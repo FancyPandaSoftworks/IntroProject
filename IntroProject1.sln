@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroProject1", "IntroProject1\IntroProject1\IntroProject1.csproj", "{F3A12102-A4FE-46AC-96E0-2995E66C044B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackBone", "IntroProject1\IntroProject1\BackBone.csproj", "{F3A12102-A4FE-46AC-96E0-2995E66C044B}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "IntroProject1Content", "IntroProject1\IntroProject1Content\IntroProject1Content.contentproj", "{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroProject1Content", "IntroProject1\IntroProject1Content\IntroProject1Content.contentproj", "{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSpecific", "GameSpecific\GameSpecific\GameSpecific.csproj", "{4FDD701B-1CBE-4567-899E-805BB77E0276}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3A12102-A4FE-46AC-96E0-2995E66C044B} = {F3A12102-A4FE-46AC-96E0-2995E66C044B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +24,10 @@ Global
 		{F3A12102-A4FE-46AC-96E0-2995E66C044B}.Release|x86.Build.0 = Release|x86
 		{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}.Debug|x86.ActiveCfg = Debug|x86
 		{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}.Release|x86.ActiveCfg = Release|x86
+		{4FDD701B-1CBE-4567-899E-805BB77E0276}.Debug|x86.ActiveCfg = Debug|x86
+		{4FDD701B-1CBE-4567-899E-805BB77E0276}.Debug|x86.Build.0 = Debug|x86
+		{4FDD701B-1CBE-4567-899E-805BB77E0276}.Release|x86.ActiveCfg = Release|x86
+		{4FDD701B-1CBE-4567-899E-805BB77E0276}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
