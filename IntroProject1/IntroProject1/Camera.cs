@@ -16,17 +16,14 @@ namespace Introproject
         float  viewAngleX, viewAngleY;
         Vector3 viewVertex,cameraPosition;
         Vector2 prevMousePos, mouseDiff;
-        protected override void LoadContent()
+
+        protected void LoadContent()
         {
-            prevMousePos = new Vector2(GraphicsDevice.Viewport.X / 2, GraphicsDevice.Viewport.Y / 2);
+            prevMousePos = new Vector2(GameEnvironment.screen.X / 2, GameEnvironment.screen.Y / 2);
             LoadContent();
         }
 
-
-        protected 
-      
-
-        protected override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
 
             InputHelper input = InputHelper;

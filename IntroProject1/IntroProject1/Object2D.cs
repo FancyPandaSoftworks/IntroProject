@@ -23,10 +23,7 @@ namespace Introproject
         {
             if (!visible || spriteSheet == null)
                 return;
-            if (!overlaySprite)
-                spriteSheet.Draw(spriteBatch, GameObject.Camera.Position(this.GlobalPosition), origin); //moet ogelost worden
-            else if (overlaySprite)
-                spriteSheet.Draw(spriteBatch, this.GlobalPosition, origin);
+            spriteSheet.Draw(spriteBatch, this.GlobalPosition, origin);
 
 
             
