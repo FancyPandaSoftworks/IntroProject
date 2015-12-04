@@ -1,2 +1,4 @@
 C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1\obj\x86\Debug\BackBone.csprojResolveAssemblyReference.cache
 C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\IntroProject1\IntroProject1\obj\x86\Debug\BackBone.csprojResolveAssemblyReference.cache
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\IntroProject1\IntroProject1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
