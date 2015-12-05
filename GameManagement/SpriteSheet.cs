@@ -2,8 +2,7 @@
 using Microsoft.Xna.Framework;
 
 
-namespace Introproject
-{
+
     public class SpriteSheet
     {
         protected Texture2D sprite;
@@ -99,4 +98,4 @@ namespace Introproject
             get { return this.sheetColumns * this.sheetRows; }
         }
     }
-}
+

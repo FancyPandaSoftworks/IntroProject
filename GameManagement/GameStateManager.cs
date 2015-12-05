@@ -9,8 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace Introproject
-{
+
     public class GameStateManager : Root
     {
         Dictionary<string, Root> gameState;
@@ -66,4 +65,3 @@ namespace Introproject
         }
 
     }
-}

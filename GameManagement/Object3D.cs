@@ -8,8 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Introproject
-{
+
     public class Object3D : GameObject
     {
         float aspectRatio, modelRotation, viewAngleX, viewAngleY;
@@ -17,7 +16,7 @@ namespace Introproject
         Model myModel;
         GraphicsDevice graphicsDevice;
         ContentManager content;
-        string id;
+        
 
         public Object3D(string modelName, string id = "")
         {
@@ -74,4 +73,4 @@ namespace Introproject
 
 
     }
-}
+

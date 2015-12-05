@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-
-namespace Introproject
-{
-    public class AnimatedGameObject : Object2D
+   
+public class AnimatedGameObject : Object2D
     {
         protected Dictionary<string, Animation> animations;
 
@@ -46,4 +44,4 @@ namespace Introproject
 
 
     }
-}
+

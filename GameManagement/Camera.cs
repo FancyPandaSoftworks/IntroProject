@@ -8,8 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Introproject
-{
+
     public class Camera : GameObject
     {
 
@@ -70,4 +69,3 @@ namespace Introproject
 
         }
     }
-}

@@ -10,8 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 
-namespace Introproject
-{
+
     public class AssetManager
     {
         protected ContentManager contentmanager;
@@ -47,4 +46,3 @@ namespace Introproject
             get { return contentmanager; }
         }
     }
-}

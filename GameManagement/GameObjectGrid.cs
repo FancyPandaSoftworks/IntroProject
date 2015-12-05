@@ -1,8 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Introproject
-{
+
     public class GameObjectGrid : GameObject
     {
         protected GameObject[,] grid;
@@ -92,4 +91,3 @@ namespace Introproject
         }
 
     }
-}

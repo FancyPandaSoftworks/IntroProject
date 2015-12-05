@@ -1,8 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Introproject
-{
+
     public class GameObject : Root
     {
         protected GameObject parent;
@@ -108,4 +107,4 @@ namespace Introproject
 
 
     }
-}
+

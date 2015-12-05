@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace Introproject
-{
+
     class Collision
     {
         public static Vector2 CalculatedIntersectionDepth(Rectangle rectA, Rectangle rectB)
@@ -31,4 +30,4 @@ namespace Introproject
             return new Rectangle(xmin, ymin, xmax - xmin, ymax - ymin);
         }
     }
-}
+

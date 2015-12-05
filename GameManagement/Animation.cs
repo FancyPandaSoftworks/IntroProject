@@ -2,8 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Introproject
-{
+
     public class Animation : SpriteSheet
     {
         protected float frameTime;
@@ -56,4 +55,4 @@ namespace Introproject
             get { return !this.isLooping && sheetIndex >= NumberSheetElements - 1; }
         }
     }
-}
+

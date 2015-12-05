@@ -2,8 +2,7 @@
 using Microsoft.Xna.Framework;
 
 
-namespace Introproject
-{
+
     class TextGameObject : GameObject
     {
         SpriteFont spriteFont;
@@ -36,4 +35,4 @@ namespace Introproject
             get { return spriteFont.MeasureString(text); }
         }
     }
-}
+

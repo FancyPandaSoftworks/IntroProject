@@ -2,8 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Introproject
-{
+
     public class GameObjectList : GameObject
     {
         protected List<GameObject> gameObjects;
@@ -69,4 +68,4 @@ namespace Introproject
                 obj.Reset();
         }
     }
-}
+

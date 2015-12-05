@@ -4,8 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Introproject
-{
+
     public class Object2D : GameObject
     {
         protected Vector2 origin;
@@ -88,4 +87,4 @@ namespace Introproject
 
 
     }
-}
+
