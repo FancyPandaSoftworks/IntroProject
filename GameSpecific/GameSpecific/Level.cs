@@ -25,8 +25,8 @@ class Level
         newTile = new EntryTile();
         random = new Random();
 
-        newTile.tilePosition = Point.Zero;
-        position = newTile.tilePosition;
+        newTile.gridPosition = Point.Zero;
+        position = newTile.gridPosition;
         tileList.Add(position, newTile);
         this.maxTiles = maxTiles;
 
@@ -48,25 +48,25 @@ class Level
             List<Point> possiblePositions = new List<Point>();
 
             //Look where a Tile can be placed
-            Point position = new Point(newTile.tilePosition.X - 1, newTile.tilePosition.Y);
+            Point position = new Point(newTile.gridPosition.X - 1, newTile.gridPosition.Y);
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X;
-            position.Y = newTile.tilePosition.Y + 1;
+            position.X = newTile.gridPosition.X;
+            position.Y = newTile.gridPosition.Y + 1;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X + 1;
-            position.Y = newTile.tilePosition.Y;
+            position.X = newTile.gridPosition.X + 1;
+            position.Y = newTile.gridPosition.Y;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X;
-            position.Y = newTile.tilePosition.Y - 1;
+            position.X = newTile.gridPosition.X;
+            position.Y = newTile.gridPosition.Y - 1;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
@@ -76,18 +76,18 @@ class Level
             {
                 //Choose where to place the Tile
                 newTile = CreateMainPathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                tileList.Add(newTile.tilePosition, newTile);
+                tileList.Add(newTile.gridPosition, newTile);
             }
             else
             {
                 //Choose where to place the Tile
                 newTile = CreateExitTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                tileList.Add(newTile.tilePosition, newTile);
+                tileList.Add(newTile.gridPosition, newTile);
             }
 
-            keyList.Add(newTile.tilePosition);
+            keyList.Add(newTile.gridPosition);
 
-            Console.WriteLine("X:" + newTile.tilePosition.X + "\nY:" + newTile.tilePosition.Y + "");
+            Console.WriteLine("X:" + newTile.gridPosition.X + "\nY:" + newTile.gridPosition.Y + "");
             maxTiles--;
 
         }
@@ -125,32 +125,32 @@ class Level
         if (nextTile != null)
         {
 
-            tileList.Add(nextTile.tilePosition, nextTile);
+            tileList.Add(nextTile.gridPosition, nextTile);
 
             while (tiles > 0)
             {
                 List<Point> possiblePositions = new List<Point>();
 
                 //Look where a Tile can be placed
-                Point position = new Point(nextTile.tilePosition.X - 1, nextTile.tilePosition.Y);
+                Point position = new Point(nextTile.gridPosition.X - 1, nextTile.gridPosition.Y);
 
                 if (!tileList.ContainsKey(position))
                     possiblePositions.Add(position);
 
-                position.X = nextTile.tilePosition.X;
-                position.Y = nextTile.tilePosition.Y + 1;
+                position.X = nextTile.gridPosition.X;
+                position.Y = nextTile.gridPosition.Y + 1;
 
                 if (!tileList.ContainsKey(position))
                     possiblePositions.Add(position);
 
-                position.X = nextTile.tilePosition.X + 1;
-                position.Y = nextTile.tilePosition.Y;
+                position.X = nextTile.gridPosition.X + 1;
+                position.Y = nextTile.gridPosition.Y;
 
                 if (!tileList.ContainsKey(position))
                     possiblePositions.Add(position);
 
-                position.X = nextTile.tilePosition.X;
-                position.Y = nextTile.tilePosition.Y - 1;
+                position.X = nextTile.gridPosition.X;
+                position.Y = nextTile.gridPosition.Y - 1;
 
                 if (!tileList.ContainsKey(position))
                     possiblePositions.Add(position);
@@ -159,8 +159,8 @@ class Level
                 {
                     //Choose where to place the Tile
                     nextTile = new SidePathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                    tileList.Add(nextTile.tilePosition, nextTile);
-                    Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                    tileList.Add(nextTile.gridPosition, nextTile);
+                    Console.WriteLine("Side: \nX: " + nextTile.gridPosition.X + "\nY: " + nextTile.gridPosition.Y);
                 }
                 else
                 {

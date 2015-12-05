@@ -4,8 +4,8 @@ using Microsoft.Xna.Framework;
 public class GameObject : Root
 {
     protected GameObject parent;
-    protected Vector2 velocity;
-    protected Vector2 position;
+    protected Vector3 velocity;
+    protected Vector3 position;
     protected bool visible;
     protected bool overlaySprite = false;
     protected InputHelper inputHelper;
@@ -14,7 +14,7 @@ public class GameObject : Root
     public GameObject(string id = "")
     {
 
-        this.velocity = Vector2.Zero;
+        this.velocity = Vector3.Zero;
         this.visible = true;
         inputHelper = new InputHelper();
         this.id = id;
@@ -40,7 +40,7 @@ public class GameObject : Root
     {
 
     }
-    public virtual Vector2 GlobalPosition
+    public virtual Vector3 GlobalPosition
     {
         get
         {
@@ -59,13 +59,13 @@ public class GameObject : Root
 
 
 
-    public virtual Vector2 Position //dit is voor 2d classe
+    public virtual Vector3 Position //dit is voor 2d classe
     {
         get { return position; }
         set { position = value; }
     }
 
-    public virtual Vector2 Velocity
+    public virtual Vector3 Velocity
     {
         get { return velocity; }
         set { velocity = value; }

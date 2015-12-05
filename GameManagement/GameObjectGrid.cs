@@ -19,7 +19,7 @@ public class GameObjectGrid : GameObject
     {
         grid[x, y] = obj2D;
         obj2D.Parent = this;
-        obj2D.Position = new Vector2(x * cellWidth, y * cellHeight);
+        obj2D.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
     }
 
     public GameObject get(int x, int y)

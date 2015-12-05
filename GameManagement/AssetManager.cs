@@ -25,6 +25,13 @@ public class AssetManager
         return contentmanager.Load<Texture2D>(assetName);
     }
 
+    public Model GetModel(string assetName)
+    {
+        if (assetName == "")
+            return null;
+        return contentmanager.Load<Model>(assetName);
+    }
+
     public void Playsound(string assetName)
     {
         SoundEffect soundeffect = contentmanager.Load<SoundEffect>(assetName);

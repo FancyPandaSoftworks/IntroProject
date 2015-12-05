@@ -18,8 +18,8 @@ class TextGameObject : GameObject
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         
-        if (visible)
-            spriteBatch.DrawString(spriteFont, text, this.position, color);
+        //if (visible)
+            //spriteBatch.DrawString(spriteFont, text, this.position, color);
     }
 
     public Color Color

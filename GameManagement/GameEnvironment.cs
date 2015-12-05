@@ -20,6 +20,7 @@ public class GameEnvironment : Game
     protected static Random random;
     protected static AssetManager assetManager;
     protected static GameSettingsManager gameSettingsManager;
+    protected static Camera camera;
 
 
 
@@ -32,7 +33,12 @@ public class GameEnvironment : Game
         random = new Random();
         assetManager = new AssetManager(Content);
         gameSettingsManager = new GameSettingsManager();
+        camera = new Camera();
+    }
 
+    public static Camera Camera
+    {
+        get { return GameEnvironment.camera; }
     }
 
     public static Point screen
