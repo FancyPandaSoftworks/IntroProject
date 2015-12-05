@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-abstract class Tile
+class Tile
 {
     public Point tilePosition;
 }

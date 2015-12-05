@@ -1,95 +1,92 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Introproject
+public class GameObjectGrid : GameObject
 {
-    public class GameObjectGrid : GameObject
+    protected GameObject[,] grid;
+    protected int cellWidth, cellHeight;
+
+
+    public GameObjectGrid(int rows, int columns, string id = "")
     {
-        protected GameObject[,] grid;
-        protected int cellWidth, cellHeight;
+        grid = new GameObject[columns, rows];
+        for (int x = 0; x < columns; x++)
+            for (int y = 0; y < rows; y++)
+                grid[x, y] = null;
+    }
 
+    public void Add(GameObject obj2D, int x, int y)
+    {
+        grid[x, y] = obj2D;
+        obj2D.Parent = this;
+        obj2D.Position = new Vector2(x * cellWidth, y * cellHeight);
+    }
 
-        public GameObjectGrid(int rows, int columns, string id = "")
+    public GameObject get(int x, int y)
+    {
+        if (x >= 0 && x < grid.GetLength(0) && y >= 0 && y < grid.GetLength(1))
+            return grid[x, y];
+        else
+            return null;
+    }
+
+    public GameObject[,] Objects
+    {
+        get
         {
-            grid = new GameObject[columns, rows];
-            for (int x = 0; x < columns; x++)
-                for (int y = 0; y < rows; y++)
-                    grid[x, y] = null;
+            return grid;
         }
+    }
 
-        public void Add(GameObject obj2D, int x, int y)
-        {
-            grid[x, y] = obj2D;
-            obj2D.Parent = this;
-            obj2D.Position = new Vector2(x * cellWidth, y * cellHeight);
-        }
+    public Vector2 GetAnchorPosition(GameObject g)
+    {
+        for (int x = 0; x < Columns; x++)
+            for (int y = 0; y < Rows; y++)
+                if (grid[x, y] == g)
+                    return new Vector2(x * cellWidth, y * cellHeight);
+        return Vector2.Zero;
+    }
 
-        public GameObject get(int x, int y)
-        {
-            if (x >= 0 && x < grid.GetLength(0) && y >= 0 && y < grid.GetLength(1))
-                return grid[x, y];
-            else
-                return null;
-        }
+    public int Columns
+    {
+        get { return grid.GetLength(0); }
+    }
 
-        public GameObject[,] Objects
-        {
-            get
-            {
-                return grid;
-            }
-        }
+    public int Rows
+    {
+        get { return grid.GetLength(1); }
+    }
 
-        public Vector2 GetAnchorPosition(GameObject g)
-        {
-            for (int x = 0; x < Columns; x++)
-                for (int y = 0; y < Rows; y++)
-                    if (grid[x, y] == g)
-                        return new Vector2(x * cellWidth, y * cellHeight);
-            return Vector2.Zero;
-        }
+    public int CellWidth
+    {
+        get { return cellWidth; }
+        set { cellWidth = value; }
+    }
 
-        public int Columns
-        {
-            get { return grid.GetLength(0); }
-        }
+    public int CellHeight
+    {
+        get { return cellHeight; }
+        set { cellWidth = value; }
+    }
 
-        public int Rows
-        {
-            get { return grid.GetLength(1); }
-        }
+    public override void HandleInput(InputHelper inputhelper)
+    {
+        foreach (GameObject obj in grid)
+            obj.HandleInput(inputHelper);
+    }
 
-        public int CellWidth
-        {
-            get { return cellWidth; }
-            set { cellWidth = value; }
-        }
-
-        public int CellHeight
-        {
-            get { return cellHeight; }
-            set { cellWidth = value; }
-        }
-
-        public override void HandleInput(InputHelper inputhelper)
-        {
-            foreach (GameObject obj in grid)
-                obj.HandleInput(inputHelper);
-        }
-
-        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-        {
-            foreach (GameObject obj in grid)
-                obj.Draw(gameTime, spriteBatch);
-
-        }
-
-        public override void Reset()
-        {
-            base.Reset();
-            foreach (GameObject obj in grid)
-                obj.Reset();
-        }
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        foreach (GameObject obj in grid)
+            obj.Draw(gameTime, spriteBatch);
 
     }
+
+    public override void Reset()
+    {
+        base.Reset();
+        foreach (GameObject obj in grid)
+            obj.Reset();
+    }
+
 }

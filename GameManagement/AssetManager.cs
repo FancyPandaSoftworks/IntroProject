@@ -9,42 +9,38 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-
-namespace Introproject
+public class AssetManager
 {
-    public class AssetManager
+    protected ContentManager contentmanager;
+
+    public AssetManager(ContentManager Content)
     {
-        protected ContentManager contentmanager;
+        this.contentmanager = Content;
+    }
 
-        public AssetManager(ContentManager Content)
-        {
-            this.contentmanager = Content;
-        }
+    public Texture2D GetSprite(string assetName)
+    {
+        if (assetName == "")
+            return null;
+        return contentmanager.Load<Texture2D>(assetName);
+    }
 
-        public Texture2D GetSprite(string assetName)
-        {
-            if (assetName == "")
-                return null;
-            return contentmanager.Load<Texture2D>(assetName);
-        }
+    public void Playsound(string assetName)
+    {
+        SoundEffect soundeffect = contentmanager.Load<SoundEffect>(assetName);
+        soundeffect.Play();
 
-        public void Playsound(string assetName)
-        {
-            SoundEffect soundeffect = contentmanager.Load<SoundEffect>(assetName);
-            soundeffect.Play();
+    }
 
-        }
+    public void PlayMusic(string assetName, bool repeat = true)
+    {
+        MediaPlayer.IsRepeating = repeat;
+        MediaPlayer.Play(contentmanager.Load<Song>(assetName));
 
-        public void PlayMusic(string assetName, bool repeat = true)
-        {
-            MediaPlayer.IsRepeating = repeat;
-            MediaPlayer.Play(contentmanager.Load<Song>(assetName));
+    }
 
-        }
-
-        public ContentManager Content
-        {
-            get { return contentmanager; }
-        }
+    public ContentManager Content
+    {
+        get { return contentmanager; }
     }
 }
