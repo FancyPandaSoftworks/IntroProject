@@ -9,4 +9,9 @@ C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\GameMa
 C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\GameManagement.dll
 C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\GameManagement.pdb
-
+D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameManagement\bin\x86\Debug\GameManagement.dll
+D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameManagement\bin\x86\Debug\GameManagement.pdb
+D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameManagement\obj\x86\Debug\GameManagement.csprojResolveAssemblyReference.cache
+D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameManagement\obj\x86\Debug\GameManagement.dll
+D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameManagement\obj\x86\Debug\GameManagement.pdb

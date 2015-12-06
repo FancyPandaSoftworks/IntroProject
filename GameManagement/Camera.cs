@@ -27,10 +27,8 @@ public class Camera : Object3D
         get { return viewVertex; }
     }
 
-    public override void HandleInput(InputHelper inputHelper)
+    public override void HandleInput(InputHelper input)
     {
-
-        InputHelper input = InputHelper;
         mouseDiff.X = input.MousePosition.X - prevMousePos.X;
         mouseDiff.Y = input.MousePosition.Y - prevMousePos.Y;
         viewAngleX += mouseDiff.X * 0.005f;
