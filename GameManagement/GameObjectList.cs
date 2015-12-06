@@ -41,8 +41,8 @@ public class GameObjectList : GameObject
 
     public override void HandleInput(InputHelper inputhelper)
     {
-        for (int i = gameObjects.Count - 1; i >= 0; i--)
-            gameObjects[i].HandleInput(inputhelper);
+        foreach (GameObject obj in gameObjects)
+            obj.HandleInput(inputHelper);
     }
 
     public override void Update(GameTime gameTime)

@@ -21,7 +21,7 @@ public class GameEnvironment : Game
     protected static AssetManager assetManager;
     protected static GameSettingsManager gameSettingsManager;
     protected static Camera camera;
-
+    protected static Point screen;
 
 
 
@@ -33,7 +33,10 @@ public class GameEnvironment : Game
         random = new Random();
         assetManager = new AssetManager(Content);
         gameSettingsManager = new GameSettingsManager();
+        graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
+        screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
+        
     }
 
     public static Camera Camera
@@ -41,10 +44,9 @@ public class GameEnvironment : Game
         get { return GameEnvironment.camera; }
     }
 
-    public static Point screen
+    public static Point Screen
     {
         get { return GameEnvironment.screen; }
-        set { screen = value; }
     }
 
     public static Random Random
@@ -99,10 +101,7 @@ public class GameEnvironment : Game
 
     protected override void LoadContent()
     {
-
         spriteBatch = new SpriteBatch(GraphicsDevice);
-
-
     }
 
     protected void HandleInput()
@@ -112,18 +111,19 @@ public class GameEnvironment : Game
             this.Exit();
         if (inputHelper.KeyPressed(Keys.F5))
             SetFullscreen(!graphics.IsFullScreen);
+        gameStateManager.HandleInput(inputHelper);
 
     }
 
     protected override void Update(GameTime gameTime)
     {
-
         HandleInput();
         gameStateManager.Update(gameTime);
     }
     protected override void Draw(GameTime gameTime)
     {
-        base.Draw(gameTime);
+        graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+        gameStateManager.Draw(gameTime, spriteBatch);
     }
 
 

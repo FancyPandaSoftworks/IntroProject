@@ -1,12 +1,27 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+enum TileType
+{
+    Wall,
+    Path,
+    Empty
+}
 
 class Tile : Object3D
 {
-    public Point gridPosition;
+    protected TileType type;
 
-    public Tile(string modelName, string id) : base(modelName, id)
+    public Tile(string modelName, string id, TileType type = TileType.Empty) : base(modelName, id)
     {
+        this.type = type;
+    }
 
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        if (type == TileType.Empty)
+            return;
+        base.Draw(gameTime, spriteBatch);
     }
 }
 

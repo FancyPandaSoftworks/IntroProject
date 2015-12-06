@@ -1,11 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace GameSpecific
+
+class PlayingState : Root
 {
-    class PlayingState
+    Level level;
+    
+    public PlayingState()
+    {
+        level = new Level();
+    }
+
+    public void HandleInput(InputHelper inputhelper)
+    {
+        level.Find("player").HandleInput(inputhelper);
+    }
+
+    public void Update(GameTime gameTime)
+    {
+        level.Update(gameTime);
+        if (false)
+            level = new Level();
+    }
+
+    public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        level.Draw(gameTime, spriteBatch);
+    }
+
+    public void Reset()
     {
     }
 }

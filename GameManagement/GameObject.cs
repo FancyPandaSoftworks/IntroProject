@@ -55,10 +55,6 @@ public class GameObject : Root
         visible = true;
     }
 
-
-
-
-
     public virtual Vector3 Position //dit is voor 2d classe
     {
         get { return position; }

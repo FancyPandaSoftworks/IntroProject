@@ -7,8 +7,10 @@ public class GameObjectGrid : GameObject
     protected int cellWidth, cellHeight;
 
 
-    public GameObjectGrid(int rows, int columns, string id = "")
+    public GameObjectGrid(int rows, int columns, string id = "") : base(id)
     {
+        cellHeight = 100;
+        cellWidth = 100;
         grid = new GameObject[columns, rows];
         for (int x = 0; x < columns; x++)
             for (int y = 0; y < rows; y++)

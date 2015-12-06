@@ -11,56 +11,24 @@ using Microsoft.Xna.Framework.Input;
 public class Camera : Object3D
 {
     
-    float  viewAngleX, viewAngleY;
+    public float viewAngleX, viewAngleY;
     Vector3 viewVertex;
     Vector2 prevMousePos, mouseDiff;
 
-    public Camera() : base("", "")
+    public Camera(string id = "") : base("", id)
     {
-
-    }
-
-    protected void LoadContent()
-    {
-        prevMousePos = new Vector2(GameEnvironment.screen.X / 2, GameEnvironment.screen.Y / 2);
-        LoadContent();
+        prevMousePos = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
     }
 
     public Vector3 ViewVertex
     {
-        get { return ViewVertex; }
+        get { return viewVertex; }
     }
 
-    public override void Update(GameTime gameTime)
+    public override void HandleInput(InputHelper inputHelper)
     {
 
         InputHelper input = InputHelper;
-
-            
-        if (input.IsKeyDown(Keys.W))
-        {
-            position.X += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.Z += 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-        if (input.IsKeyDown(Keys.S))
-        {
-            position.X -= 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.Z -= 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-        if (input.IsKeyDown(Keys.D))
-        {
-            position.Z += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.X -= 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-        if (input.IsKeyDown(Keys.A))
-        {
-            position.Z -= 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.X += 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-        if (input.IsKeyDown(Keys.Space))
-            position.Y += 40f;
-        if (input.IsKeyDown(Keys.LeftShift))
-            position.Y -= 40f;
         mouseDiff.X = input.MousePosition.X - prevMousePos.X;
         mouseDiff.Y = input.MousePosition.Y - prevMousePos.Y;
         viewAngleX += mouseDiff.X * 0.005f;

@@ -11,31 +11,25 @@ using Microsoft.Xna.Framework.Input;
 public class Object3D : GameObject
 {
     float aspectRatio, modelRotation;
-    Vector3 modelPosition;
-    Model myModel;
-    string id;
+    Model model;
 
-    public Object3D(string modelName, string id = "")
+    public Object3D(string modelName = "", string id = "") : base(id)
     {
-        myModel = GameEnvironment.AssetManager.GetModel(modelName);
-        this.id = id;
-
+        model = GameEnvironment.AssetManager.GetModel(modelName);
     }
-
-
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        Matrix[] transforms = new Matrix[myModel.Bones.Count];
-        myModel.CopyAbsoluteBoneTransformsTo(transforms);
+        Matrix[] transforms = new Matrix[model.Bones.Count];
+        model.CopyAbsoluteBoneTransformsTo(transforms);
 
-        foreach (ModelMesh mesh in myModel.Meshes)
+        foreach (ModelMesh mesh in model.Meshes)
         {
             foreach (BasicEffect effect in mesh.Effects)
             {
                 effect.EnableDefaultLighting();
                 effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
-                    * Matrix.CreateTranslation(modelPosition);
+                    * Matrix.CreateTranslation(position);
                 effect.View = Matrix.CreateLookAt(GameEnvironment.Camera.position, GameEnvironment.Camera.ViewVertex, Vector3.Up);
                 effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
                     aspectRatio, 1.0f, 10000.0f);
@@ -46,17 +40,18 @@ public class Object3D : GameObject
 
 
     }
-    public Vector3 Position
-    {
-        get { return position; }
-        set { position = value; }
-    }
+
     public Vector3 GlobalPosition
     {
         get
         {
             return this.position;
         }
+    }
+
+    public Model Model
+    {
+        get { return model; }
     }
 
 

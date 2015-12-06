@@ -16,5 +16,11 @@ class MainGame : GameEnvironment
         Content.RootDirectory = "Content";
         this.IsMouseVisible = true;
     }
+
+    protected override void LoadContent()
+    {
+        gameStateManager.AddGameState("playingState", new PlayingState());
+        gameStateManager.SwitchTo("playingState");
+    }
 }
 
