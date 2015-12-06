@@ -8,15 +8,15 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\DATA\GIT\Introproject\IntroProject\IntroProject1\IntroProject1Content\</RootDirectory>
-      <LoggerRootDirectory>D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-09-08T11:11:29.5050406+02:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-09-13T12:04:20.3391947+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
