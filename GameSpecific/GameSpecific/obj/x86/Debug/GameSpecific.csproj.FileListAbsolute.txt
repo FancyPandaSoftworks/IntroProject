@@ -3,3 +3,8 @@ C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x8
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.exe
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.pdb
+D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameSpecific.exe
+D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameSpecific.pdb
+D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.exe
+D:\DATA\GIT\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.pdb

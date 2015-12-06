@@ -10,7 +10,7 @@ class Level
     private Tile newTile;
     private Point position;
     private Random random;
-    private int maxTiles;
+    private int tiles;
 
     public static void Main()
     {
@@ -18,7 +18,7 @@ class Level
 
     }
 
-    public Level(int maxTiles = 10)
+    public Level(int tiles = 10)
     {
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();
@@ -28,22 +28,19 @@ class Level
         newTile.tilePosition = Point.Zero;
         position = newTile.tilePosition;
         tileList.Add(position, newTile);
-        this.maxTiles = maxTiles;
+        keyList.Add(position);
+        this.tiles = tiles;
 
         CreateMainPath();
 
-        int i;
-        i = random.Next(1, maxTiles / 4);
-        while (i > 0)
-        {
-            CreateSidePath(random.Next(3, maxTiles / 2));
-            i--;
-        }
+        for(int i = random.Next(1, tiles / 4); i > 0; i--)
+            CreateSidePath(random.Next(3, tiles / 2));
+
     }
 
     private void CreateMainPath()
     {
-        while (maxTiles >= 0)
+        while (tiles >= 0)
         {
             List<Point> possiblePositions = new List<Point>();
 
@@ -72,7 +69,7 @@ class Level
                 possiblePositions.Add(position);
 
 
-            if (maxTiles > 0)
+            if (tiles > 0)
             {
                 //Choose where to place the Tile
                 newTile = CreateMainPathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
@@ -88,31 +85,11 @@ class Level
             keyList.Add(newTile.tilePosition);
 
             Console.WriteLine("X:" + newTile.tilePosition.X + "\nY:" + newTile.tilePosition.Y + "");
-            maxTiles--;
+            
+            tiles--;
 
         }
 
-    }
-
-    private Tile CreateMainPathTile(Point point)
-    {
-        return new MainPathTile(point);
-    }
-
-    private Tile CreateExitTile(Point point)
-    {
-        return new ExitTile(point);
-    }
-
-    private bool CanPlaceMainPathTile(Point currentPosition)
-    {
-        if (!tileList.ContainsKey(currentPosition))
-        {
-
-
-            return (CanPlaceTile(currentPosition, true));
-        }
-        else { return false; }
     }
 
 
@@ -126,40 +103,18 @@ class Level
         {
 
             tileList.Add(nextTile.tilePosition, nextTile);
+            keyList.Add(nextTile.tilePosition);
 
             while (tiles > 0)
             {
-                List<Point> possiblePositions = new List<Point>();
-
-                //Look where a Tile can be placed
-                Point position = new Point(nextTile.tilePosition.X - 1, nextTile.tilePosition.Y);
-
-                if (!tileList.ContainsKey(position))
-                    possiblePositions.Add(position);
-
-                position.X = nextTile.tilePosition.X;
-                position.Y = nextTile.tilePosition.Y + 1;
-
-                if (!tileList.ContainsKey(position))
-                    possiblePositions.Add(position);
-
-                position.X = nextTile.tilePosition.X + 1;
-                position.Y = nextTile.tilePosition.Y;
-
-                if (!tileList.ContainsKey(position))
-                    possiblePositions.Add(position);
-
-                position.X = nextTile.tilePosition.X;
-                position.Y = nextTile.tilePosition.Y - 1;
-
-                if (!tileList.ContainsKey(position))
-                    possiblePositions.Add(position);
-
+                List<Point> possiblePositions = GetPossiblePositions(nextTile.tilePosition);
+                
                 if (possiblePositions.Count > 0)
                 {
                     //Choose where to place the Tile
                     nextTile = new SidePathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
                     tileList.Add(nextTile.tilePosition, nextTile);
+                    keyList.Add(nextTile.tilePosition);
                     Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
                 }
                 else
@@ -172,10 +127,8 @@ class Level
         }
         else
         {
-
+            CreateSidePath(tiles);
         }
-
-
     }
 
     private Tile CanCreateSidePath(Point nextPosition)
@@ -206,46 +159,59 @@ class Level
         }
         return (new SidePathEntryTile(possibleEntrys[random.Next(0, possibleEntrys.Count - 1)]));
     }
+
     private bool CanPlaceSideEntry(Point currentPosition)
     {
-        if (!tileList.ContainsKey(currentPosition))
-        {
-
-            return CanPlaceTile(currentPosition, false);
-        }
-
-        return false;
+        return (!tileList.ContainsKey(currentPosition) && GetPossiblePositions(currentPosition).Count > 0);
     }
 
     //Checking if a tile can be placed
-    private bool CanPlaceTile(Point currentPosition, bool IsMain)
+    private List<Point> GetPossiblePositions(Point currentPosition)
     {
         List<Point> possiblePositions = new List<Point>();
-        Point position = new Point(currentPosition.X - 1, currentPosition.Y);
+        
+            Point position = new Point(currentPosition.X - 1, currentPosition.Y);
 
-        if (!tileList.ContainsKey(position))
-            possiblePositions.Add(position);
+            if (!tileList.ContainsKey(position))
+                possiblePositions.Add(position);
 
-        position.X = currentPosition.X;
-        position.Y = currentPosition.Y + 1;
+            position.X = currentPosition.X;
+            position.Y = currentPosition.Y + 1;
 
-        if (!tileList.ContainsKey(position))
-            possiblePositions.Add(position);
+            if (!tileList.ContainsKey(position))
+                possiblePositions.Add(position);
 
-        position.X = currentPosition.X + 1;
-        position.Y = currentPosition.Y;
+            position.X = currentPosition.X + 1;
+            position.Y = currentPosition.Y;
 
-        if (!tileList.ContainsKey(position))
-            possiblePositions.Add(position);
+            if (!tileList.ContainsKey(position))
+                possiblePositions.Add(position);
 
-        position.X = currentPosition.X;
-        position.Y = currentPosition.Y - 1;
+            position.X = currentPosition.X;
+            position.Y = currentPosition.Y - 1;
 
-        if (!tileList.ContainsKey(position))
-            possiblePositions.Add(position);
-
-        return ((IsMain && possiblePositions.Count == 3) || (!IsMain && possiblePositions.Count > 0));
+            if (!tileList.ContainsKey(position))
+                possiblePositions.Add(position);
+        
+        return possiblePositions;
+       
     }
+
+    private bool CanPlaceMainPathTile(Point currentPosition)
+    {
+            return (!tileList.ContainsKey(currentPosition) && GetPossiblePositions(currentPosition).Count == 3);
+    }
+
+    private Tile CreateMainPathTile(Point point)
+    {
+        return new MainPathTile(point);
+    }
+
+    private Tile CreateExitTile(Point point)
+    {
+        return new ExitTile(point);
+    }
+
 }
 
 
