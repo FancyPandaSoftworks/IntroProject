@@ -15,12 +15,11 @@ class Player : Camera
         position = startPos;
     }
 
-    public override void HandleInput(InputHelper inputHelper)
+    public override void HandleInput(InputHelper input)
     {
         float viewAngleX = GameEnvironment.Camera.viewAngleX;
         float viewAngleY = GameEnvironment.Camera.viewAngleY;
-
-        InputHelper input = InputHelper;
+       
      
         if (input.IsKeyDown(Keys.W))
         {
