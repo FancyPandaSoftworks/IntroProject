@@ -7,7 +7,6 @@ class TextGameObject : GameObject
     Color color;
     string text;
 
-
     public TextGameObject(string assetName)
     {
         spriteFont = GameEnvironment.AssetManager.Content.Load<SpriteFont>(assetName);
@@ -17,9 +16,9 @@ class TextGameObject : GameObject
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        
+
         //if (visible)
-            //spriteBatch.DrawString(spriteFont, text, this.position, color);
+        //spriteBatch.DrawString(spriteFont, text, this.position, color);
     }
 
     public Color Color

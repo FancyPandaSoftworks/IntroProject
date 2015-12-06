@@ -3,9 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 class Level : GameObjectList
-{
-    
+{    
     public Level()
+
     {
         Player player = new Player(Vector3.Zero);
         gameObjects.Add(player);
@@ -29,10 +29,8 @@ class Level : GameObjectList
                 Object3D gameObject3D = gameObject as Object3D;
                 if (gameObject3D.Model != null)
                     gameObject3D.Draw(gameTime, spriteBatch);
-            }
-                
-        }
-            
+            }               
+        }        
     }
 
     public TileGrid Create(TileGrid tileGrid)

@@ -23,8 +23,6 @@ public class GameEnvironment : Game
     protected static Camera camera;
     protected static Point screen;
 
-
-
     public GameEnvironment()
     {
         modelScale = Matrix.CreateScale(1, 1, 1);
@@ -36,7 +34,7 @@ public class GameEnvironment : Game
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
         screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
-        
+
     }
 
     public static Camera Camera
@@ -125,7 +123,6 @@ public class GameEnvironment : Game
         graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
         gameStateManager.Draw(gameTime, spriteBatch);
     }
-
-
-
 }
+
+

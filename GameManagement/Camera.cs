@@ -10,12 +10,14 @@ using Microsoft.Xna.Framework.Input;
 
 public class Camera : Object3D
 {
-    
+
     public float viewAngleX, viewAngleY;
     Vector3 viewVertex;
     Vector2 prevMousePos, mouseDiff;
 
-    public Camera(string id = "") : base("", id)
+
+    public Camera(string id = "")
+        : base("", id)
     {
         prevMousePos = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
     }
@@ -41,8 +43,5 @@ public class Camera : Object3D
                                 position.Y + (float)Math.Sin(viewAngleY),
                                 position.Z + (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)));
         prevMousePos = new Vector2(input.MousePosition.X, input.MousePosition.Y);
-
-
-
     }
 }

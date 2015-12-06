@@ -8,9 +8,7 @@ public class Object2D : GameObject
 {
     protected Vector2 origin;
     protected SpriteSheet spriteSheet;
-        
 
-        
     public Object2D(string assetname, int sheetIndex = 0, string id = "")
     {
         if (assetname != "")
@@ -81,9 +79,5 @@ public class Object2D : GameObject
                 } 
             return false;  
            
-            
     }
-
-
 }
-

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
 public class Object3D : GameObject
 {
     float aspectRatio, modelRotation;
@@ -60,6 +61,4 @@ public class Object3D : GameObject
         get { return new BoundingBox(new Vector3((int)GlobalPosition.X, (int)GlobalPosition.Y, (int)GlobalPosition.Z), new Vector3(0, 0, 0)); }
 
     }
-
-
 }

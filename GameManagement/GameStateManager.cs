@@ -62,5 +62,4 @@ public class GameStateManager : Root
         if (currentGameState != null)
             currentGameState.Reset();
     }
-
 }

@@ -6,6 +6,7 @@ public class GameObjectList : GameObject
 {
     protected List<GameObject> gameObjects;
 
+
     public GameObjectList(string id = "")
     {
         gameObjects = new List<GameObject>();

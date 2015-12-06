@@ -8,6 +8,7 @@ public class Animation : SpriteSheet
     protected bool isLooping;
     protected float time;
 
+
     public Animation(string assetname, bool isLooping, float frameTime = 0.1f)
     {
         this.frameTime = frameTime;

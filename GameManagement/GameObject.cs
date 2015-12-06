@@ -98,7 +98,4 @@ public class GameObject : Root
     {
         set { overlaySprite = value; }
     }
-
-
-
 }
