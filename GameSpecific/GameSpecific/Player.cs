@@ -17,10 +17,6 @@ class Player : Camera
 
     public override void HandleInput(InputHelper input)
     {
-        float viewAngleX = GameEnvironment.Camera.viewAngleX;
-        float viewAngleY = GameEnvironment.Camera.viewAngleY;
-       
-     
         if (input.IsKeyDown(Keys.W))
         {
             position.X += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
@@ -45,7 +41,7 @@ class Player : Camera
             position.Y += 40f;
         if (input.IsKeyDown(Keys.LeftShift))
             position.Y -= 40f;
-        Console.WriteLine(viewAngleX);
-        GameEnvironment.Camera.Position = position;
+
+        base.HandleInput(input);
         }
 }

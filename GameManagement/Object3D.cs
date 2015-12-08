@@ -13,9 +13,12 @@ public class Object3D : GameObject
 {
     float aspectRatio, modelRotation;
     Model model;
+    Camera playercamera;
 
     public Object3D(string modelName = "", string id = "") : base(id)
     {
+        modelRotation = 0.0f;
+        aspectRatio = 1.6667f; //NEEDS TO BE DETERMINED, INSTEAD OF DECLARED
         model = GameEnvironment.AssetManager.GetModel(modelName);
     }
 
@@ -31,7 +34,7 @@ public class Object3D : GameObject
                 effect.EnableDefaultLighting();
                 effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
                     * Matrix.CreateTranslation(position);
-                effect.View = Matrix.CreateLookAt(GameEnvironment.Camera.position, GameEnvironment.Camera.ViewVertex, Vector3.Up);
+                effect.View = Matrix.CreateLookAt(playercamera.position, playercamera.ViewVertex, Vector3.Up);
                 effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
                     aspectRatio, 1.0f, 10000.0f);
             }
@@ -60,5 +63,10 @@ public class Object3D : GameObject
     {
         get { return new BoundingBox(new Vector3((int)GlobalPosition.X, (int)GlobalPosition.Y, (int)GlobalPosition.Z), new Vector3(0, 0, 0)); }
 
+    }
+
+    public void DrawCamera(Camera player)
+    {
+        playercamera = player;
     }
 }

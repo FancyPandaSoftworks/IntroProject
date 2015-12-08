@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 public class GameObjectGrid : GameObject
 {
@@ -9,8 +10,8 @@ public class GameObjectGrid : GameObject
 
     public GameObjectGrid(int rows, int columns, string id = "") : base(id)
     {
-        cellHeight = 100;
-        cellWidth = 100;
+        cellHeight = 200;
+        cellWidth = 200;
         grid = new GameObject[columns, rows];
         for (int x = 0; x < columns; x++)
             for (int y = 0; y < rows; y++)
@@ -21,6 +22,8 @@ public class GameObjectGrid : GameObject
     {
         grid[x, y] = obj2D;
         obj2D.Parent = this;
+        Console.WriteLine(x);
+        Console.WriteLine(y);
         obj2D.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
     }
 
@@ -81,7 +84,6 @@ public class GameObjectGrid : GameObject
     {
         foreach (GameObject obj in grid)
             obj.Draw(gameTime, spriteBatch);
-
     }
 
     public override void Reset()

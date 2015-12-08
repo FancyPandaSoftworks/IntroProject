@@ -62,7 +62,6 @@ public class GameEnvironment : Game
         get { return gameSettingsManager; }
     }
 
-
     public InputHelper InputHelper
     {
         get { return inputHelper; }
