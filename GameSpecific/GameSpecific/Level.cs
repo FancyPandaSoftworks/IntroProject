@@ -29,7 +29,13 @@ class Level : GameObjectList
                 Object3D gameObject3D = gameObject as Object3D;
                 if (gameObject3D.Model != null)
                     gameObject3D.Draw(gameTime, spriteBatch);
-            }               
+            }
+            
+            if (gameObject is GameObjectGrid)
+            {
+                GameObjectGrid gameObjectGrid = gameObject as GameObjectGrid;
+                gameObjectGrid.Draw(gameTime, spriteBatch);
+            }
         }        
     }
 

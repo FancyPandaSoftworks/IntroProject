@@ -45,12 +45,7 @@ class Player : Camera
             position.Y += 40f;
         if (input.IsKeyDown(Keys.LeftShift))
             position.Y -= 40f;
-
-        GameEnvironment.Camera.Position = position;
-
-        Console.WriteLine(position);
         Console.WriteLine(viewAngleX);
-        Console.WriteLine(viewAngleY);
-
+        GameEnvironment.Camera.Position = position;
         }
 }
