@@ -8,9 +8,12 @@ enum TileType
     Empty
 }
 
-class Tile : Object3D
+abstract class Tile : Object3D
 {
     protected TileType type;
+    protected Point tilePosition;
+
+    public Point TilePosition { get { return tilePosition; } }
 
     public Tile(string modelName, string id, TileType type = TileType.Empty) : base(modelName, id)
     {

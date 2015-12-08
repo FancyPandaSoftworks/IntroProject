@@ -34,11 +34,10 @@ class RandomLevel
     {
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();
-        newTile = new EntryTile();
+        newTile = new EntryTile(Point.Zero);
         random = new Random();
 
-        newTile.tilePosition = Point.Zero;
-        position = newTile.tilePosition;
+        position = newTile.TilePosition;
         tileList.Add(position, newTile);
         keyList.Add(position);
 
@@ -58,25 +57,25 @@ class RandomLevel
             List<Point> possiblePositions = new List<Point>();
 
             //Look where a Tile can be placed
-            Point position = new Point(newTile.tilePosition.X - 1, newTile.tilePosition.Y);
+            Point position = new Point(newTile.TilePosition.X - 1, newTile.TilePosition.Y);
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X;
-            position.Y = newTile.tilePosition.Y + 1;
+            position.X = newTile.TilePosition.X;
+            position.Y = newTile.TilePosition.Y + 1;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X + 1;
-            position.Y = newTile.tilePosition.Y;
+            position.X = newTile.TilePosition.X + 1;
+            position.Y = newTile.TilePosition.Y;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X;
-            position.Y = newTile.tilePosition.Y - 1;
+            position.X = newTile.TilePosition.X;
+            position.Y = newTile.TilePosition.Y - 1;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
@@ -86,18 +85,18 @@ class RandomLevel
             {
                 //Choose where to place the Tile
                 newTile = CreateMainPathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                tileList.Add(newTile.tilePosition, newTile);
+                tileList.Add(newTile.TilePosition, newTile);
             }
             else
             {
                 //Choose where to place the Tile
                 newTile = CreateExitTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                tileList.Add(newTile.tilePosition, newTile);
+                tileList.Add(newTile.TilePosition, newTile);
             }
 
-            keyList.Add(newTile.tilePosition);
+            keyList.Add(newTile.TilePosition);
 
-            Console.WriteLine("X:" + newTile.tilePosition.X + "\nY:" + newTile.tilePosition.Y + "");
+            Console.WriteLine("X:" + newTile.TilePosition.X + "\nY:" + newTile.TilePosition.Y + "");
 
             tiles--;
 
@@ -115,20 +114,20 @@ class RandomLevel
         if (nextTile != null)
         {
 
-            tileList.Add(nextTile.tilePosition, nextTile);
-            keyList.Add(nextTile.tilePosition);
+            tileList.Add(nextTile.TilePosition, nextTile);
+            keyList.Add(nextTile.TilePosition);
 
             while (tiles > 0)
             {
-                List<Point> possiblePositions = GetPossiblePositions(nextTile.tilePosition);
+                List<Point> possiblePositions = GetPossiblePositions(nextTile.TilePosition);
 
                 if (possiblePositions.Count > 0)
                 {
                     //Choose where to place the Tile
                     nextTile = new SidePathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                    tileList.Add(nextTile.tilePosition, nextTile);
-                    keyList.Add(nextTile.tilePosition);
-                    Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                    tileList.Add(nextTile.TilePosition, nextTile);
+                    keyList.Add(nextTile.TilePosition);
+                    Console.WriteLine("Side: \nX: " + nextTile.TilePosition.X + "\nY: " + nextTile.TilePosition.Y);
                 }
                 else
                 {
