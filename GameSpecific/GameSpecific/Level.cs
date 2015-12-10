@@ -39,7 +39,7 @@ class Level : GameObjectList
         {
             for (int y = 0; y < 3; y++)
             {
-                tileGrid.Add(new Tile("box", "Tile", TileType.Wall), x, y);
+                tileGrid.Add(new WallTile(new Point(x, y)), x, y); //(?)
             }
         }
         return tileGrid;    

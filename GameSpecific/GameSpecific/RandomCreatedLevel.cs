@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-class RandomLevel
+class RandomLevel : Level
 {
     private Dictionary<Point, Tile> tileList;
     private List<Point> keyList;
@@ -30,7 +30,9 @@ class RandomLevel
             return keyList;
         }
     }
-    public RandomLevel(int tiles = 10)
+
+
+    public RandomLevel(int tiles = 10) : base()
     {
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();

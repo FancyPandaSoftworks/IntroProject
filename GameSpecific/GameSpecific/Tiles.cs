@@ -3,6 +3,15 @@
 //TODO: Comments and fixing modelname(?) and id(?)
 
 
+class WallTile : Tile
+{
+    public WallTile(Point position)
+        : base("box", "Tile", TileType.Wall)
+    {
+        tilePosition = position;
+    }
+}
+
 class EntryTile : Tile
 {
     public EntryTile(Point position) : base (modelName,id,TileType.Path)
