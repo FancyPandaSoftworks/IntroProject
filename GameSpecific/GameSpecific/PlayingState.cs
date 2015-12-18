@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
 
@@ -14,13 +15,15 @@ class PlayingState : Root
     public void HandleInput(InputHelper inputhelper)
     {
         level.Find("player").HandleInput(inputhelper);
+        if (inputhelper.KeyPressed(Keys.R))
+            level = new RandomLevel(500);
+
     }
 
     public void Update(GameTime gameTime)
     {
         level.Update(gameTime);
-        if (false)
-            level = new Level();
+        
     }
 
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)

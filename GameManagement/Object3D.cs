@@ -36,7 +36,7 @@ public class Object3D : GameObject
                     * Matrix.CreateTranslation(position);
                 effect.View = Matrix.CreateLookAt(playercamera.position, playercamera.ViewVertex, Vector3.Up);
                 effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-                    aspectRatio, 1.0f, 10000.0f);
+                    aspectRatio, 1.0f, 1000000.0f);
             }
             mesh.Draw();
         }

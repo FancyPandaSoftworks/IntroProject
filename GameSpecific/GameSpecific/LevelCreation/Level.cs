@@ -5,16 +5,20 @@ using System;
 
 class Level : GameObjectList
 {
-    Player player;
+    protected Player player;
 
     public Level()
 
     {
-        player = new Player(Vector3.Zero);
-        gameObjects.Add(player);
-        TileGrid tileGrid = new TileGrid(6, 6, "TileGrid");
-        Create(tileGrid);  // RANDOM LEVEL GENERATION HERE <-----------------------------------------
-        gameObjects.Add(tileGrid);
+        
+        if (!(this is RandomLevel))
+        {
+            player = new Player(Vector3.Zero);
+            gameObjects.Add(player);
+            TileGrid tileGrid = new TileGrid(100, 100, "TileGrid");
+            Create(tileGrid);  // RANDOM LEVEL GENERATION HERE <-----------------------------------------
+            gameObjects.Add(tileGrid);
+        }
         
     }
 
@@ -47,7 +51,7 @@ class Level : GameObjectList
                         Object3D gameObject3D = obj as Object3D;
                         if (gameObject3D.Model != null)
                         {
-                            Console.WriteLine(true);
+                            
                             gameObject3D.DrawCamera(player);
                             gameObject3D.Draw(gameTime, spriteBatch);
                         }
@@ -58,12 +62,12 @@ class Level : GameObjectList
 
     public TileGrid Create(TileGrid tileGrid)
     {
-        for(int x = 0; x < 6; x++)
+        for(int x = 0; x < 100; x++)
         {
-            for (int y = 0; y < 6; y++)
+            for (int y = 0; y < 100; y++)
             {
                 if (y % 2 == 0 && x % 2 == 0 || y % 2 == 1 && x % 2 == 1)
-                tileGrid.Add(new Tile("box", "Tile", TileType.Wall), x, y);
+                tileGrid.Add(new WallTile(new Point(x,y)), x, y);
             }
         }
         return tileGrid;    

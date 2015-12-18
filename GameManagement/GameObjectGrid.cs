@@ -8,7 +8,7 @@ public class GameObjectGrid : GameObject
     protected int cellWidth, cellHeight;
 
 
-    public GameObjectGrid(int rows, int columns, string id = "") : base(id)
+    public GameObjectGrid(int columns, int rows, string id = "") : base(id)
     {
         cellHeight = 200;
         cellWidth = 200;
@@ -22,8 +22,7 @@ public class GameObjectGrid : GameObject
     {
         grid[x, y] = obj2D;
         obj2D.Parent = this;
-        Console.WriteLine(x);
-        Console.WriteLine(y);
+
         obj2D.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
     }
 
