@@ -58,15 +58,47 @@ class RandomLevel : Level
                 }
             }
 
-            grid = new TileGrid(highestPoint.X - lowestPoint.X + 1, highestPoint.Y - lowestPoint.Y + 1, "Grid");
-            
+            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "Grid");
+            Console.WriteLine(highestPoint.X - lowestPoint.X);
+            Console.WriteLine(highestPoint.Y - lowestPoint.Y);
             //Step 2: filling the grid
             foreach (Point position in keyList)
             {
-                grid.Add(tileList[position], position.X - lowestPoint.X, position.Y - lowestPoint.Y);
+                grid.Add(tileList[position], position.X - lowestPoint.X + 1, position.Y - lowestPoint.Y + 1);
             }
 
-            //Step 3: returning the grid
+            //Step 3: adding the walls
+            for (int i = 0; i < grid.Objects.GetLength(0); i++)
+            {
+                for (int j = 0; j < grid.Objects.GetLength(1); j++)
+                {
+                    if (grid.Objects[i, j] != null && !(grid.Objects[i, j] is WallTile))
+                    {
+                        Tile tile = (Tile)grid.Objects[i, j];
+                        if (!(grid.Objects[i - 1, j] is Tile))
+                        {
+                            grid.Objects[i - 1, j] = new WallTile(new Point((i - 1), j));
+                            grid.Objects[i - 1, j].Position = new Vector3((i - 1) * grid.CellWidth, grid.CellHeight, j * grid.CellHeight);
+                        }
+                        if (!(grid.Objects[i + 1, j] is Tile))
+                        {
+                            grid.Objects[i + 1, j] = new WallTile(new Point((i + 1), j));
+                            grid.Objects[i + 1, j].Position = new Vector3((i + 1) * grid.CellWidth, grid.CellHeight, j * grid.CellHeight);
+                        }
+                        if (!(grid.Objects[i, j - 1] is Tile))
+                        {
+                            grid.Objects[i, j - 1] = new WallTile(new Point(i, j - 1));
+                            grid.Objects[i, j - 1].Position = new Vector3(i * grid.CellWidth, grid.CellHeight, (j - 1) * grid.CellHeight);
+                        }
+                        if (!(grid.Objects[i, j + 1] is Tile))
+                        {
+                            grid.Objects[i, j + 1] = new WallTile(new Point(i, j + 1));
+                            grid.Objects[i, j + 1].Position = new Vector3(i * grid.CellWidth, grid.CellHeight, (j + 1) * grid.CellHeight);
+                        }
+                    }
+                }
+            }
+            //Step 4: returning the grid
             return grid;
         }
     }
@@ -90,13 +122,13 @@ class RandomLevel : Level
         //Creating the paths
         CreateMainPath();
 
-        for (int i = random.Next(1, tiles *3); i > 0; i--)
+        for (int i = random.Next(1, tiles * 3); i > 0; i--)
             CreateSidePath(random.Next(3, tiles / 2));
 
         TileGrid tileGrid = Grid;
         gameObjects.Add(tileGrid);
 
-        player = new Player(new Vector3(tileGrid.Columns * 200 /2,0, tileGrid.Rows * 200 /2 ));
+        player = new Player(new Vector3(tileGrid.Columns * 200 /2, 200 , tileGrid.Rows * 200 /2 ));
         gameObjects.Add(player);
     }
 
@@ -216,7 +248,7 @@ class RandomLevel : Level
                 if (possiblePositions.Count > 0)
                 {
                     //Choose where to place the Tile
-                    nextTile = new SidePathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
+                    nextTile = new PathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
                     tileList.Add(nextTile.tilePosition, nextTile);
                     keyList.Add(nextTile.tilePosition);
                    // Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
@@ -324,7 +356,7 @@ class RandomLevel : Level
     //Create a MainPathTile (this method can still be replaced with 'new MainPathTile(point)')
     private Tile CreateMainPathTile(Point point)
     {
-        return new MainPathTile(point);
+        return new PathTile(point);
     }
 
     //Create a ExitTile (this method can still be replaced with 'new ExitTile(point)') 

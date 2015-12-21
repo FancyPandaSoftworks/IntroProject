@@ -16,7 +16,7 @@ class PlayingState : Root
     {
         level.Find("player").HandleInput(inputhelper);
         if (inputhelper.KeyPressed(Keys.R))
-            level = new RandomLevel(500);
+            level = new RandomLevel(200);
 
     }
 

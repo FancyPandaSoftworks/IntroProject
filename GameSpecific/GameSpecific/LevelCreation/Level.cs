@@ -15,7 +15,7 @@ class Level : GameObjectList
         {
             player = new Player(Vector3.Zero);
             gameObjects.Add(player);
-            TileGrid tileGrid = new TileGrid(100, 100, "TileGrid");
+            TileGrid tileGrid = new TileGrid(6, 6, "TileGrid");
             Create(tileGrid);  // RANDOM LEVEL GENERATION HERE <-----------------------------------------
             gameObjects.Add(tileGrid);
         }
@@ -62,9 +62,9 @@ class Level : GameObjectList
 
     public TileGrid Create(TileGrid tileGrid)
     {
-        for(int x = 0; x < 100; x++)
+        for(int x = 0; x < 6; x++)
         {
-            for (int y = 0; y < 100; y++)
+            for (int y = 0; y < 6; y++)
             {
                 if (y % 2 == 0 && x % 2 == 0 || y % 2 == 1 && x % 2 == 1)
                 tileGrid.Add(new WallTile(new Point(x,y)), x, y);

@@ -119,7 +119,7 @@ public class GameEnvironment : Game
     }
     protected override void Draw(GameTime gameTime)
     {
-        graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+        graphics.GraphicsDevice.Clear(Color.Black);
         gameStateManager.Draw(gameTime, spriteBatch);
     }
 }
