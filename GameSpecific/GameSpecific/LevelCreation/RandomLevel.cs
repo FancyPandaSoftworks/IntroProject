@@ -8,7 +8,7 @@ class RandomLevel : Level
     private Dictionary<Point, Tile> tileList; //List of tiles, accessible by a position
     private List<Point> keyList; //List of all occupied positions
     private Tile newTile; //Next tile to be build
-    private Point position; 
+    private new Point position; 
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
    
@@ -77,22 +77,22 @@ class RandomLevel : Level
                         Tile tile = (Tile)grid.Objects[i, j];
                         if (!(grid.Objects[i - 1, j] is Tile))
                         {
-                            grid.Objects[i - 1, j] = new WallTile(new Point((i - 1), j));
+                            grid.Objects[i - 1, j] = new WallTile();
                             grid.Objects[i - 1, j].Position = new Vector3((i - 1) * grid.CellWidth, grid.CellHeight, j * grid.CellHeight);
                         }
                         if (!(grid.Objects[i + 1, j] is Tile))
                         {
-                            grid.Objects[i + 1, j] = new WallTile(new Point((i + 1), j));
+                            grid.Objects[i + 1, j] = new WallTile();
                             grid.Objects[i + 1, j].Position = new Vector3((i + 1) * grid.CellWidth, grid.CellHeight, j * grid.CellHeight);
                         }
                         if (!(grid.Objects[i, j - 1] is Tile))
                         {
-                            grid.Objects[i, j - 1] = new WallTile(new Point(i, j - 1));
+                            grid.Objects[i, j - 1] = new WallTile();
                             grid.Objects[i, j - 1].Position = new Vector3(i * grid.CellWidth, grid.CellHeight, (j - 1) * grid.CellHeight);
                         }
                         if (!(grid.Objects[i, j + 1] is Tile))
                         {
-                            grid.Objects[i, j + 1] = new WallTile(new Point(i, j + 1));
+                            grid.Objects[i, j + 1] = new WallTile();
                             grid.Objects[i, j + 1].Position = new Vector3(i * grid.CellWidth, grid.CellHeight, (j + 1) * grid.CellHeight);
                         }
                     }
@@ -114,8 +114,8 @@ class RandomLevel : Level
         this.tiles = tiles;
 
         //Create the startpoint
-        newTile.tilePosition = Point.Zero;
-        position = newTile.tilePosition;
+        //newTile.this.position = Point.Zero;
+        position = Point.Zero;  //newTile.this.position;
         tileList.Add(position, newTile);
         keyList.Add(position);
 
@@ -140,25 +140,25 @@ class RandomLevel : Level
             List<Point> possiblePositions = new List<Point>();
 
             //Look where a Tile can be placed
-            Point position = new Point(newTile.tilePosition.X - 1, newTile.tilePosition.Y);
+            Point position = new Point(this.position.X - 1, this.position.Y);
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X;
-            position.Y = newTile.tilePosition.Y + 1;
+            position.X = this.position.X;
+            position.Y = this.position.Y + 1;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X + 1;
-            position.Y = newTile.tilePosition.Y;
+            position.X = this.position.X + 1;
+            position.Y = this.position.Y;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
 
-            position.X = newTile.tilePosition.X;
-            position.Y = newTile.tilePosition.Y - 1;
+            position.X = this.position.X;
+            position.Y = this.position.Y - 1;
 
             if (CanPlaceMainPathTile(position))
                 possiblePositions.Add(position);
@@ -171,16 +171,18 @@ class RandomLevel : Level
                 //Choose where to place the Tile
                 try
                 {
-                    newTile = CreateMainPathTile(possiblePositions[i]);
-                    tileList.Add(newTile.tilePosition, newTile);
+                    this.position = possiblePositions[i];
+                    newTile = new PathTile();
+                    tileList.Add(this.position, newTile);
                 }
                 catch
                 {
                     //Mainpath enclosed itself, ending it here
                     Console.WriteLine("MainPathError");
-                    possiblePositions = GetPossiblePositions(newTile.tilePosition);
-                    newTile = CreateExitTile(possiblePositions[i]);
-                    tileList.Add(newTile.tilePosition, newTile);
+                    possiblePositions = GetPossiblePositions(this.position);
+                    this.position = possiblePositions[i];
+                    newTile = new ExitTile();
+                    tileList.Add(this.position, newTile);
                     tiles = -2;
                 }
 
@@ -190,22 +192,24 @@ class RandomLevel : Level
                 //Choose where to place the Tile
                 try
                 {
-                    newTile = CreateExitTile(possiblePositions[i]);
-                    tileList.Add(newTile.tilePosition, newTile);
+                    this.position = possiblePositions[i];
+                    newTile = new ExitTile();
+                    tileList.Add(this.position, newTile);
                 }
                 catch (ArgumentOutOfRangeException e)
                 {
                     //Couldn't place exit, so place it at the last placed tile
-                    newTile = CreateExitTile(keyList[keyList.Count - 1]);
-                    tileList[keyList[keyList.Count - 1]] = newTile;
-                    // Console.WriteLine("X:" + newTile.tilePosition.X + "\nY:" + newTile.tilePosition.Y + "");
+                    newTile = new ExitTile();
+                    this.position = keyList[keyList.Count - 1];
+                    tileList[this.position] = newTile;
+                     Console.WriteLine(e.StackTrace);
                     tiles--;
                     continue;
                 }
                 
             }
 
-            keyList.Add(newTile.tilePosition);
+            keyList.Add(this.position);
 /*            possiblePositions.RemoveAt(i);
 
             foreach (Point element in possiblePositions)
@@ -214,7 +218,7 @@ class RandomLevel : Level
                 keyList.Add(element);
             }
 */
-           // Console.WriteLine("X:" + newTile.tilePosition.X + "\nY:" + newTile.tilePosition.Y + "");
+           // Console.WriteLine("X:" + this.position.X + "\nY:" + this.position.Y + "");
 
             tiles--;
         }
@@ -241,22 +245,23 @@ class RandomLevel : Level
         if (nextTile != null)
         {
 
-            tileList.Add(nextTile.tilePosition, nextTile);
-            keyList.Add(nextTile.tilePosition);
+            tileList.Add(this.position, nextTile);
+            keyList.Add(this.position);
 
             if (!chased)
             {
                 while (tiles > 0)
                 {
-                    List<Point> possiblePositions = GetPossiblePositions(nextTile.tilePosition);
+                    List<Point> possiblePositions = GetPossiblePositions(this.position);
 
                     if (possiblePositions.Count > 0)
                     {
                         //Choose where to place the Tile
-                        nextTile = new PathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                        tileList.Add(nextTile.tilePosition, nextTile);
-                        keyList.Add(nextTile.tilePosition);
-                        // Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                        this.position = possiblePositions[random.Next(0, possiblePositions.Count - 1)];
+                        nextTile = new PathTile();
+                        tileList.Add(this.position, nextTile);
+                        keyList.Add(this.position);
+                        // Console.WriteLine("Side: \nX: " + this.position.X + "\nY: " + this.position.Y);
                     }
                     else
                     {
@@ -267,21 +272,23 @@ class RandomLevel : Level
             }
             else
             {
-                int x = nextTile.tilePosition.X - previousPosition.X;
-                int y = nextTile.tilePosition.Y - previousPosition.Y;
+                int x = this.position.X - previousPosition.X;
+                int y = this.position.Y - previousPosition.Y;
 
                 tiles = tiles / 4;
                 
                 while (tiles > 0)
                 {
-                    if (tileList.ContainsKey(new Point(nextTile.tilePosition.X + x, nextTile.tilePosition.Y + y)))
+                    if (tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y)))
                     {
                         //Choose where to place the Tile
-                        nextTile = new PathTile(new Point(nextTile.tilePosition.X + x, nextTile.tilePosition.Y + y));
-                        tileList.Add(nextTile.tilePosition, nextTile);
-                        keyList.Add(nextTile.tilePosition);
+                        this.position.X += x;
+                        this.position.Y += y;
+                        nextTile = new PathTile();
+                        tileList.Add(this.position, nextTile);
+                        keyList.Add(this.position);
 
-                        // Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                        // Console.WriteLine("Side: \nX: " + this.position.X + "\nY: " + this.position.Y);
                     }
                     else
                     {
@@ -332,7 +339,8 @@ class RandomLevel : Level
             try
             {
                 //If it is suitable
-                return (new SidePathEntryTile(possibleEntrys[random.Next(0, possibleEntrys.Count)]));
+                this.position = (possibleEntrys[random.Next(0, possibleEntrys.Count)]);
+                return (new SidePathEntryTile());
             }
             catch (Exception e)
             {
@@ -386,18 +394,6 @@ class RandomLevel : Level
     private bool CanPlaceMainPathTile(Point currentPosition)
     {
         return (!tileList.ContainsKey(currentPosition) && GetPossiblePositions(currentPosition).Count == 3);
-    }
-
-    //Create a MainPathTile (this method can still be replaced with 'new MainPathTile(point)')
-    private Tile CreateMainPathTile(Point point)
-    {
-        return new PathTile(point);
-    }
-
-    //Create a ExitTile (this method can still be replaced with 'new ExitTile(point)') 
-    private Tile CreateExitTile(Point point)
-    {
-        return new ExitTile(point);
     }
 
 }

@@ -75,7 +75,7 @@ class Level : GameObjectList
             for (int y = 0; y < 6; y++)
             {
                 if (y % 2 == 0 && x % 2 == 0 || y % 2 == 1 && x % 2 == 1)
-                tileGrid.Add(new WallTile(new Point(x,y)), x, y);
+                tileGrid.Add(new WallTile(), x, y);
             }
         }
         return tileGrid;    
