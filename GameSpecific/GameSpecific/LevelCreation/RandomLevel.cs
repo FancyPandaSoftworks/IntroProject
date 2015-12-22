@@ -104,7 +104,7 @@ class RandomLevel : Level
     }
 
     //Creating/generating the level itself
-    public RandomLevel(int tiles = 10)
+    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false) : base(roomNumber)
     {
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
@@ -122,8 +122,8 @@ class RandomLevel : Level
         //Creating the paths
         CreateMainPath();
 
-        for (int i = random.Next(1, tiles * 3); i > 0; i--)
-            CreateSidePath(random.Next(3, tiles / 2));
+        for (int i = random.Next(1, tiles / 4); i > 0; i--)
+            CreateSidePath(random.Next(3, tiles / 2), chased);
 
         TileGrid tileGrid = Grid;
         gameObjects.Add(tileGrid);
@@ -223,16 +223,19 @@ class RandomLevel : Level
 
 
     //Creating SidePath From here
-    private void CreateSidePath(int tiles)
+    private void CreateSidePath(int tiles, bool chased)
     {
         //Pick a place to place a SidePath
-        Point nextPosition;
+        Point previousPosition;
+        Point anchorPosition;
         do
         {
-            nextPosition = keyList[random.Next(0, keyList.Count - 1)];
-        } while (tileList[nextPosition] is ExitTile);
+            anchorPosition = keyList[random.Next(0, keyList.Count - 1)];
+        } while (tileList[anchorPosition] is ExitTile);
+        
+        previousPosition = anchorPosition;
 
-        Tile nextTile = CanCreateSidePath(nextPosition);
+        Tile nextTile = CanCreateSidePath(anchorPosition);
 
         //If it can be placed
         if (nextTile != null)
@@ -241,72 +244,104 @@ class RandomLevel : Level
             tileList.Add(nextTile.tilePosition, nextTile);
             keyList.Add(nextTile.tilePosition);
 
-            while (tiles > 0)
+            if (!chased)
             {
-                List<Point> possiblePositions = GetPossiblePositions(nextTile.tilePosition);
+                while (tiles > 0)
+                {
+                    List<Point> possiblePositions = GetPossiblePositions(nextTile.tilePosition);
 
-                if (possiblePositions.Count > 0)
-                {
-                    //Choose where to place the Tile
-                    nextTile = new PathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
-                    tileList.Add(nextTile.tilePosition, nextTile);
-                    keyList.Add(nextTile.tilePosition);
-                   // Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                    if (possiblePositions.Count > 0)
+                    {
+                        //Choose where to place the Tile
+                        nextTile = new PathTile(possiblePositions[random.Next(0, possiblePositions.Count - 1)]);
+                        tileList.Add(nextTile.tilePosition, nextTile);
+                        keyList.Add(nextTile.tilePosition);
+                        // Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    tiles--;
                 }
-                else
+            }
+            else
+            {
+                int x = nextTile.tilePosition.X - previousPosition.X;
+                int y = nextTile.tilePosition.Y - previousPosition.Y;
+
+                tiles = tiles / 4;
+                
+                while (tiles > 0)
                 {
-                    break;
+                    if (tileList.ContainsKey(new Point(nextTile.tilePosition.X + x, nextTile.tilePosition.Y + y)))
+                    {
+                        //Choose where to place the Tile
+                        nextTile = new PathTile(new Point(nextTile.tilePosition.X + x, nextTile.tilePosition.Y + y));
+                        tileList.Add(nextTile.tilePosition, nextTile);
+                        keyList.Add(nextTile.tilePosition);
+
+                        // Console.WriteLine("Side: \nX: " + nextTile.tilePosition.X + "\nY: " + nextTile.tilePosition.Y);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    tiles--;
                 }
-                tiles--;
             }
 
         }
         //Try again
         else
         {
-            CreateSidePath(tiles);
+            CreateSidePath(tiles, chased);
         }
     }
 
     //Checks whether the place is suitable for a SidePath
-    private Tile CanCreateSidePath(Point nextPosition)
+    private Tile CanCreateSidePath(Point anchorPosition)
     {
         List<Point> possibleEntrys = new List<Point>();
-        Point test = nextPosition;
+        Point test = anchorPosition;
 
-        test.X = nextPosition.X - 1;
+        test.X = anchorPosition.X - 1;
         if (CanPlaceSideEntry(test))
         {
             possibleEntrys.Add(test);
         }
-        test.X = nextPosition.X + 1;
+        test.X = anchorPosition.X + 1;
         if (CanPlaceSideEntry(test))
         {
             possibleEntrys.Add(test);
         }
-        test.X = nextPosition.X;
-        test.Y = nextPosition.Y - 1;
+        test.X = anchorPosition.X;
+        test.Y = anchorPosition.Y - 1;
         if (CanPlaceSideEntry(test))
         {
             possibleEntrys.Add(test);
         }
-        test.Y = nextPosition.Y + 1;
+        test.Y = anchorPosition.Y + 1;
         if (CanPlaceSideEntry(test))
         {
             possibleEntrys.Add(test);
         }
 
-        try
+        if (possibleEntrys.Count >= 1)
         {
-            //If it is suitable
-            return (new SidePathEntryTile(possibleEntrys[random.Next(0, possibleEntrys.Count)]));
+            try
+            {
+                //If it is suitable
+                return (new SidePathEntryTile(possibleEntrys[random.Next(0, possibleEntrys.Count)]));
+            }
+            catch (Exception e)
+            {
+                //If it is, for some reason, unsuitable
+                Console.WriteLine("SidePathEntryError: " + e.StackTrace);
+                return null;
+            }
         }
-        catch(Exception e)
-        {
-            //If it is, for some reason, unsuitable
-            Console.WriteLine("SidePathEntryError: " + e.StackTrace);
-            return null;
-        }
+        else return null;
     }
     
     //Can a SidePathEntryTile be placed here

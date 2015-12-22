@@ -6,17 +6,23 @@ using Microsoft.Xna.Framework.Graphics;
 class PlayingState : Root
 {
     Level level;
+    protected int roomCounter;
     
-    public PlayingState()
+    public PlayingState(int roomCounter = 1)
     {
-        level = new Level();
+        this.roomCounter = roomCounter;
+        level = new Level(this.roomCounter);
+        roomCounter++;
     }
 
     public void HandleInput(InputHelper inputhelper)
     {
         level.Find("player").HandleInput(inputhelper);
         if (inputhelper.KeyPressed(Keys.R))
-            level = new RandomLevel(200);
+        {
+            level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
+            roomCounter++;
+        }
 
     }
 
