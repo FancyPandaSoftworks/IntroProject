@@ -39,7 +39,7 @@ class PathTile : Tile
     
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        int layers = 6;
+        int layers = 1;
         base.Draw(gameTime, spriteBatch);
         Position = new Vector3(Position.X, Position.Y + (200 * (layers + 1)), Position.Z);
         base.Draw(gameTime, spriteBatch);
@@ -50,14 +50,14 @@ class PathTile : Tile
 class WallTile : Tile
 {
     public WallTile(Point point) 
-        : base("box","WallTile",TileType.Wall)
+        : base("box", "WallTile",TileType.Wall)
     {
         tilePosition = point;
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        int layers = 6;
+        int layers = 1;
         for (int i = 0; i < layers; i++)
         {
             base.Draw(gameTime, spriteBatch);

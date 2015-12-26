@@ -122,7 +122,7 @@ class RandomLevel : Level
         //Creating the paths
         CreateMainPath();
 
-        for (int i = random.Next(1, tiles * 3); i > 0; i--)
+        for (int i = random.Next(1, tiles / 4); i > 0; i--)
             CreateSidePath(random.Next(3, tiles / 2));
 
         TileGrid tileGrid = Grid;
