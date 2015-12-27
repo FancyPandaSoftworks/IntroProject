@@ -8,6 +8,7 @@ public class Object2D : GameObject
 {
     protected Vector2 origin;
     protected SpriteSheet spriteSheet;
+    Texture2D player;
 
     public Object2D(string assetname, int sheetIndex = 0, string id = "")
     {
@@ -19,8 +20,9 @@ public class Object2D : GameObject
     {
         if (!visible || spriteSheet == null)
             return;
-        //spriteSheet.Draw(spriteBatch, this.GlobalPosition, origin);
-
+        //spriteBatch.Draw(spriteBatch, Position, origin);
+        
+        
 
             
     }

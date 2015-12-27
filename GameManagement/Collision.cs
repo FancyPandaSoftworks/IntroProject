@@ -1,6 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
 
-class Collision
+public class Collision
 {
     public static Vector2 CalculatedIntersectionDepth(Rectangle rectA, Rectangle rectB)
     {
@@ -18,6 +22,21 @@ class Collision
         else
             depth.Y = -minDistance.Y - distance.Y;
         return depth;
+    }
+
+    public static bool Collision3D(BoundingSphere bounding1, Model model1, Matrix matrix)
+    {
+        for (int i = 0; i < model1.Meshes.Count; i++ )
+        {
+            BoundingSphere bs1 = model1.Meshes[i].BoundingSphere;
+            bs1 = bs1.Transform(matrix);
+            
+                if(bounding1.Intersects(bs1))
+                    return true;
+            
+
+        }
+        return false;
     }
 
     public static Rectangle Intersection(Rectangle rect1, Rectangle rect2)

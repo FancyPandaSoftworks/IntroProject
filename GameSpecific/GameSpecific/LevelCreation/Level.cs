@@ -7,6 +7,7 @@ class Level : GameObjectList
 {
     protected Player player;
     protected int roomNumber;
+   
 
     public Level(int roomNumber)
 
@@ -14,6 +15,7 @@ class Level : GameObjectList
         
         if (!(this is RandomLevel))
         {
+           
             player = new Player(Vector3.Zero);
             gameObjects.Add(player);
             TileGrid tileGrid = new TileGrid(6, 6, "TileGrid");

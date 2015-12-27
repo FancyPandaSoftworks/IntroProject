@@ -21,3 +21,8 @@ D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameSpecific\GameSpecific\obj
 D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.exe
 D:\DATA\GIT\Introproject\IntroProject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.pdb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\box.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameManagement.dll
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameManagement.pdb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.csprojResolveAssemblyReference.cache
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\player.xnb

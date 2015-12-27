@@ -8,11 +8,25 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-class Player : Camera
+public class Player : Camera
 {
+    
     public Player(Vector3 startPos) : base("player")
     {
         position = startPos;
+        
+    }
+
+    public bool CollisionPlayer(Model model1, Matrix matrix)
+    {
+        BoundingSphere playerBoundingSphere = new BoundingSphere(position, 20);   
+     
+        return Collision.Collision3D(playerBoundingSphere, model1, matrix);
+    }
+
+    public void FollowPlayer()
+    {
+        
     }
 
     public override void HandleInput(InputHelper input)
