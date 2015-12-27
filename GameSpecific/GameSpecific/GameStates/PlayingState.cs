@@ -23,6 +23,10 @@ class PlayingState : Root
             level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
             roomCounter++;
         }
+        if (inputhelper.KeyPressed(Keys.Y))
+        {
+            GameEnvironment.GameStateManage.SwitchTo("gameOverState");
+        }
 
     }
 

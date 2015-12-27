@@ -62,7 +62,7 @@ public class GameEnvironment : Game
         get { return gameSettingsManager; }
     }
 
-    public static GameStateManager GameStateManager
+    public static GameStateManager GameStateManage
     { 
         get { return gameStateManager; } 
     }

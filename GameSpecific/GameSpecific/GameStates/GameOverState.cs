@@ -16,20 +16,26 @@ class GameOverState : Root
         
         if (inputhelper.KeyPressed(Keys.Space))
         {
-            GameEnvironment.GameStateManager.SwitchTo("playingState");
+            GameEnvironment.GameStateManage.SwitchTo("playingState");
+
         }
 
     }
 
     public void Update(GameTime gameTime)
     {
-
+        Console.WriteLine("GameOverState");
         
     }
 
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
        
+        
     }
-    
+
+    public void Reset()
+    {
+
+    }
 }

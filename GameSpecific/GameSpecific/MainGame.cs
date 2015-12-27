@@ -11,8 +11,8 @@ class MainGame : GameEnvironment
         game.Run();
     }
 
-    public MainGame()
-    {
+    public MainGame() : base()
+    {        
         Content.RootDirectory = "Content";
         this.IsMouseVisible = true;
     }
