@@ -19,7 +19,7 @@ public class Object2D : GameObject
     {
         if (!visible || spriteSheet == null)
             return;
-        //spriteSheet.Draw(spriteBatch, this.GlobalPosition, origin);
+        //spriteSheet.Draw(spriteBatch, Position, origin);
 
 
             

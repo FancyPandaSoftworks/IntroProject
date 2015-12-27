@@ -11,7 +11,7 @@ class PlayingState : Root
     public PlayingState(int roomCounter = 1)
     {
         this.roomCounter = roomCounter;
-        level = new Level(this.roomCounter);
+        level = new RandomLevel(this.roomCounter);
         roomCounter++;
     }
 
@@ -19,15 +19,10 @@ class PlayingState : Root
     {
         level.Find("player").HandleInput(inputhelper);
         if (inputhelper.KeyPressed(Keys.R))
-<<<<<<< HEAD
-            level = new RandomLevel(20);
-=======
         {
             level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
             roomCounter++;
         }
->>>>>>> origin/master
-
     }
 
     public void Update(GameTime gameTime)

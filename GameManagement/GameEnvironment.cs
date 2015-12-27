@@ -62,6 +62,11 @@ public class GameEnvironment : Game
         get { return gameSettingsManager; }
     }
 
+    public static GameStateManager GameStateManager
+    {
+        get { return gameStateManager; }
+    }
+
     public InputHelper InputHelper
     {
         get { return inputHelper; }

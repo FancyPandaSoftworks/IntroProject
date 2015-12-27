@@ -49,13 +49,8 @@ class PathTile : Tile
 
 class WallTile : Tile
 {
-<<<<<<< HEAD
-    public WallTile(Point point) 
-        : base("box", "WallTile",TileType.Wall)
-=======
     public WallTile() 
         : base("box","WallTile",TileType.Wall)
->>>>>>> origin/master
     {
     }
 

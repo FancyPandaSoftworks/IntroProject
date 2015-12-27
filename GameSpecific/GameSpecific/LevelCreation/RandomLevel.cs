@@ -123,11 +123,7 @@ class RandomLevel : Level
         CreateMainPath();
 
         for (int i = random.Next(1, tiles / 4); i > 0; i--)
-<<<<<<< HEAD
-            CreateSidePath(random.Next(3, tiles / 2));
-=======
             CreateSidePath(random.Next(3, tiles / 2), chased);
->>>>>>> origin/master
 
         TileGrid tileGrid = Grid;
         gameObjects.Add(tileGrid);
