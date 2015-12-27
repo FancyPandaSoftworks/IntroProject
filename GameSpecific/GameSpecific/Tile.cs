@@ -14,7 +14,7 @@ enum TileType
 abstract class Tile : Object3D
 {
     protected TileType type;
-    public Point tilePosition; //TODO: GETS WORKED OUT #ENGLISHSKILLS
+    //public Point tilePosition; //TODO: GETS WORKED OUT #ENGLISHSKILLS
 
     public Tile(string modelName, string id, TileType type = TileType.Empty) : base(modelName, id)
     {
@@ -31,10 +31,10 @@ abstract class Tile : Object3D
 
 class PathTile : Tile
 {
-    public PathTile(Point point)
+    public PathTile()
         : base("box", "MainPath", TileType.Path)
     {
-        tilePosition = point;
+        
     }
     
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -49,10 +49,14 @@ class PathTile : Tile
 
 class WallTile : Tile
 {
+<<<<<<< HEAD
     public WallTile(Point point) 
         : base("box", "WallTile",TileType.Wall)
+=======
+    public WallTile() 
+        : base("box","WallTile",TileType.Wall)
+>>>>>>> origin/master
     {
-        tilePosition = point;
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -69,26 +73,26 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     public EntryTile()
-        : base(new Point(0,0))
+        : base()
     {
-        tilePosition = new Point(0, 0);
+
     }
 }
 
 class ExitTile : PathTile
 {
-    public ExitTile(Point point)
-        : base(point)
+    public ExitTile()
+        : base()
     {
-        tilePosition = point;
+
     }
 }
 
 class SidePathEntryTile : PathTile
 {
-    public SidePathEntryTile(Point point)
-        : base(point)
+    public SidePathEntryTile()
+        : base()
     {
-        tilePosition = point;
+
     }
 }

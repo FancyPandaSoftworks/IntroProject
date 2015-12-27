@@ -6,8 +6,9 @@ using System;
 class Level : GameObjectList
 {
     protected Player player;
+    protected int roomNumber;
 
-    public Level()
+    public Level(int roomNumber)
 
     {
         
@@ -16,11 +17,18 @@ class Level : GameObjectList
             player = new Player(Vector3.Zero);
             gameObjects.Add(player);
             TileGrid tileGrid = new TileGrid(6, 6, "TileGrid");
-            Create(tileGrid);  // RANDOM LEVEL GENERATION HERE <-----------------------------------------
+            Create(tileGrid);
             gameObjects.Add(tileGrid);
         }
         
     }
+
+    /*
+    protected Level()
+    {
+
+    }
+    */
 
     public override void Update(GameTime gameTime)
     {
@@ -67,7 +75,7 @@ class Level : GameObjectList
             for (int y = 0; y < 6; y++)
             {
                 if (y % 2 == 0 && x % 2 == 0 || y % 2 == 1 && x % 2 == 1)
-                tileGrid.Add(new WallTile(new Point(x,y)), x, y);
+                tileGrid.Add(new WallTile(), x, y);
             }
         }
         return tileGrid;    
