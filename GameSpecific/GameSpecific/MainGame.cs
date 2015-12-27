@@ -20,6 +20,7 @@ class MainGame : GameEnvironment
     protected override void LoadContent()
     {
         gameStateManager.AddGameState("playingState", new PlayingState());
+        gameStateManager.AddGameState("gameOverState", new GameOverState());
         gameStateManager.SwitchTo("playingState");
     }
 }

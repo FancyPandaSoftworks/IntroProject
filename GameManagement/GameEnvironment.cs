@@ -17,9 +17,9 @@ public class GameEnvironment : Game
     protected GraphicsDeviceManager graphics;
     protected InputHelper inputHelper;
     protected static GameStateManager gameStateManager;
+    protected static GameSettingsManager gameSettingsManager;
     protected static Random random;
     protected static AssetManager assetManager;
-    protected static GameSettingsManager gameSettingsManager;
     protected static Camera camera;
     protected static Point screen;
 
@@ -60,6 +60,11 @@ public class GameEnvironment : Game
     public static GameSettingsManager GameSettingsManager
     {
         get { return gameSettingsManager; }
+    }
+
+    public static GameStateManager GameStateManager
+    { 
+        get { return gameStateManager; } 
     }
 
     public InputHelper InputHelper

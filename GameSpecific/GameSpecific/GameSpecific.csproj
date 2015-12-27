@@ -74,13 +74,14 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="LevelCreation\Level.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LevelCreation\RandomLevel.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayingState.cs" />
+    <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileGrid.cs" />
