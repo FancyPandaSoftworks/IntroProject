@@ -69,7 +69,7 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     public EntryTile()
-        : base()
+        : base("Axis", "EntryTile")
     {
 
     }

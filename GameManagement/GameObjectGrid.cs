@@ -5,7 +5,7 @@ using System;
 public class GameObjectGrid : GameObject
 {
     protected GameObject[,] grid;
-    protected int cellWidth, cellHeight;
+    protected static int cellWidth, cellHeight;
 
 
     public GameObjectGrid(int columns, int rows, string id = "") : base(id)
@@ -61,13 +61,13 @@ public class GameObjectGrid : GameObject
         get { return grid.GetLength(1); }
     }
 
-    public int CellWidth
+    public static int CellWidth
     {
         get { return cellWidth; }
         set { cellWidth = value; }
     }
 
-    public int CellHeight
+    public static int CellHeight
     {
         get { return cellHeight; }
         set { cellWidth = value; }

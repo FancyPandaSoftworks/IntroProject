@@ -21,8 +21,9 @@ class MainGame : GameEnvironment
     {
         base.LoadContent();
 
+        gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.AddGameState("playingState", new PlayingState());
-        gameStateManager.SwitchTo("playingState");
+        gameStateManager.SwitchTo("titleScreenState");
     }
 }
 

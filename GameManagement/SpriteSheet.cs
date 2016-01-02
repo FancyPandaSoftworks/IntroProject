@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 public class SpriteSheet
 {
@@ -40,8 +41,9 @@ public class SpriteSheet
         if (mirror)
         {
             spriteEffects = SpriteEffects.FlipHorizontally;
-            spriteBatch.Draw(sprite, position, spritePart, Color.White, 0.0f, origin, 1.0f, spriteEffects, 0.0f);
         }
+
+        spriteBatch.Draw(sprite, position, spritePart, Color.White, 0.0f, origin, 1.0f, spriteEffects, 0.0f);
     }
     public Color GetPixelColor(int x, int y)
     {
