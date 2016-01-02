@@ -2,16 +2,17 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System;
+using Microsoft.Xna.Framework.Input;
 
 class Level : GameObjectList
 {
     protected Player player;
-    protected int roomNumber;
+    protected bool completed;
 
-    public Level(int roomNumber)
+    public Level()
 
     {
-        
+        completed = false;
         if (!(this is RandomLevel))
         {
             player = new Player(Vector3.Zero);
@@ -20,17 +21,35 @@ class Level : GameObjectList
         
     }
 
-    /*
-    protected Level()
+    public override void HandleInput(InputHelper inputhelper)
     {
-
+        Find("player").HandleInput(inputhelper);
+        if (inputhelper.KeyPressed(Keys.R))
+        {
+            Completed = true;
+        }
     }
-    */
 
     public override void Update(GameTime gameTime)
     {
         foreach (GameObject obj in gameObjects)
-            obj.Update(gameTime);
+        {
+            if (obj is GameObjectGrid)
+            {
+                GameObjectGrid gameObjectGrid = obj as GameObjectGrid;
+                foreach (GameObject gameObject in gameObjectGrid.Objects)
+                {
+                    if (gameObject != null)
+                    {
+                        gameObject.Update(gameTime);
+                    }
+                }
+            }
+
+            else
+                obj.Update(gameTime);
+        }
+            
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -63,5 +82,11 @@ class Level : GameObjectList
                     }
             }
         }        
+    }
+
+    public bool Completed
+    {
+        get { return completed; }
+        set { completed = value; }
     }
 }

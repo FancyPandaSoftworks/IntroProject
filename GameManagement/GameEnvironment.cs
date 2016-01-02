@@ -34,7 +34,6 @@ public class GameEnvironment : Game
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
         screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
-
     }
 
     public static Camera Camera
@@ -103,6 +102,7 @@ public class GameEnvironment : Game
 
     protected override void LoadContent()
     {
+        DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
     }
 

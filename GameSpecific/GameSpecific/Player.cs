@@ -12,7 +12,7 @@ class Player : Camera
 {
     float velocity;
     int stamina;
-    bool exhausted, ShiftDown, WDown, ADown, SDown, DDown;
+    public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
 
     public Player(Vector3 startPos) : base("player")
     {
@@ -29,6 +29,7 @@ class Player : Camera
         ADown = false;
         SDown = false;
         DDown = false;
+        EDown = false;
 
         if (input.IsKeyDown(Keys.LeftShift))
             ShiftDown = true;
@@ -40,6 +41,8 @@ class Player : Camera
             SDown = true;
         if (input.IsKeyDown(Keys.D))
             DDown = true;
+        if (input.IsKeyDown(Keys.E))
+            EDown = true;
 
         base.HandleInput(InputHelper);
     }

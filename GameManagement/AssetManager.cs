@@ -32,6 +32,13 @@ public class AssetManager
         return contentmanager.Load<Model>(assetName);
     }
 
+    public SpriteFont GetSpriteFont(string assetName)
+    {
+        if (assetName == "")
+            return null;
+        return contentmanager.Load<SpriteFont>(assetName);
+    }
+
     public void Playsound(string assetName)
     {
         SoundEffect soundeffect = contentmanager.Load<SoundEffect>(assetName);

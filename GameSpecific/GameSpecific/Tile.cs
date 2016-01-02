@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 enum TileType
 {
@@ -31,8 +32,8 @@ abstract class Tile : Object3D
 
 class PathTile : Tile
 {
-    public PathTile()
-        : base("box", "MainPath", TileType.Path)
+    public PathTile(string modelName = "box", string id = "PathTile")
+        : base(modelName, id, TileType.Path)
     {
         
     }
@@ -76,10 +77,55 @@ class EntryTile : PathTile
 
 class ExitTile : PathTile
 {
-    public ExitTile()
-        : base()
-    {
+    TextGameObject text;
 
+    public ExitTile()
+        : base("Axis", "ExitTile")
+    {
+        text = new TextGameObject("text");
+        text.Position = Vector2.Zero;
+        text.text = "Press E to proceed";
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        Level level = parent.Parent as Level;
+        foreach(GameObject obj in level.Objects)
+        {
+            if(obj != null)
+            {
+                if (obj.ID == "player")
+                {
+                    if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
+                    {
+                        Player player = obj as Player;
+                        if(player.EDown == true)
+                            level.Completed = true;
+                        
+                    }
+                }
+            } 
+        }
+    }
+
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        base.Draw(gameTime, spriteBatch);
+        Level level = parent.Parent as Level;
+        foreach (GameObject obj in level.Objects)
+        {
+            if (obj != null)
+            {
+                if (obj.ID == "player")
+                {
+                    if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
+                    {
+                        text.Draw(gameTime, spriteBatch);
+                    }
+                }
+            }
+        }
+        
     }
 }
 

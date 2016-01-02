@@ -7,19 +7,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\box.xnb</Output>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\bin\x86\Debug\Content\box.xnb</Output>
       <Time>2015-12-18T22:48:20.1215118+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\box_0.xml</Key>
-        <Value>2015-12-27T12:59:55.9224488+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\box_0.xml</Key>
+        <Value>2016-01-02T15:54:07.616093+01:00</Value>
       </Dependency>
-    </Item>
-    <Item>
-      <Source>box.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\box_0.xml</Output>
-      <Time>2015-12-18T22:48:20.1215118+01:00</Time>
     </Item>
     <Item>
       <Source>Axis.fbx</Source>
@@ -27,19 +20,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Axis.xnb</Output>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\bin\x86\Debug\Content\Axis.xnb</Output>
       <Time>2016-01-02T14:07:40.5322564+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Key>
-        <Value>2016-01-02T14:07:53.9295695+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\Axis_0.xml</Key>
+        <Value>2016-01-02T15:54:08.2782465+01:00</Value>
       </Dependency>
-    </Item>
-    <Item>
-      <Source>Axis.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Output>
-      <Time>2016-01-02T14:07:40.5322564+01:00</Time>
     </Item>
     <Item>
       <Source>text.spritefont</Source>
@@ -47,8 +33,22 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb</Output>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\bin\x86\Debug\Content\text.xnb</Output>
       <Time>2016-01-02T15:18:18.3871974+01:00</Time>
+    </Item>
+    <Item>
+      <Source>box.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\box_0.xml</Output>
+      <Time>2015-12-18T22:48:20.1215118+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Axis.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\Axis_0.xml</Output>
+      <Time>2016-01-02T14:07:40.5322564+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -58,9 +58,9 @@
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
       <RootDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\</OutputDirectory>
+      <LoggerRootDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameManagement\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

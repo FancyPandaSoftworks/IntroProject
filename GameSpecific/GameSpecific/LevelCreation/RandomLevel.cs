@@ -104,7 +104,7 @@ class RandomLevel : Level
     }
 
     //Creating/generating the level itself
-    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false) : base(roomNumber)
+    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
     {
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();

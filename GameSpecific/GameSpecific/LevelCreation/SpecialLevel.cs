@@ -9,7 +9,7 @@ class SpecialLevel : Level
 {
     TileGrid tileGrid;
 
-    public SpecialLevel(int roomNumber, string name) : base(roomNumber)
+    public SpecialLevel(int roomNumber, string name)
     {
         tileGrid = LoadLevel(name);
         gameObjects.Add(tileGrid);
@@ -28,13 +28,20 @@ class SpecialLevel : Level
             text.Add(line);
             line = streamReader.ReadLine();
         }
-        TileGrid tilegrid = new TileGrid(text.Count, width, "grid");
+        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
         for (int x = 0; x < width; ++x)
         {
             for (int y = 0; y < text.Count - 1; ++y)
             {
                 Tile tile = LoadTile(text[y][x], x, y);
-                tileGrid.Add(tile, x, y);
+                if (tile != null)
+                {
+                    tileGrid.Add(tile, x, y);
+                    if( tile is WallTile)
+                    {
+                        tile.Position += new Vector3(0, 200, 0);
+                    }
+                }
             }
         }
         return tileGrid;
@@ -47,7 +54,10 @@ class SpecialLevel : Level
         else if (chr == 'P')
             return new PathTile();
         else if (chr == 'N')
+        {
+            player.Position = new Vector3(x * 200, 200f, y * 200);
             return new EntryTile();
+        }
         else if (chr == 'X')
             return new ExitTile();
         else

@@ -18,12 +18,12 @@ public class GameObjectGrid : GameObject
                 grid[x, y] = null;
     }
 
-    public void Add(GameObject obj2D, int x, int y)
+    public void Add(GameObject obj, int x, int y)
     {
-        grid[x, y] = obj2D;
-        obj2D.Parent = this;
+        grid[x, y] = obj;
+        obj.Parent = this;
 
-        obj2D.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
+        obj.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
     }
 
     public GameObject get(int x, int y)
