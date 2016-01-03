@@ -5,7 +5,7 @@ public class DrawingHelper
 {
     protected static Texture2D pixel;
 
-    //Vormt een witte pixel
+    //Make a White Pixel
     public static void Initialize(GraphicsDevice graphics)
     {
         pixel = new Texture2D(graphics, 1, 1);

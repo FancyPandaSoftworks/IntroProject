@@ -16,6 +16,8 @@ public class Object2D : GameObject
             spriteSheet = new SpriteSheet(assetname, sheetIndex);
                 
     }
+
+    //drawing the object2D
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (!visible || spriteSheet == null)
@@ -23,39 +25,46 @@ public class Object2D : GameObject
         spriteSheet.Draw(spriteBatch, Position, origin);      
     }
 
+    //return position on the screen
     public Vector2 Position
     {
         get { return position; }
         set { position = value; }
     }
 
+    //return spritesheet
     public SpriteSheet SpriteSheet
     {
         get { return SpriteSheet; }
     }
 
+    //return spriteSheet width
     public int Width
     {
         get { return spriteSheet.Width; }
     }
 
+    //return spriteSheet height
     public int Height
     {
         get { return spriteSheet.Height; }
     }
 
+    //make a mirror of the spritesheet
     public bool Mirror
     {
         get { return spriteSheet.Mirror; }
         set { spriteSheet.Mirror = value; }
     }
 
+    //the middle of the spritesheet
     public Vector2 Origin
     {
         get { return this.origin; }
         set { this.origin = value; }
     }
-
+    
+    //return the boundingbox for collision
     public  Rectangle BoundingBox
     {
         get
@@ -66,6 +75,7 @@ public class Object2D : GameObject
         }
     }
 
+    //collision of object2D with pixels
     public bool CollidesWith(Object2D obj2D)
     {
             if (!this.Visible || !obj2D.Visible || !BoundingBox.Intersects(obj2D.BoundingBox))

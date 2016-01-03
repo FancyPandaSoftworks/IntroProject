@@ -36,41 +36,49 @@ public class GameEnvironment : Game
         screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
     }
 
+    //Returns the camera
     public static Camera Camera
     {
         get { return GameEnvironment.camera; }
     }
 
+    //Returns the screen size
     public static Point Screen
     {
         get { return GameEnvironment.screen; }
     }
 
+    //Returns an object of the Random Class
     public static Random Random
     {
         get { return random; }
     }
 
+    //Return the AssetManager
     public static AssetManager AssetManager
     {
         get { return assetManager; }
     }
 
+    //Return the GameSettingsManager
     public static GameSettingsManager GameSettingsManager
     {
         get { return gameSettingsManager; }
     }
 
+    //Return the GameStateManager
     public static GameStateManager GameStateManager
     {
         get { return gameStateManager; }
     }
 
+    //Return the InputHelper
     public InputHelper InputHelper
     {
         get { return inputHelper; }
     }
 
+    //Change window mode
     public void SetFullscreen(bool fullscreen = true)
     {
         float scalex = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / (float)screen.X;
@@ -95,17 +103,16 @@ public class GameEnvironment : Game
         graphics.ApplyChanges();
         inputHelper.Scale = new Vector2((float)GraphicsDevice.Viewport.Width / screen.X, (float)GraphicsDevice.Viewport.Height / screen.Y);
         modelScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
-        //ik weet niet zeker of de modescale klopt, hoewel je meestal kijkt naar hoe groot je screen(x en y dus) heb je de x niet nodig
-        //dus doublecheck de modelscale voor de zekerheid zodat er geen rare fouten in zit.
-
     }
 
+    //Make an instance of the SpriteBatch
     protected override void LoadContent()
     {
         DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
     }
 
+    //Handles the input and allows for switching to and from fullscreen
     protected void HandleInput()
     {
         inputHelper.Update();
@@ -117,11 +124,14 @@ public class GameEnvironment : Game
 
     }
 
+    //Updates the game
     protected override void Update(GameTime gameTime)
     {
         HandleInput();
         gameStateManager.Update(gameTime);
     }
+
+    //Draw the game
     protected override void Draw(GameTime gameTime)
     {
         graphics.GraphicsDevice.Clear(Color.Black);

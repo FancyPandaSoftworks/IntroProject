@@ -11,6 +11,7 @@ public class GameObject : Root
     protected InputHelper inputHelper;
     protected string id;
 
+    //An Object to be updated and/or drawn
     public GameObject(string id = "")
     {
 
@@ -20,26 +21,23 @@ public class GameObject : Root
         this.id = id;
     }
 
-
-    public InputHelper InputHelper
-    {
-        get { return inputHelper; }
-    }
+    //Create a method to handle the input with in all game objects
     public virtual void HandleInput(InputHelper inputhelper)
     {
     }
 
-
+    //Create a method to update the game objects
     public virtual void Update(GameTime gameTime)
     {
-
     }
 
-
+    //Create a method to draw the object
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
 
     }
+
+    //gets the absolute position of an object in relation to its parents
     public virtual Vector3 GlobalPosition
     {
         get
@@ -50,50 +48,45 @@ public class GameObject : Root
                 return this.position;
         }
     }
+
     public virtual void Reset()
     {
         visible = true;
     }
 
-    public virtual Vector3 Position //dit is voor 2d classe
+    //property for the object's position
+    public virtual Vector3 Position
     {
         get { return position; }
         set { position = value; }
     }
 
+    //property for the object's velocity
     public virtual Vector3 Velocity
     {
         get { return velocity; }
         set { velocity = value; }
     }
 
+    //return the object id
     public string ID
     {
         get { return id; }
     }
 
-
-    public GameObject Root
-    {
-        get
-        {
-            return this;
-        }
-    }
-
-
     public bool Visible
     {
         get { return visible; }
         set { visible = value; }
-
     }
 
+    //property for the parent of the object
     public virtual GameObject Parent
     {
         get { return parent; }
         set { parent = value; }
     }
+
     public bool OverlaySprite
     {
         set { overlaySprite = value; }

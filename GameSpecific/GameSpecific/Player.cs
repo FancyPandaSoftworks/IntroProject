@@ -22,6 +22,7 @@ class Player : Camera
         exhausted = false;
     }
 
+    //HandleInput for the player
     public override void HandleInput(InputHelper input)
     {
         ShiftDown = false;
@@ -44,9 +45,10 @@ class Player : Camera
         if (input.IsKeyDown(Keys.E))
             EDown = true;
 
-        base.HandleInput(InputHelper);
+        base.HandleInput(inputHelper);
     }
 
+    //updating the player
     public override void Update(GameTime gameTime)
     {
         if (ShiftDown && stamina > 0 && exhausted == false &&

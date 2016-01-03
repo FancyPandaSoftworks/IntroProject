@@ -15,18 +15,20 @@ public class Camera : Object3D
     Vector3 viewVertex;
     Vector2 prevMousePos, mouseDiff;
 
-
+    //Creates a new 3D camera
     public Camera(string id = "")
         : base("", id)
     {
         prevMousePos = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
     }
 
+    //return the point the player looks at
     public Vector3 ViewVertex
     {
         get { return viewVertex; }
     }
 
+    //Checks the difference between the old and new mouse position
     public override void HandleInput(InputHelper input)
     {
         input.Update();
@@ -35,6 +37,7 @@ public class Camera : Object3D
         prevMousePos = new Vector2(input.MousePosition.X, input.MousePosition.Y);
     }
 
+    //Updates the rotation of the camera in relation to the new mouse position
     public override void Update(GameTime gameTime)
     {
         viewAngleX += mouseDiff.X * 0.005f;

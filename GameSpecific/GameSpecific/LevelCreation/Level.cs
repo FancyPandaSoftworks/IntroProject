@@ -18,9 +18,9 @@ class Level : GameObjectList
             player = new Player(Vector3.Zero);
             gameObjects.Add(player);
         }
-        
     }
-
+    
+    //inputhelper for the player
     public override void HandleInput(InputHelper inputhelper)
     {
         Find("player").HandleInput(inputhelper);
@@ -30,6 +30,7 @@ class Level : GameObjectList
         }
     }
 
+    //update the each GameObjects in GameObjectGrud
     public override void Update(GameTime gameTime)
     {
         foreach (GameObject obj in gameObjects)
@@ -52,6 +53,7 @@ class Level : GameObjectList
             
     }
 
+    //draws the GameObjects of the list
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         foreach (GameObject gameObject in gameObjects)
@@ -84,6 +86,7 @@ class Level : GameObjectList
         }        
     }
 
+    //whether the level is completed or not
     public bool Completed
     {
         get { return completed; }

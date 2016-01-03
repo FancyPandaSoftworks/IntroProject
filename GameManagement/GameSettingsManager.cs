@@ -17,7 +17,7 @@ public class GameSettingsManager
     {
         stringSettings[key] = value;
     }
-
+    //gives a string a value
     public string GetValue(string key)
     {
         if (stringSettings.ContainsKey(key))

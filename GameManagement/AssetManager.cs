@@ -18,6 +18,7 @@ public class AssetManager
         this.contentmanager = Content;
     }
 
+    //Load a Texture2D
     public Texture2D GetSprite(string assetName)
     {
         if (assetName == "")
@@ -25,6 +26,7 @@ public class AssetManager
         return contentmanager.Load<Texture2D>(assetName);
     }
 
+    //Load a Model
     public Model GetModel(string assetName)
     {
         if (assetName == "")
@@ -32,6 +34,7 @@ public class AssetManager
         return contentmanager.Load<Model>(assetName);
     }
 
+    //Load a Font
     public SpriteFont GetSpriteFont(string assetName)
     {
         if (assetName == "")
@@ -39,6 +42,7 @@ public class AssetManager
         return contentmanager.Load<SpriteFont>(assetName);
     }
 
+    //Load a Sound
     public void Playsound(string assetName)
     {
         SoundEffect soundeffect = contentmanager.Load<SoundEffect>(assetName);
@@ -46,6 +50,7 @@ public class AssetManager
 
     }
 
+    //Play Music
     public void PlayMusic(string assetName, bool repeat = true)
     {
         MediaPlayer.IsRepeating = repeat;
@@ -53,6 +58,7 @@ public class AssetManager
 
     }
 
+    //Returns the ContentManager
     public ContentManager Content
     {
         get { return contentmanager; }

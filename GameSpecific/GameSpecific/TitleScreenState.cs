@@ -8,9 +8,11 @@ class TitleScreenState : GameObjectList
 
     public TitleScreenState()
     {
+        //Add a background sprite
         Object2D background = new Object2D("White Sprite", 0);
         gameObjects.Add(background);
 
+        //Add a start button
         playButton = new Button("White Sprite", 0);
         playButton.Position = new Vector2((GameEnvironment.Screen.X - playButton.Width) / 2, 200);
         gameObjects.Add(playButton);
@@ -21,15 +23,19 @@ class TitleScreenState : GameObjectList
         inputHelper.Update();
         base.HandleInput(inputHelper);
 
+        //Check if the playbutton is being pressed to go to the game
         if (playButton.ButtonIsPressed)
             GameEnvironment.GameStateManager.SwitchTo("playingState");
     }
   
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        //Draw the Menu
         spriteBatch.Begin();
         base.Draw(gameTime, spriteBatch);
         spriteBatch.End();
+
+        //Go back to 3D mode
         spriteBatch.GraphicsDevice.BlendState = BlendState.Opaque;
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
     }

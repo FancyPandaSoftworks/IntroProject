@@ -41,9 +41,15 @@ class PathTile : Tile
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         int layers = 1;
+
+        //Draw the Path
         base.Draw(gameTime, spriteBatch);
+
+        //Exclusively draw the ceilling, no update happens
         Position = new Vector3(Position.X, Position.Y + (200 * (layers + 1)), Position.Z);
         base.Draw(gameTime, spriteBatch);
+
+        //Revert to original position to update the ground
         Position = new Vector3(Position.X, Position.Y - (200 * (layers + 1)), Position.Z);
     }
 }
@@ -58,11 +64,14 @@ class WallTile : Tile
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         int layers = 1;
+        //Draw the entire height of the wall
         for (int i = 0; i < layers; i++)
         {
             base.Draw(gameTime, spriteBatch);
             Position = new Vector3(Position.X, Position.Y + 200, Position.Z);
         }
+
+        //Revert to the original height
         Position = new Vector3(Position.X, Position.Y - (200 * layers), Position.Z);
     }
 }
@@ -89,6 +98,7 @@ class ExitTile : PathTile
 
     public override void Update(GameTime gameTime)
     {
+        //Check if the player is in the ExitTile and if so, if they are pressing E to procceed
         Level level = parent.Parent as Level;
         foreach(GameObject obj in level.Objects)
         {
@@ -111,6 +121,8 @@ class ExitTile : PathTile
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);
+
+        //Draw text if the player is on the ExitTile
         Level level = parent.Parent as Level;
         foreach (GameObject obj in level.Objects)
         {

@@ -15,6 +15,7 @@ public class TextGameObject : GameObject
         text = " ";
     }
 
+    //draws the text
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         spriteBatch.Begin();
@@ -24,17 +25,20 @@ public class TextGameObject : GameObject
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
     }
 
+    //returns and gives the text a color
     public Color Color
     {
         get { return color; }
         set { color = value; }
     }
 
+    //returns the size of the text
     public Vector2 Size
     {
         get { return spriteFont.MeasureString(text); }
     }
 
+    //returns the position and gives the text a position
     public Vector2 Position
     {
         get { return position; }

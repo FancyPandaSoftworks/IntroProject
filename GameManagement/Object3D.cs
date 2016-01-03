@@ -22,6 +22,7 @@ public class Object3D : GameObject
         model = GameEnvironment.AssetManager.GetModel(modelName);
     }
 
+    //Draw the model in the world
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         Matrix[] transforms = new Matrix[model.Bones.Count];
@@ -29,6 +30,7 @@ public class Object3D : GameObject
 
         foreach (ModelMesh mesh in model.Meshes)
         {
+            //set the effects for the meshes
             foreach (BasicEffect effect in mesh.Effects)
             {
                 effect.EnableDefaultLighting();
@@ -48,26 +50,19 @@ public class Object3D : GameObject
 
     }
 
-    public Vector3 GlobalPosition
-    {
-        get
-        {
-            return this.position;
-        }
-    }
-
+    //return the model
     public Model Model
     {
         get { return model; }
     }
 
-
+    //return a 3D boundingbox
     public virtual BoundingBox BoundingBox
     {
         get { return new BoundingBox(new Vector3((int)GlobalPosition.X, (int)GlobalPosition.Y, (int)GlobalPosition.Z), new Vector3(0, 0, 0)); }
-
     }
 
+    //get the player into the object3D class
     public void DrawCamera(Camera player)
     {
         playercamera = player;

@@ -19,17 +19,20 @@ public class GameStateManager : Root
         gameState = new Dictionary<string, Root>();
         currentGameState = null;
     }
-
+    
+    //add a gamestate
     public void AddGameState(string name, Root state)
     {
         gameState[name] = state;
     }
 
+    //return gamestate
     public Root GetGameState(string name)
     {
         return gameState[name];
     }
 
+    //able to switch between the gamestate
     public void SwitchTo(string name)
     {
         if (gameState.ContainsKey(name))
@@ -38,12 +41,14 @@ public class GameStateManager : Root
             throw new KeyNotFoundException("Can't find gamestate" + name);
     }
 
+    //inputhelper for the gamestate
     public void HandleInput(InputHelper inputhelper)
     {
         if (currentGameState != null)
             currentGameState.HandleInput(inputhelper);
     }
 
+    //updating the gamestate
     public void Update(GameTime gametime)
     {
         if (currentGameState != null)
@@ -51,12 +56,14 @@ public class GameStateManager : Root
 
     }
 
+    //drawing the gamestate
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (currentGameState != null)
             currentGameState.Draw(gameTime, spriteBatch);
     }
 
+    //reset the gamestate
     public void Reset()
     {
         if (currentGameState != null)

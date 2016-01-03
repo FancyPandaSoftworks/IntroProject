@@ -6,7 +6,7 @@ public class AnimatedGameObject : Object2D
     protected Dictionary<string, Animation> animations;
 
     public AnimatedGameObject(string id = "")
-        : base("", 0, id) //<-verander dit indien nodig
+        : base("", 0, id)
     {
         animations = new Dictionary<string, Animation>();
     }
@@ -21,10 +21,10 @@ public class AnimatedGameObject : Object2D
         if (spriteSheet == animations[id])
             return;
         if (spriteSheet != null)
-            animations[id].Mirror = spriteSheet.Mirror; //alles wordt mirror?
+            animations[id].Mirror = spriteSheet.Mirror;
         animations[id].play();
         spriteSheet = animations[id];
-        origin = new Vector2(spriteSheet.Width / 2, spriteSheet.Height);// boven in het midden
+        origin = new Vector2(spriteSheet.Width / 2, spriteSheet.Height);
 
     }
 
