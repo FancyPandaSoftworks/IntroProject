@@ -1,13 +1,14 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-class TextGameObject : GameObject
+public class TextGameObject : GameObject
 {
     SpriteFont spriteFont;
     Color color;
     string text;
+    
 
-    public TextGameObject(string assetName)
+    public TextGameObject(string assetName, string id = "")
     {
         spriteFont = GameEnvironment.AssetManager.Content.Load<SpriteFont>(assetName);
         color = Color.White;
@@ -17,8 +18,9 @@ class TextGameObject : GameObject
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
 
-        //if (visible)
-        //spriteBatch.DrawString(spriteFont, text, this.position, color);
+        if (visible)
+            spriteBatch.DrawString(spriteFont, text, Vector2.Zero, color);
+          
     }
 
     public Color Color

@@ -58,9 +58,8 @@ class RandomLevel : Level
                 }
             }
 
-            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "Grid");
-            Console.WriteLine(highestPoint.X - lowestPoint.X);
-            Console.WriteLine(highestPoint.Y - lowestPoint.Y);
+            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "TileGrid");
+            
             //Step 2: filling the grid
             foreach (Point position in keyList)
             {
@@ -78,22 +77,22 @@ class RandomLevel : Level
                         if (!(grid.Objects[i - 1, j] is Tile))
                         {
                             grid.Objects[i - 1, j] = new WallTile();
-                            grid.Objects[i - 1, j].Position = new Vector3((i - 1) * grid.CellWidth, grid.CellHeight, j * grid.CellHeight);
+                            grid.Objects[i - 1, j].Position = new Vector3((i - 1) * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, j * GameObjectGrid.CellHeight);
                         }
                         if (!(grid.Objects[i + 1, j] is Tile))
                         {
                             grid.Objects[i + 1, j] = new WallTile();
-                            grid.Objects[i + 1, j].Position = new Vector3((i + 1) * grid.CellWidth, grid.CellHeight, j * grid.CellHeight);
+                            grid.Objects[i + 1, j].Position = new Vector3((i + 1) * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, j * GameObjectGrid.CellHeight);
                         }
                         if (!(grid.Objects[i, j - 1] is Tile))
                         {
                             grid.Objects[i, j - 1] = new WallTile();
-                            grid.Objects[i, j - 1].Position = new Vector3(i * grid.CellWidth, grid.CellHeight, (j - 1) * grid.CellHeight);
+                            grid.Objects[i, j - 1].Position = new Vector3(i * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, (j - 1) * GameObjectGrid.CellHeight);
                         }
                         if (!(grid.Objects[i, j + 1] is Tile))
                         {
                             grid.Objects[i, j + 1] = new WallTile();
-                            grid.Objects[i, j + 1].Position = new Vector3(i * grid.CellWidth, grid.CellHeight, (j + 1) * grid.CellHeight);
+                            grid.Objects[i, j + 1].Position = new Vector3(i * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, (j + 1) * GameObjectGrid.CellHeight);
                         }
                     }
                 }
@@ -129,6 +128,7 @@ class RandomLevel : Level
         gameObjects.Add(tileGrid);
 
         player = new Player(new Vector3(tileGrid.Columns * 200 /2, 200 , tileGrid.Rows * 200 /2 ));
+        player.Parent = this;
         gameObjects.Add(player);
     }
 

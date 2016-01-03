@@ -25,4 +25,5 @@ C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x8
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameManagement.dll
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameManagement.pdb
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.csprojResolveAssemblyReference.cache
-C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\player.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monsterTexture.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb

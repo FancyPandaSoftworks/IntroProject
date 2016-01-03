@@ -74,6 +74,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI.cs" />
     <Compile Include="LevelCreation\Level.cs">
       <SubType>Code</SubType>
     </Compile>

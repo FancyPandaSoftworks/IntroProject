@@ -22,6 +22,7 @@ public class GameEnvironment : Game
     protected static GameSettingsManager gameSettingsManager;
     protected static Camera camera;
     protected static Point screen;
+    protected static GraphicsDevice graphicsDevice;
 
     public GameEnvironment()
     {
@@ -33,9 +34,14 @@ public class GameEnvironment : Game
         gameSettingsManager = new GameSettingsManager();
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
-        screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
-
+        screen = new Point(1000, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
+        
     }
+    public static GraphicsDevice Graphics
+    {
+        get { return graphicsDevice; }
+    }
+
 
     public static Camera Camera
     {
@@ -91,13 +97,13 @@ public class GameEnvironment : Game
         graphics.ApplyChanges();
         inputHelper.Scale = new Vector2((float)GraphicsDevice.Viewport.Width / screen.X, (float)GraphicsDevice.Viewport.Height / screen.Y);
         modelScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
-        //ik weet niet zeker of de modescale klopt, hoewel je meestal kijkt naar hoe groot je screen(x en y dus) heb je de x niet nodig
-        //dus doublecheck de modelscale voor de zekerheid zodat er geen rare fouten in zit.
+        
 
     }
 
     protected override void LoadContent()
     {
+        graphicsDevice = graphics.GraphicsDevice;
         spriteBatch = new SpriteBatch(GraphicsDevice);
     }
 

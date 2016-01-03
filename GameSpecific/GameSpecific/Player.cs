@@ -17,17 +17,6 @@ public class Player : Camera
         
     }
 
-    public bool CollisionPlayer(Model model1, Matrix matrix)
-    {
-        BoundingSphere playerBoundingSphere = new BoundingSphere(position, 20);   
-     
-        return Collision.Collision3D(playerBoundingSphere, model1, matrix);
-    }
-
-    public void FollowPlayer()
-    {
-        
-    }
 
     public override void HandleInput(InputHelper input)
     {

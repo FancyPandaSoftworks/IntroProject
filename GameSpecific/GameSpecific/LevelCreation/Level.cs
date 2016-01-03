@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System;
 
-class Level : GameObjectList
+ class Level : GameObjectList
 {
     protected Player player;
     protected int roomNumber;
@@ -16,21 +16,21 @@ class Level : GameObjectList
         if (!(this is RandomLevel))
         {
            
-            player = new Player(Vector3.Zero);
-            gameObjects.Add(player);
+            
             TileGrid tileGrid = new TileGrid(6, 6, "TileGrid");
             Create(tileGrid);
             gameObjects.Add(tileGrid);
+            player = new Player(Vector3.Zero);
+            player.Parent = this;
+            gameObjects.Add(player);
+            AI ai = new AI("monsterTexture");
+            ai.Parent = this;
+            ai.LoadContent();
+            gameObjects.Add(ai);
+            
         }
         
     }
-
-    /*
-    protected Level()
-    {
-
-    }
-    */
 
     public override void Update(GameTime gameTime)
     {
@@ -51,8 +51,8 @@ class Level : GameObjectList
                     gameObject3D.Draw(gameTime, spriteBatch);
                 }
             }
-            
-            if (gameObject is GameObjectGrid)
+
+            else if (gameObject is GameObjectGrid)
             {
                 GameObjectGrid gameObjectGrid = gameObject as GameObjectGrid;
                 foreach (GameObject obj in gameObjectGrid.Objects)
@@ -61,12 +61,19 @@ class Level : GameObjectList
                         Object3D gameObject3D = obj as Object3D;
                         if (gameObject3D.Model != null)
                         {
-                            
+
                             gameObject3D.DrawCamera(player);
                             gameObject3D.Draw(gameTime, spriteBatch);
                         }
                     }
             }
+            else if(gameObject is AI)
+            {
+                    gameObject.Draw(gameTime, spriteBatch);
+                    
+            }
+                
+
         }        
     }
 

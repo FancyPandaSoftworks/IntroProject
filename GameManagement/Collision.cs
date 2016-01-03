@@ -24,16 +24,16 @@ public class Collision
         return depth;
     }
 
-    public static bool Collision3D(BoundingSphere bounding1, Model model1, Matrix matrix)
+    public static bool Collision3D(BoundingSphere player, Object3D object1, Vector3 pos)
     {
-        for (int i = 0; i < model1.Meshes.Count; i++ )
+        
+        for (int i = 0; i < object1.Model.Meshes.Count; i++)
         {
-            BoundingSphere bs1 = model1.Meshes[i].BoundingSphere;
-            bs1 = bs1.Transform(matrix);
-            
-                if(bounding1.Intersects(bs1))
-                    return true;
-            
+            BoundingSphere bs1 = object1.Model.Meshes[i].BoundingSphere;
+            bs1.Center += object1.Position;
+            if (player.Intersects(bs1))
+                return true;
+
 
         }
         return false;

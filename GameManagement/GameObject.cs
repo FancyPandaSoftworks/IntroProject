@@ -38,7 +38,7 @@ public class GameObject : Root
 
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-
+        
     }
     public virtual Vector3 GlobalPosition
     {
