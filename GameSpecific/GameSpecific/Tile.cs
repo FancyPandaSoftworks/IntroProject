@@ -15,9 +15,9 @@ enum TileType
 abstract class Tile : Object3D
 {
     protected TileType type;
-    //public Point tilePosition; //TODO: GETS WORKED OUT #ENGLISHSKILLS
 
-    public Tile(string modelName, string id, TileType type = TileType.Empty) : base(modelName, id)
+    public Tile(string modelName, string id, TileType type = TileType.Empty)
+        : base(modelName, id)
     {
         this.type = type;
     }
@@ -35,9 +35,9 @@ class PathTile : Tile
     public PathTile(string modelName = "box", string id = "PathTile")
         : base(modelName, id, TileType.Path)
     {
-        
+
     }
-    
+
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         int layers = 1;

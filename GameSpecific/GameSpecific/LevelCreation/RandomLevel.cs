@@ -58,9 +58,8 @@ class RandomLevel : Level
                 }
             }
 
-            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "Grid");
-            Console.WriteLine(highestPoint.X - lowestPoint.X);
-            Console.WriteLine(highestPoint.Y - lowestPoint.Y);
+            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "TileGrid");
+            
             //Step 2: filling the grid
             foreach (Point position in keyList)
             {

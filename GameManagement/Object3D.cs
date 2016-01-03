@@ -11,15 +11,21 @@ using Microsoft.Xna.Framework.Input;
 
 public class Object3D : GameObject
 {
-    float aspectRatio, modelRotation;
+    public static float aspectRatio, modelRotation;
     Model model;
-    Camera playercamera;
+    public static Camera playercamera;
 
     public Object3D(string modelName = "", string id = "") : base(id)
     {
         modelRotation = 0.0f;
         aspectRatio = 1.6667f; //NEEDS TO BE DETERMINED, INSTEAD OF DECLARED
         model = GameEnvironment.AssetManager.GetModel(modelName);
+       
+    }
+
+    public float AspectRatio
+    {
+        get { return aspectRatio; }
     }
 
     //Draw the model in the world
@@ -38,10 +44,11 @@ public class Object3D : GameObject
                     * Matrix.CreateTranslation(position);
                 effect.View = Matrix.CreateLookAt(playercamera.position, playercamera.ViewVertex, Vector3.Up);
                 effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-                    aspectRatio, 1.0f, 500.0f);
+                aspectRatio, 1.0f, 500.0f);
                 effect.FogEnabled = true;
                 effect.FogStart = 0;
                 effect.FogEnd = 500;
+                
             }
             mesh.Draw();
         }

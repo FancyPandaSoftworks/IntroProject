@@ -59,6 +59,24 @@
       <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb</Output>
       <Time>2016-01-02T21:17:50.2619904+01:00</Time>
     </Item>
+    <Item>
+      <Source>monsterTexture.png</Source>
+      <Name>monsterTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monsterTexture.xnb</Output>
+      <Time>2016-01-03T15:19:37.0698111+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Albedo.fx</Source>
+      <Name>Albedo</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb</Output>
+      <Time>2016-01-03T15:19:37.0658074+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}</ContentProjectGUID>

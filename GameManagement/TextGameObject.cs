@@ -8,7 +8,7 @@ public class TextGameObject : GameObject
     public string text;
     Vector2 position;
 
-    public TextGameObject(string assetName)
+    public TextGameObject(string assetName, string id = "")
     {
         spriteFont = GameEnvironment.AssetManager.GetSpriteFont(assetName);
         color = Color.White;
@@ -18,6 +18,10 @@ public class TextGameObject : GameObject
     //draws the text
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+
+        if (visible)
+            spriteBatch.DrawString(spriteFont, text, Vector2.Zero, color);
+          
         spriteBatch.Begin();
         spriteBatch.DrawString(spriteFont, text, this.position, color);
         spriteBatch.End();

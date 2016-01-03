@@ -58,6 +58,14 @@ public class AssetManager
 
     }
 
+    //Load an Effect
+    public Effect GetEffect(string effectName)
+    {
+        if (effectName == "")
+            return null;
+        return contentmanager.Load<Effect>(effectName);
+    }
+
     //Returns the ContentManager
     public ContentManager Content
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using Microsoft.Xna.Framework.Input;
 
-class Level : GameObjectList
+ class Level : GameObjectList
 {
     protected Player player;
     protected bool completed;
@@ -67,8 +67,8 @@ class Level : GameObjectList
                     gameObject3D.Draw(gameTime, spriteBatch);
                 }
             }
-            
-            if (gameObject is GameObjectGrid)
+
+            else if (gameObject is GameObjectGrid)
             {
                 GameObjectGrid gameObjectGrid = gameObject as GameObjectGrid;
                 foreach (GameObject obj in gameObjectGrid.Objects)
@@ -77,12 +77,19 @@ class Level : GameObjectList
                         Object3D gameObject3D = obj as Object3D;
                         if (gameObject3D.Model != null)
                         {
-                            
+
                             gameObject3D.DrawCamera(player);
                             gameObject3D.Draw(gameTime, spriteBatch);
                         }
                     }
             }
+            else if(gameObject is AI)
+            {
+                    gameObject.Draw(gameTime, spriteBatch);
+                    
+            }
+                
+
         }        
     }
 

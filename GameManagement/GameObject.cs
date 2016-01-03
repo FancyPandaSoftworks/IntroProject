@@ -34,7 +34,7 @@ public class GameObject : Root
     //Create a method to draw the object
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-
+        
     }
 
     //gets the absolute position of an object in relation to its parents

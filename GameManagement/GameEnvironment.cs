@@ -22,6 +22,7 @@ public class GameEnvironment : Game
     protected static GameSettingsManager gameSettingsManager;
     protected static Camera camera;
     protected static Point screen;
+    protected static GraphicsDevice graphicsDevice;
 
     public GameEnvironment()
     {
@@ -34,6 +35,12 @@ public class GameEnvironment : Game
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
         screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
+        
+    }
+    public static GraphicsDevice Graphics
+    {
+        get { return graphicsDevice; }
+
     }
 
     //Returns the camera
@@ -108,6 +115,8 @@ public class GameEnvironment : Game
     //Make an instance of the SpriteBatch
     protected override void LoadContent()
     {
+
+        graphicsDevice = graphics.GraphicsDevice;
         DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
     }

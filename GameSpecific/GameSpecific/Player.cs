@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-class Player : Camera
+public class Player : Camera
 {
     float velocity;
     int stamina;
@@ -17,14 +17,13 @@ class Player : Camera
     public Player(Vector3 startPos) : base("player")
     {
         position = startPos;
-        stamina = 1000;
-        velocity = 5f;
-        exhausted = false;
+        
     }
 
     //HandleInput for the player
     public override void HandleInput(InputHelper input)
     {
+
         ShiftDown = false;
         WDown = false;
         ADown = false;
@@ -59,52 +58,31 @@ class Player : Camera
             if (stamina < 20)
                 exhausted = true;
         }
-        else
-        {
-            velocity = 5f;
-            stamina = stamina + 5;
-
-            if (stamina > 1000)
-                stamina = 1000;
-
-            if (exhausted == true && stamina > 200)
-            {
-                exhausted = false;
-            }
-        }
-
-        if (WDown && ADown ||
-            WDown && DDown ||
-            SDown && ADown ||
-            SDown && DDown)
-        {
-            velocity = velocity / 2;
-        }
         if (WDown)
         {
-            position.X += velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.Z += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.X += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z += 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         if (SDown)
         {
-            position.X -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.Z -= velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.X -= 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z -= 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         if (DDown)
         {
-            position.Z += velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.X -= velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.X -= 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         if (ADown)
         {
-            position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.X += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z -= 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.X += 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        //if (input.IsKeyDown(Keys.Space))
-        //    position.Y += velocity;
-        //if (input.IsKeyDown(Keys.Z))
-        //    position.Y -= velocity;
+        /* if (input.IsKeyDown(Keys.Space))
+            position.Y += 40f;
+        if (input.IsKeyDown(Keys.LeftShift))
+            position.Y -= 40f; */
 
         base.Update(gameTime);
-    }
+        }
 }

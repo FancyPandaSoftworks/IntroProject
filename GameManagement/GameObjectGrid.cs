@@ -7,7 +7,7 @@ public class GameObjectGrid : GameObject
     protected GameObject[,] grid;
     protected static int cellWidth, cellHeight;
 
-    //Create the world
+    //Create a 2-dimensional grid
     public GameObjectGrid(int columns, int rows, string id = "") : base(id)
     {
         cellHeight = 200;
@@ -16,9 +16,10 @@ public class GameObjectGrid : GameObject
         for (int x = 0; x < columns; x++)
             for (int y = 0; y < rows; y++)
                 grid[x, y] = null;
+        
     }
 
-    //Puts the GameObject to the GameObjectGrid
+    //Puts a GameObject to the GameObjectGrid
     public void Add(GameObject obj, int x, int y)
     {
         grid[x, y] = obj;
