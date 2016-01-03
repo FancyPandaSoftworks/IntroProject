@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 
 class PlayingState : Root
@@ -25,12 +26,18 @@ class PlayingState : Root
     //HandleInput for level
     public void HandleInput(InputHelper inputHelper)
     {
+        inputHelper.Update();
+        if (inputHelper.IsKeyDown(Keys.Escape))
+        {
+            GameEnvironment.GameStateManager.SwitchTo("pauseScreenState");
+        }
         level.HandleInput(inputHelper);
     }
 
     //updating the level
     public void Update(GameTime gameTime)
     {
+
         if (level.Completed)
         {
             roomCounter++;

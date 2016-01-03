@@ -14,7 +14,7 @@ class MainGame : GameEnvironment
     public MainGame()
     {
         Content.RootDirectory = "Content";
-        this.IsMouseVisible = true;
+        this.IsMouseVisible = false;
     }
 
     protected override void LoadContent()
@@ -23,6 +23,7 @@ class MainGame : GameEnvironment
 
         gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.AddGameState("playingState", new PlayingState());
+        gameStateManager.AddGameState("pauseScreenState", new PauseScreenState());
         gameStateManager.SwitchTo("titleScreenState");
     }
 }

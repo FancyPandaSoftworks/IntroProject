@@ -60,23 +60,23 @@ public class Player : Camera
         }
         if (WDown)
         {
-            position.X += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.Z += 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.X += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         if (SDown)
         {
-            position.X -= 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.Z -= 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.X -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z -= 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         if (DDown)
         {
-            position.Z += 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.X -= 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.X -= 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         if (ADown)
         {
-            position.Z -= 40f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-            position.X += 40f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.X += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
         /* if (input.IsKeyDown(Keys.Space))
             position.Y += 40f;

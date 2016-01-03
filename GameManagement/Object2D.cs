@@ -37,7 +37,7 @@ public class Object2D : GameObject
     //return spritesheet
     public SpriteSheet SpriteSheet
     {
-        get { return SpriteSheet; }
+        get { return spriteSheet; }
     }
 
     //return spriteSheet width

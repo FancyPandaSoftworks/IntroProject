@@ -34,8 +34,7 @@ public class GameEnvironment : Game
         gameSettingsManager = new GameSettingsManager();
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
-        screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
-        
+        //IsMouseVisible = false;
     }
     public static GraphicsDevice Graphics
     {
@@ -119,14 +118,13 @@ public class GameEnvironment : Game
         graphicsDevice = graphics.GraphicsDevice;
         DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
+        screen = new Point(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
     }
 
     //Handles the input and allows for switching to and from fullscreen
     protected void HandleInput()
     {
         inputHelper.Update();
-        if (inputHelper.KeyPressed(Keys.Escape))
-            this.Exit();
         if (inputHelper.KeyPressed(Keys.F5))
             SetFullscreen(!graphics.IsFullScreen);
         gameStateManager.HandleInput(inputHelper);

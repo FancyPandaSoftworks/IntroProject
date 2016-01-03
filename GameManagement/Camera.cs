@@ -34,7 +34,8 @@ public class Camera : Object3D
         input.Update();
         mouseDiff.X = input.MousePosition.X - prevMousePos.X;
         mouseDiff.Y = input.MousePosition.Y - prevMousePos.Y;
-        prevMousePos = new Vector2(input.MousePosition.X, input.MousePosition.Y);
+        prevMousePos = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+        Mouse.SetPosition((int)prevMousePos.X, (int)prevMousePos.Y);
     }
 
     //Updates the rotation of the camera in relation to the new mouse position
