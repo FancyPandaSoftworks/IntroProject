@@ -58,7 +58,7 @@ class RandomLevel : Level
                 }
             }
 
-            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "Grid");
+            grid = new TileGrid(highestPoint.X - lowestPoint.X + 3, highestPoint.Y - lowestPoint.Y + 3, "TileGrid");
             Console.WriteLine(highestPoint.X - lowestPoint.X);
             Console.WriteLine(highestPoint.Y - lowestPoint.Y);
             //Step 2: filling the grid
@@ -130,7 +130,17 @@ class RandomLevel : Level
 
         player = new Player(new Vector3(tileGrid.Columns * 200 /2, 200 , tileGrid.Rows * 200 /2 ));
         gameObjects.Add(player);
+
+        //if (roomNumber % 2 == 0)
+        //{
+            Monster monster = new Monster(Grid.Objects, player.Position);
+            monster.Parent = this;
+            monster.LoadContent();
+            gameObjects.Add(monster);
+        //}
     }
+
+    
 
     private void CreateMainPath()
     {
@@ -182,6 +192,7 @@ class RandomLevel : Level
                     possiblePositions = GetPossiblePositions(this.position);
                     this.position = possiblePositions[i];
                     newTile = new ExitTile();
+                    newTile.Parent = this;
                     tileList.Add(this.position, newTile);
                     tiles = -2;
                 }
@@ -194,12 +205,14 @@ class RandomLevel : Level
                 {
                     this.position = possiblePositions[i];
                     newTile = new ExitTile();
+                    newTile.Parent = this;
                     tileList.Add(this.position, newTile);
                 }
                 catch (ArgumentOutOfRangeException e)
                 {
                     //Couldn't place exit, so place it at the last placed tile
                     newTile = new ExitTile();
+                    newTile.Parent = this;
                     this.position = keyList[keyList.Count - 1];
                     tileList[this.position] = newTile;
                      Console.WriteLine(e.StackTrace);

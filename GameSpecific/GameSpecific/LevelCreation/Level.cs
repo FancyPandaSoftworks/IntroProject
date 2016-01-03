@@ -8,9 +8,9 @@ class Level : GameObjectList
 {
     protected Player player;
     protected bool completed;
+    public Monster monster;
 
     public Level()
-
     {
         completed = false;
         if (!(this is RandomLevel))
@@ -18,7 +18,6 @@ class Level : GameObjectList
             player = new Player(Vector3.Zero);
             gameObjects.Add(player);
         }
-        
     }
 
     public override void HandleInput(InputHelper inputhelper)

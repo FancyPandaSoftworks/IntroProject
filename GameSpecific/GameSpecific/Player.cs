@@ -13,6 +13,7 @@ class Player : Camera
     float velocity;
     int stamina;
     public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
+    public bool SpaceDown, ZDown;
 
     public Player(Vector3 startPos) : base("player")
     {
@@ -30,6 +31,9 @@ class Player : Camera
         SDown = false;
         DDown = false;
         EDown = false;
+        SpaceDown = false;
+        ZDown = false;
+
 
         if (input.IsKeyDown(Keys.LeftShift))
             ShiftDown = true;
@@ -43,6 +47,10 @@ class Player : Camera
             DDown = true;
         if (input.IsKeyDown(Keys.E))
             EDown = true;
+        if (input.IsKeyDown(Keys.Space))
+            SpaceDown = true;
+        if (input.IsKeyDown(Keys.Z))
+            ZDown = true;
 
         base.HandleInput(InputHelper);
     }
@@ -98,10 +106,10 @@ class Player : Camera
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
             position.X += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        //if (input.IsKeyDown(Keys.Space))
-        //    position.Y += velocity;
-        //if (input.IsKeyDown(Keys.Z))
-        //    position.Y -= velocity;
+        if (SpaceDown)
+            position.Y += velocity;
+        if (ShiftDown)
+            position.Y -= velocity;
 
         base.Update(gameTime);
     }

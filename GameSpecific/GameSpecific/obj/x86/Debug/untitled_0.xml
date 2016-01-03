@@ -3,14 +3,14 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\box.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\untitled.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
     <Children>
       <Child Type="Graphics:MeshContent">
         <Name>Cube</Name>
-        <Transform>100 0 0 0 0 -1.62920678E-05 -100 0 0 100 -1.62920678E-05 0 0 0 0 1</Transform>
+        <Transform>39.9999962 0 0 0 0 -6.51682649E-06 -39.9999962 0 0 39.9999962 -6.51682649E-06 0 0 0 0 1</Transform>
         <Positions>1 0.99999994 -1 1 -1 -1 -1.00000012 -0.9999998 -1 -0.999999642 1.00000036 -1 1.00000048 0.999999464 1 0.999999344 -1.0000006 1 -1.00000036 -0.999999642 1 -0.99999994 1 1</Positions>
         <Geometry>
           <Batch>
@@ -31,7 +31,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\box.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\untitled.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

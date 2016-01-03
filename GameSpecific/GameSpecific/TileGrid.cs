@@ -5,8 +5,8 @@ using System.Text;
 
 class TileGrid : GameObjectGrid
 {
-    public TileGrid(int rows, int columns, string id = "") : base(rows, columns, id)
+    public TileGrid(int rows, int columns, string id = "")
+        : base(rows, columns, id)
     {
     }
-
 }

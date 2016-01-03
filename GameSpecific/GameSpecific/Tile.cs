@@ -89,7 +89,7 @@ class ExitTile : PathTile
 
     public override void Update(GameTime gameTime)
     {
-        Level level = parent.Parent as Level;
+        Level level = parent as Level;
         foreach(GameObject obj in level.Objects)
         {
             if(obj != null)
@@ -101,7 +101,6 @@ class ExitTile : PathTile
                         Player player = obj as Player;
                         if(player.EDown == true)
                             level.Completed = true;
-                        
                     }
                 }
             } 
@@ -111,7 +110,7 @@ class ExitTile : PathTile
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);
-        Level level = parent.Parent as Level;
+        Level level = parent as Level;
         foreach (GameObject obj in level.Objects)
         {
             if (obj != null)
