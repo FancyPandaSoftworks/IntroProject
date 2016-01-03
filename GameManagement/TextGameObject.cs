@@ -5,14 +5,14 @@ public class TextGameObject : GameObject
 {
     SpriteFont spriteFont;
     Color color;
-    string text;
-    
+    public string text;
+    Vector2 position;
 
     public TextGameObject(string assetName, string id = "")
     {
-        spriteFont = GameEnvironment.AssetManager.Content.Load<SpriteFont>(assetName);
+        spriteFont = GameEnvironment.AssetManager.GetSpriteFont(assetName);
         color = Color.White;
-
+        text = " ";
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -21,6 +21,11 @@ public class TextGameObject : GameObject
         if (visible)
             spriteBatch.DrawString(spriteFont, text, Vector2.Zero, color);
           
+        spriteBatch.Begin();
+        spriteBatch.DrawString(spriteFont, text, this.position, color);
+        spriteBatch.End();
+        spriteBatch.GraphicsDevice.BlendState = BlendState.Opaque;
+        spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
     }
 
     public Color Color
@@ -32,5 +37,11 @@ public class TextGameObject : GameObject
     public Vector2 Size
     {
         get { return spriteFont.MeasureString(text); }
+    }
+
+    public Vector2 Position
+    {
+        get { return position; }
+        set { position = value; }
     }
 }

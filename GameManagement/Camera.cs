@@ -37,6 +37,7 @@ public class Camera : Object3D
 
     public override void Update(GameTime gameTime)
     {
+       
         viewAngleX += mouseDiff.X * 0.005f;
         viewAngleY -= mouseDiff.Y * 0.005f;
         if (viewAngleY > 1)
@@ -46,6 +47,7 @@ public class Camera : Object3D
         viewVertex = new Vector3(position.X + (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)),
                                 position.Y + (float)Math.Sin(viewAngleY),
                                 position.Z + (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)));
+        Console.WriteLine(viewVertex);
         
         base.Update(gameTime);
     }

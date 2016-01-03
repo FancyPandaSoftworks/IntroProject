@@ -34,12 +34,13 @@ public class GameEnvironment : Game
         gameSettingsManager = new GameSettingsManager();
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
-        screen = new Point(1000, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
+        screen = new Point(800, 600); // ACTUAL SCREEN SIZE HERE, CURRENTLY GIVES EXCEPTION
         
     }
     public static GraphicsDevice Graphics
     {
         get { return graphicsDevice; }
+
     }
 
 
@@ -66,6 +67,11 @@ public class GameEnvironment : Game
     public static GameSettingsManager GameSettingsManager
     {
         get { return gameSettingsManager; }
+    }
+
+    public static GameStateManager GameStateManager
+    {
+        get { return gameStateManager; }
     }
 
     public InputHelper InputHelper
@@ -103,7 +109,9 @@ public class GameEnvironment : Game
 
     protected override void LoadContent()
     {
+
         graphicsDevice = graphics.GraphicsDevice;
+        DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
     }
 

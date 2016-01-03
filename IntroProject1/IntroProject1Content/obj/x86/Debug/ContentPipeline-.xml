@@ -22,13 +22,60 @@
       <Time>2015-12-25T00:23:14.9973795+01:00</Time>
     </Item>
     <Item>
-      <Source>player.png</Source>
-      <Name>player</Name>
+      <Source>Axis.fbx</Source>
+      <Name>Axis</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Axis.xnb</Output>
+      <Time>2016-01-03T06:47:08.102484+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Axis_0.xml</Key>
+        <Value>2016-01-03T07:14:23.7957618+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>monsterTexture.png</Source>
+      <Name>monsterTexture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2015-12-26T23:40:59.2598142+01:00</Time>
+      <Output>C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monsterTexture.xnb</Output>
+      <Time>2016-01-02T14:25:56.977001+01:00</Time>
+    </Item>
+    <Item>
+      <Source>White Sprite.png</Source>
+      <Name>White Sprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb</Output>
+      <Time>2016-01-03T06:47:08.104486+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Albedo.fx</Source>
+      <Name>Albedo</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb</Output>
+      <Time>2016-01-02T12:57:37.898637+01:00</Time>
+    </Item>
+    <Item>
+      <Source>text.spritefont</Source>
+      <Name>text</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb</Output>
+      <Time>2016-01-03T06:47:08.1134862+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Axis.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Axis_0.xml</Output>
+      <Time>2016-01-03T06:47:08.102484+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

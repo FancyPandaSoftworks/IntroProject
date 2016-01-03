@@ -5,9 +5,7 @@ using System;
 public class GameObjectGrid : GameObject
 {
     protected GameObject[,] grid;
-    public static int cellWidth, cellHeight;
-
-
+    protected static int cellWidth, cellHeight;
     public GameObjectGrid(int columns, int rows, string id = "") : base(id)
     {
         cellHeight = 200;
@@ -19,12 +17,12 @@ public class GameObjectGrid : GameObject
         
     }
 
-    public void Add(GameObject obj2D, int x, int y)
+    public void Add(GameObject obj, int x, int y)
     {
-        grid[x, y] = obj2D;
-        obj2D.Parent = this;
+        grid[x, y] = obj;
+        obj.Parent = this;
 
-        obj2D.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
+        obj.Position = new Vector3(x * cellWidth, 0, y * cellHeight);
     }
 
     public GameObject get(int x, int y)
@@ -62,7 +60,7 @@ public class GameObjectGrid : GameObject
         get { return grid.GetLength(1); }
     }
 
-    public static  int CellWidth
+    public static int CellWidth
     {
         get { return cellWidth; }
         set { cellWidth = value; }

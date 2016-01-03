@@ -103,7 +103,7 @@ class RandomLevel : Level
     }
 
     //Creating/generating the level itself
-    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false) : base(roomNumber)
+    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
     {
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
@@ -127,8 +127,14 @@ class RandomLevel : Level
         TileGrid tileGrid = Grid;
         gameObjects.Add(tileGrid);
 
-        player = new Player(new Vector3(tileGrid.Columns * 200 /2, 200 , tileGrid.Rows * 200 /2 ));
-        player.Parent = this;
+        player = new Player(Vector3.Zero);
+        foreach(GameObject obj in tileGrid.Objects)
+        {
+            if (obj != null)
+                if(obj.ID == "EntryTile")
+                    player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
+        }
+
         gameObjects.Add(player);
     }
 

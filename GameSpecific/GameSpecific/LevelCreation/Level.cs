@@ -2,40 +2,48 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System;
+using Microsoft.Xna.Framework.Input;
 
  class Level : GameObjectList
 {
     protected Player player;
-    protected int roomNumber;
-   
+    protected bool completed;
 
-    public Level(int roomNumber)
+    public Level()
 
     {
-        
-        if (!(this is RandomLevel))
+        completed = false;
+    }
+
+    public override void HandleInput(InputHelper inputhelper)
+    {
+        Find("player").HandleInput(inputhelper);
+        if (inputhelper.KeyPressed(Keys.R))
         {
-           
-            
-            TileGrid tileGrid = new TileGrid(6, 6, "TileGrid");
-            Create(tileGrid);
-            gameObjects.Add(tileGrid);
-            player = new Player(Vector3.Zero);
-            player.Parent = this;
-            gameObjects.Add(player);
-            AI ai = new AI("monsterTexture");
-            ai.Parent = this;
-            ai.LoadContent();
-            gameObjects.Add(ai);
-            
+            Completed = true;
         }
-        
     }
 
     public override void Update(GameTime gameTime)
     {
         foreach (GameObject obj in gameObjects)
-            obj.Update(gameTime);
+        {
+            if (obj is GameObjectGrid)
+            {
+                GameObjectGrid gameObjectGrid = obj as GameObjectGrid;
+                foreach (GameObject gameObject in gameObjectGrid.Objects)
+                {
+                    if (gameObject != null)
+                    {
+                        gameObject.Update(gameTime);
+                    }
+                }
+            }
+
+            else
+                obj.Update(gameTime);
+        }
+            
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -77,16 +85,9 @@ using System;
         }        
     }
 
-    public TileGrid Create(TileGrid tileGrid)
+    public bool Completed
     {
-        for(int x = 0; x < 6; x++)
-        {
-            for (int y = 0; y < 6; y++)
-            {
-                if (y % 2 == 0 && x % 2 == 0 || y % 2 == 1 && x % 2 == 1)
-                tileGrid.Add(new WallTile(), x, y);
-            }
-        }
-        return tileGrid;    
+        get { return completed; }
+        set { completed = value; }
     }
 }

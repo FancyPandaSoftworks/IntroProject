@@ -3,10 +3,11 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 public class Object2D : GameObject
 {
-    protected Vector2 origin;
+    protected Vector2 origin, position;
     protected SpriteSheet spriteSheet;
     Texture2D player;
 
@@ -20,11 +21,14 @@ public class Object2D : GameObject
     {
         if (!visible || spriteSheet == null)
             return;
-        //spriteBatch.Draw(spriteBatch, Position, origin);
-        
-        
 
-            
+        spriteSheet.Draw(spriteBatch, Position, origin);      
+    }
+
+    public Vector2 Position
+    {
+        get { return position; }
+        set { position = value; }
     }
 
     public SpriteSheet SpriteSheet
@@ -58,8 +62,8 @@ public class Object2D : GameObject
     {
         get
         {
-            int left = (int)(GlobalPosition.X - origin.X);
-            int top = (int)(GlobalPosition.Y - origin.Y);
+            int left = (int)(Position.X - origin.X);
+            int top = (int)(Position.Y - origin.Y);
             return new Rectangle(left, top, Width, Height);
         }
     }
