@@ -115,7 +115,7 @@ using Microsoft.Xna.Framework.Input;
         {
             
             DrawMonster();
-            Console.WriteLine(position);
+            //Console.WriteLine(position);
 
         }
     }

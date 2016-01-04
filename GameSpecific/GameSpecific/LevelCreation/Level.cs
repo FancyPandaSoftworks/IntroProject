@@ -1,16 +1,16 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 
  class Level : GameObjectList
 {
     protected Player player;
     protected bool completed;
+    
 
     public Level()
-
     {
         completed = false;
         if (!(this is RandomLevel))
@@ -18,16 +18,42 @@ using Microsoft.Xna.Framework.Input;
             player = new Player(Vector3.Zero);
             gameObjects.Add(player);
         }
+
+        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
+        { 
+            NoteObject note = new NoteObject(NoteObject.idList[0]); 
+            NoteObject.idList.Remove(NoteObject.idList[0]);
+            gameObjects.Add(note); 
+        }
     }
     
     //inputhelper for the player
-    public override void HandleInput(InputHelper inputhelper)
+    public override void HandleInput(InputHelper inputHelper)
     {
-        Find("player").HandleInput(inputhelper);
-        if (inputhelper.KeyPressed(Keys.R))
+        if (inputHelper.KeyPressed(Keys.N))
+        {
+            Console.WriteLine("n");
+            foreach (GameObject obj in gameObjects)
+            {
+                if (obj is NoteObject)
+                {
+                    NoteObject note = obj as NoteObject;
+                    note.PickUp();
+                }
+            }
+
+        }
+
+        if (inputHelper.KeyPressed(Keys.N))
         {
             Completed = true;
         }
+
+        
+
+        Find("player").HandleInput(inputHelper);
+
+        
     }
 
     //update the each GameObjects in GameObjectGrud
@@ -88,8 +114,6 @@ using Microsoft.Xna.Framework.Input;
                     gameObject.Draw(gameTime, spriteBatch);
                     
             }
-                
-
         }        
     }
 

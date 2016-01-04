@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-class TitleScreenState : GameObjectList
+class TitleScreenState : GameState
 {
     protected Button playButton;
 
@@ -25,7 +26,11 @@ class TitleScreenState : GameObjectList
 
         //Check if the playbutton is being pressed to go to the game
         if (playButton.ButtonIsPressed)
+        {
+            game.IsMouseVisible = false;
+            Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
+        }
     }
   
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

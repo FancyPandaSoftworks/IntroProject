@@ -26,11 +26,11 @@ class PlayingState : Root
     //HandleInput for level
     public void HandleInput(InputHelper inputHelper)
     {
-        inputHelper.Update();
         if (inputHelper.IsKeyDown(Keys.Escape))
         {
             GameEnvironment.GameStateManager.SwitchTo("pauseScreenState");
         }
+
         level.HandleInput(inputHelper);
     }
 

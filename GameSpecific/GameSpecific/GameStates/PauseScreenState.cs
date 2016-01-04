@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
-class PauseScreenState : GameObjectList
+class PauseScreenState : GameState
 {
     protected Button resumeButton, exitButton;
 
@@ -33,7 +34,12 @@ class PauseScreenState : GameObjectList
 
         //Check if the resumeButton is being pressed to go back to the game
         if (resumeButton.ButtonIsPressed)
+        {
+            game.IsMouseVisible = false;
+            Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
+        }
+
         if (exitButton.ButtonIsPressed)
             GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
     }

@@ -76,6 +76,8 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Button.cs" />
+    <Compile Include="GameStates\GameState.cs" />
+    <Compile Include="GameStates\NoteViewingState.cs" />
     <Compile Include="GameStates\PauseScreenState.cs" />
     <Compile Include="LevelCreation\SpecialLevel.cs" />
     <Compile Include="LevelCreation\Level.cs">
@@ -83,6 +85,7 @@
     </Compile>
     <Compile Include="LevelCreation\RandomLevel.cs" />
     <Compile Include="MainGame.cs" />
+    <Compile Include="NoteObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

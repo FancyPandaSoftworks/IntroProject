@@ -1,6 +1,7 @@
 Content\box.xnb
 Content\Axis.xnb
-Content\text.xnb
-Content\White Sprite.xnb
 Content\monsterTexture.xnb
+Content\White Sprite.xnb
 Content\Albedo.xnb
+Content\text.xnb
+Content\noteIDList.txt
