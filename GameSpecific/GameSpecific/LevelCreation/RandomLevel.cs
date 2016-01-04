@@ -131,13 +131,12 @@ class RandomLevel : Level
         player = new Player(new Vector3(tileGrid.Columns * 200 /2, 200 , tileGrid.Rows * 200 /2 ));
         gameObjects.Add(player);
 
-        //if (roomNumber % 2 == 0)
-        //{
-            Monster monster = new Monster(Grid.Objects, player.Position);
-            monster.Parent = this;
-            monster.LoadContent();
-            gameObjects.Add(monster);
-        //}
+
+        Monster monster = new Monster(Grid.Objects, player.Position);
+        monster.Parent = this;
+        monster.LoadContent();
+        gameObjects.Add(monster);
+
     }
 
     

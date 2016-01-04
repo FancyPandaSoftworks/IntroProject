@@ -42,9 +42,9 @@ class PathTile : Tile
     {
         int layers = 1;
         base.Draw(gameTime, spriteBatch);
-        Position = new Vector3(Position.X, Position.Y + (200 * (layers + 1)), Position.Z);
-        base.Draw(gameTime, spriteBatch);
-        Position = new Vector3(Position.X, Position.Y - (200 * (layers + 1)), Position.Z);
+        //Position = new Vector3(Position.X, Position.Y + (200 * (layers + 1)), Position.Z);
+        //base.Draw(gameTime, spriteBatch);
+        //Position = new Vector3(Position.X, Position.Y - (200 * (layers + 1)), Position.Z);
     }
 }
 

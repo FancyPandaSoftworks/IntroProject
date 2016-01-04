@@ -11,12 +11,14 @@ using Microsoft.Xna.Framework.Media;
 
 class Monster : Object3D
 {
-    public Vector3 monsterPosition, playerPosition;
+    public Vector3 monsterPosition, playerPosition, monsterOrigin;
     public int[,] stepgrid;
     public GameObject[,] grid;
     public int tiles = 0;
     public int gridHeight, gridWidth;
     public Player player;
+    TextGameObject text;
+
 
     public Monster(GameObject[,] grid, Vector3 playerPosition) : base("untitled")
     {
@@ -44,30 +46,28 @@ class Monster : Object3D
         }
         stepgrid = new int[gridWidth, gridHeight];
         monsterPosition = playerPosition;
+        monsterOrigin = monsterPosition + new Vector3(200 / 2, 0, 200 / 2);
     }
 
     public override void Update(GameTime gameTime)
     {
-        this.Position = monsterPosition + new Vector3(-50,0,-50);
+        this.Position = monsterOrigin;
         Level level = parent as Level;
         player = level.Find("player") as Player;
         playerPosition = player.Position;
         ResetGrid();
-        Console.WriteLine(playerPosition);
         //setting the tile the player is standing on to 0, in the stepgrid
         stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
-        CalculateTileCost(new Vector2((int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)), 1);
+        CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
 
         //calculating the x- and y-difference between player and monster
-        float xdifference = playerPosition.X - monsterPosition.X;
+        float xdifference = playerPosition.X - monsterOrigin.X;
         xdifference = Math.Abs(xdifference);
-        float zdifference = playerPosition.Z - monsterPosition.Z;
+        float zdifference = playerPosition.Z - monsterOrigin.Z;
         zdifference = Math.Abs(zdifference);
 
-        SimplePathFinding(xdifference, zdifference);
-
         //this switches the monster's AI depending on whether the player is in the monster's line of sight
-        if (PlayerInSight(xdifference, zdifference, new Vector2(monsterPosition.X, monsterPosition.Z)))
+        if (PlayerInSight(xdifference, zdifference, new Vector2(monsterOrigin.X, monsterOrigin.Z)))
         {
             SimplePathFinding(xdifference, zdifference);
             Console.WriteLine("simple");
@@ -85,13 +85,13 @@ class Monster : Object3D
     //because that means that the player is not in the monster's line of sight
     public bool PlayerInSight(float xdifference, float zdifference, Vector2 checkposition)
     {
-        if (playerPosition.X < monsterPosition.X && playerPosition.Z < monsterPosition.Z)
+        if (playerPosition.X < monsterOrigin.X && playerPosition.Z < monsterOrigin.Z)
         {
             if (xdifference > zdifference)
             {
                 while (checkposition.X > playerPosition.X)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -103,7 +103,7 @@ class Monster : Object3D
             {
                 while (checkposition.Y > playerPosition.Y)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -114,13 +114,13 @@ class Monster : Object3D
 
         }
 
-        else if (playerPosition.X < monsterPosition.X && playerPosition.Z > monsterPosition.Z)
+        else if (playerPosition.X < monsterOrigin.X && playerPosition.Z > monsterOrigin.Z)
         {
             if (xdifference > zdifference)
             {
                 while (checkposition.X > playerPosition.X)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -132,7 +132,7 @@ class Monster : Object3D
             {
                 while (checkposition.Y < playerPosition.Z)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -143,13 +143,13 @@ class Monster : Object3D
 
         }
 
-        else if (playerPosition.X > monsterPosition.X && playerPosition.Z < monsterPosition.Z)
+        else if (playerPosition.X > monsterOrigin.X && playerPosition.Z < monsterOrigin.Z)
         {
             if (xdifference > zdifference)
             {
                 while (checkposition.X < playerPosition.X)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -161,7 +161,7 @@ class Monster : Object3D
             {
                 while (checkposition.Y > playerPosition.Z)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -172,13 +172,13 @@ class Monster : Object3D
 
         }
 
-        else if (playerPosition.X > monsterPosition.X && playerPosition.Z > monsterPosition.Z)
+        else if (playerPosition.X > monsterOrigin.X && playerPosition.Z > monsterOrigin.Z)
         {
             if (xdifference > zdifference)
             {
                 while (checkposition.X < playerPosition.X)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -190,7 +190,7 @@ class Monster : Object3D
             {
                 while (checkposition.Y < playerPosition.Z)
                 {
-                    if (!(grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is Tile))
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -200,24 +200,24 @@ class Monster : Object3D
             }
         }
 
-        else if (playerPosition.X == monsterPosition.X)
+        else if (playerPosition.X == monsterOrigin.X)
         {
-            if (playerPosition.Z > monsterPosition.Z)
+            if (playerPosition.Z > monsterOrigin.Z)
             {
-                while (playerPosition.Z > monsterPosition.Z)
+                while (playerPosition.Z > monsterOrigin.Z)
                 {
-                    if (grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is WallTile)
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
                     checkposition.Y += 1;
                 }
             }
-            else if (playerPosition.Z < monsterPosition.Z)
+            else if (playerPosition.Z < monsterOrigin.Z)
             {
-                while (playerPosition.Z < monsterPosition.Z)
+                while (playerPosition.Z < monsterOrigin.Z)
                 {
-                    if (grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is WallTile)
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -226,24 +226,24 @@ class Monster : Object3D
             }
         }
 
-        else if (playerPosition.Z == monsterPosition.Z)
+        else if (playerPosition.Z == monsterOrigin.Z)
         {
-            if (playerPosition.X > monsterPosition.X)
+            if (playerPosition.X > monsterOrigin.X)
             {
-                while (playerPosition.X > monsterPosition.X)
+                while (playerPosition.X > monsterOrigin.X)
                 {
-                    if (grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is WallTile)
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
                     checkposition.X += 1;
                 }
             }
-            else if (playerPosition.X < monsterPosition.X)
+            else if (playerPosition.X < monsterOrigin.X)
             {
-                while (playerPosition.X < monsterPosition.X)
+                while (playerPosition.X < monsterOrigin.X)
                 {
-                    if (grid[(int)checkposition.X / GameObjectGrid.cellWidth, (int)checkposition.Y / GameObjectGrid.cellHeight] is WallTile)
+                    if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
                         return false;
                     }
@@ -257,53 +257,65 @@ class Monster : Object3D
     //a simple method for moving the monster straight towards the player
     public void SimplePathFinding(float xdifference, float ydifference)
     {
-        if (playerPosition.X > monsterPosition.X)
+        if (playerPosition.X > monsterOrigin.X)
         {
-            monsterPosition.X += (float)Math.Cos(Math.Atan(ydifference / xdifference));
+            monsterOrigin.X += (float)Math.Cos(Math.Atan(ydifference / xdifference));
         }
-        if (playerPosition.X < monsterPosition.X)
+        if (playerPosition.X < monsterOrigin.X)
         {
-            monsterPosition.X -= (float)Math.Cos(Math.Atan(ydifference / xdifference));
+            monsterOrigin.X -= (float)Math.Cos(Math.Atan(ydifference / xdifference));
         }
-        if (playerPosition.Z > monsterPosition.Z)
+        if (playerPosition.Z > monsterOrigin.Z)
         {
-            monsterPosition.Z += (float)Math.Sin(Math.Atan(ydifference / xdifference));
+            monsterOrigin.Z += (float)Math.Sin(Math.Atan(ydifference / xdifference));
         }
-        if (playerPosition.Z < monsterPosition.Z)
+        if (playerPosition.Z < monsterOrigin.Z)
         {
-            monsterPosition.Z -= (float)Math.Sin(Math.Atan(ydifference / xdifference));
+            monsterOrigin.Z -= (float)Math.Sin(Math.Atan(ydifference / xdifference));
         }
     }
 
     //this method makes the monster follow the shortest path to the player, using the tile cost method and the stepgrid
     public void AdvancedPathFinding()
     {
-        if ((int)monsterPosition.X / GameObjectGrid.cellWidth > 0)
+        if ((int)monsterOrigin.X / GameObjectGrid.cellWidth > 0)
         {
-            if (stepgrid[(int)(monsterPosition.X) / GameObjectGrid.cellWidth - 1, (int)monsterPosition.Z / GameObjectGrid.cellHeight] < stepgrid[(int)monsterPosition.X / GameObjectGrid.cellWidth, (int)monsterPosition.Z / GameObjectGrid.cellHeight])
+            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
             {
-                monsterPosition.X -= 1;
+                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
+                {
+                    monsterOrigin.X -= 1;
+                }
             }
         }
-        if ((int)monsterPosition.X / GameObjectGrid.cellWidth < gridWidth - 1)
+        if ((int)monsterOrigin.X / GameObjectGrid.cellWidth < gridWidth - 1)
         {
-            if (stepgrid[(int)(monsterPosition.X) / GameObjectGrid.cellWidth + 1, (int)monsterPosition.Z / GameObjectGrid.cellHeight] < stepgrid[(int)monsterPosition.X / GameObjectGrid.cellWidth, (int)monsterPosition.Z / GameObjectGrid.cellHeight])
+            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
             {
-                monsterPosition.X += 1;
+                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
+                {
+                    monsterOrigin.X += 1;
+                }
             }
         }
-        if ((int)monsterPosition.Z / GameObjectGrid.cellHeight > 0)
+        if ((int)monsterOrigin.Z / GameObjectGrid.cellHeight > 0)
         {
-            if (stepgrid[(int)monsterPosition.X / GameObjectGrid.cellWidth, (int)(monsterPosition.Z) / GameObjectGrid.cellHeight - 1] < stepgrid[(int)monsterPosition.X / GameObjectGrid.cellWidth, (int)monsterPosition.Z / GameObjectGrid.cellHeight])
+            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
             {
-                monsterPosition.Z -= 1;
+                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] is WallTile))
+                {
+                    monsterOrigin.Z -= 1;
+                }
             }
         }
-        if ((int)monsterPosition.Z / GameObjectGrid.cellHeight < gridHeight - 1)
+        if ((int)monsterOrigin.Z / GameObjectGrid.cellHeight < gridHeight - 1)
         {
-            if (stepgrid[(int)monsterPosition.X / GameObjectGrid.cellWidth, (int)(monsterPosition.Z) / GameObjectGrid.cellHeight + 1] < stepgrid[(int)monsterPosition.X / GameObjectGrid.cellWidth, (int)monsterPosition.Z / GameObjectGrid.cellHeight])
+            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
             {
-                monsterPosition.Z += 1;
+                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] is WallTile))
+                {
+                    monsterOrigin.Z += 1;
+                }
             }
         }
     }

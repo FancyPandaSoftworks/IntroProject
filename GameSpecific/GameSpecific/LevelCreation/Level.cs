@@ -80,7 +80,7 @@ class Level : GameObjectList
                         }
                     }
             }
-        }        
+        }
     }
 
     public bool Completed
