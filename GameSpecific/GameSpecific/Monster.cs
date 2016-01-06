@@ -18,6 +18,7 @@ class Monster : Object3D
     public int gridHeight, gridWidth;
     public Player player;
     TextGameObject text;
+    public Matrix world;
 
 
     public Monster(GameObject[,] grid, Vector3 playerPosition) : base("untitled")
@@ -56,6 +57,8 @@ class Monster : Object3D
         player = level.Find("player") as Player;
         playerPosition = player.Position;
         ResetGrid();
+
+
         //setting the tile the player is standing on to 0, in the stepgrid
         stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
         CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
@@ -366,6 +369,18 @@ class Monster : Object3D
                 stepgrid[x, y] = tiles;
             }
         }
+    }
+
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+
+        Vector3 direction = playercamera.Position - Position; //afstand
+        direction.Y = 0;
+        direction.Normalize(); //matrix met lengte 0
+        world = Matrix.CreateWorld(Position, Vector3.Up, direction);
+
+ 	    model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
+                    aspectRatio, 1.0f, 500.0f));
     }
 }
 

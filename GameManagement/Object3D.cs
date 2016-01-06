@@ -11,9 +11,9 @@ using Microsoft.Xna.Framework.Input;
 
 public class Object3D : GameObject
 {
-    float aspectRatio, modelRotation;
-    Model model;
-    Camera playercamera;
+    protected float aspectRatio, modelRotation;
+    protected Model model;
+    protected Camera playercamera;
 
     public Object3D(string modelName = "", string id = "") : base(id)
     {
