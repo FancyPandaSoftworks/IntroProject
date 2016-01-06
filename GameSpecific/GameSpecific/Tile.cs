@@ -75,6 +75,7 @@ class WallTile : Tile
         Position = new Vector3(Position.X, Position.Y - (200 * layers), Position.Z);
     }
 }
+
 class EntryTile : PathTile
 {
     public EntryTile()
