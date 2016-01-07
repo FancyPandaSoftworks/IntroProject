@@ -29,10 +29,13 @@ class PauseScreenState : GameState
 
     public override void HandleInput(InputHelper inputHelper)
     {
-        inputHelper.Update();
         base.HandleInput(inputHelper);
+        inputHelper.Update();
 
         //Check if the resumeButton is being pressed to go back to the game
+        if (exitButton.ButtonIsPressed)
+            GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
+        
         if (resumeButton.ButtonIsPressed)
         {
             game.IsMouseVisible = false;
@@ -40,8 +43,6 @@ class PauseScreenState : GameState
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
 
-        if (exitButton.ButtonIsPressed)
-            GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

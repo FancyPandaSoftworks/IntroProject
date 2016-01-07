@@ -79,11 +79,11 @@
     <Compile Include="GameStates\GameState.cs" />
     <Compile Include="GameStates\NoteViewingState.cs" />
     <Compile Include="GameStates\PauseScreenState.cs" />
-    <Compile Include="LevelCreation\SpecialLevel.cs" />
-    <Compile Include="LevelCreation\Level.cs">
+    <Compile Include="GameStates\LevelCreation\SpecialLevel.cs" />
+    <Compile Include="GameStates\LevelCreation\Level.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LevelCreation\RandomLevel.cs" />
+    <Compile Include="GameStates\LevelCreation\RandomLevel.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="NoteObject.cs" />
     <Compile Include="Player.cs" />

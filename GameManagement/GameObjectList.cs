@@ -55,11 +55,12 @@ public class GameObjectList : GameObject
         get { return gameObjects; }
     }
 
+
     /// <summary>
     /// Inputhelper for the objects in the list
     /// </summary>
     /// <param name="inputhelper">The inputhelper to react to input</param>
-    public override void HandleInput(InputHelper inputhelper)
+    public override void HandleInput(InputHelper inputHelper)
     {
         foreach (GameObject obj in gameObjects)
             obj.HandleInput(inputHelper);

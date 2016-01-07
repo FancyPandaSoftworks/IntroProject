@@ -14,8 +14,6 @@ class Button : Object2D
     //HandleInput for the button
     public override void HandleInput(InputHelper inputHelper)
     {
-        inputHelper.Update();
-        
         //Checking whether you are pressing the button or not
         if (inputHelper.MouseLeftButtonPressed() &&
             BoundingBox.Contains((int)inputHelper.MousePosition.X, (int)inputHelper.MousePosition.Y))
