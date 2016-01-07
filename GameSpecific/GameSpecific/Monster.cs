@@ -21,7 +21,7 @@ class Monster : Object3D
     public Matrix world;
 
 
-    public Monster(GameObject[,] grid, Vector3 playerPosition) : base("untitled")
+    public Monster(GameObject[,] grid, Vector3 playerPosition) : base("monster")
     {
         ResetGrid();
         this.playerPosition = playerPosition;
@@ -46,7 +46,7 @@ class Monster : Object3D
             }
         }
         stepgrid = new int[gridWidth, gridHeight];
-        monsterPosition = playerPosition;
+        monsterPosition = playerPosition - new Vector3(0,50,0);
         monsterOrigin = monsterPosition + new Vector3(200 / 2, 0, 200 / 2);
     }
 

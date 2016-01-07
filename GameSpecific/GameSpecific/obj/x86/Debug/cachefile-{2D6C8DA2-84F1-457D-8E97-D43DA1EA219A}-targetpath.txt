@@ -3,3 +3,4 @@ Content\Axis.xnb
 Content\MANKEY.xnb
 Content\text.xnb
 Content\untitled.xnb
+Content\monster.xnb
