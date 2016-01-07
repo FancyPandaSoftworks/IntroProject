@@ -41,7 +41,6 @@ D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\noteIDList.txt
-C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\noteIDList.txt
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortile.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortexture_0.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cube.xnb

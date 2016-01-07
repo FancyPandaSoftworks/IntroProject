@@ -1,11 +1,10 @@
-Content\box.xnb
-Content\Axis.xnb
-Content\monsterTexture.xnb
-Content\White Sprite.xnb
 Content\Albedo.xnb
-Content\text.xnb
+Content\monsterTexture.xnb
+Content\WallCubeTestTexture.xnb
+Content\White Sprite.xnb
+Content\Axis.xnb
+Content\box.xnb
 Content\Floortile.xnb
 Content\Wall Cube.xnb
-Content\WallCubeTestTexture.xnb
+Content\text.xnb
 Content\Floortexture_0.xnb
-Content\noteIDList.txt
