@@ -44,7 +44,7 @@ public class GameObjectList : GameObject
     }
 
    //Inputhelper for the objects in the list
-    public override void HandleInput(InputHelper inputhelper)
+    public override void HandleInput(InputHelper inputHelper)
     {
         foreach (GameObject obj in gameObjects)
             obj.HandleInput(inputHelper);

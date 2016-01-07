@@ -15,14 +15,15 @@ class TitleScreenState : GameState
 
         //Add a start button
         playButton = new Button("White Sprite", 0);
-        playButton.Position = new Vector2((GameEnvironment.Screen.X - playButton.Width) / 2, 200);
+        playButton.Position = new Vector2((GameEnvironment.Screen.X - playButton.Width) / 2, (GameEnvironment.Screen.X - playButton.Width) / 2);
         gameObjects.Add(playButton);
     }
 
     public override void HandleInput(InputHelper inputHelper)
     {
-        inputHelper.Update();
+        
         base.HandleInput(inputHelper);
+        inputHelper.Update();
 
         //Check if the playbutton is being pressed to go to the game
         if (playButton.ButtonIsPressed)
@@ -30,7 +31,9 @@ class TitleScreenState : GameState
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
+
         }
+        
     }
   
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
