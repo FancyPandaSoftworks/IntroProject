@@ -32,7 +32,7 @@ abstract class Tile : Object3D
 
 class PathTile : Tile
 {
-    public PathTile(string modelName = "Wall Cube", string id = "PathTile")
+    public PathTile(string modelName = "untitled", string id = "PathTile")
         : base(modelName, id, TileType.Path)
     {
 
@@ -57,7 +57,7 @@ class PathTile : Tile
 class WallTile : Tile
 {
     public WallTile() 
-        : base("Wall Cube","WallTile",TileType.Wall)
+        : base("untitled","WallTile",TileType.Wall)
     {
     }
 
@@ -79,7 +79,7 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     public EntryTile()
-        : base("Wall Cube", "EntryTile")
+        : base("untitled", "EntryTile")
     {
 
     }
@@ -90,7 +90,7 @@ class ExitTile : PathTile
     TextGameObject text;
 
     public ExitTile()
-        : base("Wall Cube", "ExitTile")
+        : base("untitled", "ExitTile")
     {
         text = new TextGameObject("text");
         text.Position = Vector2.Zero;
