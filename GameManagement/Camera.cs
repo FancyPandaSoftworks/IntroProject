@@ -15,33 +15,43 @@ public class Camera : Object3D
     Vector3 viewVertex;
     Vector2 prevMousePos, mouseDiff;
 
-    //Creates a new 3D camera
+    /// <summary>
+    /// Creates a new 3D camera
+    /// </summary>
+    /// <param name="id">The id used to find this object</param>
     public Camera(string id = "")
         : base("", id)
     {
         prevMousePos = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
     }
 
-    //return the point the player looks at
+    /// <summary>
+    /// Return the point the player looks at
+    /// </summary>
     public Vector3 ViewVertex
     {
         get { return viewVertex; }
     }
 
-    //Checks the difference between the old and new mouse position
-    public override void HandleInput(InputHelper input)
+    /// <summary>
+    /// Checks the difference between the old and new mouse position
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
+    public override void HandleInput(InputHelper inputHelper)
     {
-        input.Update();
-        mouseDiff.X = input.MousePosition.X - prevMousePos.X;
-        mouseDiff.Y = input.MousePosition.Y - prevMousePos.Y;
+        inputHelper.Update();
+        mouseDiff.X = inputHelper.MousePosition.X - prevMousePos.X;
+        mouseDiff.Y = inputHelper.MousePosition.Y - prevMousePos.Y;
         prevMousePos = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
         Mouse.SetPosition((int)prevMousePos.X, (int)prevMousePos.Y);
     }
 
-    //Updates the rotation of the camera in relation to the new mouse position
+    /// <summary>
+    /// Updates the rotation of the camera in relation to the new mouse position
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
-       
         viewAngleX += mouseDiff.X * 0.005f;
         viewAngleY -= mouseDiff.Y * 0.005f;
         if (viewAngleY > 1)

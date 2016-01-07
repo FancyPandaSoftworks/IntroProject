@@ -6,20 +6,30 @@ public class GameObjectList : GameObject
 {
     protected List<GameObject> gameObjects;
 
-    //list that contains the GameObjects
+    /// <summary>
+    /// A list that contains the GameObjects
+    /// </summary>
+    /// <param name="id">The id used to find this object</param>
     public GameObjectList(string id = "")
     {
         gameObjects = new List<GameObject>();
     }
 
-    //remove the object from the list
+    /// <summary>
+    /// Remove the object from the list
+    /// </summary>
+    /// <param name="obj">The object to be removed</param>
     public void Remove(GameObject obj)
     {
         gameObjects.Remove(obj);
         obj.Parent = null;
     }
 
-    //finding the GameObject by looking for the id
+    /// <summary>
+    /// Finding the GameObject by looking for the id
+    /// </summary>
+    /// <param name="id">The id used to find this object</param>
+    /// <returns>The reference to the object or null in case the id does not match with a object</returns>
     public GameObject Find(string id)
     {
         foreach (GameObject obj in gameObjects)
@@ -37,27 +47,39 @@ public class GameObjectList : GameObject
         return null;
     }
 
-    //propertt to return gameObjects
+    /// <summary>
+    /// Property to return gameObjects, the list of all the objects
+    /// </summary>
     public List<GameObject> Objects
     {
         get { return gameObjects; }
     }
 
-   //Inputhelper for the objects in the list
+    /// <summary>
+    /// Inputhelper for the objects in the list
+    /// </summary>
+    /// <param name="inputhelper">The inputhelper to react to input</param>
     public override void HandleInput(InputHelper inputhelper)
     {
         foreach (GameObject obj in gameObjects)
             obj.HandleInput(inputHelper);
     }
 
-    //update the objects in the list
+    /// <summary>
+    /// Update the objects in the list
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
         foreach (GameObject obj in gameObjects)
             obj.Update(gameTime);
     }
 
-    //draws the objects in the list
+    /// <summary>
+    /// Draws the objects in the list
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (!visible)
@@ -67,7 +89,9 @@ public class GameObjectList : GameObject
             e.Current.Draw(gameTime, spriteBatch);
     }
 
-    //resets the objects in the list
+    /// <summary>
+    /// Resets the objects in the list
+    /// </summary>
     public override void Reset()
     {
         base.Reset();

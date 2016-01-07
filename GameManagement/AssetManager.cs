@@ -18,7 +18,11 @@ public class AssetManager
         this.contentmanager = Content;
     }
 
-    //Load a Texture2D
+    /// <summary>
+    /// Load a Texture2D
+    /// </summary>
+    /// <param name="assetName">The name of the file</param>
+    /// <returns>The sprite if the name is correct, null if the assetName is empty</returns>
     public Texture2D GetSprite(string assetName)
     {
         if (assetName == "")
@@ -26,7 +30,11 @@ public class AssetManager
         return contentmanager.Load<Texture2D>(assetName);
     }
 
-    //Load a Model
+    /// <summary>
+    /// Load a Model
+    /// </summary>
+    /// <param name="assetName">The name of the file</param>
+    /// <returns>The model in the file that can be found with the assetname, or null incase the assetName is empty</returns>
     public Model GetModel(string assetName)
     {
         if (assetName == "")
@@ -34,7 +42,11 @@ public class AssetManager
         return contentmanager.Load<Model>(assetName);
     }
 
-    //Load a Font
+    /// <summary>
+    /// Load a Font
+    /// </summary>
+    /// <param name="assetName">The name of the file</param>
+    /// <returns>The spriteFont that can be found with the assetName, or null in case the assetName is empty</returns>
     public SpriteFont GetSpriteFont(string assetName)
     {
         if (assetName == "")
@@ -42,7 +54,10 @@ public class AssetManager
         return contentmanager.Load<SpriteFont>(assetName);
     }
 
-    //Load a Sound
+    /// <summary>
+    /// Load a Sound and play it
+    /// </summary>
+    /// <param name="assetName">The name of the file</param>
     public void Playsound(string assetName)
     {
         SoundEffect soundeffect = contentmanager.Load<SoundEffect>(assetName);
@@ -50,7 +65,11 @@ public class AssetManager
 
     }
 
-    //Play Music
+    /// <summary>
+    /// Play Music
+    /// </summary>
+    /// <param name="assetName">The name of the file</param>
+    /// <param name="repeat">Defines whether the music needs to repeat or not</param>
     public void PlayMusic(string assetName, bool repeat = true)
     {
         MediaPlayer.IsRepeating = repeat;
@@ -58,15 +77,21 @@ public class AssetManager
 
     }
 
-    //Load an Effect
-    public Effect GetEffect(string effectName)
+    /// <summary>
+    /// Load an Effect
+    /// </summary>
+    /// <param name="assetName">The name of the file</param>
+    /// <returns>The effect that can be found with the assetName, or null in case the assetName is empty</returns>
+    public Effect GetEffect(string assetName)
     {
-        if (effectName == "")
+        if (assetName == "")
             return null;
-        return contentmanager.Load<Effect>(effectName);
+        return contentmanager.Load<Effect>(assetName);
     }
 
-    //Returns the ContentManager
+    /// <summary>
+    /// Returns the ContentManager
+    /// </summary>
     public ContentManager Content
     {
         get { return contentmanager; }

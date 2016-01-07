@@ -42,49 +42,66 @@ public class GameEnvironment : Game
 
     }
 
-    //Returns the camera
+    /// <summary>
+    /// Returns the camera object
+    /// </summary>
     public static Camera Camera
     {
         get { return GameEnvironment.camera; }
     }
 
-    //Returns the screen size
+    /// <summary>
+    /// Returns the screen size
+    /// </summary>
     public static Point Screen
     {
         get { return GameEnvironment.screen; }
     }
 
-    //Returns an object of the Random Class
+    /// <summary>
+    /// Returns the object of the Random Class
+    /// </summary>
     public static Random Random
     {
         get { return random; }
     }
 
-    //Return the AssetManager
+    /// <summary>
+    /// Return the AssetManager
+    /// </summary>
     public static AssetManager AssetManager
     {
         get { return assetManager; }
     }
 
-    //Return the GameSettingsManager
+    /// <summary>
+    /// Return the GameSettingsManager
+    /// </summary>
     public static GameSettingsManager GameSettingsManager
     {
         get { return gameSettingsManager; }
     }
 
-    //Return the GameStateManager
+    /// <summary>
+    /// Return the GameStateManager
+    /// </summary>
     public static GameStateManager GameStateManager
     {
         get { return gameStateManager; }
     }
 
-    //Return the InputHelper
+    /// <summary>
+    /// Return the InputHelper
+    /// </summary>
     public InputHelper InputHelper
     {
         get { return inputHelper; }
     }
 
-    //Change window mode
+    /// <summary>
+    /// Change window mode
+    /// </summary>
+    /// <param name="fullscreen">Change the fullscreen status</param>
     public void SetFullscreen(bool fullscreen = true)
     {
         float scalex = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / (float)screen.X;
@@ -111,7 +128,9 @@ public class GameEnvironment : Game
         modelScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
     }
 
-    //Make an instance of the SpriteBatch
+    /// <summary>
+    /// Make an instance of the SpriteBatch
+    /// </summary>
     protected override void LoadContent()
     {
 
@@ -121,7 +140,9 @@ public class GameEnvironment : Game
         screen = new Point(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
     }
 
-    //Handles the input and allows for switching to and from fullscreen
+    /// <summary>
+    /// Handles the input and allows for switching to and from fullscreen
+    /// </summary>
     protected void HandleInput()
     {
         inputHelper.Update();
@@ -131,14 +152,20 @@ public class GameEnvironment : Game
 
     }
 
-    //Updates the game
+    /// <summary>
+    /// Updates the game
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     protected override void Update(GameTime gameTime)
     {
         HandleInput();
         gameStateManager.Update(gameTime);
     }
 
-    //Draw the game
+    /// <summary>
+    /// Draw the game
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     protected override void Draw(GameTime gameTime)
     {
         graphics.GraphicsDevice.Clear(Color.Black);

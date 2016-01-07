@@ -8,13 +8,15 @@ public class Animation : SpriteSheet
     protected bool isLooping;
     protected float time;
 
-
     public Animation(string assetname, bool isLooping, float frameTime = 0.1f)
     {
         this.frameTime = frameTime;
         this.isLooping = isLooping;
     }
 
+    /// <summary>
+    /// Start the animation from the beginning
+    /// </summary>
     public void play()
     {
         this.sheetIndex = 0;

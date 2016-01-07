@@ -11,7 +11,10 @@ public class GameObject : Root
     protected InputHelper inputHelper;
     protected string id;
 
-    //An Object to be updated and/or drawn
+    /// <summary>
+    /// An Object to be updated and/or drawn
+    /// </summary>
+    /// <param name="id">The id used to find this object</param>
     public GameObject(string id = "")
     {
 
@@ -21,23 +24,35 @@ public class GameObject : Root
         this.id = id;
     }
 
-    //Create a method to handle the input with in all game objects
-    public virtual void HandleInput(InputHelper inputhelper)
+    /// <summary>
+    /// Create a method to handle the input with in all game objects
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
+    public virtual void HandleInput(InputHelper inputHelper)
     {
     }
 
-    //Create a method to update the game objects
+    /// <summary>
+    /// A method to update the game objects
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public virtual void Update(GameTime gameTime)
     {
     }
 
-    //Create a method to draw the object
+    /// <summary>
+    /// A method to draw the object
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         
     }
 
-    //gets the absolute position of an object in relation to its parents
+    /// <summary>
+    /// Gets the absolute position of an object in relation to its parents
+    /// </summary>
     public virtual Vector3 GlobalPosition
     {
         get
@@ -49,38 +64,52 @@ public class GameObject : Root
         }
     }
 
+    /// <summary>
+    /// Reset the object to its original state
+    /// </summary>
     public virtual void Reset()
     {
         visible = true;
     }
 
-    //property for the object's position
+    /// <summary>
+    /// Property for the object's position
+    /// </summary>
     public virtual Vector3 Position
     {
         get { return position; }
         set { position = value; }
     }
 
-    //property for the object's velocity
+    /// <summary>
+    /// Property for the object's velocity
+    /// </summary>
     public virtual Vector3 Velocity
     {
         get { return velocity; }
         set { velocity = value; }
     }
 
-    //return the object id
+    /// <summary>
+    /// Return the id of the object
+    /// </summary>
     public string ID
     {
         get { return id; }
     }
 
+    /// <summary>
+    /// Property for the visible status
+    /// </summary>
     public bool Visible
     {
         get { return visible; }
         set { visible = value; }
     }
 
-    //property for the parent of the object
+    /// <summary>
+    /// Property for the parent of the object
+    /// </summary>
     public virtual GameObject Parent
     {
         get { return parent; }
