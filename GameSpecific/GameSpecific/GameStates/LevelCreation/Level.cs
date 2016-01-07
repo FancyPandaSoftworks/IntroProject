@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework.Graphics;
 {
     protected Player player;
     protected bool completed;
-    
 
     public Level()
     {
@@ -21,8 +20,9 @@ using Microsoft.Xna.Framework.Graphics;
 
         if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
         { 
-            NoteObject note = new NoteObject(NoteObject.idList[0]); 
-            NoteObject.idList.Remove(NoteObject.idList[0]);
+            NoteObject note = new NoteObject(NoteObject.idList[0]);
+            note.Parent = this;
+            //NoteObject.idList.Remove(NoteObject.idList[0]);
             gameObjects.Add(note); 
         }
     }
@@ -44,16 +44,11 @@ using Microsoft.Xna.Framework.Graphics;
 
         }
 
-        if (inputHelper.KeyPressed(Keys.N))
+        if (inputHelper.KeyPressed(Keys.R))
         {
             Completed = true;
         }
-
-        
-
-        Find("player").HandleInput(inputHelper);
-
-        
+        Find("player").HandleInput(inputHelper);        
     }
 
     //update the each GameObjects in GameObjectGrud
