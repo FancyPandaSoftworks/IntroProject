@@ -50,3 +50,8 @@ D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cube.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortexture_0.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortile.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cube.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortexture_0.xnb
+C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\noteIDList.txt

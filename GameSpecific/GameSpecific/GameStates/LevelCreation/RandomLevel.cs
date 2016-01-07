@@ -128,6 +128,10 @@ class RandomLevel : Level
         gameObjects.Add(tileGrid);
 
         player = new Player(Vector3.Zero);
+            gameObjects.Add(player);
+            player.Parent = this;
+            player.LoadContent();
+
         foreach(GameObject obj in tileGrid.Objects)
         {
             if (obj != null)
@@ -135,7 +139,6 @@ class RandomLevel : Level
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
         }
 
-        gameObjects.Add(player);
     }
 
     private void CreateMainPath()

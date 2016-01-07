@@ -72,7 +72,6 @@ public class Player : Camera
         if (WDown && !(grid.Objects[(int)((position.X + 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-
         }
 
         if (WDown && !(grid.Objects[(int)((position.X + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight)] is WallTile))
