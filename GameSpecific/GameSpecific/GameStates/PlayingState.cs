@@ -99,4 +99,6 @@ class PlayingState : Root
         fileWriter.WriteLine(line);
         fileWriter.Close();
     }
+
+    public void Reset() { }
 }

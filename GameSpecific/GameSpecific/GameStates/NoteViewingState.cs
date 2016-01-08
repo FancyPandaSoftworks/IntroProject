@@ -17,7 +17,7 @@ class NoteViewingState : Root
     public NoteViewingState()
     {
         NoteObject.idList = new System.Collections.Generic.List<string>();
-        StreamReader streamReader = new StreamReader("Content/noteIDList.txt");
+        StreamReader streamReader = new StreamReader("noteIDList.txt");
         string line = streamReader.ReadLine();
         while (line != null)
         {

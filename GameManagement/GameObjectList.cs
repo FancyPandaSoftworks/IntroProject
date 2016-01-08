@@ -15,6 +15,13 @@ public class GameObjectList : GameObject
         gameObjects = new List<GameObject>();
     }
 
+
+    public void Add(GameObject obj)
+    {
+        gameObjects.Add(obj);
+        obj.Parent = this;
+    }
+
     /// <summary>
     /// Remove the object from the list
     /// </summary>

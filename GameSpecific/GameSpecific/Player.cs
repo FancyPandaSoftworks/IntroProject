@@ -13,16 +13,26 @@ public class Player : Camera
     float velocity;
     int stamina;
     public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
+    TileGrid grid;
 
     /// <summary>
     /// Constructing the player
     /// </summary>
     /// <param name="startPos">Where to start</param>
-    public Player(Vector3 startPos) : base("player")
+    public Player(Vector3 startPos)
+        : base("player")
     {
         position = startPos;
-        
+
     }
+
+
+    public void LoadContent()
+    {
+        Level level = parent as RandomLevel;
+        grid = level.Find("TileGrid") as TileGrid;
+    }
+
 
     /// <summary>
     /// HandleInput for the player
@@ -30,7 +40,6 @@ public class Player : Camera
     /// <param name="inputHelper">The inputhelper to react to input</param>
     public override void HandleInput(InputHelper inputHelper)
     {
-
         ShiftDown = false;
         WDown = false;
         ADown = false;
@@ -63,36 +72,54 @@ public class Player : Camera
         if (ShiftDown && stamina > 0 && exhausted == false &&
             (WDown || SDown || DDown || ADown))
         {
-            velocity = 20f;
+            velocity = 5f;
             stamina = stamina - 20;
             if (stamina < 20)
                 exhausted = true;
         }
-        if (WDown)
+        if (WDown && !(grid.Objects[(int)((position.X + 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        if (WDown && !(grid.Objects[(int)((position.X + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight)] is WallTile))
+        {
             position.Z += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        if (SDown)
+
+
+        if (SDown && !(grid.Objects[(int)(position.X - 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth, (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+
+        }
+
+        if (SDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
             position.Z -= 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        if (DDown)
+
+        if (DDown && !(grid.Objects[(int)(position.X - 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 95) / GameObjectGrid.CellWidth, (int)position.Z / GameObjectGrid.CellHeight] is WallTile))
         {
-            position.Z += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
             position.X -= 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        if (ADown)
+
+        if (DDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
-            position.Z -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        if (ADown && !(grid.Objects[(int)(position.X + (5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY))) + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
             position.X += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        /* if (inputHelper.IsKeyDown(Keys.Space))
-            position.Y += 40f;
-        if (inputHelper.IsKeyDown(Keys.LeftShift))
-            position.Y -= 40f; */
 
-        base.Update(gameTime);
+        if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
+
+            position.Z -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
+        
+        base.Update(gameTime);
+    }
 }

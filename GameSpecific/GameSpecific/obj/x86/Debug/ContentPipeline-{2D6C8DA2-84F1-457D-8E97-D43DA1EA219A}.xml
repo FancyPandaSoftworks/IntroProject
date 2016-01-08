@@ -2,17 +2,67 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>box.fbx</Source>
-      <Name>box</Name>
+      <Source>Albedo.fx</Source>
+      <Name>Albedo</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb</Output>
+      <Time>2016-01-03T22:14:55.7768921+01:00</Time>
+    </Item>
+    <Item>
+      <Source>monsterTexture.png</Source>
+      <Name>monsterTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monsterTexture.xnb</Output>
+      <Time>2016-01-03T22:14:55.8154417+01:00</Time>
+    </Item>
+    <Item>
+      <Source>WallCubeTestTexture.jpg</Source>
+      <Name>WallCubeTestTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture.xnb</Output>
+      <Time>2016-01-07T12:13:19.4681119+01:00</Time>
+    </Item>
+    <Item>
+      <Source>White Sprite.png</Source>
+      <Name>White Sprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb</Output>
+      <Time>2016-01-03T22:14:55.8029105+01:00</Time>
+    </Item>
+    <Item>
+      <Source>monster.fbx</Source>
+      <Name>monster</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\box.xnb</Output>
-      <Time>2015-12-14T15:45:02.0761811+01:00</Time>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monster.xnb</Output>
+      <Time>2016-01-08T16:57:07.3988686+01:00</Time>
       <Dependency>
-        <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\box_0.xml</Key>
-        <Value>2016-01-07T12:15:20.183565+01:00</Value>
+        <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\monster_0.xml</Key>
+        <Value>2016-01-08T17:13:54.2072428+01:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>untitled.fbx</Source>
+      <Name>untitled</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\untitled.xnb</Output>
+      <Time>2016-01-08T16:57:07.4539073+01:00</Time>
+      <Dependency>
+        <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\untitled_0.xml</Key>
+        <Value>2016-01-08T17:13:54.578384+01:00</Value>
+      </Dependency>
+      <Request>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Axis.fbx</Source>
@@ -24,7 +74,20 @@
       <Time>2016-01-03T22:14:55.7858895+01:00</Time>
       <Dependency>
         <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Key>
-        <Value>2016-01-07T12:15:20.6409491+01:00</Value>
+        <Value>2016-01-08T17:13:55.0402841+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>box.fbx</Source>
+      <Name>box</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\box.xnb</Output>
+      <Time>2015-12-14T15:45:02.0761811+01:00</Time>
+      <Dependency>
+        <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\box_0.xml</Key>
+        <Value>2016-01-08T17:13:55.1899003+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -37,58 +100,9 @@
       <Time>2016-01-07T12:13:19.4480981+01:00</Time>
       <Dependency>
         <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Floortile_0.xml</Key>
-        <Value>2016-01-07T12:15:20.8365993+01:00</Value>
+        <Value>2016-01-08T17:13:55.3244927+01:00</Value>
       </Dependency>
       <Request>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortexture_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Wall Cube.fbx</Source>
-      <Name>Wall Cube</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cube.xnb</Output>
-      <Time>2016-01-07T12:13:19.4651096+01:00</Time>
-      <Dependency>
-        <Key>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Wall Cube_0.xml</Key>
-        <Value>2016-01-07T12:15:21.314553+01:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>monsterTexture.png</Source>
-      <Name>monsterTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monsterTexture.xnb</Output>
-      <Time>2016-01-03T22:14:55.8154417+01:00</Time>
-    </Item>
-    <Item>
-      <Source>White Sprite.png</Source>
-      <Name>White Sprite</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb</Output>
-      <Time>2016-01-03T22:14:55.8029105+01:00</Time>
-    </Item>
-    <Item>
-      <Source>WallCubeTestTexture.jpg</Source>
-      <Name>WallCubeTestTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture.xnb</Output>
-      <Time>2016-01-07T12:13:19.4681119+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Albedo.fx</Source>
-      <Name>Albedo</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb</Output>
-      <Time>2016-01-03T22:14:55.7768921+01:00</Time>
     </Item>
     <Item>
       <Source>text.spritefont</Source>
@@ -100,11 +114,34 @@
       <Time>2016-01-03T22:14:55.8617624+01:00</Time>
     </Item>
     <Item>
-      <Source>box.fbx</Source>
+      <Source>monster.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\box_0.xml</Output>
-      <Time>2015-12-14T15:45:02.0761811+01:00</Time>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\monster_0.xml</Output>
+      <Time>2016-01-08T16:57:07.3988686+01:00</Time>
+    </Item>
+    <Item>
+      <Source>untitled.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\untitled_0.xml</Output>
+      <Time>2016-01-08T16:57:07.4539073+01:00</Time>
+    </Item>
+    <Item>
+      <Source>WallCubeTestTexture.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture_0.xnb</Output>
+      <Time>2016-01-07T12:13:19.4681119+01:00</Time>
     </Item>
     <Item>
       <Source>Axis.fbx</Source>
@@ -112,6 +149,13 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Output>
       <Time>2016-01-03T22:14:55.7858895+01:00</Time>
+    </Item>
+    <Item>
+      <Source>box.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\box_0.xml</Output>
+      <Time>2015-12-14T15:45:02.0761811+01:00</Time>
     </Item>
     <Item>
       <Source>Floortile.fbx</Source>
@@ -135,13 +179,6 @@
       <Options>None</Options>
       <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortexture_0.xnb</Output>
       <Time>2016-01-07T12:13:19.4380804+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Wall Cube.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Wall Cube_0.xml</Output>
-      <Time>2016-01-07T12:13:19.4651096+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

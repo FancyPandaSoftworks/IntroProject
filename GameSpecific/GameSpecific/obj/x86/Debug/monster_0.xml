@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Name>RootNode</Name>
+    <Identity>
+      <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\monster.fbx</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+    <Children>
+      <Child Type="Graphics:MeshContent">
+        <Name>Cube</Name>
+        <Transform>100 0 0 0 0 -1.62920678E-05 -100 0 0 100 -1.62920678E-05 0 0 0 0 1</Transform>
+        <Positions>0.7296304 0.193264753 -0.390866637 -0.06966835 0.1921081 -0.4243353 -0.0696800947 0.9916405 -0.451683283 0.729618669 0.992796957 -0.418214619 0.6961416 0.220588133 0.407964945 -0.103157222 0.219431877 0.374496281 -0.103168666 1.01896429 0.3471483 0.6961299 1.02012062 0.380616963 0.729637742 -0.306443036 -0.3737741 -0.06966108 -0.307599664 -0.407242775 0.6961489 -0.2791196 0.425057471 -0.10315001 -0.280275822 0.391588748 0.729643643 -0.7105659 -0.359951049 -0.06965521 -0.711722553 -0.3934197 0.6961548 -0.6832425 0.438880533 -0.103144139 -0.6843987 0.4054118</Positions>
+        <Geometry>
+          <Batch>
+            <Material>#Resource1</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 10 9 8 8 11 10</Indices>
+            <Vertices>
+              <PositionIndices>0 1 2 3 1 0 8 9 9 8 12 13</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0.04186085 -0.034154404 -0.9985395 0.04186085 -0.034154404 -0.9985395 0.04186085 -0.034154404 -0.9985395 0.04186085 -0.034154404 -0.9985395 0.04186082 -0.0341544747 -0.998539567 0.04186082 -0.0341544747 -0.998539567 0.04186082 -0.0341544747 -0.998539567 0.04186082 -0.0341544747 -0.998539567 0.0418607928 -0.03415453 -0.9985395 0.0418607928 -0.03415453 -0.9985395 0.0418607928 -0.03415453 -0.9985395 0.0418607928 -0.03415453 -0.9985395</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource2</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 10 9 8 8 11 10</Indices>
+            <Vertices>
+              <PositionIndices>4 7 6 5 4 5 11 10 10 11 15 14</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.0418608151 0.03415441 0.9985395 -0.0418608151 0.03415441 0.9985395 -0.0418608151 0.03415441 0.9985395 -0.0418608151 0.03415441 0.9985395 -0.041860804 0.0341544226 0.998539448 -0.041860804 0.0341544226 0.998539448 -0.041860804 0.0341544226 0.998539448 -0.041860804 0.0341544226 0.998539448 -0.04186082 0.0341545343 0.9985395 -0.04186082 0.0341545343 0.9985395 -0.04186082 0.0341545343 0.9985395 -0.04186082 0.0341545343 0.9985395</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource3</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 10 9 8 8 11 10</Indices>
+            <Vertices>
+              <PositionIndices>1 5 6 2 11 9 13 15 5 1 9 11</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.9991234 -0.00144548248 -0.0418359376 -0.9991234 -0.00144548248 -0.0418359376 -0.9991234 -0.00144548248 -0.0418359376 -0.9991234 -0.00144548248 -0.0418359376 -0.9991234 -0.00144553825 -0.0418362021 -0.9991234 -0.00144553825 -0.0418362021 -0.9991234 -0.00144553825 -0.0418362021 -0.9991234 -0.00144553825 -0.0418362021 -0.9991234 -0.00144548726 -0.0418361649 -0.9991234 -0.00144548726 -0.0418361649 -0.9991234 -0.00144548726 -0.0418361649 -0.9991234 -0.00144548726 -0.0418361649</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource4</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6</Indices>
+            <Vertices>
+              <PositionIndices>2 6 7 3 12 14 15 13</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-1.44877995E-05 0.9994155 -0.03418521 -1.44877995E-05 0.9994155 -0.03418521 -1.44877995E-05 0.9994155 -0.03418521 -1.44877995E-05 0.9994155 -0.03418521 1.45282456E-05 -0.9994156 0.0341851339 1.45282456E-05 -0.9994156 0.0341851339 1.45282456E-05 -0.9994156 0.0341851339 1.45282456E-05 -0.9994156 0.0341851339</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource5</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 10 9 8 8 11 10</Indices>
+            <Vertices>
+              <PositionIndices>4 0 3 7 0 4 10 8 8 10 14 12</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0.999123454 0.00144559913 0.0418360047 0.999123454 0.00144559913 0.0418360047 0.999123454 0.00144559913 0.0418360047 0.999123454 0.00144559913 0.0418360047 0.999123454 0.00144556165 0.0418360867 0.999123454 0.00144556165 0.0418360867 0.999123454 0.00144556165 0.0418360867 0.999123454 0.00144556165 0.0418360867 0.9991234 0.00144567632 0.04183612 0.9991234 0.00144567632 0.04183612 0.9991234 0.00144567632 0.04183612 0.9991234 0.00144567632 0.04183612</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+    </Children>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Name>Material.003</Name>
+      <Identity>
+        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\monster.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0 0.640000045 0.00581017137</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+    <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
+      <Name>Material.001</Name>
+      <Identity>
+        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\monster.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0 0.000576221151</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+    <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
+      <Name>Material.002</Name>
+      <Identity>
+        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\monster.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0 0.00100925041 0.640000045</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+    <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
+      <Name>Material</Name>
+      <Identity>
+        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\monster.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0.640000045 0.640000045</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+    <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
+      <Name>Material.004</Name>
+      <Identity>
+        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\monster.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0.335751146 0</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+  </Resources>
+</XnaContent>

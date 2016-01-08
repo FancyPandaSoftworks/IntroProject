@@ -5,7 +5,7 @@ using System;
 public class GameObjectGrid : GameObject
 {
     protected GameObject[,] grid;
-    protected static int cellWidth, cellHeight;
+    public static int cellWidth, cellHeight;
 
     /// <summary>
     /// Create a 2-dimensional grid
