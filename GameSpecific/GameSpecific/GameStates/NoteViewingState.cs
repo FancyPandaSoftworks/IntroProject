@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// The state the game is in while reading a note
+/// </summary>
 class NoteViewingState : Root
 {
     private string noteID;
@@ -23,14 +26,21 @@ class NoteViewingState : Root
         }
     }
 
+    /// <summary>
+    /// The ID of the note, which note it is that needs to be shown
+    /// </summary>
     public string NoteID
     {
         set { noteID = value; noteChanged = true; }
     }
 
+    /// <summary>
+    /// Reacting to input from the player
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
     public void HandleInput(InputHelper inputHelper)
     {
-        if (inputHelper.KeyPressed(Keys.Space))
+        if (inputHelper.AnyKeyPressed)
         {
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
@@ -41,8 +51,9 @@ class NoteViewingState : Root
     {
         if (noteChanged)
         {
-            try{
-            noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
+            try
+            {
+                noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
             }
             catch
             {
@@ -53,6 +64,11 @@ class NoteViewingState : Root
         }
     } 
 
+    /// <summary>
+    /// Draw the note on the screen with the Game in the Background
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         
@@ -73,6 +89,9 @@ class NoteViewingState : Root
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
     }
 
+    /// <summary>
+    /// Reset the Object to its state when it was build
+    /// </summary>
     public void Reset()
     {
         noteID = null;

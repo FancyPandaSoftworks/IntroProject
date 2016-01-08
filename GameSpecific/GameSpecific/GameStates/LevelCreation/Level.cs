@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// The standard for a level
+/// </summary>
  class Level : GameObjectList
 {
     protected Player player;
@@ -27,7 +30,10 @@ using Microsoft.Xna.Framework.Graphics;
         }
     }
     
-    //inputhelper for the player
+    /// <summary>
+    /// Handleinput for the objects in the level
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
     public override void HandleInput(InputHelper inputHelper)
     {
         if (inputHelper.KeyPressed(Keys.N))
@@ -51,7 +57,10 @@ using Microsoft.Xna.Framework.Graphics;
         Find("player").HandleInput(inputHelper);        
     }
 
-    //update the each GameObjects in GameObjectGrud
+    /// <summary>
+    /// Update each GameObject in the GameObjectGrid
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
         foreach (GameObject obj in gameObjects)
@@ -74,7 +83,11 @@ using Microsoft.Xna.Framework.Graphics;
             
     }
 
-    //draws the GameObjects of the list
+    /// <summary>
+    /// Draws the GameObjects of the list
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         foreach (GameObject gameObject in gameObjects)
@@ -112,7 +125,9 @@ using Microsoft.Xna.Framework.Graphics;
         }        
     }
 
-    //whether the level is completed or not
+    /// <summary>
+    /// Property to get and set whether the level is completed or not
+    /// </summary>
     public bool Completed
     {
         get { return completed; }

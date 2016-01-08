@@ -1,9 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
+/// <summary>
+/// A regular pre-created level
+/// </summary>
 class SpecialLevel : Level 
 {
     TileGrid tileGrid;
@@ -17,8 +20,12 @@ class SpecialLevel : Level
         gameObjects.Add(player);
     }
 
-    //Loads the level's grid of tiles
-    public TileGrid LoadLevel(string name)
+    /// <summary>
+    /// Loads the level's grid of tiles
+    /// </summary>
+    /// <param name="name">The name of the file from which to open the level</param>
+    /// <returns>Returns the TileGrid filled with the complete level</returns>
+    private TileGrid LoadLevel(string name)
     {
         List<string> text = new List<string>();
         StreamReader streamReader = new StreamReader(name);
@@ -54,8 +61,14 @@ class SpecialLevel : Level
         return tileGrid;
     }
 
-    //Load a single Tile from a certain position in the file
-    public Tile LoadTile(char chr, int x, int y)
+    /// <summary>
+    /// Load a single Tile from a certain position in the file
+    /// </summary>
+    /// <param name="chr">The character in the file, defines what tile it will be</param>
+    /// <param name="x">The x-coördinate</param>
+    /// <param name="y">The y-coördinate</param>
+    /// <returns>The Tile to Load</returns>
+    private Tile LoadTile(char chr, int x, int y)
     {
         if (chr == 'W')
             return new WallTile();

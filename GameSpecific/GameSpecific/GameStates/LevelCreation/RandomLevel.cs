@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-//A randomly generated level
+/// <summary>
+/// A randomly generated level
+/// </summary>
 class RandomLevel : Level
 {
     private Dictionary<Point, Tile> tileList; //List of tiles, accessible by a position
@@ -12,24 +14,10 @@ class RandomLevel : Level
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
    
-    //Gives the tileList
-    public Dictionary<Point, Tile> TileList
-    {
-        get { return tileList; }
-    }
-
-    //Gives the keyList
-    public List<Point> KeyList
-    {
-        get
-        {
-
-            return keyList;
-        }
-    }
-
-    //making the list of tiles into a grid
-    public TileGrid Grid //auteur: Wouter
+    /// <summary>
+    /// Property for getting the grid by making a grid out of the list of tiles
+    /// </summary>
+    public TileGrid Grid
     {
         get
         {
@@ -102,19 +90,23 @@ class RandomLevel : Level
         }
     }
 
-    //Creating/generating the level itself
+    /// <summary>
+    /// Creating/generating the level itself
+    /// </summary>
+    /// <param name="roomNumber">The number of the room</param>
+    /// <param name="tiles">The size the Mainpath should be, counted in tiles</param>
+    /// <param name="chased">Whether or not the monster is chasing the player</param>
     public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
     {
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();
         newTile = new EntryTile();
-        random = new Random();
+        random = GameEnvironment.Random;
         this.tiles = tiles;
 
         //Create the startpoint
-        //newTile.this.position = Point.Zero;
-        position = Point.Zero;  //newTile.this.position;
+        position = Point.Zero;
         tileList.Add(position, newTile);
         keyList.Add(position);
 
@@ -138,6 +130,9 @@ class RandomLevel : Level
         gameObjects.Add(player);
     }
 
+    /// <summary>
+    /// Create the Mainpath
+    /// </summary>
     private void CreateMainPath()
     {
         //Creating all MainPathTiles
@@ -191,7 +186,6 @@ class RandomLevel : Level
                     tileList.Add(this.position, newTile);
                     tiles = -2;
                 }
-
             }
             else
             {
@@ -216,23 +210,16 @@ class RandomLevel : Level
             }
 
             keyList.Add(this.position);
-/*            possiblePositions.RemoveAt(i);
-
-            foreach (Point element in possiblePositions)
-            {
-                tileList.Add(element, new WallTile(element));
-                keyList.Add(element);
-            }
-*/
-           // Console.WriteLine("X:" + this.position.X + "\nY:" + this.position.Y + "");
-
             tiles--;
         }
 
     }
 
-
-    //Creating SidePath From here
+    /// <summary>
+    /// Creating SidePath From here
+    /// </summary>
+    /// <param name="tiles">The size, counted in tiles</param>
+    /// <param name="chased">Whether or not the monster is chasing th player</param>
     private void CreateSidePath(int tiles, bool chased)
     {
         //Pick a place to place a SidePath
@@ -267,7 +254,6 @@ class RandomLevel : Level
                         nextTile = new PathTile();
                         tileList.Add(this.position, nextTile);
                         keyList.Add(this.position);
-                        // Console.WriteLine("Side: \nX: " + this.position.X + "\nY: " + this.position.Y);
                     }
                     else
                     {
@@ -293,8 +279,6 @@ class RandomLevel : Level
                         nextTile = new PathTile();
                         tileList.Add(this.position, nextTile);
                         keyList.Add(this.position);
-
-                        // Console.WriteLine("Side: \nX: " + this.position.X + "\nY: " + this.position.Y);
                     }
                     else
                     {
@@ -312,7 +296,11 @@ class RandomLevel : Level
         }
     }
 
-    //Checks whether the place is suitable for a SidePath
+    /// <summary>
+    /// Checks whether the place is suitable for a path tile
+    /// </summary>
+    /// <param name="anchorPosition">The point from which to create the path</param>
+    /// <returns>The Tile if it can be placed, null if it cannot</returns>
     private Tile CanCreateSidePath(Point anchorPosition)
     {
         List<Point> possibleEntrys = new List<Point>();
@@ -358,13 +346,21 @@ class RandomLevel : Level
         else return null;
     }
     
-    //Can a SidePathEntryTile be placed here
+    /// <summary>
+    /// Can a SidePathEntryTile be placed here
+    /// </summary>
+    /// <param name="currentPosition">The position to be checked</param>
+    /// <returns>True if it is a suitable position, false if this is not the case</returns>
     private bool CanPlaceSideEntry(Point currentPosition)
     {
         return (!tileList.ContainsKey(currentPosition) && GetPossiblePositions(currentPosition).Count > 0);
     }
 
-    //Checking all the empty tiles around the position
+    /// <summary>
+    /// Checking all the empty tiles around the position
+    /// </summary>
+    /// <param name="currentPosition">The point from which to count</param>
+    /// <returns>The list of the positions where the tiles can be placed around the given position</returns>
     private List<Point> GetPossiblePositions(Point currentPosition)
     {
         List<Point> possiblePositions = new List<Point>();
@@ -396,7 +392,11 @@ class RandomLevel : Level
 
     }
 
-    //Checks whether a MainPathTile can be placed here
+    /// <summary>
+    /// Checks whether a MainPathTile can be placed here
+    /// </summary>
+    /// <param name="currentPosition">The point to check</param>
+    /// <returns>Returns true if there can be a tile placed here, false if this is not the case</returns>
     private bool CanPlaceMainPathTile(Point currentPosition)
     {
         return (!tileList.ContainsKey(currentPosition) && GetPossiblePositions(currentPosition).Count == 3);

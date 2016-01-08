@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
+/// <summary>
+/// A 2D object
+/// </summary>
 public class Object2D : GameObject
 {
     protected Vector2 origin, position;
@@ -14,11 +17,14 @@ public class Object2D : GameObject
     public Object2D(string assetname, int sheetIndex = 0, string id = "")
     {
         if (assetname != "")
-            spriteSheet = new SpriteSheet(assetname, sheetIndex);
-                
+            spriteSheet = new SpriteSheet(assetname, sheetIndex);          
     }
 
-    //drawing the object2D
+    /// <summary>
+    /// Drawing the object
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (!visible || spriteSheet == null)
@@ -27,46 +33,60 @@ public class Object2D : GameObject
         spriteSheet.Draw(spriteBatch, Position, origin);      
     }
 
-    //return position on the screen
+    /// <summary>
+    /// Property for the position on the screen
+    /// </summary>
     public Vector2 Position
     {
         get { return position; }
         set { position = value; }
     }
 
-    //return spritesheet
+    /// <summary>
+    /// Property to get the spritesheet
+    /// </summary>
     public SpriteSheet SpriteSheet
     {
         get { return spriteSheet; }
     }
 
-    //return spriteSheet width
+    /// <summary>
+    /// Property to get the spriteSheet width
+    /// </summary>
     public int Width
     {
         get { return spriteSheet.Width; }
     }
 
-    //return spriteSheet height
+    /// <summary>
+    /// Property to get the spriteSheet height
+    /// </summary>
     public int Height
     {
         get { return spriteSheet.Height; }
     }
 
-    //make a mirror of the spritesheet
+    /// <summary>
+    /// Property to mirror the object or check wheter it is already mirrored
+    /// </summary>
     public bool Mirror
     {
         get { return spriteSheet.Mirror; }
         set { spriteSheet.Mirror = value; }
     }
 
-    //the middle of the spritesheet
+    /// <summary>
+    /// Property for the origin of the spritesheet, in this case the middle
+    /// </summary>
     public Vector2 Origin
     {
         get { return this.origin; }
         set { this.origin = value; }
     }
     
-    //return the boundingbox for collision
+    /// <summary>
+    /// Property to get the boundingbox for collision
+    /// </summary>
     public  Rectangle BoundingBox
     {
         get
@@ -77,7 +97,11 @@ public class Object2D : GameObject
         }
     }
 
-    //collision of object2D with pixels
+    /// <summary>
+    /// Collision of object2D with pixels
+    /// </summary>
+    /// <param name="obj2D">The object to check collision with</param>
+    /// <returns>True if it collides, false if it doesn't</returns>
     public bool CollidesWith(Object2D obj2D)
     {
             if (!this.Visible || !obj2D.Visible || !BoundingBox.Intersects(obj2D.BoundingBox))

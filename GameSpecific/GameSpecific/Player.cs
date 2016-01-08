@@ -14,14 +14,21 @@ public class Player : Camera
     int stamina;
     public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
 
+    /// <summary>
+    /// Constructing the player
+    /// </summary>
+    /// <param name="startPos">Where to start</param>
     public Player(Vector3 startPos) : base("player")
     {
         position = startPos;
         
     }
 
-    //HandleInput for the player
-    public override void HandleInput(InputHelper input)
+    /// <summary>
+    /// HandleInput for the player
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
+    public override void HandleInput(InputHelper inputHelper)
     {
 
         ShiftDown = false;
@@ -31,23 +38,26 @@ public class Player : Camera
         DDown = false;
         EDown = false;
 
-        if (input.IsKeyDown(Keys.LeftShift))
+        if (inputHelper.IsKeyDown(Keys.LeftShift))
             ShiftDown = true;
-        if (input.IsKeyDown(Keys.W))
+        if (inputHelper.IsKeyDown(Keys.W))
             WDown = true;
-        if (input.IsKeyDown(Keys.A))
+        if (inputHelper.IsKeyDown(Keys.A))
             ADown = true;
-        if (input.IsKeyDown(Keys.S))
+        if (inputHelper.IsKeyDown(Keys.S))
             SDown = true;
-        if (input.IsKeyDown(Keys.D))
+        if (inputHelper.IsKeyDown(Keys.D))
             DDown = true;
-        if (input.IsKeyDown(Keys.E))
+        if (inputHelper.IsKeyDown(Keys.E))
             EDown = true;
 
         base.HandleInput(inputHelper);
     }
 
-    //updating the player
+    /// <summary>
+    /// Updating the player
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
         if (ShiftDown && stamina > 0 && exhausted == false &&
@@ -78,9 +88,9 @@ public class Player : Camera
             position.Z -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
             position.X += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
-        /* if (input.IsKeyDown(Keys.Space))
+        /* if (inputHelper.IsKeyDown(Keys.Space))
             position.Y += 40f;
-        if (input.IsKeyDown(Keys.LeftShift))
+        if (inputHelper.IsKeyDown(Keys.LeftShift))
             position.Y -= 40f; */
 
         base.Update(gameTime);

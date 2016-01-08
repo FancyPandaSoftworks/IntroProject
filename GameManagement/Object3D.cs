@@ -8,13 +8,20 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-
+/// <summary>
+/// A 3D object
+/// </summary>
 public class Object3D : GameObject
 {
     public static float aspectRatio, modelRotation;
     Model model;
     public static Camera playercamera;
 
+    /// <summary>
+    /// Create the object
+    /// </summary>
+    /// <param name="modelName">What model this object represents</param>
+    /// <param name="id">The id used to find this object</param>
     public Object3D(string modelName = "", string id = "") : base(id)
     {
         modelRotation = 0.0f;
@@ -23,12 +30,19 @@ public class Object3D : GameObject
        
     }
 
+    /// <summary>
+    /// Property for the Aspectratio
+    /// </summary>
     public float AspectRatio
     {
         get { return aspectRatio; }
     }
 
-    //Draw the model in the world
+    /// <summary>
+    /// Draw the model in the world
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         Matrix[] transforms = new Matrix[model.Bones.Count];
@@ -57,19 +71,26 @@ public class Object3D : GameObject
 
     }
 
-    //return the model
+    /// <summary>
+    /// Property to get the model
+    /// </summary>
     public Model Model
     {
         get { return model; }
     }
 
-    //return a 3D boundingbox
+    /// <summary>
+    /// Property to get a 3D boundingbox
+    /// </summary>
     public virtual BoundingBox BoundingBox
     {
         get { return new BoundingBox(new Vector3((int)GlobalPosition.X, (int)GlobalPosition.Y, (int)GlobalPosition.Z), new Vector3(0, 0, 0)); }
     }
 
-    //get the player into the object3D class
+    /// <summary>
+    /// Get the data of the player and set it in this object
+    /// </summary>
+    /// <param name="player">The player which you want to set</param>
     public void DrawCamera(Camera player)
     {
         playercamera = player;

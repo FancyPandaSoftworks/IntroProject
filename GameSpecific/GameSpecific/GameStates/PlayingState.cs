@@ -5,13 +5,18 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-
+/// <summary>
+/// The state the game is in while playing
+/// </summary>
 class PlayingState : Root
 {
     Level level;
     protected int roomCounter;
     
-    //Creates the random level and makes the Level the parent of the GameObjects in the level 
+    /// <summary>
+    /// Creates the random level and makes the Level the parent of the GameObjects in the level 
+    /// </summary>
+    /// <param name="roomCounter">The Roomcounter from where to start</param>
     public PlayingState(int roomCounter = 1)
     {
         this.roomCounter = roomCounter;
@@ -23,7 +28,10 @@ class PlayingState : Root
         roomCounter++;
     }
 
-    //HandleInput for level
+    /// <summary>
+    /// HandleInput for the level
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
     public void HandleInput(InputHelper inputHelper)
     {
         if (inputHelper.IsKeyDown(Keys.Escape))
@@ -34,7 +42,10 @@ class PlayingState : Root
         level.HandleInput(inputHelper);
     }
 
-    //updating the level
+    /// <summary>
+    /// Updating the level
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public void Update(GameTime gameTime)
     {
 
@@ -66,23 +77,26 @@ class PlayingState : Root
         level.Update(gameTime);
     }
 
-    //Draws the level
+    /// <summary>
+    /// Draws the level
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         level.Draw(gameTime, spriteBatch);
     }
 
-    //Saves the level
+    /// <summary>
+    /// Saves the level
+    /// </summary>
+    /// <param name="room">What room you are in, representing the roomnumber</param>
+    /// <param name="path">The path where to save the file</param>
     public void Save(int room, string path)
     {
         StreamWriter fileWriter = new StreamWriter(path, false);
         string line = room.ToString();
         fileWriter.WriteLine(line);
         fileWriter.Close();
-    }
-
-    public void Reset()
-    {
-
     }
 }
