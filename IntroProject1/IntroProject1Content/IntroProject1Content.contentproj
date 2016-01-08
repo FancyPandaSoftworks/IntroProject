@@ -40,6 +40,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="monster.fbx">
+      <Name>monster</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>

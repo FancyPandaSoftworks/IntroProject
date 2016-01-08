@@ -12,6 +12,7 @@ class SpecialLevel : Level
     {
         //add items to the level
         tileGrid = LoadLevel(name);
+        tileGrid.Parent = this;
         gameObjects.Add(tileGrid);
         Player player = new Player(Vector3.Zero);
         gameObjects.Add(player);

@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="GameStates\LevelCreation\RandomLevel.cs" />
     <Compile Include="MainGame.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="NoteObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="GameStates\PlayingState.cs" />

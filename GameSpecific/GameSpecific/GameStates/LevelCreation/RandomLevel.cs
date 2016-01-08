@@ -97,6 +97,8 @@ class RandomLevel : Level
                     }
                 }
             }
+            grid.Parent = this;
+
             //Step 4: returning the grid
             return grid;
         }
@@ -124,9 +126,11 @@ class RandomLevel : Level
         for (int i = random.Next(1, tiles / 4); i > 0; i--)
             CreateSidePath(random.Next(3, tiles / 2), chased);
 
+        //making the tile grid
         TileGrid tileGrid = Grid;
         gameObjects.Add(tileGrid);
 
+        //making the player
         player = new Player(Vector3.Zero);
             gameObjects.Add(player);
             player.Parent = this;
@@ -139,6 +143,11 @@ class RandomLevel : Level
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
         }
 
+        //making the monster
+        Monster monster = new Monster(Grid.Objects, player.Position);
+        monster.Parent = this;
+        monster.LoadContent();
+        gameObjects.Add(monster);
     }
 
     private void CreateMainPath()
@@ -203,12 +212,14 @@ class RandomLevel : Level
                 {
                     this.position = possiblePositions[i];
                     newTile = new ExitTile();
+                    newTile.Parent = this;
                     tileList.Add(this.position, newTile);
                 }
                 catch (ArgumentOutOfRangeException e)
                 {
                     //Couldn't place exit, so place it at the last placed tile
                     newTile = new ExitTile();
+                    newTile.Parent = this;
                     this.position = keyList[keyList.Count - 1];
                     tileList[this.position] = newTile;
                      Console.WriteLine(e.StackTrace);
