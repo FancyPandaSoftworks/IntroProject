@@ -1,6 +1,9 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// A gameObject consisting of text
+/// </summary>
 public class TextGameObject : GameObject
 {
     SpriteFont spriteFont;
@@ -15,7 +18,11 @@ public class TextGameObject : GameObject
         text = " ";
     }
 
-    //draws the text
+    /// <summary>
+    /// Draws the text
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {          
         spriteBatch.Begin();
@@ -25,20 +32,26 @@ public class TextGameObject : GameObject
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
     }
 
-    //returns and gives the text a color
+    /// <summary>
+    /// Property to get and set the text color
+    /// </summary>
     public Color Color
     {
         get { return color; }
         set { color = value; }
     }
 
-    //returns the size of the text
+    /// <summary>
+    /// Property to get the size of the Text
+    /// </summary>
     public Vector2 Size
     {
         get { return spriteFont.MeasureString(text); }
     }
 
-    //returns the position and gives the text a position
+    /// <summary>
+    /// Property to get and set the position of the text
+    /// </summary>
     public Vector2 Position
     {
         get { return position; }

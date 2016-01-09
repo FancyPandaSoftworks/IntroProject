@@ -41,7 +41,6 @@ D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\noteIDList.txt
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortile.xnb
-D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cube.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture.xnb
 D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortexture_0.xnb
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Floortile.xnb
@@ -75,3 +74,9 @@ C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\D
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cubes\WallCubeTestTexture_0.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Cupboard.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wood Texture 1_0.xnb
+D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monster.xnb
+D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\untitled.xnb
+D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture_0.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cubes\Wall Model 01.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cubes\Wall Texture 01.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Wall Cubes\Wall Texture 01_0.xnb

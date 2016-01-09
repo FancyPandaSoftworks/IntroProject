@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Eigenaar\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Floortile.fbx</SourceFilename>
+      <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Floortile.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -32,7 +32,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material.001</Name>
       <Identity>
-        <SourceFilename>C:\Users\Eigenaar\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Floortile.fbx</SourceFilename>
+        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Floortile.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -50,6 +50,6 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\Floortexture.JPG</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\IntroProject1\IntroProject1Content\Floortexture.JPG</ExternalReference>
   </ExternalReferences>
 </XnaContent>

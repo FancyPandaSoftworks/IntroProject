@@ -59,6 +59,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Wall Cubes\Wall Model 01.fbx">
+      <Name>Wall Model 01</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Axis.fbx">
@@ -80,6 +85,13 @@
   <ItemGroup>
     <Compile Include="Wall Cubes\WallCubeTestTexture.jpg">
       <Name>WallCubeTestTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Wall Cubes\Wall Texture 01.jpg">
+      <Name>Wall Texture 01</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

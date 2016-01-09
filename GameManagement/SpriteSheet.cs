@@ -27,11 +27,14 @@ public class SpriteSheet
         this.sheetColumns = int.Parse(colrow[0]);
         if (colrow.Length == 2)
             this.sheetRows = int.Parse(colrow[1]);
-
-
-
     }
-    //Draws the spritesheet
+
+    /// <summary>
+    /// Draw the sprite
+    /// </summary>
+    /// <param name="spriteBatch">The SpriteBatch</param>
+    /// <param name="position">The position to draw the sprite</param>
+    /// <param name="origin">The origin within the sprite</param>
     public void Draw(SpriteBatch spriteBatch, Vector2 position, Vector2 origin)
     {
         int columnIndex = sheetIndex % sheetColumns;
@@ -46,7 +49,12 @@ public class SpriteSheet
         spriteBatch.Draw(sprite, position, spritePart, Color.White, 0.0f, origin, 1.0f, spriteEffects, 0.0f);
     }
 
-    //Get the color for pixels
+    /// <summary>
+    /// Get the color for pixels
+    /// </summary>
+    /// <param name="x">The x-coördinate</param>
+    /// <param name="y">The y-coördinate</param>
+    /// <returns>Returns the color of the defined pixel</returns>
     public Color GetPixelColor(int x, int y)
     {
         int column_index = sheetIndex % sheetColumns;
@@ -57,39 +65,51 @@ public class SpriteSheet
         return retrievedColor[0];
     }
 
-    //returns sprite
+    /// <summary>
+    /// Property to get the sprite
+    /// </summary>
     public Texture2D Sprite
     {
         get { return sprite; }
 
     }
 
-    //returns the center of the spritesheet
+    /// <summary>
+    /// Property to get the center of the spritesheet
+    /// </summary>
     public Vector2 Center
     {
         get { return new Vector2(Width, Height) / 2; }
     }
 
-    //return the width of the spritesheet
+    /// <summary>
+    /// Property to get the center of the spritesheet
+    /// </summary>
     public int Width
     {
         get { return sprite.Width / sheetColumns; }
     }
 
-    //return the height of the spritesheet
+    /// <summary>
+    /// Property to get the height of the spritesheet
+    /// </summary>
     public int Height
     {
         get { return sprite.Height / sheetRows; }
     }
 
-    //return and make the spritesheet a mirror
+    /// <summary>
+    /// Property to get the mirror status or mirror the sprite
+    /// </summary>
     public bool Mirror
     {
         get { return mirror; }
         set { mirror = value; }
     }
 
-    //returns sheetindex
+    /// <summary>
+    /// Property for the sheetindex
+    /// </summary>
     public int SheetIndex
     {
         get { return this.sheetIndex; }
@@ -101,7 +121,9 @@ public class SpriteSheet
 
     }
 
-    //the total of the elements in the spritesheet
+    /// <summary>
+    /// Property to get the total of the elements in the spritesheet
+    /// </summary>
     public int NumberSheetElements
     {
         get { return this.sheetColumns * this.sheetRows; }

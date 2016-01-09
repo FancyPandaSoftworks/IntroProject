@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Eigenaar\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Wall Cube.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Wall Cubes\Wall Model 01.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -20,7 +20,7 @@
               <PositionIndices>0 1 2 3 4 7 6 5 0 4 5 1 1 5 6 2 2 6 7 3 4 0 3 7</PositionIndices>
               <Channels>
                 <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 -1 0 0 -1 0 0 -1 0 0 -1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07</VertexChannel>
-                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.9994008 5.364418E-05 0.0005995333 5.352497E-05 0.0005993545 0.998855 0.9994008 0.9988547 0.996796966 0.00320363045 -0.00200459361 0.00320327282 -0.00200489163 1.00200438 0.99679625 1.00200486 0.9999466 0.9994006 0.999946237 0.0005993247 0.001145035 0.0005993247 0.00114539266 0.9994005 0.9999465 0.999946356 0.9999461 0.00114548206 0.00114506483 0.00114500523 0.00114506483 0.999946356 5.37931919E-05 5.352497E-05 5.37931919E-05 0.998854935 0.998855 0.9988549 0.998855 5.352497E-05 0.9994008 0.9994006 0.9994008 0.0005993247 0.000599712133 0.0005993247 0.0005993545 0.9994004</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.499994934 0.0005901456 0.000594293466 0.000590086 0.000594233861 0.499990821 0.499994934 0.4999907 0.999408841 0.000585615635 0.5000081 0.0005853772 0.5000079 0.499985933 0.999408543 0.4999861 0.499922633 0.999436855 0.499922454 0.50003624 0.000521882437 0.50003624 0.000522061251 0.9994368 0.499960721 0.9994724 0.4999606 0.5000719 0.0005600486 0.500071764 0.0005600486 0.9994724 0.500012636 0.9993978 0.500012636 0.499997139 0.0006120801 0.4999972 0.0006120801 0.9993978 0.000596732832 0.500004649 0.000596732832 0.999405265 0.4999972 0.999405265 0.499997377 0.500004768</VertexChannel>
               </Channels>
             </Vertices>
           </Batch>
@@ -32,7 +32,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>C:\Users\Eigenaar\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Wall Cube.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Wall Cubes\Wall Model 01.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -42,6 +42,17 @@
         <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
         <Data Key="SpecularPower" Type="float">9.607843</Data>
       </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <OpaqueData>
+            <Data Key="TextureCoordinate">TextureCoordinate0</Data>
+          </OpaqueData>
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
     </Resource>
   </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\..\IntroProject1\IntroProject1Content\Wall Cubes\Wall Texture 01.jpg</ExternalReference>
+  </ExternalReferences>
 </XnaContent>

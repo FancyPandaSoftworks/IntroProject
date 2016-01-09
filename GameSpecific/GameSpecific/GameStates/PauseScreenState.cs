@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// The state the game is in while paused
+/// </summary>
 class PauseScreenState : GameState
 {
     protected Button resumeButton, exitButton;
@@ -27,15 +30,20 @@ class PauseScreenState : GameState
         gameObjects.Add(exitButton);
     }
 
+    /// <summary>
+    /// React to the input
+    /// </summary>
+    /// <param name="inputHelper">The inputhelper to react to input</param>
     public override void HandleInput(InputHelper inputHelper)
     {
         base.HandleInput(inputHelper);
         inputHelper.Update();
 
-        //Check if the resumeButton is being pressed to go back to the game
+        //Check if the exitButton is being pressed to go back to the title screen
         if (exitButton.ButtonIsPressed)
             GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
-        
+
+        //Check if the resumeButton is being pressed to go back to the game
         if (resumeButton.ButtonIsPressed)
         {
             game.IsMouseVisible = false;
@@ -45,6 +53,11 @@ class PauseScreenState : GameState
 
     }
 
+    /// <summary>
+    /// Draw the menu with the game in the background
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         GameEnvironment.GameStateManager.GetGameState("playingState").Draw(gameTime, spriteBatch);

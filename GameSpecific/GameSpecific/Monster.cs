@@ -372,12 +372,7 @@ class Monster : Object3D
         }
     }
 
-    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-    {
-        Position = new Vector3(position.X, 200, position.Z);
-        base.Draw(gameTime, spriteBatch);
-    }
-    /*
+   
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
        
@@ -390,7 +385,6 @@ class Monster : Object3D
         model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
                     aspectRatio, 1.0f, 500.0f));
     }
-     */
 }
 
 

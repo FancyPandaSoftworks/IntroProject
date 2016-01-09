@@ -14,25 +14,39 @@ public class GameStateManager : Root
     Dictionary<string, Root> gameState;
     Root currentGameState;
 
+    /// <summary>
+    /// Manages the gameStates and which one is active
+    /// </summary>
     public GameStateManager()
     {
         gameState = new Dictionary<string, Root>();
         currentGameState = null;
     }
     
-    //add a gamestate
+    /// <summary>
+    /// Add a gamestate to the list of game states
+    /// </summary>
+    /// <param name="name">Specify the name to call the state</param>
+    /// <param name="state">Give a reference to the state itself</param>
     public void AddGameState(string name, Root state)
     {
         gameState[name] = state;
     }
 
-    //return gamestate
+    /// <summary>
+    /// Return a gamestate
+    /// </summary>
+    /// <param name="name">The name of the game state</param>
+    /// <returns>Returns the reference to the game state object that coresponds with the name</returns>
     public Root GetGameState(string name)
     {
         return gameState[name];
     }
 
-    //able to switch between the gamestate
+    /// <summary>
+    /// Switch to a gamestate
+    /// </summary>
+    /// <param name="name">The name of the game state</param>
     public void SwitchTo(string name)
     {
         if (gameState.ContainsKey(name))
@@ -41,14 +55,20 @@ public class GameStateManager : Root
             throw new KeyNotFoundException("Can't find gamestate" + name);
     }
 
-    //inputhelper for the gamestate
-    public void HandleInput(InputHelper inputhelper)
+    /// <summary>
+    /// Handle the input for the game state
+    /// </summary>
+    /// <param name="inputhelper">The inputhelper to react to input</param>
+    public void HandleInput(InputHelper inputHelper)
     {
         if (currentGameState != null)
-            currentGameState.HandleInput(inputhelper);
+            currentGameState.HandleInput(inputHelper);
     }
 
-    //updating the gamestate
+    /// <summary>
+    /// Updating the current gamestate
+    /// </summary>
+    /// <param name="gametime">The object used for reacting to timechanges</param>
     public void Update(GameTime gametime)
     {
         if (currentGameState != null)
@@ -56,14 +76,20 @@ public class GameStateManager : Root
 
     }
 
-    //drawing the gamestate
+    /// <summary>
+    /// Drawing the current gamestate
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (currentGameState != null)
             currentGameState.Draw(gameTime, spriteBatch);
     }
 
-    //reset the gamestate
+    /// <summary>
+    /// Reset the current gamestate
+    /// </summary>
     public void Reset()
     {
         if (currentGameState != null)

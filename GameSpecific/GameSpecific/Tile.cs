@@ -12,16 +12,30 @@ enum TileType
     Empty
 }
 
+/// <summary>
+/// The standard things for a tile
+/// </summary>
 abstract class Tile : Object3D
 {
     protected TileType type;
 
+    /// <summary>
+    /// Constructing the tile
+    /// </summary>
+    /// <param name="modelName">What model to use for the drawing of the tile</param>
+    /// <param name="id">The id used to find this object</param>
+    /// <param name="type">The type of tile</param>
     public Tile(string modelName, string id, TileType type = TileType.Empty)
         : base(modelName, id)
     {
         this.type = type;
     }
 
+    /// <summary>
+    /// Draw the tile
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (type == TileType.Empty)
@@ -30,14 +44,22 @@ abstract class Tile : Object3D
     }
 }
 
+/// <summary>
+/// A simple Tile
+/// </summary>
 class PathTile : Tile
 {
-    public PathTile(string modelName = "Wall Cubes\\Wall Cube 01", string id = "PathTile")
+    public PathTile(string modelName = "Wall Cubes\\Wall Model 01", string id = "PathTile")
         : base(modelName, id, TileType.Path)
     {
 
     }
 
+    /// <summary>
+    /// Draw the tile
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         int layers = 1;
@@ -54,13 +76,21 @@ class PathTile : Tile
     }
 }
 
+/// <summary>
+/// A piece of the wall
+/// </summary>
 class WallTile : Tile
 {
     public WallTile()
-        : base("Wall Cubes\\Wall Cube 01", "WallTile", TileType.Wall)
+        : base("Wall Cubes\\Wall Model 01", "WallTile", TileType.Wall)
     {
     }
-
+    
+    /// <summary>
+    /// Drawing the tile
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         int layers = 1;
@@ -76,27 +106,37 @@ class WallTile : Tile
     }
 }
 
+/// <summary>
+/// The Entry
+/// </summary>
 class EntryTile : PathTile
 {
     public EntryTile()
-        : base("Wall Cubes\\Wall Cube 01", "EntryTile")
+        : base("Wall Cubes\\Wall Model 01", "EntryTile")
     {
 
     }
 }
 
+/// <summary>
+/// The Exit
+/// </summary>
 class ExitTile : PathTile
 {
     TextGameObject text;
 
     public ExitTile()
-        : base("Wall Cubes\\Wall Cube 01", "ExitTile")
+        : base("Wall Cubes\\Wall Model 01", "ExitTile")
     {
         text = new TextGameObject("text");
         text.Position = Vector2.Zero;
         text.text = "Press E to proceed";
     }
 
+    /// <summary>
+    /// Updating the tile
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
         //Check if the player is in the ExitTile and if so, if they are pressing E to procceed
@@ -119,6 +159,11 @@ class ExitTile : PathTile
         }
     }
 
+    /// <summary>
+    /// Drawing the tile
+    /// </summary>
+    /// <param name="gameTime">The object used for reacting to timechanges</param>
+    /// <param name="spriteBatch">The SpriteBatch</param>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         base.Draw(gameTime, spriteBatch);
@@ -142,11 +187,12 @@ class ExitTile : PathTile
     }
 }
 
+/// <summary>
+/// The Entry to a sidePath
+/// </summary>
 class SidePathEntryTile : PathTile
 {
     public SidePathEntryTile()
         : base()
-    {
-
-    }
+    { }
 }
