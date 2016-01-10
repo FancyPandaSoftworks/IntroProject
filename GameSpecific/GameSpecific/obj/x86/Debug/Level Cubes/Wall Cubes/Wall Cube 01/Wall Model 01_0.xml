@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -43,7 +43,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material.001</Name>
       <Identity>
-        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -57,7 +57,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
