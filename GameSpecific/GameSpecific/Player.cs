@@ -29,7 +29,7 @@ public class Player : Camera
 
     public void LoadContent()
     {
-        Level level = parent as RandomLevel;
+        Level level = parent as Level;
         grid = level.Find("TileGrid") as TileGrid;
     }
 
@@ -117,7 +117,6 @@ public class Player : Camera
 
         if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
-
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
 
