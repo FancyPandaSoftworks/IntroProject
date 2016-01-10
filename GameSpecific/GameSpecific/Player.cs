@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 public class Player : Camera
 {
-    float velocity;
+    new float velocity;
     int stamina;
     public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
     TileGrid grid;
@@ -31,6 +31,7 @@ public class Player : Camera
     {
         Level level = parent as Level;
         grid = level.Find("TileGrid") as TileGrid;
+        stamina = 2000;
     }
 
 
@@ -69,15 +70,20 @@ public class Player : Camera
     /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
-        velocity = 5f;
+        velocity = 250f * (float)gameTime.ElapsedGameTime.TotalSeconds;
         if (ShiftDown && stamina > 0 && exhausted == false &&
             (WDown || SDown || DDown || ADown))
         {
-            velocity = 10f;
-            stamina = stamina - 20;
+            velocity = 500f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (stamina < 20)
                 exhausted = true;
         }
+        if (stamina < 2000 && !ShiftDown)
+            stamina += (int)(0.3f * gameTime.ElapsedGameTime.TotalMilliseconds);
+        if (stamina > 20)
+            exhausted = false;
+
         if (WDown && !(grid.Objects[(int)((position.X + 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X += velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
