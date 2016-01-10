@@ -117,11 +117,7 @@ using Microsoft.Xna.Framework.Graphics;
                         }
                     }
             }
-            else if(gameObject is AI)
-            {
-                    gameObject.Draw(gameTime, spriteBatch);
-                    
-            }
+          
         }        
     }
 

@@ -13,6 +13,7 @@ class RandomLevel : Level
     private new Point position; 
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
+    private string pathID, wallID;
    
     /// <summary>
     /// Property for getting the grid by making a grid out of the list of tiles
@@ -64,22 +65,22 @@ class RandomLevel : Level
                         Tile tile = (Tile)grid.Objects[i, j];
                         if (!(grid.Objects[i - 1, j] is Tile))
                         {
-                            grid.Objects[i - 1, j] = new WallTile();
+                            grid.Objects[i - 1, j] = new WallTile(wallID);
                             grid.Objects[i - 1, j].Position = new Vector3((i - 1) * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, j * GameObjectGrid.CellHeight);
                         }
                         if (!(grid.Objects[i + 1, j] is Tile))
                         {
-                            grid.Objects[i + 1, j] = new WallTile();
+                            grid.Objects[i + 1, j] = new WallTile(wallID);
                             grid.Objects[i + 1, j].Position = new Vector3((i + 1) * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, j * GameObjectGrid.CellHeight);
                         }
                         if (!(grid.Objects[i, j - 1] is Tile))
                         {
-                            grid.Objects[i, j - 1] = new WallTile();
+                            grid.Objects[i, j - 1] = new WallTile(wallID);
                             grid.Objects[i, j - 1].Position = new Vector3(i * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, (j - 1) * GameObjectGrid.CellHeight);
                         }
                         if (!(grid.Objects[i, j + 1] is Tile))
                         {
-                            grid.Objects[i, j + 1] = new WallTile();
+                            grid.Objects[i, j + 1] = new WallTile(wallID);
                             grid.Objects[i, j + 1].Position = new Vector3(i * GameObjectGrid.CellWidth, GameObjectGrid.CellHeight, (j + 1) * GameObjectGrid.CellHeight);
                         }
                     }
@@ -103,8 +104,22 @@ class RandomLevel : Level
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();
-        newTile = new EntryTile();
+        
         random = GameEnvironment.Random;
+        
+        //Select the tiles to use
+        int pathType = random.Next(3);
+        if (pathType < 9)
+            pathID = "0" + (pathType + 1);
+        else
+            pathID = "" + (pathType + 1);
+
+        int wallType = random.Next(3);
+        if (wallType < 9)
+            wallID = "0" + (wallType + 1);
+        else
+            pathID = "" + (wallType + 1);
+        newTile = new EntryTile(pathID);
         this.tiles = tiles;
 
         //Create the startpoint
@@ -136,7 +151,7 @@ class RandomLevel : Level
         }
 
         //making the monster
-        Monster monster = new Monster(Grid.Objects, player.Position);
+        Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
         monster.Parent = this;
         monster.LoadContent();
         gameObjects.Add(monster);
@@ -185,7 +200,7 @@ class RandomLevel : Level
                 try
                 {
                     this.position = possiblePositions[i];
-                    newTile = new PathTile();
+                    newTile = new PathTile(pathID);
                     tileList.Add(this.position, newTile);
                 }
                 catch
@@ -194,7 +209,7 @@ class RandomLevel : Level
                     Console.WriteLine("MainPathError");
                     possiblePositions = GetPossiblePositions(this.position);
                     this.position = possiblePositions[i];
-                    newTile = new ExitTile();
+                    newTile = new ExitTile(pathID);
                     tileList.Add(this.position, newTile);
                     tiles = -2;
                 }
@@ -205,14 +220,14 @@ class RandomLevel : Level
                 try
                 {
                     this.position = possiblePositions[i];
-                    newTile = new ExitTile();
+                    newTile = new ExitTile(pathID);
                     newTile.Parent = this;
                     tileList.Add(this.position, newTile);
                 }
                 catch (ArgumentOutOfRangeException e)
                 {
                     //Couldn't place exit, so place it at the last placed tile
-                    newTile = new ExitTile();
+                    newTile = new ExitTile(pathID);
                     newTile.Parent = this;
                     this.position = keyList[keyList.Count - 1];
                     tileList[this.position] = newTile;
@@ -265,7 +280,7 @@ class RandomLevel : Level
                     {
                         //Choose where to place the Tile
                         this.position = possiblePositions[random.Next(0, possiblePositions.Count - 1)];
-                        nextTile = new PathTile();
+                        nextTile = new PathTile(pathID);
                         tileList.Add(this.position, nextTile);
                         keyList.Add(this.position);
                     }
@@ -290,7 +305,7 @@ class RandomLevel : Level
                         //Choose where to place the Tile
                         this.position.X += x;
                         this.position.Y += y;
-                        nextTile = new PathTile();
+                        nextTile = new PathTile(pathID);
                         tileList.Add(this.position, nextTile);
                         keyList.Add(this.position);
                     }
@@ -348,7 +363,7 @@ class RandomLevel : Level
             {
                 //If it is suitable
                 this.position = (possibleEntrys[random.Next(0, possibleEntrys.Count)]);
-                return (new SidePathEntryTile());
+                return (new PathTile(pathID));
             }
             catch (Exception e)
             {

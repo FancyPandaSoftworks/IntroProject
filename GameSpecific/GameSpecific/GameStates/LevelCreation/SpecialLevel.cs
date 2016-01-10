@@ -72,17 +72,17 @@ class SpecialLevel : Level
     private Tile LoadTile(char chr, int x, int y)
     {
         if (chr == 'W')
-            return new WallTile();
+            return new WallTile("01");
         else if (chr == 'P')
-            return new PathTile();
+            return new PathTile("01");
         else if (chr == 'N')
         {
             //place the player in the entry tile
             player.Position = new Vector3(x * 200, 200f, y * 200);
-            return new EntryTile();
+            return new EntryTile("01");
         }
         else if (chr == 'X')
-            return new ExitTile();
+            return new ExitTile("01");
         else
             return null;
     }

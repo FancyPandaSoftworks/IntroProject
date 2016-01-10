@@ -49,8 +49,8 @@ abstract class Tile : Object3D
 /// </summary>
 class PathTile : Tile
 {
-    public PathTile(string modelName = "Wall Cubes\\Wall Model 01", string id = "PathTile")
-        : base(modelName, id, TileType.Path)
+    public PathTile(string pathID, string id = "PathTile")
+        : base("Level Cubes\\Path Cubes\\Path Cube " + pathID + "\\Path Model " + pathID, id, TileType.Path)
     {
 
     }
@@ -81,8 +81,8 @@ class PathTile : Tile
 /// </summary>
 class WallTile : Tile
 {
-    public WallTile()
-        : base("Wall Cubes\\Wall Model 01", "WallTile", TileType.Wall)
+    public WallTile(string wallID, string id = "WallTile")
+        : base("Level Cubes\\Wall Cubes\\Wall Cube " + wallID + "\\Wall Model " + wallID, "WallTile", TileType.Wall)
     {
     }
     
@@ -111,8 +111,8 @@ class WallTile : Tile
 /// </summary>
 class EntryTile : PathTile
 {
-    public EntryTile()
-        : base("Wall Cubes\\Wall Model 01", "EntryTile")
+    public EntryTile(string pathID)
+        : base(pathID, "EntryTile")
     {
 
     }
@@ -125,8 +125,8 @@ class ExitTile : PathTile
 {
     TextGameObject text;
 
-    public ExitTile()
-        : base("Wall Cubes\\Wall Model 01", "ExitTile")
+    public ExitTile(string pathID)
+        : base(pathID, "ExitTile")
     {
         text = new TextGameObject("text");
         text.Position = Vector2.Zero;
@@ -185,14 +185,4 @@ class ExitTile : PathTile
         }
         
     }
-}
-
-/// <summary>
-/// The Entry to a sidePath
-/// </summary>
-class SidePathEntryTile : PathTile
-{
-    public SidePathEntryTile()
-        : base()
-    { }
 }
