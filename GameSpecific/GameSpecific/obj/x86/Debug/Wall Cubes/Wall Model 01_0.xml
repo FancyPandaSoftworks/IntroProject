@@ -3,14 +3,14 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Monster.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Wall Cubes\Wall Model 01.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
     <Children>
       <Child Type="Graphics:MeshContent">
         <Name>Cube</Name>
-        <Transform>35 0 0 0 0 -5.702224E-06 -35 0 0 63 -1.02640024E-05 0 0 0 0 1</Transform>
+        <Transform>100 0 0 0 0 -1.62920678E-05 -100 0 0 100 -1.62920678E-05 0 0 0 0 1</Transform>
         <Positions>1 0.99999994 -1 1 -1 -1 -1.00000012 -0.9999998 -1 -0.999999642 1.00000036 -1 1.00000048 0.999999464 1 0.999999344 -1.0000006 1 -1.00000036 -0.999999642 1 -0.99999994 1 1</Positions>
         <Geometry>
           <Batch>
@@ -20,7 +20,7 @@
               <PositionIndices>0 1 2 3 4 7 6 5 0 4 5 1 1 5 6 2 2 6 7 3 4 0 3 7</PositionIndices>
               <Channels>
                 <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 -1 0 0 -1 0 0 -1 0 0 -1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07</VertexChannel>
-                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.666467 0.6668664 0.333533257 0.6668664 0.3335332 0.999800265 0.666467 0.999800146 0.3331337 0.666866541 0.0001998496 0.6668664 0.0001997603 0.999800146 0.3331335 0.999800265 0.8419399 0.9994006 0.8419396 0.0005993247 0.152852148 0.0005993247 0.152852386 0.9994005 0.839610338 1.00073385 0.8396101 0.00193285942 0.151244283 0.00193238258 0.151244283 1.00073385 0.152819246 1.00003612 0.152819246 0.00123476982 0.84648335 0.00123482943 0.84648335 1.00003612 0.15254876 0.0005992651 0.15254876 0.999400556 0.8474511 0.999400556 0.8474513 0.0005995035</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.499994934 0.0005901456 0.000594293466 0.000590086 0.000594233861 0.499990821 0.499994934 0.4999907 0.999408841 0.000585615635 0.5000081 0.0005853772 0.5000079 0.499985933 0.999408543 0.4999861 0.499922633 0.999436855 0.499922454 0.50003624 0.000521882437 0.50003624 0.000522061251 0.9994368 0.499960721 0.9994724 0.4999606 0.5000719 0.0005600486 0.500071764 0.0005600486 0.9994724 0.500012636 0.9993978 0.500012636 0.499997139 0.0006120801 0.4999972 0.0006120801 0.9993978 0.000596732832 0.500004649 0.000596732832 0.999405265 0.4999972 0.999405265 0.499997377 0.500004768</VertexChannel>
               </Channels>
             </Vertices>
           </Batch>
@@ -32,7 +32,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Monster.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Wall Cubes\Wall Model 01.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -42,6 +42,17 @@
         <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
         <Data Key="SpecularPower" Type="float">9.607843</Data>
       </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <OpaqueData>
+            <Data Key="TextureCoordinate">TextureCoordinate0</Data>
+          </OpaqueData>
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
     </Resource>
   </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\..\IntroProject1\IntroProject1Content\Wall Cubes\Wall Texture 01.jpg</ExternalReference>
+  </ExternalReferences>
 </XnaContent>

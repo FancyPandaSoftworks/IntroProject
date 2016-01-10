@@ -69,56 +69,69 @@ public class Player : Camera
     /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
+        velocity = 5f;
         if (ShiftDown && stamina > 0 && exhausted == false &&
             (WDown || SDown || DDown || ADown))
         {
-            velocity = 5f;
+            velocity = 10f;
             stamina = stamina - 20;
             if (stamina < 20)
                 exhausted = true;
         }
-        if (WDown && !(grid.Objects[(int)((position.X + 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
+        if (WDown && !(grid.Objects[(int)((position.X + 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
-            position.X += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+            position.X += velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
 
-        if (WDown && !(grid.Objects[(int)((position.X + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight)] is WallTile))
+        if (WDown && !(grid.Objects[(int)((position.X + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 20f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
-            position.Z += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+            position.Z += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        if (SDown && !(grid.Objects[(int)(position.X - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth, (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
+        {
+            position.X -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+
+        }
+
+        if (SDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
+            position.Z -= velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        if (DDown && !(grid.Objects[(int)(position.X - 20f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
+            position.X -= velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        if (DDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
+            position.Z += velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        if (ADown && !(grid.Objects[(int)(position.X + (20f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY))) + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 100) / GameObjectGrid.CellHeight] is WallTile))
+        {
+            position.X += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
 
 
-        if (SDown && !(grid.Objects[(int)(position.X - 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth, (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
+        if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
-            position.X -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-
-        }
-
-        if (SDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
-        {
-            position.Z -= 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-
-        if (DDown && !(grid.Objects[(int)(position.X - 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 95) / GameObjectGrid.CellWidth, (int)position.Z / GameObjectGrid.CellHeight] is WallTile))
-        {
-            position.X -= 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-
-        if (DDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
-        {
-            position.Z += 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-        }
-
-        if (ADown && !(grid.Objects[(int)(position.X + (5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY))) + 100) / GameObjectGrid.CellWidth, (int)(position.Z + 100) / GameObjectGrid.CellHeight] is WallTile))
-        {
-            position.X += 5f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
-        }
-
-        if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
-        {
+<<<<<<< HEAD
             position.Z -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+=======
+
+            position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+>>>>>>> c07c03b0cd99b621fc0a293366f0eb0002818528
         }
-        
+
+ 
+
+        /* if (input.IsKeyDown(Keys.Space))
+            position.Y += 40f;
+        if (input.IsKeyDown(Keys.LeftShift))
+            position.Y -= 40f; */
+
         base.Update(gameTime);
     }
 }

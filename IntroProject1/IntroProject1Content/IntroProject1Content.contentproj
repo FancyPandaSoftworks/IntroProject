@@ -35,13 +35,13 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="monsterTexture.png">
-      <Name>monsterTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+    <Compile Include="Monster.fbx">
+      <Name>Monster</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="monster.fbx">
-      <Name>monster</Name>
+    <Compile Include="Cupboard.fbx">
+      <Name>Cupboard</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -49,18 +49,18 @@
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
     </None>
-    <Compile Include="WallCubeTestTexture.jpg">
-      <Name>WallCubeTestTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="White Sprite.png">
       <Name>White Sprite</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="untitled.fbx">
-      <Name>untitled</Name>
+    <Compile Include="Wall Cubes\Wall Cube 01.fbx">
+      <Name>Wall Cube 01</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Wall Cubes\Wall Model 01.fbx">
+      <Name>Wall Model 01</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -76,15 +76,24 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Floortile.fbx">
-      <Name>Floortile</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="text.spritefont">
       <Name>text</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Wall Cubes\WallCubeTestTexture.jpg">
+      <Name>WallCubeTestTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Wall Cubes\Wall Texture 01.jpg">
+      <Name>Wall Texture 01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
