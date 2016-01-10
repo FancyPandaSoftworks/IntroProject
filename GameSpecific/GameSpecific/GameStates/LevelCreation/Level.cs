@@ -111,7 +111,6 @@ using Microsoft.Xna.Framework.Graphics;
                         Object3D gameObject3D = obj as Object3D;
                         if (gameObject3D.Model != null)
                         {
-
                             gameObject3D.DrawCamera(player);
                             gameObject3D.Draw(gameTime, spriteBatch);
                         }
