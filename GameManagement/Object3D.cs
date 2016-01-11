@@ -52,7 +52,7 @@ public class Object3D : GameObject
         {
             //set the effects for the meshes
             foreach (BasicEffect effect in mesh.Effects)
-            {
+            { 
                 effect.EnableDefaultLighting();
                 effect.World = transforms[mesh.ParentBone.Index] * Matrix.CreateRotationY(modelRotation)
                     * Matrix.CreateTranslation(position);

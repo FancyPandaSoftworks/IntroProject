@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Name>RootNode</Name>
+    <Identity>
+      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Trapdoor.fbx</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+    <Children>
+      <Child Type="Graphics:MeshContent">
+        <Name>Cube</Name>
+        <Transform>30.0000019 0 0 0 0 -4.887621E-06 -30.0000019 0 0 7.50000048 -1.22190522E-06 0 0 0 0 1</Transform>
+        <Positions>1 0.99999994 -1 1 -1 -1 -1.00000012 -0.9999998 -1 -0.999999642 1.00000036 -1 1.00000048 0.999999464 1 0.999999344 -1.0000006 1 -1.00000036 -0.999999642 1 -0.99999994 1 1 0.7499999 0.7499999 -0.99999994 0.7499999 -0.74999994 -0.99999994 -0.7499997 0.7500001 -0.99999994 -0.75000006 -0.7499998 -0.99999994 0.750000238 0.7499995 0.99999994 0.749999464 -0.7500004 0.99999994 -0.74999994 0.7499999 0.99999994 -0.750000238 -0.7499997 0.99999994 0.7499998 0.7499998 -0.0999999642 0.7499998 -0.7499999 -0.0999999642 -0.749999642 0.75000006 -0.0999999642 -0.75 -0.749999762 -0.0999999642 0.7500002 0.749999464 0.100000024 0.7499994 -0.750000358 0.100000024 -0.7499999 0.7499998 0.100000024 -0.7500002 -0.749999642 0.100000024</Positions>
+        <Geometry>
+          <Batch>
+            <Material>#Resource1</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 10 9 8 8 11 10 14 13 12 12 15 14 18 17 16 16 19 18 22 21 20 20 23 22 26 25 24 24 27 26 30 29 28 28 31 30 34 33 32 32 35 34 38 37 36 36 39 38 42 41 40 40 43 42 46 45 44 44 47 46 50 49 48 48 51 50 54 53 52 52 55 54 58 57 56 56 59 58 62 61 60 60 63 62 66 65 64 64 67 66 70 69 68 68 71 70 74 73 72 72 75 74</Indices>
+            <Vertices>
+              <PositionIndices>6 5 13 15 3 0 8 10 0 4 5 1 1 5 6 2 2 6 7 3 14 15 23 22 8 9 17 16 5 4 12 13 7 6 15 14 0 1 9 8 4 7 14 12 2 3 10 11 1 2 11 9 12 14 22 20 11 10 18 19 10 8 16 18 15 13 21 23 13 12 20 21 9 11 19 17</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">1.2992778E-13 2.3841848E-07 1 1.2992778E-13 2.3841848E-07 1 1.2992778E-13 2.3841848E-07 1 1.2992778E-13 2.3841848E-07 1 -3.24819449E-14 -2.38418451E-07 -1 -3.24819449E-14 -2.38418451E-07 -1 -3.24819449E-14 -2.38418451E-07 -1 -3.24819449E-14 -2.38418451E-07 -1 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 1 -2.20758039E-07 6.622739E-08 1 -2.20758039E-07 6.622739E-08 1 -2.20758039E-07 6.622739E-08 1 -2.20758039E-07 6.622739E-08 -0.99999994 0 -6.62273862E-08 -0.99999994 0 -6.62273862E-08 -0.99999994 0 -6.62273862E-08 -0.99999994 0 -6.62273862E-08 2.724783E-07 1.2992778E-13 1 2.724783E-07 1.2992778E-13 1 2.724783E-07 1.2992778E-13 1 2.724783E-07 1.2992778E-13 1 2.724784E-07 -4.87229343E-14 1 2.724784E-07 -4.87229343E-14 1 2.724784E-07 -4.87229343E-14 1 2.724784E-07 -4.87229343E-14 1 -8.17434852E-07 0 -1 -8.17434852E-07 0 -1 -8.17434852E-07 0 -1 -8.17434852E-07 0 -1 -6.496389E-14 -2.38418551E-07 1 -6.496389E-14 -2.38418551E-07 1 -6.496389E-14 -2.38418551E-07 1 -6.496389E-14 -2.38418551E-07 1 2.724784E-07 -6.496391E-14 -1 2.724784E-07 -6.496391E-14 -1 2.724784E-07 -6.496391E-14 -1 2.724784E-07 -6.496391E-14 -1 1.62409809E-14 2.38418636E-07 -1 1.62409809E-14 2.38418636E-07 -1 1.62409809E-14 2.38418636E-07 -1 1.62409809E-14 2.38418636E-07 -1 -2.38418536E-07 -1 1.76606363E-07 -2.38418536E-07 -1 1.76606363E-07 -2.38418536E-07 -1 1.76606363E-07 -2.38418536E-07 -1 1.76606363E-07 1 -2.20757954E-07 -6.622738E-08 1 -2.20757954E-07 -6.622738E-08 1 -2.20757954E-07 -6.622738E-08 1 -2.20757954E-07 -6.622738E-08 -1.58945781E-07 -1 -8.830321E-08 -1.58945781E-07 -1 -8.830321E-08 -1.58945781E-07 -1 -8.830321E-08 -1.58945781E-07 -1 -8.830321E-08 4.76837329E-07 1 1.7660642E-07 4.76837329E-07 1 1.7660642E-07 4.76837329E-07 1 1.7660642E-07 4.76837329E-07 1 1.7660642E-07 -1 5.298191E-07 6.622738E-08 -1 5.298191E-07 6.622738E-08 -1 5.298191E-07 6.622738E-08 -1 5.298191E-07 6.622738E-08 7.947286E-08 1 -1.76606363E-07 7.947286E-08 1 -1.76606363E-07 7.947286E-08 1 -1.76606363E-07 7.947286E-08 1 -1.76606363E-07</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.00200179219 0.262913346 0.00199869275 0.6916198 0.988861144 0.638031662 0.9888673 0.316501856 0.002699852 0.30086273 0.00269824266 0.6005364 0.9908752 0.5630772 0.9908752 0.338321924 0.304029226 0.6951828 0.3040291 0.39154768 0.000394004252 0.39154768 0.000394112838 0.6951828 0.6084524 0.6951828 0.6084523 0.39154768 0.30481723 0.39154762 0.30481723 0.6951828 0.30481723 0.6959709 0.304817319 0.999606 0.608452439 0.999605954 0.608452439 0.6959709 0.9908081 0.9579144 0.9908079 0.0105833411 0.00255009532 0.01058346 0.00255024433 0.957914233 0.990503669 1.29743075 0.989933133 -0.3553313 -0.00172448158 -0.354989052 -0.00115484 1.29777336 0.001337558 0.052357018 0.00133794546 0.985105038 0.9895464 0.868511558 0.989542842 0.168950438 0.008175254 0.156908154 0.008175254 0.7499037 0.9930662 0.6757795 0.99307394 0.231033087 0.005348742 0.303341329 0.005348742 0.6067431 0.9949578 0.568817854 0.9949578 0.3412665 0.0007021427 0.342713177 0.0006990433 0.655458868 0.986909866 0.6163656 0.986909866 0.3818063 0.0114426827 0.0167220831 0.0114428913 0.996095538 0.99451673 0.8736742 0.994521 0.1391443 0.004306197 0.295678556 0.00430464745 0.599313736 0.9928311 0.5613594 0.9928311 0.3336329 1.00212264 0.9998617 1.00212312 0.004085779 0.010986805 0.004085839 0.0109864175 0.9998615 0.988066435 1.00156391 0.9880668 0.0103856325 0.008140534 0.0103857517 0.008140922 1.001564 0.990703642 1.0059073 0.9907036 0.00389188528 0.00735908747 0.00389200449 0.007359326 1.005907 0.9910227 0.945534 0.991022944 0.0305993557 0.00164475315 0.0305992365 0.00164332264 0.945533752 0.990768552 0.41439712 0.990768552 0.19898808 0.00258922577 0.1989882 0.00258922577 0.41439724 0.9971645 0.990867138 0.997164249 0.0190891027 -0.00331702642 0.0190891027 -0.00331690721 0.9908669</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource2</Material>
+            <Indices>2 1 0 0 3 2</Indices>
+            <Vertices>
+              <PositionIndices>4 0 3 7</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.304029226 0.999606 0.304029226 0.6959709 0.000394094735 0.695970833 0.000394004252 0.9996059</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource3</Material>
+            <Indices>2 1 0 0 3 2</Indices>
+            <Vertices>
+              <PositionIndices>16 17 19 18</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-6.622741E-09 0 -1 -6.622741E-09 0 -1 -6.622741E-09 0 -1 -6.622741E-09 0 -1</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.8369668 0.7718797 0.6092405 0.7718797 0.6092405 0.999606 0.8369668 0.999605954</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource4</Material>
+            <Indices>2 1 0 0 3 2</Indices>
+            <Vertices>
+              <PositionIndices>20 22 23 21</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">1.19209416E-08 0 1 1.19209416E-08 0 1 1.19209416E-08 0 1 1.19209416E-08 0 1</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.6233368 0.235004425 0.152052626 0.2350043 0.152052566 0.7062883 0.623336554 0.706288457</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+    </Children>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Name>Material.001</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Trapdoor.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0.640000045 0.640000045</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
+      <Name>Material.003</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Trapdoor.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.223115444 0.0327321552 0.000242821334</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+    <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
+      <Name>Material.002</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Trapdoor.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+    <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
+      <Name>Material</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Trapdoor.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0.640000045 0.640000045</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <OpaqueData>
+            <Data Key="TextureCoordinate">TextureCoordinate0</Data>
+          </OpaqueData>
+          <Reference>#External2</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+  </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\..\..\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Wooden Beam.jpg</ExternalReference>
+    <ExternalReference ID="#External2" TargetType="Graphics:TextureContent">..\..\..\..\..\..\..\IntroProject1\IntroProject1Content\Misc Level Objects\Trapdoor\Door.jpg</ExternalReference>
+  </ExternalReferences>
+</XnaContent>

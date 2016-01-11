@@ -22,7 +22,7 @@ class Monster : Object3D
 
 
     public Monster(GameObject[,] grid, Vector3 playerPosition)
-        : base("Cupboard")
+        : base("Misc Level Objects\\Monster\\Monster Model")
     {
         ResetGrid();
         this.playerPosition = playerPosition;
@@ -375,15 +375,15 @@ class Monster : Object3D
    
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-       
-        Vector3 direction = playercamera.Position - Position; //afstand
-        direction.Y = 0;
-        direction.Normalize(); //matrix met lengte 0
-        world = Matrix.CreateWorld(Position, Vector3.Up, direction);
-         
 
-        model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-                    aspectRatio, 1.0f, 500.0f));
+        //Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, Position.Z - playercamera.Position.Z); //afstand
+        //direction.Normalize(); //matrix met lengte 0
+        //world = Matrix.CreateWorld(Position, Vector3.Up, direction);
+        //model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
+        //           aspectRatio, 1.0f, 500.0f));
+
+        base.Draw(gameTime, spriteBatch);
+            
     }
 }
 

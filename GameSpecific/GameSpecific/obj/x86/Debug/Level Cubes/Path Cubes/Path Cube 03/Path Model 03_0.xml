@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Name>RootNode</Name>
+    <Identity>
+      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.fbx</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+    <Children>
+      <Child Type="Graphics:MeshContent">
+        <Name>Cube</Name>
+        <Transform>100 0 0 0 0 -1.62920678E-05 -100 0 0 100 -1.62920678E-05 0 0 0 0 1</Transform>
+        <Positions>1 0.99999994 -1 1 -1 -1 -1.00000012 -0.9999998 -1 -0.999999642 1.00000036 -1 1.00000048 0.999999464 1 0.999999344 -1.0000006 1 -1.00000036 -0.999999642 1 -0.99999994 1 1</Positions>
+        <Geometry>
+          <Batch>
+            <Material>#Resource1</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6</Indices>
+            <Vertices>
+              <PositionIndices>0 1 2 3 4 7 6 5</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 -1 0 0 -1 0 0 -1 0 0 -1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.4999001 9.983778E-05 0.000100004727 9.983778E-05 9.996004E-05 0.499899983 0.499900043 0.499899864 0.999801159 0.500008 0.5000009 0.500007749 0.5000008 0.9998078 0.9998007 0.999807954</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+          <Batch>
+            <Material>#Resource2</Material>
+            <Indices>2 1 0 0 3 2 6 5 4 4 7 6 10 9 8 8 11 10 14 13 12 12 15 14</Indices>
+            <Vertices>
+              <PositionIndices>0 4 5 1 1 5 6 2 2 6 7 3 4 0 3 7</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+    </Children>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Name>Material.001</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0.640000045 0.640000045</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
+      <Name>Material</Name>
+      <Identity>
+        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0 0.359966844</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
+        <Data Key="SpecularPower" Type="float">9.607843</Data>
+      </OpaqueData>
+    </Resource>
+  </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\..\..\..\IntroProject1\IntroProject1Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.jpg</ExternalReference>
+  </ExternalReferences>
+</XnaContent>
