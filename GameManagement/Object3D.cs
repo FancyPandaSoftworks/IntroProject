@@ -62,13 +62,10 @@ public class Object3D : GameObject
                 effect.FogEnabled = true;
                 effect.FogStart = 0;
                 effect.FogEnd = 500;
-                
             }
             mesh.Draw();
         }
         base.Draw(gameTime, spriteBatch);
-
-
     }
 
     /// <summary>

@@ -23,7 +23,6 @@ public class Player : Camera
         : base("player")
     {
         position = startPos;
-
     }
 
 
@@ -91,7 +90,6 @@ public class Player : Camera
         if (SDown && !(grid.Objects[(int)(position.X - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth, (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-
         }
 
         if (SDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
@@ -117,12 +115,7 @@ public class Player : Camera
 
         if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
-<<<<<<< HEAD
-            position.Z -= 5f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-=======
-
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
->>>>>>> c07c03b0cd99b621fc0a293366f0eb0002818528
         }
 
  

@@ -31,6 +31,7 @@ public class Camera : Object3D
     public Vector3 ViewVertex
     {
         get { return viewVertex; }
+        set { viewVertex = value; }
     }
 
     /// <summary>

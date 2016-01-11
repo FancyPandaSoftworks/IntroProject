@@ -12,13 +12,13 @@ using Microsoft.Xna.Framework.Graphics;
     protected Player player;
     protected bool completed;
 
-    public Level()
+    public Level(Player player = null)
     {
         completed = false;
-        if (!(this is RandomLevel))
+
+        if (player != null)
         {
-            player = new Player(Vector3.Zero);
-            gameObjects.Add(player);
+            this.player = player;
         }
 
         if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
@@ -47,7 +47,6 @@ using Microsoft.Xna.Framework.Graphics;
                     note.PickUp();
                 }
             }
-
         }
 
         if (inputHelper.KeyPressed(Keys.R))
@@ -119,7 +118,6 @@ using Microsoft.Xna.Framework.Graphics;
             else if(gameObject is AI)
             {
                     gameObject.Draw(gameTime, spriteBatch);
-                    
             }
         }        
     }
