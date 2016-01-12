@@ -74,12 +74,10 @@ class Monster : Object3D
         if (PlayerInSight(xdifference, zdifference, new Vector2(monsterOrigin.X, monsterOrigin.Z)))
         {
             SimplePathFinding(xdifference, zdifference);
-            Console.WriteLine("simple");
         }
         else
         {
             AdvancedPathFinding();
-            Console.WriteLine("adv");
         }
     }
 
