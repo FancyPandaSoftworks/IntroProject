@@ -8,7 +8,7 @@ using System;
 /// </summary>
 class TitleScreenState : GameState
 {
-    protected Button playButton;
+    protected Button continueButton, newGameButton, exitButton;
     private int part;
     private Level level;
     Player player;
@@ -27,18 +27,29 @@ class TitleScreenState : GameState
                         201);
         level = new Level(player);
 
-        //Add a start button
-        playButton = new Button("White Sprite", 0);
-        playButton.Position = new Vector2((GameEnvironment.Screen.X - playButton.Width) / 2, (GameEnvironment.Screen.X - playButton.Width) / 2);
-        gameObjects.Add(playButton);
+        //Add a continue button
+        continueButton = new Button("White Sprite", 0);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
+        gameObjects.Add(continueButton);
+
+        //Add a new game button
+        newGameButton = new Button("white Sprite", 0);
+        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
+        gameObjects.Add(newGameButton);
+
+        //Add an exit button
+        exitButton = new Button("white Sprite", 0);
+        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
+        gameObjects.Add(exitButton);
 
         part = 0;
     }
 
     public void ResetPositions()
     {
-        playButton.Position = new Vector2((GameEnvironment.Screen.X - playButton.Width) / 2, (GameEnvironment.Screen.X - playButton.Width) / 2);
-
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
+        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
+        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
     }
 
     /// <summary>
@@ -51,12 +62,28 @@ class TitleScreenState : GameState
         inputHelper.Update();
 
         //Check if the playbutton is being pressed to go to the game
-        if (playButton.ButtonIsPressed)
+        if (continueButton.ButtonIsPressed)
         {
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+            //TODO: VOEG TOE DAT JE BEGINT VANAF HET LAATSTE CHECKPOINT
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
+
+        if (newGameButton.ButtonIsPressed)
+        {
+            game.IsMouseVisible = false;
+            Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+            //TODO: voeg een waarschuwing toe(?)
+            //TODO: verwijder de laatste checkpoint in de txt file en maak er 0 van ofzo en begin bij kamer 1
+            GameEnvironment.GameStateManager.SwitchTo("playingState");
+        }
+
+        if (exitButton.ButtonIsPressed)
+        {
+            game.Exit();
+        }
+
     }
 
     /// <summary>

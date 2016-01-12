@@ -7,23 +7,23 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
 /// <summary>
-/// The state the game is in while paused
+/// The state the game is in when you have died
 /// </summary>
-class PauseScreenState : GameState
+class GameOverState : GameState
 {
-    protected Button resumeButton, exitButton;
+    protected Button continueButton, exitButton;
     protected Object2D background;
 
-    public PauseScreenState()
+    public GameOverState()
     {
         background = new Object2D("White Sprite", 0);
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);
 
         //add a resume button
-        resumeButton = new Button("White Sprite", 0);
-        resumeButton.Position = new Vector2((GameEnvironment.Screen.X - resumeButton.Width) / 2, (GameEnvironment.Screen.Y - resumeButton.Height) / 2 - 100);
-        gameObjects.Add(resumeButton);
+        continueButton = new Button("White Sprite", 0);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 - 100);
+        gameObjects.Add(continueButton);
 
         //add an exit button
         exitButton = new Button("White Sprite", 0);
@@ -31,12 +31,12 @@ class PauseScreenState : GameState
         gameObjects.Add(exitButton);
     }
 
-    //method for resetting the positions of the buttons and background while in the pause state
+    //method for resetting the positions of the buttons and background
     //neccesary for when one switches from fullscreen to windowed or the other way around
     public void ResetPositions()
     {
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
-        resumeButton.Position = new Vector2((GameEnvironment.Screen.X - resumeButton.Width) / 2, (GameEnvironment.Screen.Y - resumeButton.Height) / 2 - 100);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 - 100);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
     }
 
@@ -49,22 +49,19 @@ class PauseScreenState : GameState
         base.HandleInput(inputHelper);
         inputHelper.Update();
 
-        //Check if the exitButton is being pressed to go back to the title screen
-        if (exitButton.ButtonIsPressed)
-            GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
-
-        //Check if the resumeButton is being pressed to go back to the game
-        if (resumeButton.ButtonIsPressed || inputHelper.KeyPressed(Keys.Escape))
+        //Check if the continueButton is being pressed to go back to the game, starting from the last checkpoint
+        if (continueButton.ButtonIsPressed)
         {
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+            //TODO: START FROM LAST CHECKPOINT
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
 
     }
 
     /// <summary>
-    /// Draw the menu with the game in the background
+    /// Draw the game-over screen with the game in the background
     /// </summary>
     /// <param name="gameTime">The object used for reacting to timechanges</param>
     /// <param name="spriteBatch">The SpriteBatch</param>

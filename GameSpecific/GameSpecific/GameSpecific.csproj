@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="GameStates\GameState.cs" />
     <Compile Include="GameStates\LevelCreation\MultipleExitLevel.cs" />
     <Compile Include="GameStates\NoteViewingState.cs" />
