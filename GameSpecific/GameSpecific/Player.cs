@@ -118,13 +118,10 @@ public class Player : Camera
             position.X += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
 
-
         if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
-
- 
 
         /* if (input.IsKeyDown(Keys.Space))
             position.Y += 40f;

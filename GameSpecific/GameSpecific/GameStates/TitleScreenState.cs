@@ -35,6 +35,12 @@ class TitleScreenState : GameState
         part = 0;
     }
 
+    public void ResetPositions()
+    {
+        playButton.Position = new Vector2((GameEnvironment.Screen.X - playButton.Width) / 2, (GameEnvironment.Screen.X - playButton.Width) / 2);
+
+    }
+
     /// <summary>
     /// Handle the input
     /// </summary>
@@ -74,6 +80,9 @@ class TitleScreenState : GameState
         //Go back to 3D mode
         spriteBatch.GraphicsDevice.BlendState = BlendState.Opaque;
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
+        //Resetting the positions of the buttons
+        ResetPositions();
     }
 
     private void DrawEndless(int part,GameTime gameTime, SpriteBatch spriteBatch)

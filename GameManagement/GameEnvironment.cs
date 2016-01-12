@@ -124,6 +124,7 @@ public class GameEnvironment : Game
         graphics.PreferredBackBufferHeight = (int)(finalescale * screen.Y);
         graphics.IsFullScreen = fullscreen;
         graphics.ApplyChanges();
+        screen = new Point(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         inputHelper.Scale = new Vector2((float)GraphicsDevice.Viewport.Width / screen.X, (float)GraphicsDevice.Viewport.Height / screen.Y);
         modelScale = Matrix.CreateScale(inputHelper.Scale.X, inputHelper.Scale.Y, 1);
     }
@@ -133,7 +134,6 @@ public class GameEnvironment : Game
     /// </summary>
     protected override void LoadContent()
     {
-
         graphicsDevice = graphics.GraphicsDevice;
         DrawingHelper.Initialize(this.GraphicsDevice);
         spriteBatch = new SpriteBatch(GraphicsDevice);
