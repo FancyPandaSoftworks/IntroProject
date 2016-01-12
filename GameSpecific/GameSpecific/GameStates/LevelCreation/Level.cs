@@ -75,11 +75,9 @@ using Microsoft.Xna.Framework.Graphics;
                     }
                 }
             }
-
             else
                 obj.Update(gameTime);
         }
-            
     }
 
     /// <summary>
@@ -115,10 +113,10 @@ using Microsoft.Xna.Framework.Graphics;
                         }
                     }
             }
-            else if(gameObject is AI)
+            /*else if(gameObject is AI)
             {
                     gameObject.Draw(gameTime, spriteBatch);
-            }
+            }*/
         }        
     }
 

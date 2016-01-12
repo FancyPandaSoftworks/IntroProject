@@ -84,9 +84,9 @@ class TitleScreenState : GameState
         
         for (int i = 0; i < grid.Rows; i++)
         {
-            grid.Add(new WallTile(), 0, i);
-            grid.Add(new WallTile(), 2, i);
-            grid.Add(new PathTile(), 1, i);
+            grid.Add(new WallTile("01"), 0, i);
+            grid.Add(new WallTile("01"), 2, i);
+            grid.Add(new PathTile("01"), 1, i);
         }
 
         for (int x = 0; x < grid.Objects.GetLength(0); x++)

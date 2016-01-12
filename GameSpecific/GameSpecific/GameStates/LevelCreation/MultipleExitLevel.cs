@@ -1,0 +1,177 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+class MultipleExitLevel : Level
+{
+    protected short previousPart;
+    protected short part;
+    protected TileGrid[] grids;
+    protected Vector3[] startingPositions;
+
+    public MultipleExitLevel()
+    {
+        part = 0;
+        player = new Player(new Vector3(200, 0, 200));
+        Add(player);
+        completed = false;
+        CreateGrids();
+    }
+
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        grids[part].Draw(gameTime, spriteBatch);
+        base.Draw(gameTime, spriteBatch);
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        if (part != previousPart)
+        {
+            player.Position = startingPositions[part];
+            previousPart = part;
+        }
+        grids[part].Update(gameTime);
+        base.Update(gameTime);
+    }
+
+    private void CreateGrids()
+    {
+        grids = new TileGrid[3];
+        startingPositions = new Vector3[3];
+        grids[0] = LoadPart("MultipleExitLevelPart1", 0);
+        grids[1] = LoadPart("MultipleExitLevelPart2", 1);
+        grids[2] = LoadPart("MultipleExitLevelPart3", 2);
+    }
+
+    private TileGrid LoadPart(string name, short part)
+    {
+        List<string> text = new List<string>();
+        StreamReader streamReader = new StreamReader(name);
+        string line = streamReader.ReadLine();
+        int width = line.Length;
+
+        //read the file
+        while (line != null)
+        {
+            text.Add(line);
+            line = streamReader.ReadLine();
+        }
+
+        //make a grid for the tiles
+        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
+
+        //Load the tiles into the grid
+        for (int x = 0; x < width; ++x)
+        {
+            for (int y = 0; y < text.Count - 1; ++y)
+            {
+                Tile tile = LoadTile(text[y][x], x, y, part);
+                if (tile != null)
+                {
+                    tileGrid.Add(tile, x, y);
+                    if (tile is WallTile)
+                    {
+                        tile.Position += new Vector3(0, 200, 0);
+                    }
+                }
+            }
+        }
+        return tileGrid;
+    }
+
+    /// <summary>
+    /// Load a single Tile from a certain position in the file
+    /// </summary>
+    /// <param name="chr">The character in the file, defines what tile it will be</param>
+    /// <param name="x">The x-coördinate</param>
+    /// <param name="y">The y-coördinate</param>
+    /// <returns>The Tile to Load</returns>
+    private Tile LoadTile(char chr, int x, int y, short part)
+    {
+        if (chr == 'W')
+            return new WallTile("01");
+        else if (chr == 'P')
+            return new PathTile("01");
+        else if (chr == 'N')
+        {
+            //place the player in the entry tile
+            startingPositions[part] = new Vector3(x * 200, 200f, y * 200);
+            return new EntryTile("01");
+        }
+        else if (chr == 'F')
+            return new FakeExit(this);
+        else if (chr == 'R')
+            return new RealExit(this);
+        else if (chr == 'X')
+            return new ExitTile("01");
+        else
+            return null;
+    }
+
+    protected class FakeExit : ExitTile
+    {
+        protected MultipleExitLevel level;
+
+        public FakeExit(MultipleExitLevel level)
+            : base("01")
+        {
+            this.level = level;
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            //Check if the player is in the ExitTile and if so, if they are pressing E to procceed
+            foreach (GameObject obj in level.Objects)
+            {
+                if (obj != null)
+                {
+                    if (obj.ID == "player")
+                    {
+                        if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
+                        {
+                            Player player = obj as Player;
+                            if (player.EDown == true)
+                                this.level.part = 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    protected class RealExit : ExitTile
+    {
+        protected MultipleExitLevel level;
+
+        public RealExit(MultipleExitLevel level)
+            : base("01")
+        {
+            this.level = level;
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            //Check if the player is in the ExitTile and if so, if they are pressing E to procceed
+            foreach (GameObject obj in level.Objects)
+            {
+                if (obj != null)
+                {
+                    if (obj.ID == "player")
+                    {
+                        if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
+                        {
+                            Player player = obj as Player;
+                            if (player.EDown == true)
+                            {
+                                this.level.part++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

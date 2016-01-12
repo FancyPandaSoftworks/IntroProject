@@ -52,7 +52,7 @@ class SpecialLevel : Level
                 if (tile != null)
                 {
                     tileGrid.Add(tile, x, y);
-                    if( tile is WallTile)
+                    if(tile is WallTile)
                     {
                         tile.Position += new Vector3(0, 200, 0);
                     }

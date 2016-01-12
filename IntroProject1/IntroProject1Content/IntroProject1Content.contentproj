@@ -83,6 +83,7 @@
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="White Sprite.png">
       <Name>White Sprite</Name>
