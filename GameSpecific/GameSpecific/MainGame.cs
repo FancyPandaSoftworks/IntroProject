@@ -34,9 +34,10 @@ class MainGame : GameEnvironment
         base.LoadContent();
         GameState.GameVariable = this;
         gameStateManager.AddGameState("noteViewingState", new NoteViewingState());
-        gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.AddGameState("playingState", new PlayingState());
         gameStateManager.AddGameState("pauseScreenState", new PauseScreenState());
+        gameStateManager.AddGameState("gameOverState", new GameOverState());
+        gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.SwitchTo("titleScreenState");
     }
 }

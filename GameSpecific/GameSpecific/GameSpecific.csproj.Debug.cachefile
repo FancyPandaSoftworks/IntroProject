@@ -34,7 +34,10 @@ Content\Misc Level Objects\Monster\Monster Texture_0.xnb
 Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
 Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
 Content\Misc Level Objects\Trapdoor\Door_0.xnb
+<<<<<<< HEAD
 Content\MultipleExitLevelPart1.txt
 Content\MultipleExitLevelPart2.txt
 Content\MultipleExitLevelPart3.txt
+=======
+>>>>>>> 415b6b155338e007ef9bcd2e27e52870a18b8c47
 Content\noteIDList.txt

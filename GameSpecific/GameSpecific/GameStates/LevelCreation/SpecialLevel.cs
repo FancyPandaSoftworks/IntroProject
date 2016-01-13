@@ -9,7 +9,8 @@ using Microsoft.Xna.Framework;
 /// </summary>
 class SpecialLevel : Level 
 {
-    TileGrid tileGrid;
+    private TileGrid tileGrid;
+    private Object3D trapdoor;
     
     public SpecialLevel(int roomNumber, string name)
     {
@@ -55,6 +56,13 @@ class SpecialLevel : Level
                     if(tile is WallTile)
                     {
                         tile.Position += new Vector3(0, 200, 0);
+                    }
+                    //adding trapdoors to the exit-tiles
+                    if (tile is ExitTile)
+                    {
+                        trapdoor = new Object3D("Axis", "Trapdoor");
+                        trapdoor.Position = tile.Position + new Vector3(0, 150, 0);
+                        gameObjects.Add(trapdoor);
                     }
                 }
             }
