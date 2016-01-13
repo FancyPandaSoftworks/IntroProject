@@ -20,7 +20,8 @@ class PlayingState : Root
     public PlayingState(int roomCounter = 1)
     {
         this.roomCounter = roomCounter;
-        level = new RandomLevel(this.roomCounter);
+//        level = new RandomLevel(this.roomCounter);
+        level = new MultipleExitLevel();
         foreach (GameObject obj in level.Objects)
         {
             obj.Parent = level;

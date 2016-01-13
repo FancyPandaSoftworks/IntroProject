@@ -33,6 +33,10 @@ public class Player : Camera
         stamina = 2000;
     }
 
+    public TileGrid Grid
+    {
+        set { grid = value; }
+    }
 
     /// <summary>
     /// HandleInput for the player

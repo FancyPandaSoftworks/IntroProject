@@ -10,31 +10,32 @@ class MultipleExitLevel : Level
     protected short part;
     protected TileGrid[] grids;
     protected Vector3[] startingPositions;
+    private bool firstTime;
 
     public MultipleExitLevel()
     {
         part = 0;
-        player = new Player(new Vector3(200, 0, 200));
+        CreateGrids();
+        Add(grids[part]);
         Add(player);
         completed = false;
-        CreateGrids();
-    }
-
-    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-    {
-        grids[part].Draw(gameTime, spriteBatch);
-        base.Draw(gameTime, spriteBatch);
+        firstTime = true;
+        player.Grid = grids[part];
     }
 
     public override void Update(GameTime gameTime)
     {
+        if (firstTime) { player.Grid = grids[part]; firstTime = false; }
+        base.Update(gameTime);
         if (part != previousPart)
         {
             player.Position = startingPositions[part];
             previousPart = part;
+            this.gameObjects = new List<GameObject>();
+            this.gameObjects.Add(grids[part]);
+            this.gameObjects.Add(player);
+            player.Grid = grids[part];
         }
-        grids[part].Update(gameTime);
-        base.Update(gameTime);
     }
 
     private void CreateGrids()
@@ -44,12 +45,16 @@ class MultipleExitLevel : Level
         grids[0] = LoadPart("MultipleExitLevelPart1", 0);
         grids[1] = LoadPart("MultipleExitLevelPart2", 1);
         grids[2] = LoadPart("MultipleExitLevelPart3", 2);
+        player = new Player(startingPositions[0]);
+        player.Parent = this;
+        for (int i = 0; i < grids.Length; i++)
+            grids[i].Parent = this;
     }
 
     private TileGrid LoadPart(string name, short part)
     {
         List<string> text = new List<string>();
-        StreamReader streamReader = new StreamReader(name);
+        StreamReader streamReader = new StreamReader("Content/"+name+".txt");
         string line = streamReader.ReadLine();
         int width = line.Length;
 
@@ -61,12 +66,12 @@ class MultipleExitLevel : Level
         }
 
         //make a grid for the tiles
-        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
+        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "TileGrid");
 
         //Load the tiles into the grid
         for (int x = 0; x < width; ++x)
         {
-            for (int y = 0; y < text.Count - 1; ++y)
+            for (int y = 0; y < text.Count; ++y)
             {
                 Tile tile = LoadTile(text[y][x], x, y, part);
                 if (tile != null)
@@ -134,7 +139,10 @@ class MultipleExitLevel : Level
                         {
                             Player player = obj as Player;
                             if (player.EDown == true)
+                            {
                                 this.level.part = 0;
+                                this.level.player.Position = this.level.startingPositions[this.level.part];
+                            }                              
                         }
                     }
                 }

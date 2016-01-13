@@ -46,7 +46,7 @@ class SpecialLevel : Level
         //Load the tiles into the grid
         for (int x = 0; x < width; ++x)
         {
-            for (int y = 0; y < text.Count - 1; ++y)
+            for (int y = 0; y < text.Count; ++y)
             {
                 Tile tile = LoadTile(text[y][x], x, y);
                 if (tile != null)
