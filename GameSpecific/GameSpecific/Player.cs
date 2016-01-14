@@ -23,7 +23,7 @@ public class Player : Camera
         : base("Player")
     {
         position = startPos;
-
+        ViewVertex = startPos + new Vector3(0, 0, 1);
     }
 
 
@@ -34,6 +34,10 @@ public class Player : Camera
         stamina = 2000;
     }
 
+    public TileGrid Grid
+    {
+        set { grid = value; }
+    }
 
     /// <summary>
     /// HandleInput for the player
@@ -97,7 +101,6 @@ public class Player : Camera
         if (SDown && !(grid.Objects[(int)(position.X - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth, (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
-
         }
 
         if (SDown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
@@ -120,13 +123,10 @@ public class Player : Camera
             position.X += velocity * (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY));
         }
 
-
         if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
-
- 
 
         /* if (input.IsKeyDown(Keys.Space))
             position.Y += 40f;

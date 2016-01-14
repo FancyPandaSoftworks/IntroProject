@@ -6,7 +6,7 @@ using System;
 /// </summary>
 class Button : Object2D
 {
-    protected bool buttonIsPressed;
+    protected bool buttonIsPressed, isMouseOver;
 
     /// <summary>
     /// Create the button
@@ -18,6 +18,7 @@ class Button : Object2D
         : base(assetName, layer, id)
     {
         buttonIsPressed = false;
+        isMouseOver = false;
     }
     
     /// <summary>
@@ -26,13 +27,15 @@ class Button : Object2D
     /// <param name="inputHelper">The inputhelper to react to input</param>
     public override void HandleInput(InputHelper inputHelper)
     {
-        //Checking whether you are pressing the button or not
-        if (inputHelper.MouseLeftButtonPressed() &&
-            BoundingBox.Contains((int)inputHelper.MousePosition.X, (int)inputHelper.MousePosition.Y))
-        {
-            buttonIsPressed = true;
-        }
+        //Checking whether the mouse is hovering over a button or not
+        if (BoundingBox.Contains((int)inputHelper.MousePosition.X, (int)inputHelper.MousePosition.Y))
+            isMouseOver = true;
+        else
+            isMouseOver = false;
 
+        //Checking whether you are pressing the button or not
+        if (inputHelper.MouseLeftButtonPressed() && isMouseOver)
+            buttonIsPressed = true;
         else
             buttonIsPressed = false;
     }

@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// The tilegrid, a grid which holds all the tiles
 /// </summary>
-class TileGrid : GameObjectGrid
+public class TileGrid : GameObjectGrid
 {
     /// <summary>
     /// Creating the tileGrid

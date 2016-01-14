@@ -129,7 +129,7 @@ public class GameObjectGrid : GameObject
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         foreach (GameObject obj in grid)
-            obj.Draw(gameTime, spriteBatch);
+                obj.Draw(gameTime, spriteBatch);
     }
 
     /// <summary>

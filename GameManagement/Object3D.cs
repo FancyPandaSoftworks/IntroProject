@@ -27,7 +27,6 @@ public class Object3D : GameObject
         modelRotation = 0.0f;
         aspectRatio = 1.6667f; //NEEDS TO BE DETERMINED, INSTEAD OF DECLARED
         model = GameEnvironment.AssetManager.GetModel(modelName);
-       
     }
 
     /// <summary>
@@ -62,13 +61,10 @@ public class Object3D : GameObject
                 effect.FogEnabled = true;
                 effect.FogStart = 0;
                 effect.FogEnd = 500;
-                
             }
             mesh.Draw();
         }
         base.Draw(gameTime, spriteBatch);
-
-
     }
 
     /// <summary>

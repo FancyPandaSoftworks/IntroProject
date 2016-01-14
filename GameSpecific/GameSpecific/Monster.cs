@@ -74,12 +74,10 @@ class Monster : Object3D
         if (PlayerInSight(xdifference, zdifference, new Vector2(monsterOrigin.X, monsterOrigin.Z)))
         {
             SimplePathFinding(xdifference, zdifference);
-            //Console.WriteLine("simple");
         }
         else
         {
             AdvancedPathFinding();
-            //Console.WriteLine("adv");
         }
     }
 
@@ -372,15 +370,32 @@ class Monster : Object3D
         }
     }
 
-   
+
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, playercamera.Position.Z - Position.Z); //afstand
+        direction.Normalize(); //matrix met lengte 1
+        world = Matrix.CreateWorld(Position, direction, Vector3.Up);
+        //GameEnvironment.Graphics.BlendState = BlendState.AlphaBlend;
+        Matrix[] transforms = new Matrix[model.Bones.Count];
+        model.CopyAbsoluteBoneTransformsTo(transforms);
 
-        Vector3 direction = playercamera.Position - Position; //afstand
-        direction.Normalize(); //matrix met lengte 0
-        world = Matrix.CreateWorld(Position, Vector3.Up, direction);
-        model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-                   aspectRatio, 1.0f, 500.0f));            
+        foreach (ModelMesh mesh in model.Meshes)
+        {
+            //set the effects for the meshes
+            foreach (BasicEffect effect in mesh.Effects)
+            {
+                effect.EnableDefaultLighting();
+                effect.World = transforms[mesh.ParentBone.Index] * world;
+                effect.View = Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up);
+                effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45),
+                aspectRatio, 1, 1000);
+                effect.FogEnabled = true;
+                effect.FogStart = 0;
+                effect.FogEnd = 1000;
+            }
+            mesh.Draw();
+        }
     }
 }
 

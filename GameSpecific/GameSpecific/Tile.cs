@@ -111,10 +111,31 @@ class WallTile : Tile
 /// </summary>
 class EntryTile : PathTile
 {
+    protected Object3D trapdoor;
+
     public EntryTile(string pathID)
         : base(pathID, "EntryTile")
     {
+        trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor Model", "Trapdoor");
+    }
 
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        base.Draw(gameTime, spriteBatch);
+
+        Level level = parent.Parent as Level;
+        foreach (GameObject obj in level.Objects)
+        {
+            if (obj != null)
+            {
+                if (obj.ID == "player")
+                {
+                    trapdoor.DrawCamera(obj as Player);
+                }
+            }
+        }
+        trapdoor.Position = this.Position + new Vector3(0, 300, 0);
+        trapdoor.Draw(gameTime, spriteBatch);
     }
 }
 
@@ -124,6 +145,7 @@ class EntryTile : PathTile
 class ExitTile : PathTile
 {
     TextGameObject text;
+    protected Object3D trapdoor;
 
     public ExitTile(string pathID)
         : base(pathID, "ExitTile")
@@ -131,6 +153,8 @@ class ExitTile : PathTile
         text = new TextGameObject("text");
         text.Position = Vector2.Zero;
         text.text = "Press E to proceed";
+
+        trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor Model", "Trapdoor");
     }
 
     /// <summary>
@@ -152,7 +176,6 @@ class ExitTile : PathTile
                         Player player = obj as Player;
                         if(player.EDown == true)
                             level.Completed = true;
-                        
                     }
                 }
             } 
@@ -176,6 +199,7 @@ class ExitTile : PathTile
             {
                 if (obj.ID == "Player")
                 {
+                    trapdoor.DrawCamera(obj as Player);
                     if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
                     {
                         text.Draw(gameTime, spriteBatch);
@@ -183,6 +207,7 @@ class ExitTile : PathTile
                 }
             }
         }
-        
+        trapdoor.Position = Position + new Vector3(0, 100, 0);
+        trapdoor.Draw(gameTime, spriteBatch);
     }
 }

@@ -17,12 +17,14 @@ class NoteViewingState : Root
     public NoteViewingState()
     {
         NoteObject.idList = new System.Collections.Generic.List<string>();
-        StreamReader streamReader = new StreamReader("noteIDList.txt");
-        string line = streamReader.ReadLine();
-        while (line != null)
+        using (StreamReader streamReader = new StreamReader("Content/noteIDList.txt"))
         {
-            NoteObject.idList.Add(line);
-            line = streamReader.ReadLine();
+            string line = streamReader.ReadLine();
+            while (line != null)
+            {
+                NoteObject.idList.Add(line);
+                line = streamReader.ReadLine();
+            }
         }
     }
 

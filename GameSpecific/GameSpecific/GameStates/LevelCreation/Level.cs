@@ -13,9 +13,14 @@ using Microsoft.Xna.Framework.Graphics;
     protected Stamina stamina;
     protected bool completed;
 
-    public Level()
+    public Level(Player player = null)
     {
         completed = false;
+        if (player != null)
+        {
+            this.player = player;
+        }
+
         if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
         { 
             NoteObject note = new NoteObject(NoteObject.idList[0]);
@@ -42,7 +47,6 @@ using Microsoft.Xna.Framework.Graphics;
                     note.PickUp();
                 }
             }
-
         }
 
         if (inputHelper.KeyPressed(Keys.R))
@@ -71,11 +75,9 @@ using Microsoft.Xna.Framework.Graphics;
                     }
                 }
             }
-
             else
                 obj.Update(gameTime);
         }
-            
     }
 
     /// <summary>
@@ -111,7 +113,6 @@ using Microsoft.Xna.Framework.Graphics;
                         }
                     }
             }
-
             else
                 gameObject.Draw(gameTime, spriteBatch);
         }

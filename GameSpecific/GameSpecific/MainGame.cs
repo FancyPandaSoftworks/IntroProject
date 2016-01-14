@@ -32,12 +32,12 @@ class MainGame : GameEnvironment
     protected override void LoadContent()
     {
         base.LoadContent();
-
         GameState.GameVariable = this;
-        gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.AddGameState("noteViewingState", new NoteViewingState());
         gameStateManager.AddGameState("playingState", new PlayingState());
         gameStateManager.AddGameState("pauseScreenState", new PauseScreenState());
+        gameStateManager.AddGameState("gameOverState", new GameOverState());
+        gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.SwitchTo("titleScreenState");
     }
 }

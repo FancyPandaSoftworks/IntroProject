@@ -14,6 +14,7 @@ class RandomLevel : Level
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
     private string pathID, wallID;
+
    
     /// <summary>
     /// Property for getting the grid by making a grid out of the list of tiles
@@ -142,6 +143,8 @@ class RandomLevel : Level
         gameObjects.Add(player);
         player.Parent = this;
         player.LoadContent();
+        
+
 
         foreach(GameObject obj in tileGrid.Objects)
         {
@@ -155,10 +158,9 @@ class RandomLevel : Level
         monster.Parent = this;
         monster.LoadContent();
         gameObjects.Add(monster);
-
         stamina = new Stamina();
-        stamina.Parent = this;
         gameObjects.Add(stamina);
+        stamina.Parent = this;
 
     }
 
@@ -305,7 +307,7 @@ class RandomLevel : Level
                 
                 while (tiles > 0)
                 {
-                    if (tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y)))
+                    if (!(tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y))))
                     {
                         //Choose where to place the Tile
                         this.position.X += x;
