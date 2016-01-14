@@ -55,7 +55,7 @@ class Monster : Object3D
         monsterOrigin = monsterPosition + new Vector3(200 / 2, 0, 200 / 2);
 
         //Monster's velocity
-        velocity = 120;
+        velocity = 2;
     }
 
     public override void Update(GameTime gameTime)
@@ -79,11 +79,11 @@ class Monster : Object3D
         //this switches the monster's AI depending on whether the player is in the monster's line of sight
         if (PlayerInSight(xdifference, zdifference, new Vector2(monsterOrigin.X, monsterOrigin.Z)))
         {
-            SimplePathFinding(gameTime, xdifference, zdifference);
+            SimplePathFinding(xdifference, zdifference);
         }
         else
         {
-            AdvancedPathFinding(gameTime);
+            AdvancedPathFinding();
         }
 
         //Making the danger level depentent on the position difference of the player and monster
@@ -274,28 +274,28 @@ class Monster : Object3D
     }
 
     //a simple method for moving the monster straight towards the player
-    public void SimplePathFinding(GameTime gameTime, float xdifference, float ydifference)
+    public void SimplePathFinding(float xdifference, float ydifference)
     {
         if (playerPosition.X > monsterOrigin.X)
         {
-            monsterOrigin.X += velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            monsterOrigin.X += velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference));
         }
         if (playerPosition.X < monsterOrigin.X)
         {
-            monsterOrigin.X -= velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            monsterOrigin.X -= velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference));
         }
         if (playerPosition.Z > monsterOrigin.Z)
         {
-            monsterOrigin.Z += velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            monsterOrigin.Z += velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference));
         }
         if (playerPosition.Z < monsterOrigin.Z)
         {
-            monsterOrigin.Z -= velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            monsterOrigin.Z -= velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference));
         }
     }
 
     //this method makes the monster follow the shortest path to the player, using the tile cost method and the stepgrid
-    public void AdvancedPathFinding(GameTime gameTime)
+    public void AdvancedPathFinding()
     {
         if ((int)monsterOrigin.X / GameObjectGrid.cellWidth > 0)
         {
@@ -303,7 +303,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
                 {
-                    monsterOrigin.X -= velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    monsterOrigin.X -= velocity;
                 }
             }
         }
@@ -313,7 +313,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
                 {
-                    monsterOrigin.X += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    monsterOrigin.X += velocity;
                 }
             }
         }
@@ -323,7 +323,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] is WallTile))
                 {
-                    monsterOrigin.Z -= velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    monsterOrigin.Z -= velocity;
                 }
             }
         }
@@ -333,7 +333,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] is WallTile))
                 {
-                    monsterOrigin.Z += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    monsterOrigin.Z += velocity;
                 }
             }
         }
