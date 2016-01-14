@@ -53,23 +53,60 @@ class PlayingState : Root
         if (level.Completed)
         {
             roomCounter++;
-            
-            //Random level 
-            if (roomCounter % 50 != 0)
-                level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
-            
+            Console.WriteLine(roomCounter);
+            //First room
+            if (roomCounter == 1)
+                level = new SpecialLevel(roomCounter, "Content\\Special Levels\\First.txt");
+
+            //Save rooms 
+            else if (roomCounter % 50 == 0 && roomCounter != 250)
+            {
+                level = new SpecialLevel(roomCounter, "Content\\Special Levels\\CheckPoint.txt");
+                Save(roomCounter, "SaveFile.txt");
+            }
+
             //Final level
             else if (roomCounter == 250)
             {
-                level = new SpecialLevel(roomCounter, "Final.txt");
+                level = new SpecialLevel(roomCounter, "Content\\Special Levels\\Final.txt");
             }
-           
-            //Every 50 levels
-            else
+
+            //Rooms 61 - 80: 1/5 chance of a monster chasing you
+            else if (roomCounter > 60 && roomCounter < 81)
             {
-                level = new SpecialLevel(roomCounter, "CheckPoint.txt");
-                Save(roomCounter, "SaveFile.txt");
+                if (GameEnvironment.Random.Next(5) == 0)
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)), true);
+                else
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
             }
+            //Rooms 101 - 125: 1/4 chance of monster chasing you
+            else if (roomCounter > 100 && roomCounter < 126)
+            {
+                if (GameEnvironment.Random.Next(4) == 0)
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)), true);
+                else
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
+            }
+            //Rooms 151 - 190: 1/3 chance of monster chasing you
+            else if (roomCounter > 150 && roomCounter < 191)
+            {
+                if (GameEnvironment.Random.Next(3) == 0)
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)), true);
+                else
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
+            }
+            //Rooms 211 - 240: 1/2 chance of monster chasing you
+            else if (roomCounter > 210 && roomCounter < 241)
+            {
+                if (GameEnvironment.Random.Next(2) == 0)
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)), true);
+                else
+                    level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
+            }
+            //Levels with no monster
+            else
+                level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
+
             foreach (GameObject obj in level.Objects)
             {
                 obj.Parent = level;

@@ -14,10 +14,12 @@ class SpecialLevel : Level
     public SpecialLevel(int roomNumber, string name)
     {
         //add items to the level
+        player = new Player(Vector3.Zero);
+        player.Parent = this;
         tileGrid = LoadLevel(name);
         tileGrid.Parent = this;
         gameObjects.Add(tileGrid);
-        Player player = new Player(Vector3.Zero);
+        player.LoadContent();
         gameObjects.Add(player);
     }
 
@@ -41,7 +43,7 @@ class SpecialLevel : Level
         }
 
         //make a grid for the tiles
-        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
+        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "TileGrid");
 
         //Load the tiles into the grid
         for (int x = 0; x < width; ++x)

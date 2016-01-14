@@ -140,9 +140,9 @@ class RandomLevel : Level
 
         //making the player
         player = new Player(Vector3.Zero);
-            gameObjects.Add(player);
-            player.Parent = this;
-            player.LoadContent();
+        gameObjects.Add(player);
+        player.Parent = this;
+        player.LoadContent();
 
         foreach(GameObject obj in tileGrid.Objects)
         {
@@ -309,7 +309,7 @@ class RandomLevel : Level
                 
                 while (tiles > 0)
                 {
-                    if (tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y)))
+                    if (!(tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y))))
                     {
                         //Choose where to place the Tile
                         this.position.X += x;
