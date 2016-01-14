@@ -29,32 +29,35 @@ class SpecialLevel : Level
     private TileGrid LoadLevel(string name)
     {
         List<string> text = new List<string>();
-        StreamReader streamReader = new StreamReader(name);
-        string line = streamReader.ReadLine();
-        int width = line.Length;
-
-        //read the file
-        while (line != null)
+        TileGrid tileGrid;
+        using (StreamReader streamReader = new StreamReader(name))
         {
-            text.Add(line);
-            line = streamReader.ReadLine();
-        }
+            string line = streamReader.ReadLine();
+            int width = line.Length;
 
-        //make a grid for the tiles
-        TileGrid tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
-
-        //Load the tiles into the grid
-        for (int x = 0; x < width; ++x)
-        {
-            for (int y = 0; y < text.Count; ++y)
+            //read the file
+            while (line != null)
             {
-                Tile tile = LoadTile(text[y][x], x, y);
-                if (tile != null)
+                text.Add(line);
+                line = streamReader.ReadLine();
+            }
+
+            //make a grid for the tiles
+            tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
+
+            //Load the tiles into the grid
+            for (int x = 0; x < width; ++x)
+            {
+                for (int y = 0; y < text.Count; ++y)
                 {
-                    tileGrid.Add(tile, x, y);
-                    if(tile is WallTile)
+                    Tile tile = LoadTile(text[y][x], x, y);
+                    if (tile != null)
                     {
-                        tile.Position += new Vector3(0, 200, 0);
+                        tileGrid.Add(tile, x, y);
+                        if (tile is WallTile)
+                        {
+                            tile.Position += new Vector3(0, 200, 0);
+                        }
                     }
                 }
             }

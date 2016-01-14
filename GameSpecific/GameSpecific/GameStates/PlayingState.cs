@@ -95,10 +95,12 @@ class PlayingState : Root
     /// <param name="path">The path where to save the file</param>
     public void Save(int room, string path)
     {
-        StreamWriter fileWriter = new StreamWriter(path, false);
-        string line = room.ToString();
-        fileWriter.WriteLine(line);
-        fileWriter.Close();
+        using (StreamWriter fileWriter = new StreamWriter(path, false))
+        {
+            string line = room.ToString();
+            fileWriter.WriteLine(line);
+            fileWriter.Close();
+        }
     }
 
     public void Reset() { }
