@@ -12,7 +12,12 @@ class PlayingState : Root
 {
     Level level;
     protected int roomCounter;
-    
+
+    public int RoomCounter
+    {
+        set { roomCounter = value - 1; level.Completed = true; }
+    }
+
     /// <summary>
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
@@ -26,7 +31,6 @@ class PlayingState : Root
         {
             obj.Parent = level;
         }
-        roomCounter++;
     }
 
     /// <summary>
@@ -108,9 +112,7 @@ class PlayingState : Root
                 level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
 
             foreach (GameObject obj in level.Objects)
-            {
                 obj.Parent = level;
-            }
         }
         level.Update(gameTime);
     }
@@ -132,10 +134,12 @@ class PlayingState : Root
     /// <param name="path">The path where to save the file</param>
     public void Save(int room, string path)
     {
-        StreamWriter fileWriter = new StreamWriter(path, false);
-        string line = room.ToString();
-        fileWriter.WriteLine(line);
-        fileWriter.Close();
+        using (StreamWriter fileWriter = new StreamWriter(path, false))
+        {
+            string line = room.ToString();
+            fileWriter.WriteLine(line);
+            fileWriter.Close();
+        }
     }
 
     public void Reset() { }
