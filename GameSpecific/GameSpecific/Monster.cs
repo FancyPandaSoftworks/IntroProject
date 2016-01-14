@@ -17,8 +17,9 @@ class Monster : Object3D
     public int tiles = 0;
     public int gridHeight, gridWidth;
     public Player player;
-    TextGameObject text;
+    //public TextGameObject text;
     public Matrix world;
+    public float velocity;
 
 
     public Monster(GameObject[,] grid, Vector3 playerPosition)
@@ -30,25 +31,31 @@ class Monster : Object3D
 
     public void LoadContent()
     {
+        //Finding and declaring the grid
         Level parentLevel = parent as Level;
         TileGrid tileGrid = parentLevel.Find("TileGrid") as TileGrid;
         this.grid = tileGrid.Objects;
         gridWidth = grid.GetLength(0);
         gridHeight = grid.GetLength(1);
+        stepgrid = new int[gridWidth, gridHeight];
+
+        //Counting the amount of path-tiles in the room
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                //counting the amount of path-tiles in the room
                 if (grid[x, y] is Tile && !(grid[x, y] is WallTile))
                 {
                     tiles++;
                 }
             }
         }
-        stepgrid = new int[gridWidth, gridHeight];
+        //Monster's position and origin
         monsterPosition = playerPosition - new Vector3(0, 50, 0);
         monsterOrigin = monsterPosition + new Vector3(200 / 2, 0, 200 / 2);
+
+        //Monster's velocity
+        velocity = 2;
     }
 
     public override void Update(GameTime gameTime)
@@ -261,19 +268,19 @@ class Monster : Object3D
     {
         if (playerPosition.X > monsterOrigin.X)
         {
-            monsterOrigin.X += (float)Math.Cos(Math.Atan(ydifference / xdifference));
+            monsterOrigin.X += velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference));
         }
         if (playerPosition.X < monsterOrigin.X)
         {
-            monsterOrigin.X -= (float)Math.Cos(Math.Atan(ydifference / xdifference));
+            monsterOrigin.X -= velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference));
         }
         if (playerPosition.Z > monsterOrigin.Z)
         {
-            monsterOrigin.Z += (float)Math.Sin(Math.Atan(ydifference / xdifference));
+            monsterOrigin.Z += velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference));
         }
         if (playerPosition.Z < monsterOrigin.Z)
         {
-            monsterOrigin.Z -= (float)Math.Sin(Math.Atan(ydifference / xdifference));
+            monsterOrigin.Z -= velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference));
         }
     }
 
@@ -286,7 +293,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
                 {
-                    monsterOrigin.X -= 1;
+                    monsterOrigin.X -= velocity;
                 }
             }
         }
@@ -296,7 +303,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
                 {
-                    monsterOrigin.X += 1;
+                    monsterOrigin.X += velocity;
                 }
             }
         }
@@ -306,7 +313,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] is WallTile))
                 {
-                    monsterOrigin.Z -= 1;
+                    monsterOrigin.Z -= velocity;
                 }
             }
         }
@@ -316,7 +323,7 @@ class Monster : Object3D
             {
                 if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] is WallTile))
                 {
-                    monsterOrigin.Z += 1;
+                    monsterOrigin.Z += velocity;
                 }
             }
         }
