@@ -80,6 +80,21 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Misc Level Objects\Note\Note Model.fbx">
+      <Name>Note Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Pistol\Pistol Model.fbx">
+      <Name>Pistol Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Door\Door Model.fbx">
+      <Name>Door Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
@@ -199,7 +214,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <None Include="MultipleExitLevelPart1.txt">
       <Name>MultipleExitLevelPart1</Name>
@@ -231,6 +246,25 @@
       <Name>Final</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Misc Level Objects\Note\Note Texture.jpg">
+      <Name>Note Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Misc Level Objects\Door\Door.png">
+      <Name>Door</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Door\Wooden Beam.png">
+      <Name>Wooden Beam</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
