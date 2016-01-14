@@ -16,7 +16,6 @@ class NoteViewingState : Root
 
     public NoteViewingState()
     {
-        MusicPlayer.dangerLevel = 0;
         NoteObject.idList = new System.Collections.Generic.List<string>();
         using (StreamReader streamReader = new StreamReader("Content/noteIDList.txt"))
         {
@@ -74,7 +73,6 @@ class NoteViewingState : Root
     /// <param name="spriteBatch">The SpriteBatch</param>
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        
         GameEnvironment.GameStateManager.GetGameState("playingState").Draw(gameTime, spriteBatch);
         
         //Draw the Pausescreen
@@ -90,6 +88,8 @@ class NoteViewingState : Root
         //Go back to 3D mode
         spriteBatch.GraphicsDevice.BlendState = BlendState.Opaque;
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
+        MusicPlayer.dangerLevel = 0;
     }
 
     /// <summary>
