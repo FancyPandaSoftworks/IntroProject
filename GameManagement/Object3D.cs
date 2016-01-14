@@ -27,7 +27,6 @@ public class Object3D : GameObject
         modelRotation = 0.0f;
         aspectRatio = 1.6667f; //NEEDS TO BE DETERMINED, INSTEAD OF DECLARED
         model = GameEnvironment.AssetManager.GetModel(modelName);
-       
     }
 
     /// <summary>

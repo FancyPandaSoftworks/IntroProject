@@ -14,7 +14,7 @@ class RandomLevel : Level
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
     private string pathID, wallID;
-    private Object3D trapdoor;
+
    
     /// <summary>
     /// Property for getting the grid by making a grid out of the list of tiles
@@ -157,25 +157,13 @@ class RandomLevel : Level
         monster.LoadContent();
         gameObjects.Add(monster);
 
-        //adding the trapdoor to the exit-tile and entrance-tile
-        //(the bottom of the trapdoor model looks like a hole in  the ceiling and is put on the roof of the entrance-tile)
-        for (int i = 0; i < tileGrid.Objects.GetLength(0); i++)
-            for (int j = 0; j < tileGrid.Objects.GetLength(1); j++)
-            {
-                if (tileGrid.Objects[i, j] is ExitTile)
-                {
-                    trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor");
-                    trapdoor.Position = tileGrid.Objects[i, j].Position + new Vector3(0, 100, 0);
-                    gameObjects.Add(trapdoor);
-                }
-
-                if (tileGrid.Objects[i, j] is EntryTile)
+        /*if (tileGrid.Objects[i, j] is EntryTile)
                 {
                     trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor");
                     trapdoor.Position = tileGrid.Objects[i, j].Position + new Vector3(0, 300, 0);
                     gameObjects.Add(trapdoor);
                 }
-            }
+            }*/
     }
 
     /// <summary>

@@ -15,12 +15,6 @@ class TitleScreenState : GameState
 
     public TitleScreenState()
     {
-        /*
-        //Add a background sprite
-        Object2D background = new Object2D("White Sprite", 0);
-        gameObjects.Add(background);
-        */
-
         player = new Player(new Vector3(200, 200f, 200));
         player.ViewVertex = new Vector3(200,
                         200,
