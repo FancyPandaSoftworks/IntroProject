@@ -157,13 +157,6 @@ class RandomLevel : Level
         monster.LoadContent();
         gameObjects.Add(monster);
 
-        /*if (tileGrid.Objects[i, j] is EntryTile)
-                {
-                    trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor");
-                    trapdoor.Position = tileGrid.Objects[i, j].Position + new Vector3(0, 300, 0);
-                    gameObjects.Add(trapdoor);
-                }
-            }*/
     }
 
     /// <summary>

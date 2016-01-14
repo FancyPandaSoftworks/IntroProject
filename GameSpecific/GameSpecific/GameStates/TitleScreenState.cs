@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.IO;
 
 /// <summary>
 /// The state where the game starts of in
@@ -61,6 +62,18 @@ class TitleScreenState : GameState
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             //TODO: VOEG TOE DAT JE BEGINT VANAF HET LAATSTE CHECKPOINT
+            if (File.Exists("SaveFile.txt"))
+            {
+                using (StreamReader stream = new StreamReader("SaveFile.txt"))
+                {
+                    string line = stream.ReadLine();
+                    if (line != null)
+                    {
+                        PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
+                        playingState.RoomCounter = int.Parse(line);
+                    }
+                }
+            }
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
 
@@ -70,6 +83,9 @@ class TitleScreenState : GameState
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             //TODO: voeg een waarschuwing toe(?)
             //TODO: verwijder de laatste checkpoint in de txt file en maak er 0 van ofzo en begin bij kamer 1
+            File.WriteAllText("SaveFile.txt", String.Empty);
+            PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
+            playingState.RoomCounter = 1;
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
 

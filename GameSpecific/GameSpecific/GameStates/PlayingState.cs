@@ -12,7 +12,12 @@ class PlayingState : Root
 {
     Level level;
     protected int roomCounter;
-    
+
+    public int RoomCounter
+    {
+        set { roomCounter = value - 1; level.Completed = true; }
+    }
+
     /// <summary>
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
@@ -26,7 +31,6 @@ class PlayingState : Root
         {
             obj.Parent = level;
         }
-        roomCounter++;
     }
 
     /// <summary>
@@ -71,9 +75,7 @@ class PlayingState : Root
                 Save(roomCounter, "SaveFile.txt");
             }
             foreach (GameObject obj in level.Objects)
-            {
                 obj.Parent = level;
-            }
         }
         level.Update(gameTime);
     }
