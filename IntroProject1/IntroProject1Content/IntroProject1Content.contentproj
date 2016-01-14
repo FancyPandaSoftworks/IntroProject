@@ -247,7 +247,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="Music\mIn_AmbienceHigh%4032%400%400.wav">
       <Name>mIn_AmbienceHigh%4032%400%400</Name>
@@ -273,6 +272,8 @@
       <Name>SFX_ClockTick</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Misc Level Objects\Note\Note Texture.jpg">
       <Name>Note Texture</Name>
@@ -286,12 +287,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Door\Wooden Beam.png">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Misc Level Objects\Door\Wooden Beam.png">
       <Name>Wooden Beam</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
->>>>>>> origin/master
-    </Compile>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

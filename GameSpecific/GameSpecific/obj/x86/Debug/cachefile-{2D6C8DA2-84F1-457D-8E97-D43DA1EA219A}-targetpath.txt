@@ -37,6 +37,19 @@ Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb
 Content\HUD\Stamina\Exhausted Empty Stamina.xnb
 Content\HUD\Stamina\Exhausted Full Stamina.xnb
 Content\HUD\Stamina\Full Stamina.xnb
+Content\Misc Level Objects\Note\Note Model.xnb
+Content\Misc Level Objects\Pistol\Pistol Model.xnb
+Content\Misc Level Objects\Door\Door Model.xnb
+Content\Misc Level Objects\Note\Note Texture.xnb
+Content\Misc Level Objects\Door\Door.xnb
+Content\Music\mIn_AmbienceHigh@32@0@0.xnb
+Content\Music\mIn_AmbienceLow@32@0@0.xnb
+Content\Music\mIn_DrumsFast@2@8@8.xnb
+Content\Music\mIn_Violin@2@8@8.xnb
+Content\Music\SFX_ClockTick.xnb
+Content\Misc Level Objects\Note\Note Texture_0.xnb
+Content\Misc Level Objects\Door\Door_0.xnb
+Content\Misc Level Objects\Door\Wooden Beam_0.xnb
 Content\noteIDList.txt
 Content\MultipleExitLevelPart1.txt
 Content\MultipleExitLevelPart2.txt

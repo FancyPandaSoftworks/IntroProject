@@ -561,6 +561,180 @@
       <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Full Stamina.xnb</Output>
       <Time>2016-01-14T18:17:35.5517533+01:00</Time>
     </Item>
+    <Item>
+      <Source>Misc Level Objects\Note\Note Model.fbx</Source>
+      <Name>Misc Level Objects\Note\Note Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Model.xnb</Output>
+      <Time>2016-01-14T22:03:57.0846027+01:00</Time>
+      <Dependency>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Note\Note Model_0.xml</Key>
+        <Value>2016-01-14T23:16:37.6773049+01:00</Value>
+      </Dependency>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Pistol\Pistol Model.fbx</Source>
+      <Name>Misc Level Objects\Pistol\Pistol Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Pistol\Pistol Model.xnb</Output>
+      <Time>2016-01-14T22:03:57.0866025+01:00</Time>
+      <Dependency>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Pistol\Pistol Model_0.xml</Key>
+        <Value>2016-01-14T23:16:38.2502978+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Door\Door Model.fbx</Source>
+      <Name>Misc Level Objects\Door\Door Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door Model.xnb</Output>
+      <Time>2016-01-14T23:17:21.2897904+01:00</Time>
+      <Dependency>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Door\Door Model_0.xml</Key>
+        <Value>2016-01-14T23:18:34.8843974+01:00</Value>
+      </Dependency>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Note\Note Texture.jpg</Source>
+      <Name>Misc Level Objects\Note\Note Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture.xnb</Output>
+      <Time>2016-01-14T22:03:57.0856022+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Door\Door.png</Source>
+      <Name>Misc Level Objects\Door\Door</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door.xnb</Output>
+      <Time>2016-01-14T23:17:21.296795+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\mIn_AmbienceHigh@32@0@0.wav</Source>
+      <Name>Music\mIn_AmbienceHigh@32@0@0</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceHigh@32@0@0.xnb</Output>
+      <Time>2016-01-14T23:08:16.1987282+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\mIn_AmbienceLow@32@0@0.wav</Source>
+      <Name>Music\mIn_AmbienceLow@32@0@0</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceLow@32@0@0.xnb</Output>
+      <Time>2016-01-14T23:08:16.3808578+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\mIn_DrumsFast@2@8@8.wav</Source>
+      <Name>Music\mIn_DrumsFast@2@8@8</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsFast@2@8@8.xnb</Output>
+      <Time>2016-01-14T23:08:16.393867+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\mIn_Violin@2@8@8.wav</Source>
+      <Name>Music\mIn_Violin@2@8@8</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_Violin@2@8@8.xnb</Output>
+      <Time>2016-01-14T23:08:16.4098827+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\SFX_ClockTick.wav</Source>
+      <Name>Music\SFX_ClockTick</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_ClockTick.xnb</Output>
+      <Time>2016-01-14T23:08:15.8686568+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Note\Note Model.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Note\Note Model_0.xml</Output>
+      <Time>2016-01-14T22:03:57.0846027+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Note\Note Texture.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb</Output>
+      <Time>2016-01-14T22:03:57.0856022+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Pistol\Pistol Model.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Pistol\Pistol Model_0.xml</Output>
+      <Time>2016-01-14T22:03:57.0866025+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Door\Door Model.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Door\Door Model_0.xml</Output>
+      <Time>2016-01-14T23:17:21.2897904+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Door\Door.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb</Output>
+      <Time>2016-01-14T23:17:21.296795+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\Door\Wooden Beam.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb</Output>
+      <Time>2016-01-14T23:18:19.1285215+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}</ContentProjectGUID>

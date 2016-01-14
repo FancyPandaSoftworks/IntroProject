@@ -1,47 +1,55 @@
 Content\Albedo.xnb
-Content\Misc Level Objects\Cupboard\Cupboard Model.xnb
-Content\Level Cubes\Path Cubes\Path Cube 01\Path Model 01.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.xnb
-Content\Level Cubes\Path Cubes\Path Cube 02\Path Model 02.xnb
-Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.xnb
-Content\Misc Level Objects\Closet\Closet Model.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.xnb
-Content\Misc Level Objects\Monster\Monster Model.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.xnb
-Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb
 Content\Axis.xnb
 Content\White Sprite.xnb
+Content\text.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb
 Content\Misc Level Objects\Trapdoor\Door.xnb
 Content\Misc Level Objects\Trapdoor\Wooden Beam.xnb
 Content\Misc Level Objects\Cupboard\Wood Texture 1.xnb
+Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb
+Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
+Content\Misc Level Objects\Trapdoor\Door_0.xnb
+Content\Level Cubes\Path Cubes\Path Cube 01\Path Model 01.xnb
 Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.xnb
+Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb
+Content\Level Cubes\Path Cubes\Path Cube 02\Path Model 02.xnb
 Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb
+Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb
+Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.xnb
 Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.xnb
+Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb
 Content\Misc Level Objects\Closet\Wood Texture 3.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.xnb
+Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb
+Content\Misc Level Objects\Monster\Monster Model.xnb
 Content\Misc Level Objects\Monster\Monster Texture.xnb
+Content\Misc Level Objects\Monster\Monster Texture_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.xnb
 Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
+Content\Misc Level Objects\Cupboard\Cupboard Model.xnb
+Content\Misc Level Objects\Closet\Closet Model.xnb
+Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb
 Content\HUD\Stamina\Exhausted Empty Stamina.xnb
 Content\HUD\Stamina\Exhausted Full Stamina.xnb
 Content\HUD\Stamina\Full Stamina.xnb
-Content\text.xnb
-Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb
-Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb
-Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb
-Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb
-Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb
-Content\Misc Level Objects\Monster\Monster Texture_0.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
-Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
-Content\Misc Level Objects\Trapdoor\Door_0.xnb
+Content\Misc Level Objects\Note\Note Model.xnb
+Content\Misc Level Objects\Pistol\Pistol Model.xnb
+Content\Misc Level Objects\Door\Door Model.xnb
+Content\Misc Level Objects\Note\Note Texture.xnb
+Content\Misc Level Objects\Door\Door.xnb
 Content\Music\mIn_AmbienceHigh@32@0@0.xnb
 Content\Music\mIn_AmbienceLow@32@0@0.xnb
 Content\Music\mIn_DrumsFast@2@8@8.xnb
 Content\Music\mIn_Violin@2@8@8.xnb
 Content\Music\SFX_ClockTick.xnb
+Content\Misc Level Objects\Note\Note Texture_0.xnb
+Content\Misc Level Objects\Door\Door_0.xnb
+Content\Misc Level Objects\Door\Wooden Beam_0.xnb
 Content\MultipleExitLevelPart1.txt
 Content\MultipleExitLevelPart2.txt
 Content\MultipleExitLevelPart3.txt
