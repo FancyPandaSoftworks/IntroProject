@@ -90,7 +90,7 @@ public class Object3D : GameObject
     /// <summary>
     /// Get the data of the player and set it in this object
     /// </summary>
-    /// <param name="player">The player which you want to set</param>
+    /// <param name="Player">The player which you want to set</param>
     public void DrawCamera(Camera player)
     {
         playercamera = player;

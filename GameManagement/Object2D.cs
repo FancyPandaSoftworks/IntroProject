@@ -12,7 +12,6 @@ public class Object2D : GameObject
 {
     protected Vector2 origin, position;
     protected SpriteSheet spriteSheet;
-    Texture2D player;
 
     public Object2D(string assetname, int sheetIndex = 0, string id = "")
     {

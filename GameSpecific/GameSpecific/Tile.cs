@@ -145,7 +145,7 @@ class ExitTile : PathTile
         {
             if(obj != null)
             {
-                if (obj.ID == "player")
+                if (obj.ID == "Player")
                 {
                     if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
                     {
@@ -174,7 +174,7 @@ class ExitTile : PathTile
         {
             if (obj != null)
             {
-                if (obj.ID == "player")
+                if (obj.ID == "Player")
                 {
                     if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
                     {

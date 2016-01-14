@@ -55,7 +55,7 @@ class Monster : Object3D
     {
         this.Position = monsterOrigin;
         Level level = parent as Level;
-        player = level.Find("player") as Player;
+        player = level.Find("Player") as Player;
         playerPosition = player.Position;
         ResetGrid();
 
@@ -74,12 +74,12 @@ class Monster : Object3D
         if (PlayerInSight(xdifference, zdifference, new Vector2(monsterOrigin.X, monsterOrigin.Z)))
         {
             SimplePathFinding(xdifference, zdifference);
-            Console.WriteLine("simple");
+            //Console.WriteLine("simple");
         }
         else
         {
             AdvancedPathFinding();
-            Console.WriteLine("adv");
+            //Console.WriteLine("adv");
         }
     }
 
@@ -376,14 +376,11 @@ class Monster : Object3D
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
 
-        //Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, Position.Z - playercamera.Position.Z); //afstand
-        //direction.Normalize(); //matrix met lengte 0
-        //world = Matrix.CreateWorld(Position, Vector3.Up, direction);
-        //model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
-        //           aspectRatio, 1.0f, 500.0f));
-
-        base.Draw(gameTime, spriteBatch);
-            
+        Vector3 direction = playercamera.Position - Position; //afstand
+        direction.Normalize(); //matrix met lengte 0
+        world = Matrix.CreateWorld(Position, Vector3.Up, direction);
+        model.Draw(world, Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up), Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f),
+                   aspectRatio, 1.0f, 500.0f));            
     }
 }
 

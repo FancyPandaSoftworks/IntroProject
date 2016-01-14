@@ -35,8 +35,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Cupboard\Cupboard.fbx">
-      <Name>Cupboard</Name>
+    <Compile Include="Misc Level Objects\Cupboard\Cupboard Model.fbx">
+      <Name>Cupboard Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -60,8 +60,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Closet\Closet.fbx">
-      <Name>Closet</Name>
+    <Compile Include="Misc Level Objects\Closet\Closet Model.fbx">
+      <Name>Closet Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -89,8 +89,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Trapdoor\Trapdoor.fbx">
-      <Name>Trapdoor</Name>
+    <Compile Include="Misc Level Objects\Trapdoor\Trapdoor Model.fbx">
+      <Name>Trapdoor Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -178,6 +178,24 @@
   <ItemGroup>
     <Compile Include="Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.jpg">
       <Name>Wall Texture 03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="HUD\Stamina\Exhausted Empty Stamina.png">
+      <Name>Exhausted Empty Stamina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="HUD\Stamina\Exhausted Full Stamina.png">
+      <Name>Exhausted Full Stamina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="HUD\Stamina\Full Stamina.png">
+      <Name>Full Stamina</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

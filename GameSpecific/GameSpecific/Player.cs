@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input;
 public class Player : Camera
 {
     float velocity;
-    int stamina;
+    public int stamina;
     public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
     TileGrid grid;
 
@@ -20,7 +20,7 @@ public class Player : Camera
     /// </summary>
     /// <param name="startPos">Where to start</param>
     public Player(Vector3 startPos)
-        : base("player")
+        : base("Player")
     {
         position = startPos;
 
@@ -79,9 +79,9 @@ public class Player : Camera
             if (stamina < 20)
                 exhausted = true;
         }
-        if (stamina < 2000 && !ShiftDown)
+        if (stamina < 2000 && (!ShiftDown || exhausted))
             stamina += (int)(0.3f * gameTime.ElapsedGameTime.TotalMilliseconds);
-        if (stamina > 20)
+        if (stamina > 400)
             exhausted = false;
 
         if (WDown && !(grid.Objects[(int)((position.X + 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))

@@ -72,10 +72,8 @@ D:\DATA\GIT\Introproject\Introproject\IntroProject\GameSpecific\GameSpecific\bin
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\monster.xnb
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\untitled.xnb
 C:\Users\Eigenaar\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\WallCubeTestTexture_0.xnb
-C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Cupboard.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.xnb
-C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Trapdoor.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door.xnb
@@ -95,7 +93,6 @@ C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\D
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb
-C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Closet.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Model.xnb
@@ -104,3 +101,9 @@ C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\D
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.xnb
 C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Cupboard Model.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Closet Model.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Empty Stamina.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Full Stamina.xnb
+C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Full Stamina.xnb

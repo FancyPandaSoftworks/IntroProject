@@ -139,9 +139,9 @@ class RandomLevel : Level
 
         //making the player
         player = new Player(Vector3.Zero);
-            gameObjects.Add(player);
-            player.Parent = this;
-            player.LoadContent();
+        gameObjects.Add(player);
+        player.Parent = this;
+        player.LoadContent();
 
         foreach(GameObject obj in tileGrid.Objects)
         {
@@ -155,6 +155,11 @@ class RandomLevel : Level
         monster.Parent = this;
         monster.LoadContent();
         gameObjects.Add(monster);
+
+        stamina = new Stamina();
+        stamina.Parent = this;
+        gameObjects.Add(stamina);
+
     }
 
     /// <summary>

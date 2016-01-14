@@ -10,23 +10,18 @@ using Microsoft.Xna.Framework.Graphics;
  class Level : GameObjectList
 {
     protected Player player;
+    protected Stamina stamina;
     protected bool completed;
 
     public Level()
     {
         completed = false;
-        if (!(this is RandomLevel))
-        {
-            player = new Player(Vector3.Zero);
-            gameObjects.Add(player);
-        }
-
         if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
         { 
             NoteObject note = new NoteObject(NoteObject.idList[0]);
             note.Parent = this;
             //NoteObject.idList.Remove(NoteObject.idList[0]);
-            gameObjects.Add(note); 
+            gameObjects.Add(note);
         }
     }
     
@@ -54,7 +49,7 @@ using Microsoft.Xna.Framework.Graphics;
         {
             Completed = true;
         }
-        Find("player").HandleInput(inputHelper);        
+        Find("Player").HandleInput(inputHelper);        
     }
 
     /// <summary>
@@ -116,8 +111,10 @@ using Microsoft.Xna.Framework.Graphics;
                         }
                     }
             }
-          
-        }        
+
+            else
+                gameObject.Draw(gameTime, spriteBatch);
+        }
     }
 
     /// <summary>
