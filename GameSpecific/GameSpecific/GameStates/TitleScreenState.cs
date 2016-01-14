@@ -17,7 +17,6 @@ class TitleScreenState : GameState
     public TitleScreenState()
     {
         player = new Player(new Vector3(200, 200f, 200));
- 
         level = new Level(player);
 
         //Add a continue button
@@ -118,6 +117,15 @@ class TitleScreenState : GameState
 
         //Resetting the positions of the buttons
         ResetPositions();
+
+        
+
+        foreach (Sound sound in MusicPlayer.musicInstruments)
+        {
+            sound.StopSound();
+        }
+        MusicPlayer.beatCount = 0;
+        MusicPlayer.barCount = 0; 
     }
 
     private void DrawEndless(int part,GameTime gameTime, SpriteBatch spriteBatch)

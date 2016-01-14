@@ -80,5 +80,7 @@ class GameOverState : GameState
 
         //Resetting button and background
         ResetPositions();
+
+        MusicPlayer.dangerLevel = 0;
     }
 }

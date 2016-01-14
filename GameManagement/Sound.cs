@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 
 
-class Sound : Game
+public class Sound
 {
     private string type;
     private string name;
@@ -19,7 +19,6 @@ class Sound : Game
     private int fadeOut;    // in beats
     private int fadeOutCounter = 0;
     private int fadeInCounter = 0;
-    private int part = 0;
     Timer fadeOutTimer = new Timer();
 
     SoundEffect sound;
@@ -27,8 +26,7 @@ class Sound : Game
 
     protected void Initialize(string filename)
     {
-        Content.RootDirectory = "Content";
-        sound = Content.Load<SoundEffect>(filename);
+        sound = GameEnvironment.AssetManager.Content.Load<SoundEffect>("Music\\" + filename);
         iSound = sound.CreateInstance();
     }
 
@@ -178,20 +176,13 @@ class Sound : Game
         #region Declare File info
         name = localName;
 
-        for (int k = 1; k <= 4; k++)
-            if (name.Contains(k.ToString()))
-                part = k;
-
-
         fadeIn = (int)localFadeIn - 48;
         fadeOut = (int)localFadeOut - 48;
         #endregion
 
         #endregion
 
-        #region Create Sound
         Initialize(filename);
-        #endregion
     }
 
     public void PlaySound()
@@ -233,11 +224,6 @@ class Sound : Game
     public string Name
     {
         get { return name; }
-    }
-
-    public int Part
-    {
-        get { return part; }
     }
 
     public int DangerLevel

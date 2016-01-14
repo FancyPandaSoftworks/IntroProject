@@ -35,6 +35,7 @@ public class GameEnvironment : Game
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
         //IsMouseVisible = false;
+
     }
     public static GraphicsDevice Graphics
     {

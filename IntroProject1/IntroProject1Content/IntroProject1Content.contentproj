@@ -199,7 +199,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <None Include="MultipleExitLevelPart1.txt">
       <Name>MultipleExitLevelPart1</Name>
@@ -231,6 +231,34 @@
       <Name>Final</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Music\mIn_AmbienceHigh%4032%400%400.wav">
+      <Name>mIn_AmbienceHigh%4032%400%400</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mIn_AmbienceLow%4032%400%400.wav">
+      <Name>mIn_AmbienceLow%4032%400%400</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mIn_DrumsFast%402%408%408.wav">
+      <Name>mIn_DrumsFast%402%408%408</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mIn_Violin%402%408%408.wav">
+      <Name>mIn_Violin%402%408%408</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_ClockTick.wav">
+      <Name>SFX_ClockTick</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

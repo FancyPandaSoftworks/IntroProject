@@ -14,11 +14,13 @@ abstract class GameState : GameObjectList
     /// </summary>
     public static Game GameVariable
     {
-        set{ if (!gameVariableSet)
-                { 
+        set
+        {
+            if (!gameVariableSet)
+            {
                 game = value;
                 gameVariableSet = true;
-                }
+            }
         }
     }
 

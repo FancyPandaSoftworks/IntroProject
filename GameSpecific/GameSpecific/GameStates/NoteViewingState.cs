@@ -16,6 +16,7 @@ class NoteViewingState : Root
 
     public NoteViewingState()
     {
+        MusicPlayer.dangerLevel = 0;
         NoteObject.idList = new System.Collections.Generic.List<string>();
         using (StreamReader streamReader = new StreamReader("Content/noteIDList.txt"))
         {

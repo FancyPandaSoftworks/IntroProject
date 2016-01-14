@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 
-class MusicPlayer : Game
+public class MusicPlayer
 {
     #region Lists of sound types
-    List<Sound> musicInstruments = new List<Sound>();
+    public static List<Sound> musicInstruments = new List<Sound>();
     List<Sound> SoundEffect3D = new List<Sound>();
     List<Sound> SoundEffect = new List<Sound>();
     List<Sound> LoopedEffect = new List<Sound>();
@@ -23,16 +23,16 @@ class MusicPlayer : Game
     SpriteBatch spriteBatch;
     int bpm = 110;      //beats per second
     double beatLength;  //
-    int beatCount = 0;  //
-    int barCount = 0;   //
+    public static int beatCount = 0;  //
+    public static int barCount = 0;   //
 
     //sync
     bool[] barSync = new bool[64];
 
-    float dangerLevel = 4.0f;
+    public static float dangerLevel;
     int TimerCount = 0;
 
-    Timer timer = new Timer();
+    public Timer timer = new Timer();
     Timer timer2 = new Timer();
     Timer fadeOutTimer = new Timer();
 
@@ -42,14 +42,14 @@ class MusicPlayer : Game
 
     //----------------------------------Methods----------------------------------//
 
-    static void Main()
+    /*static void Main()
     {
         MusicPlayer musicPlayer = new MusicPlayer();
         musicPlayer.Run();
-    }
+    }*/
 
     //create a new sound, and add them to their type list
-    private void NewSound(string filename, int dangerlevel = 0)
+    public void NewSound(string filename, int dangerlevel = 0)
     {
         Sound sound = new Sound(filename, dangerlevel);
 
@@ -69,7 +69,7 @@ class MusicPlayer : Game
 
     public MusicPlayer()
     {
-        graphics = new GraphicsDeviceManager(this);
+        //graphics = new GraphicsDeviceManager(this);
         beatLength = 60000 / (double)bpm;
         timer.Interval = beatLength;
         timer.Elapsed += MusicTimer;
@@ -90,29 +90,18 @@ class MusicPlayer : Game
                     {
                         if (beatCount == 0)
                         {
-                            if (sound.Part == 0)
-                            {
-                                sound.PlaySound();
-                            }
-                            else
-                            {
-                                int maxParts = 4;//32 * (1 / sound.Length);
-                                for (int i = 1; i <= maxParts; i++)
-                                    if (sound.Part == i)
-                                        if ((barCount + sound.Length) - sound.Length * i == 0)
-                                            sound.PlaySound();
-                            }
+                            sound.PlaySound();
                         }
                     }
                     else
                     {
                         if (sound.Playingstate == "playing")
-                            if (sound.FadeOut >= 0)
-                            {
-                                sound.Playingstate = "fadingOut";
-                                FadeOut(sound);
-                            }
-                            else
+                            //if (sound.FadeOut >= 0)
+                            //{
+                            //    sound.Playingstate = "fadingOut";
+                            //    //FadeOut(sound);
+                            //}
+                            //else
                                 sound.StopSound();
                     }
                 }
@@ -137,31 +126,27 @@ class MusicPlayer : Game
         }
     }
 
-    //add new sounds here: NewSound("type_Name@Length@fadeIn@fadeOut")
-    protected override void LoadContent()
-    {
-        player = new AudioListener();
-        emitter = new AudioEmitter();
-        Content.RootDirectory = "Content";
-        spriteBatch = new SpriteBatch(GraphicsDevice);
-        font = Content.Load<SpriteFont>("SpriteFont1");
-        #region MusicInstruments
-        NewSound("mIn_AmbienceHigh@32@0@0");
-        NewSound("mIn_AmbienceLow@32@0@0");
-        NewSound("mIn_Violin@2@8@8", 4);
-        NewSound("mIn_DrumsFast@2@8@8", 4);
-        #endregion
-        //NewSound("3DS_beeptone");
-        NewSound("SFX_ClockTick");
-        timer.Enabled = true;
-        foreach (Sound sound in SoundEffect3D)
-        {
-            sound.Play3DSound(player, emitter);
-        }
-    }
+    //add new sounds here: newsound("type_name@length@fadein@fadeout")
+    //protected override void loadcontent()
+    //{
+    //player = new audiolistener();
+    //emitter = new audioemitter();
+    /*content.rootdirectory = "content";
+    spritebatch = new spritebatch(graphicsdevice);
+    font = content.load<spritefont>("spritefont1");*/
+    /*#region musicinstruments
+    newsound("min_ambiencehigh@32@0@0");
+    newsound("min_ambiencelow@32@0@0");
+    newsound("min_violin@2@8@8", 4);
+    newsound("min_drumsfast@2@8@8", 4);
+    #endregion*/
+    //newsound("3ds_beeptone");
+    //newsound("sfx_clocktick");
+    //timer.enabled = true;
+    //}
 
     //Draw info on screen (debug)
-    protected override void Draw(GameTime gameTime)
+    /*protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.White);
         spriteBatch.Begin();
@@ -174,21 +159,21 @@ class MusicPlayer : Game
         spriteBatch.DrawString(font, "GameTime: " + gameTime.TotalGameTime.Seconds, pos, Color.Black);
         pos.Y = 0;
         spriteBatch.End();
-    }
+    }*/
 
-    protected override void Update(GameTime gameTime)
-    {
-        emitter.Position = new Vector3(
-            (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds), // left right
-            (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds), // front back
-            (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds) // up down
-                                                    );
+    //protected override void Update(GameTime gameTime)
+    //{
+    //    emitter.Position = new Vector3(
+    //        (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds), // left right
+    //        (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds), // front back
+    //        (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds) // up down
+    //                                                );
 
-        foreach (Sound sound in SoundEffect3D)
-        {
-            sound.SoundApply3D(player, emitter);
-        }
-    }
+    //    foreach (Sound sound in SoundEffect3D)
+    //    {
+    //        sound.SoundApply3D(player, emitter);
+    //    }
+    //}
 
     private void BeatCounter()
     {
@@ -204,11 +189,11 @@ class MusicPlayer : Game
             barCount = 0;
         }
 
-        if (TimerCount == 8) // ??
+        /*if (TimerCount == 8) // ??
         {
             timer2.Enabled = false;
             TimerCount = 0;
-        }
+        }*/
     }
 
     private void BeatSyncer()
@@ -229,14 +214,15 @@ class MusicPlayer : Game
 
     }
 
-    public void FadeOut(Sound sound)
-    {
-        Console.WriteLine("FadeOutTimer start");
-        sound.FadeOutTimer.Elapsed += FadeOutTimer;
-        sound.FadeOutTimer.Interval = beatLength * sound.FadeOut / 100;
-        sound.FadeOutTimer.AutoReset = true;
-        sound.FadeOutTimer.Enabled = true;
-    }
+    //TIJDELIJK ERUIT GECOMMENT
+    //public void FadeOut(Sound sound)
+    //{
+    //    Console.WriteLine("FadeOutTimer start");
+    //    sound.FadeOutTimer.Elapsed += FadeOutTimer;
+    //    sound.FadeOutTimer.Interval = beatLength * sound.FadeOut / 100;
+    //    sound.FadeOutTimer.AutoReset = true;
+    //    sound.FadeOutTimer.Enabled = true;
+    //}
 
     //--------------------Timers----------------------//
 
@@ -255,28 +241,28 @@ class MusicPlayer : Game
         BeatCounter();
     }
 
-    private void FadeOutTimer(Object source, ElapsedEventArgs e)
-    {
-        foreach (Sound sound in musicInstruments)
-        {
-            if (sound.Playingstate == "fadingOut")
-            {
-                sound.FadeOutCounter++;
+    //private void FadeOutTimer(Object source, ElapsedEventArgs e)
+    //{
+    //    foreach (Sound sound in musicInstruments)
+    //    {
+    //        if (sound.Playingstate == "fadingOut")
+    //        {
+    //            sound.FadeOutCounter++;
 
 
-                if (sound.FadeOutCounter < 100)
-                    sound.Volume = 1.0f - (float)sound.FadeOutCounter / 100;
-                else
-                {
-                    sound.FadeOutCounter = 0;
-                    sound.FadeOutTimer.Enabled = false;
-                    sound.StopSound();
-                }
-                Console.WriteLine("Timer executed {0} times", sound.FadeOutCounter);
-                Console.WriteLine("volume = {0}", sound.Volume);
-            }
-        }
-    }
+    //            if (sound.FadeOutCounter < 100)
+    //                sound.Volume = 1.0f - (float)sound.FadeOutCounter / 100;
+    //            else
+    //            {
+    //                sound.FadeOutCounter = 0;
+    //                sound.FadeOutTimer.Enabled = false;
+    //                sound.StopSound();
+    //            }
+    //            Console.WriteLine("Timer executed {0} times", sound.FadeOutCounter);
+    //            Console.WriteLine("volume = {0}", sound.Volume);
+    //        }
+    //    }
+    //}
 
 
     //Metronome for debugging

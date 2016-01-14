@@ -19,7 +19,7 @@ class Monster : Object3D
     public Player player;
     //public TextGameObject text;
     public Matrix world;
-    public float velocity;
+    public float velocity, xzdifference;
 
 
     public Monster(GameObject[,] grid, Vector3 playerPosition)
@@ -66,7 +66,6 @@ class Monster : Object3D
         playerPosition = player.Position;
         ResetGrid();
 
-
         //setting the tile the player is standing on to 0, in the stepgrid
         stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
         CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
@@ -85,6 +84,17 @@ class Monster : Object3D
         else
         {
             AdvancedPathFinding(gameTime);
+        }
+
+        //Making the danger level depentent on the position difference of the player and monster
+        xzdifference = (float)Math.Sqrt(Math.Pow(xdifference, 2) + Math.Pow(zdifference, 2));
+
+        for (int i = 10; i >= 0; i--)
+        {
+            if (xzdifference < GameObjectGrid.cellWidth * 2 * i)
+            {
+                MusicPlayer.dangerLevel = 10 - i;
+            }
         }
     }
 
