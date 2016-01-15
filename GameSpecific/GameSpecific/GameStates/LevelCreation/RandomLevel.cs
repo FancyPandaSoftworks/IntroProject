@@ -161,6 +161,7 @@ class RandomLevel : Level
         stamina = new Stamina();
         gameObjects.Add(stamina);
         stamina.Parent = this;
+        text.text = "Press E to proceed";
 
     }
 

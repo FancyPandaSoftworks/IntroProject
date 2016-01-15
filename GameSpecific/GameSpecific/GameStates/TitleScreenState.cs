@@ -59,9 +59,9 @@ class TitleScreenState : GameState
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             //TODO: VOEG TOE DAT JE BEGINT VANAF HET LAATSTE CHECKPOINT
-            if (File.Exists("SaveFile.txt"))
+            if (File.Exists("Content\\SaveFile.txt"))
             {
-                using (StreamReader stream = new StreamReader("SaveFile.txt"))
+                using (StreamReader stream = new StreamReader("Content\\SaveFile.txt"))
                 {
                     string line = stream.ReadLine();
                     if (line != null)
@@ -80,7 +80,7 @@ class TitleScreenState : GameState
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             //TODO: voeg een waarschuwing toe(?)
             //TODO: verwijder de laatste checkpoint in de txt file en maak er 0 van ofzo en begin bij kamer 1
-            File.WriteAllText("SaveFile.txt", String.Empty);
+            File.WriteAllText("Content\\SaveFile.txt", String.Empty);
             PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
             playingState.RoomCounter = 1;
             GameEnvironment.GameStateManager.SwitchTo("playingState");

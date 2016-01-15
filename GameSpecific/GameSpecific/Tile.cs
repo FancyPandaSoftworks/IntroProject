@@ -144,17 +144,14 @@ class EntryTile : PathTile
 /// </summary>
 class ExitTile : PathTile
 {
-    TextGameObject text;
-    protected Object3D trapdoor;
+    public TextGameObject text;
+    public Object3D exitObject;
+    public bool isOnTile;
 
     public ExitTile(string pathID)
         : base(pathID, "ExitTile")
     {
-        text = new TextGameObject("text");
-        text.Position = Vector2.Zero;
-        text.text = "Press E to proceed";
-
-        trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor Model", "Trapdoor");
+        exitObject = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor Model", "Trapdoor");
     }
 
     /// <summary>
@@ -173,10 +170,13 @@ class ExitTile : PathTile
                 {
                     if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
                     {
+                        isOnTile = true;
                         Player player = obj as Player;
-                        if(player.EDown == true)
+                        if (player.EDown == true)
                             level.Completed = true;
                     }
+                    else
+                        isOnTile = false;
                 }
             } 
         }
@@ -191,23 +191,7 @@ class ExitTile : PathTile
     {
         base.Draw(gameTime, spriteBatch);
 
-        //Draw text if the player is on the ExitTile
-        Level level = parent.Parent as Level;
-        foreach (GameObject obj in level.Objects)
-        {
-            if (obj != null)
-            {
-                if (obj.ID == "Player")
-                {
-                    trapdoor.DrawCamera(obj as Player);
-                    if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
-                    {
-                        text.Draw(gameTime, spriteBatch);
-                    }
-                }
-            }
-        }
-        trapdoor.Position = Position + new Vector3(0, 100, 0);
-        trapdoor.Draw(gameTime, spriteBatch);
+        exitObject.Position = Position + new Vector3(0, 100, 0);
+        exitObject.Draw(gameTime, spriteBatch);
     }
 }

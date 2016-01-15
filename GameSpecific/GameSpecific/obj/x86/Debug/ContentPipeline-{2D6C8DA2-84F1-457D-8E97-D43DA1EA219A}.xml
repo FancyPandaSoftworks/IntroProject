@@ -385,10 +385,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Model.xnb</Output>
-      <Time>2016-01-14T18:17:39.4316482+01:00</Time>
+      <Time>2016-01-15T20:52:45.6429457+01:00</Time>
       <Dependency>
         <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Monster\Monster Model_0.xml</Key>
-        <Value>2016-01-14T18:26:29.816444+01:00</Value>
+        <Value>2016-01-15T20:52:47.7163599+01:00</Value>
       </Dependency>
       <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture_0.xnb</Request>
     </Item>
@@ -406,7 +406,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Monster\Monster Model_0.xml</Output>
-      <Time>2016-01-14T18:17:39.4316482+01:00</Time>
+      <Time>2016-01-15T20:52:45.6429457+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Monster\Monster Texture.png</Source>

@@ -26,7 +26,7 @@ class PlayingState : Root
     {
         this.roomCounter = roomCounter;
         level = new RandomLevel(this.roomCounter);
-        Save(roomCounter, "SaveFile.txt");
+        Save(roomCounter, "Content\\SaveFile.txt");
         //level = new MultipleExitLevel();
         foreach (GameObject obj in level.Objects)
         {
@@ -67,7 +67,7 @@ class PlayingState : Root
             else if (roomCounter % 50 == 0 && roomCounter != 250)
             {
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\CheckPoint.txt");
-                Save(roomCounter, "SaveFile.txt");
+                Save(roomCounter, "Content\\SaveFile.txt");
             }
 
             //Final level

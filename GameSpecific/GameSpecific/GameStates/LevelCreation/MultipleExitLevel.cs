@@ -24,6 +24,8 @@ class MultipleExitLevel : Level
         stamina = new Stamina();
         stamina.Parent = this;
         gameObjects.Add(stamina);
+
+        text.text = "Press E to proceed";
     }
 
     public override void Update(GameTime gameTime)

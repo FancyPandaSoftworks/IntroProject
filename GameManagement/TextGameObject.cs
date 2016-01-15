@@ -28,8 +28,9 @@ public class TextGameObject : GameObject
         spriteBatch.Begin();
         spriteBatch.DrawString(spriteFont, text, this.position, color);
         spriteBatch.End();
-        spriteBatch.GraphicsDevice.BlendState = BlendState.Opaque;
+        spriteBatch.GraphicsDevice.BlendState = BlendState.AlphaBlend;
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
     }
 
     /// <summary>

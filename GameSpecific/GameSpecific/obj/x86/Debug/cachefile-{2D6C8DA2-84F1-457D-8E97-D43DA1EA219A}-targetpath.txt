@@ -51,6 +51,7 @@ Content\Misc Level Objects\Note\Note Texture_0.xnb
 Content\Misc Level Objects\Door\Door_0.xnb
 Content\Misc Level Objects\Door\Wooden Beam_0.xnb
 Content\noteIDList.txt
+Content\SaveFile.txt
 Content\MultipleExitLevelPart1.txt
 Content\MultipleExitLevelPart2.txt
 Content\MultipleExitLevelPart3.txt

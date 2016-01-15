@@ -11,7 +11,8 @@ using Microsoft.Xna.Framework.Graphics;
 {
     protected Player player;
     protected Stamina stamina;
-    protected bool completed;
+    protected bool isOnExit, completed;
+    protected TextGameObject text;
 
     public Level(Player player = null)
     {
@@ -28,6 +29,9 @@ using Microsoft.Xna.Framework.Graphics;
             //NoteObject.idList.Remove(NoteObject.idList[0]);
             gameObjects.Add(note);
         }
+
+        text = new TextGameObject("text");
+        text.Position = Vector2.Zero;
     }
     
     /// <summary>
@@ -72,6 +76,12 @@ using Microsoft.Xna.Framework.Graphics;
                     if (gameObject != null)
                     {
                         gameObject.Update(gameTime);
+                        if(gameObject is ExitTile)
+                        {
+                            ExitTile exitTile = gameObject as ExitTile;
+                            if (exitTile.isOnTile)
+                                isOnExit = true;
+                        }
                     }
                 }
             }
@@ -115,6 +125,12 @@ using Microsoft.Xna.Framework.Graphics;
             }
             else
                 gameObject.Draw(gameTime, spriteBatch);
+        }
+
+        if(isOnExit)
+        {
+            text.Draw(gameTime, spriteBatch);
+            isOnExit = false;
         }
     }
 

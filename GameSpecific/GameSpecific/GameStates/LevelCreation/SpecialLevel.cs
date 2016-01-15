@@ -24,6 +24,11 @@ class SpecialLevel : Level
         stamina = new Stamina();
         stamina.Parent = this;
         gameObjects.Add(stamina);
+
+        if (name == "Content\\Special Levels\\Final.txt")
+            text.text = "Press E to kill yourself";
+        else
+            text.text = "Press E to proceed";
     }
 
     /// <summary>
@@ -55,7 +60,7 @@ class SpecialLevel : Level
             {
                 for (int y = 0; y < text.Count; ++y)
                 {
-                    Tile tile = LoadTile(text[y][x], x, y);
+                    Tile tile = LoadTile(text[y][x], x, y, name);
                     if (tile != null)
                     {
                         tileGrid.Add(tile, x, y);
@@ -77,7 +82,7 @@ class SpecialLevel : Level
     /// <param name="x">The x-coördinate</param>
     /// <param name="y">The y-coördinate</param>
     /// <returns>The Tile to Load</returns>
-    private Tile LoadTile(char chr, int x, int y)
+    private Tile LoadTile(char chr, int x, int y, string name)
     {
         if (chr == 'W')
             return new WallTile("01");
@@ -90,7 +95,12 @@ class SpecialLevel : Level
             return new EntryTile("01");
         }
         else if (chr == 'X')
-            return new ExitTile("01");
+        {
+            ExitTile exitTile = new ExitTile("01");
+            if (name == "Content\\Special Levels\\Final.txt")
+                exitTile.exitObject = new Object3D("Misc Level Objects\\Pistol\\Pistol Model");
+            return exitTile;
+        }
         else
             return null;
     }

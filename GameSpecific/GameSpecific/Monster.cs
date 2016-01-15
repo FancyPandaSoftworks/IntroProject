@@ -402,6 +402,8 @@ class Monster : Object3D
             //set the effects for the meshes
             foreach (BasicEffect effect in mesh.Effects)
             {
+                spriteBatch.GraphicsDevice.BlendState = BlendState.AlphaBlend;
+                spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
                 effect.EnableDefaultLighting();
                 effect.World = transforms[mesh.ParentBone.Index] * world;
                 effect.View = Matrix.CreateLookAt(playercamera.Position, playercamera.ViewVertex, Vector3.Up);
@@ -410,6 +412,7 @@ class Monster : Object3D
                 effect.FogEnabled = true;
                 effect.FogStart = 0;
                 effect.FogEnd = 1000;
+                effect.Alpha = 1.0f;
             }
             mesh.Draw();
         }
