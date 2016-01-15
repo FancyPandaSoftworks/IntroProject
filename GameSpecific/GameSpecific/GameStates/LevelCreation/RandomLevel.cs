@@ -157,6 +157,61 @@ class RandomLevel : Level
         monster.LoadContent();
         gameObjects.Add(monster);
 
+        if(GameEnvironment.Random.Next(0,10)==1)
+        {
+           
+            Cupboard cupboard = new Cupboard("Misc Level Objects\\Cupboard\\Cupboard");
+            cupboard.Parent = this;
+            gameObjects.Add(cupboard);
+            foreach (GameObject gameObject in gameObjects)
+            {
+                if (gameObject != null)
+                {
+                    if (gameObject.ID == "TileGrid")
+                    {
+                        TileGrid grid = gameObject as TileGrid;
+                        for (int x = 0; x < grid.Columns; x++)
+                        {
+                            for (int y = 0; y < grid.Rows; y++)
+                            {
+                                if (grid.get(x, y) != null)
+                                {
+                                    if (grid.get(x, y).ID == "WallTile" /*&& GameEnvironment.Random.Next(2) == 1*/)
+                                    {
+                                        try
+                                        {
+                                            if (grid.get(x + 1, y) != null)
+                                            {
+                                                if (grid.get(x + 1, y).ID == "PathTile")
+                                                    cupboard.Position = grid.get(x, y).Position + new Vector3(cupboard.cupboardWidth, -30, 0);
+                                            }
+                                            else if (grid.get(x, y + 1) != null)
+                                            {
+                                                if (grid.get(x, y + 1).ID == "PathTile")
+                                                    cupboard.Position = grid.get(x, y).Position + new Vector3(0, -30, cupboard.cupboardWidth);
+                                            }
+                                            else if (grid.get(x - 1, y) != null)
+                                            {
+                                                if (grid.get(x - 1, y).ID == "PathTile")
+                                                    cupboard.Position = grid.get(x, y).Position - new Vector3(cupboard.cupboardWidth, 30, 0);
+                                            }
+                                            else if (grid.get(x, y - 1) != null)
+                                            {
+                                                if (grid.get(x, y - 1).ID == "PathTile")
+                                                    cupboard.Position = grid.get(x, y).Position - new Vector3(0, 30, cupboard.cupboardWidth);
+                                            }
+                                        }
+                                        catch (IndexOutOfRangeException e) { Console.WriteLine(e.StackTrace); }
+                                        Console.WriteLine(cupboard.Position);
+                                        Console.WriteLine(player.Position);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /// <summary>

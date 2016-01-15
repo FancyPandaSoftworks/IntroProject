@@ -377,7 +377,7 @@ class Monster : Object3D
         Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, playercamera.Position.Z - Position.Z); //afstand
         direction.Normalize(); //matrix met lengte 1
         world = Matrix.CreateWorld(Position, direction, Vector3.Up);
-        //GameEnvironment.Graphics.BlendState = BlendState.AlphaBlend;
+        GameEnvironment.Graphics.BlendState = BlendState.AlphaBlend;
         Matrix[] transforms = new Matrix[model.Bones.Count];
         model.CopyAbsoluteBoneTransformsTo(transforms);
 

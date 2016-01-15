@@ -31,6 +31,7 @@ class Decoration: Object3D
 
 class Cupboard: Decoration
 {
+    public int cupboardWidth = 170;
     public Cupboard(string cupboard, string id = "Cupboard")
         : base(cupboard, "Misc Level Objects\\Cupboard\\Cupboard", DecorationType.cupboard)
     {
@@ -38,10 +39,8 @@ class Cupboard: Decoration
     }
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        if(GameEnvironment.Random.Next(0,10)==0)
         base.Draw(gameTime, spriteBatch);
-        position = new Vector3(Position.X, Position.Y, Position.Z);
-        Console.WriteLine(position);
+        
     }
 }
 

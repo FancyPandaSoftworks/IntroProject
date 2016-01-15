@@ -82,7 +82,7 @@ class PathTile : Tile
 class WallTile : Tile
 {
     public WallTile(string wallID, string id = "WallTile")
-        : base("Level Cubes\\Wall Cubes\\Wall Cube " + wallID + "\\Wall Model " + wallID, "WallTile", TileType.Wall)
+        : base("Level Cubes\\Wall Cubes\\Wall Cube " + wallID + "\\Wall Model " + wallID, id, TileType.Wall)
     {
     }
     
