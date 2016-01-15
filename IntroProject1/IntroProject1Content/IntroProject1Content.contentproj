@@ -289,11 +289,46 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu Buttons\Menu button Exit.png">
+      <Name>Menu button Exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button Continue.png">
+      <Name>Menu button Continue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button NewGame.png">
+      <Name>Menu button NewGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button Continue MouseOver.png">
+      <Name>Menu button Continue MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button Exit MouseOver.png">
+      <Name>Menu button Exit MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button NewGame MouseOver.png">
+      <Name>Menu button NewGame MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="Misc Level Objects\Door\Wooden Beam.png">
       <Name>Wooden Beam</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Content>
+    <Compile Include="Note blank.jpg">
+      <Name>Note blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

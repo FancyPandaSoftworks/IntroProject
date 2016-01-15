@@ -47,4 +47,9 @@ class Button : Object2D
     {
         get { return buttonIsPressed; }
     }
+
+    public bool IsMouseOver
+    {
+        get { return isMouseOver; }
+    }
 }

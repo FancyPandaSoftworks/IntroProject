@@ -10,6 +10,7 @@ using System.IO;
 class TitleScreenState : GameState
 {
     protected Button continueButton, newGameButton, exitButton;
+    protected Button continueButtonMouseOver, newGameButtonMouseOver, exitButtonMouseOver;
     private int part;
     private Level level;
     Player player;
@@ -20,19 +21,37 @@ class TitleScreenState : GameState
         level = new Level(player);
 
         //Add a continue button
-        continueButton = new Button("White Sprite", 0);
+        continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
         gameObjects.Add(continueButton);
+        
+        //Add a mouse-over continue button
+        continueButtonMouseOver = new Button("Menu Buttons\\Menu button Continue MouseOver", 0);
+        continueButtonMouseOver.Position = continueButton.Position;
+        gameObjects.Add(continueButtonMouseOver);
+        continueButtonMouseOver.Visible = false;
 
         //Add a new game button
-        newGameButton = new Button("white Sprite", 0);
+        newGameButton = new Button("Menu Buttons\\Menu button NewGame", 0);
         newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
         gameObjects.Add(newGameButton);
 
+        //Add a mouse-over new game button
+        newGameButtonMouseOver = new Button("Menu Buttons\\Menu button NewGame MouseOver", 0);
+        newGameButtonMouseOver.Position = newGameButton.Position;
+        gameObjects.Add(newGameButtonMouseOver);
+        newGameButtonMouseOver.Visible = false;
+
         //Add an exit button
-        exitButton = new Button("white Sprite", 0);
+        exitButton = new Button("Menu Buttons\\Menu button Exit", 0);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
         gameObjects.Add(exitButton);
+
+        //Add a mouse-over exit button
+        exitButtonMouseOver = new Button("Menu Buttons\\Menu button Exit MouseOver", 0);
+        exitButtonMouseOver.Position = exitButton.Position;
+        gameObjects.Add(exitButtonMouseOver);
+        exitButtonMouseOver.Visible = false;
 
         part = 0;
     }
@@ -42,6 +61,9 @@ class TitleScreenState : GameState
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
         newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
+        continueButtonMouseOver.Position = continueButton.Position - new Vector2(20,0);
+        newGameButtonMouseOver.Position = newGameButton.Position - new Vector2(10,0); 
+        exitButtonMouseOver.Position = exitButton.Position - new Vector2(10,0);
     }
 
     /// <summary>
@@ -58,7 +80,6 @@ class TitleScreenState : GameState
         {
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
-            //TODO: VOEG TOE DAT JE BEGINT VANAF HET LAATSTE CHECKPOINT
             if (File.Exists("SaveFile.txt"))
             {
                 using (StreamReader stream = new StreamReader("SaveFile.txt"))
@@ -78,8 +99,6 @@ class TitleScreenState : GameState
         {
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
-            //TODO: voeg een waarschuwing toe(?)
-            //TODO: verwijder de laatste checkpoint in de txt file en maak er 0 van ofzo en begin bij kamer 1
             File.WriteAllText("SaveFile.txt", String.Empty);
             PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
             playingState.RoomCounter = 1;
@@ -91,6 +110,21 @@ class TitleScreenState : GameState
             game.Exit();
         }
 
+        //Change visibility of mouseoverbutton
+        if (continueButton.IsMouseOver)
+            continueButtonMouseOver.Visible = true;
+        else
+            continueButtonMouseOver.Visible = false;
+
+        if (newGameButtonMouseOver.IsMouseOver)
+            newGameButtonMouseOver.Visible = true;
+        else
+            newGameButtonMouseOver.Visible = false;
+
+        if (exitButtonMouseOver.IsMouseOver)
+            exitButtonMouseOver.Visible = true;
+        else
+            exitButtonMouseOver.Visible = false;
     }
 
     /// <summary>
@@ -119,7 +153,7 @@ class TitleScreenState : GameState
         ResetPositions();
 
         
-
+        //Stop sound in the main menu
         foreach (Sound sound in MusicPlayer.musicInstruments)
         {
             sound.StopSound();
