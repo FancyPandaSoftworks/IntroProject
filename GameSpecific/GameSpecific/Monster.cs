@@ -12,6 +12,9 @@ using Microsoft.Xna.Framework.Media;
 class Monster : Object3D
 {
     public Vector3 monsterPosition, playerPosition, monsterOrigin;
+    float realXdif, realZdif;
+    private AudioEmitter monsterEmitter;
+    private AudioListener playerListener;
     public int[,] stepgrid;
     public GameObject[,] grid;
     public int tiles = 0;
@@ -20,6 +23,7 @@ class Monster : Object3D
     //public TextGameObject text;
     public Matrix world;
     public float velocity, xzdifference;
+    private bool groanPlaying;
 
 
     public Monster(GameObject[,] grid, Vector3 playerPosition)
@@ -56,6 +60,10 @@ class Monster : Object3D
 
         //Monster's velocity
         velocity = 120;
+
+        //
+        playerListener = new AudioListener();
+        monsterEmitter = new AudioEmitter();
     }
 
     public override void Update(GameTime gameTime)
@@ -66,14 +74,18 @@ class Monster : Object3D
         playerPosition = player.Position;
         ResetGrid();
 
+        
+
         //setting the tile the player is standing on to 0, in the stepgrid
         stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
         CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
 
         //calculating the x- and y-difference between player and monster
         float xdifference = playerPosition.X - monsterOrigin.X;
+        realXdif = xdifference / 40; // change value to adjust volume
         xdifference = Math.Abs(xdifference);
         float zdifference = playerPosition.Z - monsterOrigin.Z;
+        realZdif = zdifference / 40;
         zdifference = Math.Abs(zdifference);
 
         //this switches the monster's AI depending on whether the player is in the monster's line of sight
@@ -96,6 +108,31 @@ class Monster : Object3D
                 MusicPlayer.dangerLevel = 10 - i;
             }
         }
+        
+
+
+        foreach (Sound sound in MusicPlayer.SoundEffect3D)
+            for (int i = 0; i < 10; i++)
+                if (sound.Name == "Monster" + i)
+                    if (sound.SoundState == SoundState.Playing)
+                        groanPlaying = true;
+                    else
+                        groanPlaying = false;
+
+        Console.WriteLine("GroanPlaying {0}", groanPlaying);
+
+        playerListener.Position = playerPosition;
+        monsterEmitter.Position =  new Vector3(playerPosition.X + realXdif, monsterPosition.Y, playerPosition.Z + realZdif);
+
+        
+        if (!groanPlaying && GameEnvironment.Random.Next(110) == 0)
+            foreach (Sound sound in MusicPlayer.SoundEffect3D)
+                if (sound.Name == "Monster" + GameEnvironment.Random.Next(10))
+                {
+                    Console.WriteLine("Playing: {0}", sound.Name);
+                    sound.Play3DSound(playerListener, monsterEmitter);
+                }
+
     }
 
     //method to check if the player is in the monster's 'line of sight'

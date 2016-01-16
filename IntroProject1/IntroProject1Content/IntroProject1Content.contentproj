@@ -178,13 +178,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
-      <Name>Wall Texture 01</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Misc Level Objects\Monster\Monster Texture.png">
       <Name>Monster Texture</Name>
       <Importer>TextureImporter</Importer>
@@ -319,11 +312,121 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Content Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
+      <Name>Wall Texture 01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
     <Content Include="Misc Level Objects\Door\Wooden Beam.png">
       <Name>Wooden Beam</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Content>
+    <Compile Include="Music\mIn_DrumsSlow%402%400%400.wav">
+      <Name>mIn_DrumsSlow%402%400%400</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_paperrustle.wav">
+      <Name>SFX_paperrustle</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_paperrustle2.wav">
+      <Name>SFX_paperrustle2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_doorcreak.wav">
+      <Name>SFX_doorcreak</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster1.wav">
+      <Name>3DS_Monster1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster0.wav">
+      <Name>3DS_Monster0</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster2.wav">
+      <Name>3DS_Monster2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster3.wav">
+      <Name>3DS_Monster3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster4.wav">
+      <Name>3DS_Monster4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster5.wav">
+      <Name>3DS_Monster5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster6.wav">
+      <Name>3DS_Monster6</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster7.wav">
+      <Name>3DS_Monster7</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster8.wav">
+      <Name>3DS_Monster8</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster9.wav">
+      <Name>3DS_Monster9</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_MouseClick.wav">
+      <Name>SFX_MouseClick</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_MouseOver.wav">
+      <Name>SFX_MouseOver</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\LFX_Footsteps1%408.wav">
+      <Name>LFX_Footsteps1%408</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\LFX_Footsteps2%404.wav">
+      <Name>LFX_Footsteps2%404</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mus_MainMenu.wav">
+      <Name>mus_MainMenu</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_GunShot.wav">
+      <Name>SFX_GunShot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_GameOver.wav">
+      <Name>SFX_GameOver</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
     <None Include="SaveFile.txt">
       <Name>SaveFile</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

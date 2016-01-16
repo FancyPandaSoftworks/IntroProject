@@ -17,6 +17,7 @@ class PauseScreenState : GameState
 
     public PauseScreenState()
     {
+
         background = new Object2D("Note blank", 0);
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);
@@ -66,11 +67,20 @@ class PauseScreenState : GameState
 
         //Check if the exitButton is being pressed to go back to the title screen
         if (exitButton.ButtonIsPressed)
+        {
+            foreach (Sound sound in MusicPlayer.Music)
+            {
+                sound.PlaySound();
+            }
             GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
+        }
 
         //Check if the resumeButton is being pressed to go back to the game
         if (continueButton.ButtonIsPressed || inputHelper.KeyPressed(Keys.Escape))
         {
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "paperrustle2")
+                    sound.PlaySound();
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");

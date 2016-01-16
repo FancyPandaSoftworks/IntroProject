@@ -182,3 +182,106 @@ C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue MouseOver.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit MouseOver.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame MouseOver.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Cupboard Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Model 01.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Model 02.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Closet Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Pistol\Pistol Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Axis.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Empty Stamina.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Full Stamina.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Full Stamina.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue MouseOver.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit MouseOver.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame MouseOver.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Note blank.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceHigh@32@0@0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceLow@32@0@0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsFast@2@8@8.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_Violin@2@8@8.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_ClockTick.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door_0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\MultipleExitLevelPart1.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\MultipleExitLevelPart2.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\MultipleExitLevelPart3.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Special Levels\CheckPoint.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Special Levels\First.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Special Levels\Final.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\noteIDList.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\SaveFile.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameSpecific.exe
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameSpecific.pdb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameManagement.dll
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\GameManagement.pdb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.csprojResolveAssemblyReference.cache
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.exe
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\GameSpecific.pdb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsSlow@2@0@0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle2.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_doorcreak.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster1.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster0.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster2.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster3.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster4.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster5.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster6.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster7.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster8.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster9.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseClick.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseOver.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps1@8.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps2@4.xnb
+C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mus_MainMenu.xnb

@@ -65,6 +65,38 @@ public class Player : Camera
         if (inputHelper.IsKeyDown(Keys.E))
             EDown = true;
 
+        if ((WDown || ADown || SDown || DDown) && !ShiftDown)
+        {
+            foreach (Sound sound in MusicPlayer.LoopedEffect)
+                if (sound.Name == "Footsteps1")
+                {
+                    sound.PlaySound(0.5f);
+                }
+        }
+        else
+        {
+            foreach (Sound sound in MusicPlayer.LoopedEffect)
+                if (sound.Name == "Footsteps1")
+                    sound.StopSound();
+        }
+
+        if ((WDown || ADown || SDown || DDown) && ShiftDown)
+        {
+            foreach (Sound sound in MusicPlayer.LoopedEffect)
+                if (sound.Name == "Footsteps2")
+                {
+                    sound.PlaySound(0.5f);
+                }
+        }
+        else
+        {
+            foreach (Sound sound in MusicPlayer.LoopedEffect)
+                if (sound.Name == "Footsteps2")
+                    sound.StopSound();
+        }
+
+
+
         base.HandleInput(inputHelper);
     }
 
@@ -79,7 +111,7 @@ public class Player : Camera
             (WDown || SDown || DDown || ADown))
         {
             velocity = 500f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (stamina < 20)
                 exhausted = true;
         }

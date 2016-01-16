@@ -173,7 +173,12 @@ class ExitTile : PathTile
                         isOnTile = true;
                         Player player = obj as Player;
                         if (player.EDown == true)
+                        {
+                            foreach (Sound sound in MusicPlayer.SoundEffect)
+                                if (sound.Name == "doorcreak")
+                                    sound.PlaySound();
                             level.Completed = true;
+                        }
                     }
                     else
                         isOnTile = false;

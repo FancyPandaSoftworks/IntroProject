@@ -12,7 +12,7 @@ public class Sound
     private string type;
     private string name;
     private string playingState = "stopped"; //stopped, playing, fadingIn, fadingOut
-    private int dangerLevel;
+    private int dangerLevel, maxDangerLevel;
     private bool instancePlaying = false;   //to check if an instance in playing or to create a new instance
     private int length;  // in bars
     private int fadeIn;     // in beats
@@ -30,9 +30,10 @@ public class Sound
         iSound = sound.CreateInstance();
     }
 
-    public Sound(string filename, int dangerlevel = 0)
+    public Sound(string filename, int dangerlevel = 0, int maxdangerlevel = 10)
     {
         dangerLevel = dangerlevel;
+        maxDangerLevel = maxdangerlevel;
 
         #region Getting File Info
 
@@ -45,6 +46,8 @@ public class Sound
             type = "LoopedEffect";
         else if (filename.Substring(0, 4) == "mIn_")
             type = "MusicInstrument";
+        else if (filename.Substring(0, 4) == "mus_")
+            type = "Music";
         else
             type = "Unknown type";
         #endregion
@@ -66,6 +69,15 @@ public class Sound
         i = 4;
         j = i;
         if (type == "SoundEffect")
+        {
+            #region SoundEffect Info
+
+            localName = filename.Substring(i, filename.Length - i);
+
+            #endregion
+        }
+
+        if (type == "Music")
         {
             #region SoundEffect Info
 
@@ -185,16 +197,17 @@ public class Sound
         Initialize(filename);
     }
 
-    public void PlaySound()
+
+    public void PlaySound(float volume = 1)
     {
-        if (instancePlaying)
+        if (instancePlaying && type != "LoopedEffect")
             StopSound();
 
         if (!instancePlaying)
         {
             iSound = sound.CreateInstance();
 
-            if (type == "LoopedEffect" || type == "MusicInstrument")
+            if (type == "LoopedEffect" || type == "MusicInstrument" || type == "Music")
                 iSound.IsLooped = true;
             else
                 iSound.IsLooped = false;
@@ -203,7 +216,7 @@ public class Sound
         Console.WriteLine("Play: {0}", name);
         iSound.Play();
         instancePlaying = true;
-        iSound.Volume = 1;
+        iSound.Volume = volume;
         playingState = "playing";
     }
 
@@ -220,6 +233,15 @@ public class Sound
         }
     }
 
+    public void Play3DSound(AudioListener listener, AudioEmitter emitter)
+    {
+        iSound.Apply3D(listener, emitter);
+        playingState = "playing";
+        iSound.Play();
+    }
+
+
+
     #region Accessors
     public string Name
     {
@@ -229,6 +251,11 @@ public class Sound
     public int DangerLevel
     {
         get { return dangerLevel; }
+    }
+
+    public int MaxDangerLevel
+    {
+        get { return maxDangerLevel; }
     }
 
     public int Length
@@ -254,12 +281,6 @@ public class Sound
     public void Pitch(float value)
     {
         iSound.Pitch = value;
-    }
-
-    public void Play3DSound(AudioListener listener, AudioEmitter emitter)
-    {
-        iSound.Apply3D(listener, emitter);
-        iSound.Play();
     }
 
     public void SoundApply3D(AudioListener listener, AudioEmitter emitter)
@@ -297,5 +318,10 @@ public class Sound
         set { fadeOutTimer = value; }
     }
 
+    public SoundState SoundState
+    {
+        get { return iSound.State; }
+    }
+
+    #endregion
 }
-#endregion

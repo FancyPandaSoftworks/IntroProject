@@ -42,6 +42,9 @@ class PlayingState : Root
     {
         if (inputHelper.IsKeyDown(Keys.Escape))
         {
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "paperrustle")
+                    sound.PlaySound();
             GameEnvironment.GameStateManager.SwitchTo("pauseScreenState");
         }
 

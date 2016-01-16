@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Jelle\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -11,7 +11,7 @@
       <Child Type="Graphics:MeshContent">
         <Name>Cube</Name>
         <Transform>100 0 0 0 0 -1.62920678E-05 -100 0 0 100 -1.62920678E-05 0 0 0 0 1</Transform>
-        <Positions>1 0.99999994 -1 1 -1 -1 -1.00000012 -0.9999998 -1 -0.999999642 1.00000036 -1 1.00000048 0.999999464 1 0.999999344 -1.0000006 1 -1.00000036 -0.999999642 1 -0.99999994 1 1</Positions>
+        <Positions>0.659999967 0.659999967 -0.66 0.659999967 -0.6600001 -0.66 -0.660000145 -0.659999847 -0.66 -0.6599998 0.6600002 -0.66 0.660000265 0.6599997 0.66 0.659999549 -0.660000443 0.66 -0.6600003 -0.659999847 0.66 -0.66 0.659999967 0.66</Positions>
         <Geometry>
           <Batch>
             <Material>#Resource1</Material>
@@ -19,8 +19,8 @@
             <Vertices>
               <PositionIndices>0 1 2 3 4 7 6 5 0 4 5 1 1 5 6 2 2 6 7 3 4 0 3 7</PositionIndices>
               <Channels>
-                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 -1 0 0 -1 0 0 -1 0 0 -1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 2.98023224E-08 0 1 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07</VertexChannel>
-                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0 1 1 1 1 0 0 0 1 0 0 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0</VertexChannel>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 -0.99999994 0 0 -0.99999994 0 0 -0.99999994 0 0 -0.99999994 -1.36833291E-08 0 1 -1.36833291E-08 0 1 -1.36833291E-08 0 1 -1.36833291E-08 0 1 1 -2.73666842E-07 4.515497E-08 1 -2.73666842E-07 4.515497E-08 1 -2.73666842E-07 4.515497E-08 1 -2.73666842E-07 4.515497E-08 -3.16085249E-07 -0.99999994 -1.37517617E-07 -3.16085249E-07 -0.99999994 -1.37517617E-07 -3.16085249E-07 -0.99999994 -1.37517617E-07 -3.16085249E-07 -0.99999994 -1.37517617E-07 -0.99999994 2.394585E-07 -1.58042582E-07 -0.99999994 2.394585E-07 -1.58042582E-07 -0.99999994 2.394585E-07 -1.58042582E-07 -0.99999994 2.394585E-07 -1.58042582E-07 1.80620148E-07 1 1.58726792E-07 1.80620148E-07 1 1.58726792E-07 1.80620148E-07 1 1.58726792E-07 1.80620148E-07 1 1.58726792E-07</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0 1.1920929E-07 0 1 0.9999999 1.00000012 0.9999999 1.1920929E-07 0 5.96046448E-08 0 1 0.9999999 1.00000012 0.9999999 1.1920929E-07 0 1.1920929E-07 0 1 0.9999999 1.00000012 0.9999999 1.1920929E-07 0 1.1920929E-07 0 1 0.9999999 1.00000012 0.9999999 1.1920929E-07 0 1.1920929E-07 0 1 0.9999999 1.00000012 0.9999999 1.1920929E-07 0 1.1920929E-07 0 1 0.9999999 1.00000012 0.9999999 1.1920929E-07</VertexChannel>
               </Channels>
             </Vertices>
           </Batch>
@@ -32,24 +32,18 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Jelle\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
         <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0.640000045 0.640000045</Data>
         <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
-        <Data Key="Alpha" Type="float">0.199999988</Data>
+        <Data Key="Alpha" Type="float">1</Data>
         <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
         <Data Key="SpecularPower" Type="float">9.607843</Data>
       </OpaqueData>
       <Textures>
         <Texture Key="Texture">
-          <OpaqueData>
-            <Data Key="TextureCoordinate">TextureCoordinate0</Data>
-          </OpaqueData>
-          <Reference>#External1</Reference>
-        </Texture>
-        <Texture Key="TransparencyFactor">
           <OpaqueData>
             <Data Key="TextureCoordinate">TextureCoordinate0</Data>
           </OpaqueData>

@@ -88,6 +88,10 @@ class GameOverState : GameState
         //Check if the exitbutton is being pressed, to switch back to the main menu
         if (exitButton.ButtonIsPressed)
         {
+            foreach (Sound sound in MusicPlayer.Music)
+            {
+                sound.PlaySound();
+            }
             GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
         }
 

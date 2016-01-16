@@ -20,6 +20,11 @@ class TitleScreenState : GameState
         player = new Player(new Vector3(200, 200f, 200));
         level = new Level(player);
 
+        foreach (Sound sound in MusicPlayer.Music)
+        {
+            sound.PlaySound();
+        }
+
         //Add a continue button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
@@ -78,6 +83,11 @@ class TitleScreenState : GameState
         //Check if the playbutton is being pressed to go to the game
         if (continueButton.ButtonIsPressed)
         {
+            foreach (Sound sound in MusicPlayer.Music)
+            {
+                sound.StopSound();
+            }
+
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             //TODO: VOEG TOE DAT JE BEGINT VANAF HET LAATSTE CHECKPOINT
@@ -98,6 +108,11 @@ class TitleScreenState : GameState
 
         if (newGameButton.ButtonIsPressed)
         {
+            foreach (Sound sound in MusicPlayer.Music)
+            {
+                sound.StopSound();
+            }
+
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             //TODO: voeg een waarschuwing toe(?)
@@ -157,12 +172,9 @@ class TitleScreenState : GameState
 
         
         //Stop sound in the main menu
-        foreach (Sound sound in MusicPlayer.musicInstruments)
-        {
-            sound.StopSound();
-        }
         MusicPlayer.beatCount = 0;
-        MusicPlayer.barCount = 0; 
+        MusicPlayer.barCount = 0;
+        MusicPlayer.dangerLevel = 0;
     }
 
     private void DrawEndless(int part,GameTime gameTime, SpriteBatch spriteBatch)

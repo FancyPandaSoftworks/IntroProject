@@ -11,10 +11,11 @@ public class MusicPlayer
 {
     #region Lists of sound types
     public static List<Sound> musicInstruments = new List<Sound>();
-    List<Sound> SoundEffect3D = new List<Sound>();
-    List<Sound> SoundEffect = new List<Sound>();
-    List<Sound> LoopedEffect = new List<Sound>();
-    List<Sound> AllSounds = new List<Sound>();
+    public static List<Sound> SoundEffect3D = new List<Sound>();
+    public static List<Sound> SoundEffect = new List<Sound>();
+    public static List<Sound> LoopedEffect = new List<Sound>();
+    public static List<Sound> Music = new List<Sound>();
+    public static List<Sound> AllSounds = new List<Sound>();
     #endregion
 
     SpriteFont font;
@@ -49,9 +50,9 @@ public class MusicPlayer
     }*/
 
     //create a new sound, and add them to their type list
-    public void NewSound(string filename, int dangerlevel = 0)
+    public void NewSound(string filename, int dangerlevel = 0, int maxdangerlevel = 10)
     {
-        Sound sound = new Sound(filename, dangerlevel);
+        Sound sound = new Sound(filename, dangerlevel, maxdangerlevel);
 
         AllSounds.Add(sound);
 
@@ -63,6 +64,8 @@ public class MusicPlayer
             SoundEffect.Add(sound);
         if (sound.Type == "LoopedEffect")
             LoopedEffect.Add(sound);
+        if (sound.Type == "Music")
+            Music.Add(sound);
 
         Console.WriteLine("The {0} {1} has loaded succesfully, with length of {2} bars fadein time of {3} beats and fadeout time of {4} beats", sound.Type, sound.Name, sound.Length, sound.FadeIn, sound.FadeOut);
     }
@@ -86,7 +89,7 @@ public class MusicPlayer
             {
                 if (barSync[sound.Length])
                 {
-                    if (dangerLevel >= sound.DangerLevel)
+                    if (dangerLevel >= sound.DangerLevel && dangerLevel < sound.MaxDangerLevel)
                     {
                         if (beatCount == 0)
                         {
@@ -237,7 +240,7 @@ public class MusicPlayer
 
         BeatSyncer();
         //Metronome();
-        SyncPlayer();
+        //SyncPlayer();
         BeatCounter();
     }
 
