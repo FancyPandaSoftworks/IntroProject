@@ -154,15 +154,20 @@ class RandomLevel : Level
         }
 
         //making the monster
-        Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
-        monster.Parent = this;
-        monster.LoadContent();
-        gameObjects.Add(monster);
+        if (chased)
+        {
+            Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
+            monster.Parent = this;
+            monster.LoadContent();
+            gameObjects.Add(monster);
+        }
+
+
+        //making the stamina bar
         stamina = new Stamina();
         gameObjects.Add(stamina);
         stamina.Parent = this;
         text.text = "Press E to proceed";
-
     }
 
     /// <summary>

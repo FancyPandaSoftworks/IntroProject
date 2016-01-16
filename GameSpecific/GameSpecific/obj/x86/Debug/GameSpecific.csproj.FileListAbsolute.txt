@@ -141,7 +141,6 @@ C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3.xnb
-C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Empty Stamina.xnb
@@ -285,3 +284,25 @@ C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\D
 C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps1@8.xnb
 C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps2@4.xnb
 C:\Users\Jelle\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mus_MainMenu.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsSlow@2@0@0.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle2.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_doorcreak.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster1.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster0.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster2.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster3.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster4.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster5.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster6.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster7.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster8.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster9.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseClick.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseOver.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps1@8.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps2@4.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mus_MainMenu.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GunShot.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GameOver.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\SaveFile.txt

@@ -57,6 +57,7 @@ class PlayingState : Root
     /// <param name="gameTime">The object used for reacting to timechanges</param>
     public void Update(GameTime gameTime)
     {
+        MusicPlayer.dangerLevel = 0;
 
         if (level.Completed)
         {

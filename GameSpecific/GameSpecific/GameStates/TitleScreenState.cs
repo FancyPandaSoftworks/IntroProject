@@ -174,7 +174,7 @@ class TitleScreenState : GameState
         //Stop sound in the main menu
         MusicPlayer.beatCount = 0;
         MusicPlayer.barCount = 0;
-        MusicPlayer.dangerLevel = 0;
+        MusicPlayer.dangerLevel = -1;
     }
 
     private void DrawEndless(int part,GameTime gameTime, SpriteBatch spriteBatch)

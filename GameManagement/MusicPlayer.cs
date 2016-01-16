@@ -240,7 +240,7 @@ public class MusicPlayer
 
         BeatSyncer();
         //Metronome();
-        //SyncPlayer();
+        SyncPlayer();
         BeatCounter();
     }
 

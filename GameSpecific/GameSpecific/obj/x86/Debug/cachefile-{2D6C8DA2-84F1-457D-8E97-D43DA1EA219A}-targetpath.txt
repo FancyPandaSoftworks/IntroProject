@@ -42,20 +42,6 @@ Content\Music\mIn_AmbienceLow@32@0@0.xnb
 Content\Music\mIn_DrumsFast@2@8@8.xnb
 Content\Music\mIn_Violin@2@8@8.xnb
 Content\Music\SFX_ClockTick.xnb
-Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb
-Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb
-Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb
-Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb
-Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb
-Content\Misc Level Objects\Monster\Monster Texture_0.xnb
-Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
-Content\Misc Level Objects\Note\Note Texture_0.xnb
-Content\Misc Level Objects\Door\Door_0.xnb
-Content\Misc Level Objects\Door\Wooden Beam_0.xnb
-Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
-Content\Misc Level Objects\Trapdoor\Door_0.xnb
 Content\Music\mIn_DrumsSlow@2@0@0.xnb
 Content\Music\SFX_paperrustle.xnb
 Content\Music\SFX_paperrustle2.xnb
@@ -75,6 +61,22 @@ Content\Music\SFX_MouseOver.xnb
 Content\Music\LFX_Footsteps1@8.xnb
 Content\Music\LFX_Footsteps2@4.xnb
 Content\Music\mus_MainMenu.xnb
+Content\Music\SFX_GunShot.xnb
+Content\Music\SFX_GameOver.xnb
+Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb
+Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb
+Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb
+Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb
+Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb
+Content\Misc Level Objects\Monster\Monster Texture_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
+Content\Misc Level Objects\Note\Note Texture_0.xnb
+Content\Misc Level Objects\Door\Door_0.xnb
+Content\Misc Level Objects\Door\Wooden Beam_0.xnb
+Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
+Content\Misc Level Objects\Trapdoor\Door_0.xnb
 Content\noteIDList.txt
 Content\SaveFile.txt
 Content\MultipleExitLevelPart1.txt
