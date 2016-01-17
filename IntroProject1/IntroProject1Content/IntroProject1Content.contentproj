@@ -99,6 +99,11 @@
       <Name>Notepad Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+      </Compile>
+    <Compile Include="credits.spritefont">
+      <Name>credits</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
     </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
@@ -317,11 +322,31 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="black.png">
+      <Name>black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
       <Name>Wall Texture 01</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Content>
+    <Compile Include="Menu Buttons\Paused.png">
+      <Name>Paused</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\GameOver.png">
+      <Name>GameOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Chased.png">
+      <Name>Chased</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="Misc Level Objects\Door\Wooden Beam.png">
       <Name>Wooden Beam</Name>
       <Importer>TextureImporter</Importer>
@@ -436,6 +461,16 @@
       <Name>Note Texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      </Compile> 
+    <Compile Include="Music\SFX_MonsterScreech.wav">
+      <Name>SFX_MonsterScreech</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_WindAmbience.wav">
+      <Name>SFX_WindAmbience</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <None Include="SaveFile.txt">
       <Name>SaveFile</Name>

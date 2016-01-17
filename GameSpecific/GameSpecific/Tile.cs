@@ -112,6 +112,7 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     protected Object3D trapdoor;
+    public static Vector3 position;
 
     public EntryTile(string pathID)
         : base(pathID, "EntryTile")
@@ -136,6 +137,8 @@ class EntryTile : PathTile
         }
         trapdoor.Position = this.Position + new Vector3(0, 300, 0);
         trapdoor.Draw(gameTime, spriteBatch);
+
+        position = this.Position;
     }
 }
 
@@ -147,6 +150,7 @@ class ExitTile : PathTile
     public TextGameObject text;
     public Object3D exitObject;
     public bool isOnTile;
+    public static bool finalLevel;
 
     public ExitTile(string pathID)
         : base(pathID, "ExitTile")
@@ -172,12 +176,17 @@ class ExitTile : PathTile
                     {
                         isOnTile = true;
                         Player player = obj as Player;
-                        if (player.EDown == true)
+                        if (player.EDown && !finalLevel)
                         {
                             foreach (Sound sound in MusicPlayer.SoundEffect)
                                 if (sound.Name == "doorcreak")
                                     sound.PlaySound();
                             level.Completed = true;
+                        }
+                        else if (player.EDown && finalLevel)
+                        {
+                            EndGameState endGameState = GameEnvironment.GameStateManager.GetGameState("endGameState") as EndGameState;
+                            GameEnvironment.GameStateManager.SwitchTo("endGameState");
                         }
                     }
                     else

@@ -14,6 +14,8 @@ class RandomLevel : Level
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
     private string pathID, wallID;
+    private float timer;
+    private bool chased, monsterMade;
 
    
     /// <summary>
@@ -102,6 +104,10 @@ class RandomLevel : Level
     /// <param name="chased">Whether or not the monster is chasing the player</param>
     public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
     {
+        //Setting two booleans for the monster (they are used in the Update method)
+        this.chased = chased;
+        monsterMade = false;
+
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();
@@ -143,8 +149,6 @@ class RandomLevel : Level
         gameObjects.Add(player);
         player.Parent = this;
         player.LoadContent();
-        
-
 
         foreach(GameObject obj in tileGrid.Objects)
         {
@@ -152,16 +156,6 @@ class RandomLevel : Level
                 if(obj.ID == "EntryTile")
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
         }
-
-        //making the monster
-        if (chased)
-        {
-            Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
-            monster.Parent = this;
-            monster.LoadContent();
-            gameObjects.Add(monster);
-        }
-
 
         //making the stamina bar
         stamina = new Stamina();
@@ -172,6 +166,38 @@ class RandomLevel : Level
         roomCounter = new TextGameObject("text");
         roomCounter.text = roomNumber.ToString();
         gameObjects.Add(roomCounter);
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        base.Update(gameTime);
+
+        timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+        if (timer > 3)
+        {
+            //making the monster
+            if (chased && !monsterMade)
+            {
+                //Playing a sound-effect before the monster has entered the room
+                foreach (Sound sound in MusicPlayer.SoundEffect)
+                    if (sound.Name == "MonsterScreech")
+                        sound.PlaySound();
+                //Making the monster
+                Monster monster = new Monster(Grid.Objects);
+                monster.Parent = this;
+                monster.LoadContent();
+                gameObjects.Add(monster);
+                monsterMade = true;
+            }
+        }
+
+        if (GameEnvironment.Random.Next(10000) == 0 && !chased)
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "WindAmbience")
+                {
+                    sound.PlaySound();
+                }
     }
 
     /// <summary>

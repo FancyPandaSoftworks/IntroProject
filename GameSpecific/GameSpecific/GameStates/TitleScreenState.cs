@@ -11,6 +11,7 @@ class TitleScreenState : GameState
 {
     protected Button continueButton, newGameButton, exitButton;
     protected Button continueButtonMouseOver, newGameButtonMouseOver, exitButtonMouseOver;
+    protected Object2D title;
     private int part;
     private Level level;
     Player player;
@@ -25,6 +26,11 @@ class TitleScreenState : GameState
         {
             sound.PlaySound();
         }
+
+        //Add title
+        title = new Object2D("Menu Buttons\\Chased");
+        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2, 10);
+        gameObjects.Add(title);
 
         //Add a continue button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
@@ -64,6 +70,7 @@ class TitleScreenState : GameState
 
     public void ResetPositions()
     {
+        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2 + 50, 10);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
         newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
@@ -85,13 +92,10 @@ class TitleScreenState : GameState
         if (continueButton.ButtonIsPressed)
         {
             foreach (Sound sound in MusicPlayer.Music)
-            {
                 sound.StopSound();
-            }
 
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
-            //TODO: VOEG TOE DAT JE BEGINT VANAF HET LAATSTE CHECKPOINT
             if (File.Exists("Content\\SaveFile.txt"))
             {
                 using (StreamReader stream = new StreamReader("Content\\SaveFile.txt"))
@@ -110,14 +114,9 @@ class TitleScreenState : GameState
         if (newGameButton.ButtonIsPressed)
         {
             foreach (Sound sound in MusicPlayer.Music)
-            {
                 sound.StopSound();
-            }
-
             game.IsMouseVisible = false;
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
-            //TODO: voeg een waarschuwing toe(?)
-            //TODO: verwijder de laatste checkpoint in de txt file en maak er 0 van ofzo en begin bij kamer 1
             File.WriteAllText("Content\\SaveFile.txt", String.Empty);
             PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
             playingState.RoomCounter = 1;
@@ -172,7 +171,7 @@ class TitleScreenState : GameState
         ResetPositions();
 
         
-        //Stop sound in the main menu
+        //Stop ambience sound in the main menu
         MusicPlayer.beatCount = 0;
         MusicPlayer.barCount = 0;
         MusicPlayer.dangerLevel = -1;
