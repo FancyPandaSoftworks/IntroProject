@@ -10,9 +10,15 @@ using Microsoft.Xna.Framework;
 class SpecialLevel : Level 
 {
     private TileGrid tileGrid;
+    private TextGameObject saveText;
+    private bool drawSaveText, firstTime;
+    private double time;
     
-    public SpecialLevel(int roomNumber, string name)
+    public SpecialLevel(int roomNumber, string name, bool saved = false)
     {
+        drawSaveText = saved;
+        firstTime = true;
+
         //add items to the level
         player = new Player(Vector3.Zero);
         player.Parent = this;
@@ -25,6 +31,12 @@ class SpecialLevel : Level
         stamina.Parent = this;
         gameObjects.Add(stamina);
 
+        if (drawSaveText)
+        {
+            saveText = new TextGameObject("text");
+            saveText.text = "Progress Saved...";
+            saveText.Position = new Vector2((GameEnvironment.Screen.X - saveText.Size.X) / 2, 0);
+        }
         if (name == "Content\\Special Levels\\Final.txt")
             text.text = "Press E to kill yourself";
         else
@@ -103,5 +115,30 @@ class SpecialLevel : Level
         }
         else
             return null;
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        if (firstTime)
+        {
+            time = gameTime.TotalGameTime.TotalSeconds;
+            firstTime = false;
+        }
+        if (gameTime.TotalGameTime.TotalSeconds >= time + 5)
+        {
+            drawSaveText = false;
+        }
+        base.Update(gameTime);
+    }
+
+    public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+    {        
+        base.Draw(gameTime, spriteBatch);
+        if (drawSaveText)
+        {
+            saveText.Position = new Vector2((GameEnvironment.Screen.X - saveText.Size.X) / 2, 0);
+            saveText.Draw(gameTime, spriteBatch);
+        }
+
     }
 }

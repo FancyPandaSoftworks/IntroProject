@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
     protected Player player;
     protected Stamina stamina;
     protected bool isOnExit, completed;
-    protected TextGameObject text;
+    protected TextGameObject text, text2;
 
     public Level(Player player = null)
     {
@@ -22,16 +22,11 @@ using Microsoft.Xna.Framework.Graphics;
             this.player = player;
         }
 
-        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
-        { 
-            NoteObject note = new NoteObject(NoteObject.idList[0]);
-            note.Parent = this;
-            //NoteObject.idList.Remove(NoteObject.idList[0]);
-            gameObjects.Add(note);
-        }
-
         text = new TextGameObject("text");
+        text2 = new TextGameObject("text");
         text.Position = Vector2.Zero;
+        text2.Position = Vector2.Zero;
+        text2.text = "Press N to pick up the note";
     }
     
     /// <summary>
@@ -40,9 +35,8 @@ using Microsoft.Xna.Framework.Graphics;
     /// <param name="inputHelper">The inputhelper to react to input</param>
     public override void HandleInput(InputHelper inputHelper)
     {
-        if (inputHelper.KeyPressed(Keys.N))
+        if (inputHelper.KeyPressed(Keys.N) && NoteInVicinity)
         {
-            Console.WriteLine("n");
             foreach (GameObject obj in gameObjects)
             {
                 if (obj is NoteObject)
@@ -127,10 +121,44 @@ using Microsoft.Xna.Framework.Graphics;
                 gameObject.Draw(gameTime, spriteBatch);
         }
 
-        if(isOnExit)
+        if(isOnExit && !NoteInVicinity)
         {
             text.Draw(gameTime, spriteBatch);
             isOnExit = false;
+        }
+        else if (NoteInVicinity)
+        {
+            text2.Draw(gameTime, spriteBatch);
+        }
+    }
+
+    protected void CreateNote(NoteObject note, TileGrid tileGrid)
+    {
+        for (int x = 0; x<tileGrid.Columns; x++)
+        {
+            for (int y =0; y<tileGrid.Rows; y++)
+            {
+                if (tileGrid.get(x,y) != null && tileGrid.get(x,y) is WallTile)
+                {
+                    if(tileGrid.get(x+1,y) is PathTile) 
+                    {
+                        note.Position = tileGrid.get(x, y).Position + new Vector3(102/*100+modelDepth*/, 0, 0);
+                    }
+                    else if(tileGrid.get(x,y+1) is PathTile)
+                    {
+                        note.Position = tileGrid.get(x, y).Position + new Vector3(0, 0, 102);
+                    }
+
+                    else if(tileGrid.get(x-1,y) is PathTile)
+                    {
+                        note.Position = tileGrid.get(x, y).Position - new Vector3(102, 0, 0);
+                    }
+                    else if(tileGrid.get(x,y-1)is PathTile)
+                    {
+                        note.Position = tileGrid.get(x, y).Position - new Vector3(0, 0, 102);
+                    }
+                }       
+            }
         }
     }
 
@@ -141,5 +169,17 @@ using Microsoft.Xna.Framework.Graphics;
     {
         get { return completed; }
         set { completed = value; }
+    }
+
+    public bool NoteInVicinity
+    {
+        get 
+        {
+            NoteObject note = Find("note") as NoteObject;
+            if (note == null)
+                return false;
+            return ((player.Position.X >= note.Position.X - 100 && player.Position.X <= note.Position.X + 100)
+                    && (player.Position.Y >= note.Position.Y - 100 && player.Position.Y <= note.Position.Y + 100));
+        }
     }
 }

@@ -132,7 +132,7 @@ class RandomLevel : Level
         CreateMainPath();
 
         for (int i = random.Next(1, tiles / 4); i > 0; i--)
-            CreateSidePath(random.Next(3, tiles / 2), chased);
+            CreateSidePath(random.Next(3, tiles / 4), chased);
 
         //making the tile grid
         TileGrid tileGrid = Grid;
@@ -144,7 +144,15 @@ class RandomLevel : Level
         player.Parent = this;
         player.LoadContent();
         
-
+        //Add the note
+        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
+        { 
+            NoteObject note = new NoteObject(NoteObject.idList[0]);
+            note.Parent = this;
+            //NoteObject.idList.Remove(NoteObject.idList[0]);
+            CreateNote(note, tileGrid);
+            gameObjects.Add(note);
+        }
 
         foreach(GameObject obj in tileGrid.Objects)
         {
