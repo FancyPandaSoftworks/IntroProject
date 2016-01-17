@@ -38,9 +38,13 @@ class SpecialLevel : Level
             saveText.Position = new Vector2((GameEnvironment.Screen.X - saveText.Size.X) / 2, 0);
         }
         if (name == "Content\\Special Levels\\Final.txt")
-            text.text = "Press E to kill yourself";
+            exitText.text = "Press E to kill yourself";
         else
-            text.text = "Press E to proceed";
+            exitText.text = "Press E to proceed";
+
+        roomCounter = new TextGameObject("text");
+        roomCounter.text = roomNumber.ToString();
+        gameObjects.Add(roomCounter);
     }
 
     /// <summary>

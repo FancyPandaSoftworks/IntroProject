@@ -9,10 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 /// </summary>
  class Level : GameObjectList
 {
-    protected Player player;
+    public Player player;
     protected Stamina stamina;
     protected bool isOnExit, completed;
-    protected TextGameObject text, text2;
+    protected TextGameObject exitText, roomCounter, text2;
+
 
     public Level(Player player = null)
     {
@@ -22,9 +23,9 @@ using Microsoft.Xna.Framework.Graphics;
             this.player = player;
         }
 
-        text = new TextGameObject("text");
+        exitText = new TextGameObject("text");
         text2 = new TextGameObject("text");
-        text.Position = Vector2.Zero;
+        exitText.Position = Vector2.Zero;
         text2.Position = Vector2.Zero;
         text2.text = "Press N to pick up the note";
     }
@@ -123,7 +124,7 @@ using Microsoft.Xna.Framework.Graphics;
 
         if(isOnExit && !NoteInVicinity)
         {
-            text.Draw(gameTime, spriteBatch);
+            exitText.Draw(gameTime, spriteBatch);
             isOnExit = false;
         }
         else if (NoteInVicinity)

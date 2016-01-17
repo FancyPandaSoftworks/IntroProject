@@ -75,6 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="GameStates\CreditState.cs" />
+    <Compile Include="GameStates\EndGameState.cs" />
     <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="GameStates\GameState.cs" />
     <Compile Include="GameStates\LevelCreation\MultipleExitLevel.cs" />
@@ -85,7 +87,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GameStates\LevelCreation\RandomLevel.cs" />
-    <Compile Include="HUD.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="NoteObject.cs" />
