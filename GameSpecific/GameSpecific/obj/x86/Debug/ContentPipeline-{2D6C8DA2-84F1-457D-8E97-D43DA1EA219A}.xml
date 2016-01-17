@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb</Output>
-      <Time>2016-01-08T14:28:18.4434041+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Albedo.xnb</Output>
+      <Time>2016-01-08T15:40:40.2465125+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Cupboard\Cupboard Model.fbx</Source>
@@ -16,13 +16,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Cupboard Model.xnb</Output>
-      <Time>2016-01-14T19:37:20.6518534+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Cupboard Model.xnb</Output>
+      <Time>2016-01-14T18:17:36.2616008+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Cupboard\Cupboard Model_0.xml</Key>
-        <Value>2016-01-16T20:23:18.4731017+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Cupboard\Cupboard Model_0.xml</Key>
+        <Value>2016-01-16T20:41:57.6387298+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb</Request>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 01\Path Model 01.fbx</Source>
@@ -30,13 +30,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Model 01.xnb</Output>
-      <Time>2016-01-10T20:24:44.7942034+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Model 01.xnb</Output>
+      <Time>2016-01-10T20:06:39.6140026+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 01\Path Model 01_0.xml</Key>
-        <Value>2016-01-16T20:23:18.7912882+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 01\Path Model 01_0.xml</Key>
+        <Value>2016-01-16T20:41:57.9981089+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb</Request>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</Source>
@@ -44,13 +44,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.xnb</Output>
-      <Time>2016-01-10T20:24:44.8087227+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.xnb</Output>
+      <Time>2016-01-17T15:24:32.0057176+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02_0.xml</Key>
-        <Value>2016-01-16T20:23:19.0117718+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02_0.xml</Key>
+        <Value>2016-01-17T15:24:50.7855444+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb</Request>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 02\Path Model 02.fbx</Source>
@@ -58,13 +58,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Model 02.xnb</Output>
-      <Time>2016-01-10T20:24:44.7971224+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Model 02.xnb</Output>
+      <Time>2016-01-10T20:06:39.0229271+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 02\Path Model 02_0.xml</Key>
-        <Value>2016-01-16T20:23:19.1247141+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 02\Path Model 02_0.xml</Key>
+        <Value>2016-01-16T20:41:58.3262388+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb</Request>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 03\Path Model 03.fbx</Source>
@@ -72,13 +72,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.xnb</Output>
-      <Time>2016-01-10T20:24:44.799624+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Model 03.xnb</Output>
+      <Time>2016-01-10T20:06:39.1262476+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 03\Path Model 03_0.xml</Key>
-        <Value>2016-01-16T20:23:19.3162685+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 03\Path Model 03_0.xml</Key>
+        <Value>2016-01-16T20:41:58.4824905+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb</Request>
     </Item>
     <Item>
       <Source>Misc Level Objects\Closet\Closet Model.fbx</Source>
@@ -86,13 +86,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Closet Model.xnb</Output>
-      <Time>2016-01-14T19:37:20.6348366+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Closet Model.xnb</Output>
+      <Time>2016-01-14T18:17:36.2626015+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Closet\Closet Model_0.xml</Key>
-        <Value>2016-01-16T20:23:19.5370898+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Closet\Closet Model_0.xml</Key>
+        <Value>2016-01-16T20:41:58.6387435+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb</Request>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</Source>
@@ -100,13 +100,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.xnb</Output>
-      <Time>2016-01-10T20:24:44.8057206+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.xnb</Output>
+      <Time>2016-01-10T20:06:39.6129907+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01_0.xml</Key>
-        <Value>2016-01-16T20:23:19.6407934+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01_0.xml</Key>
+        <Value>2016-01-16T20:41:58.7168687+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb</Request>
     </Item>
     <Item>
       <Source>Misc Level Objects\Monster\Monster Model.fbx</Source>
@@ -114,13 +114,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Model.xnb</Output>
-      <Time>2016-01-15T21:23:35.6435048+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Model.xnb</Output>
+      <Time>2016-01-15T21:15:25.1912018+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Monster\Monster Model_0.xml</Key>
-        <Value>2016-01-16T20:23:19.7383975+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Monster\Monster Model_0.xml</Key>
+        <Value>2016-01-16T20:41:58.8106054+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.fbx</Source>
@@ -128,13 +128,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.xnb</Output>
-      <Time>2016-01-10T20:24:44.8110657+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.xnb</Output>
+      <Time>2016-01-10T20:06:39.3168695+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03_0.xml</Key>
-        <Value>2016-01-16T20:23:19.8136711+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03_0.xml</Key>
+        <Value>2016-01-16T20:41:58.857496+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb</Request>
     </Item>
     <Item>
       <Source>Misc Level Objects\Note\Note Model.fbx</Source>
@@ -142,13 +142,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Model.xnb</Output>
-      <Time>2016-01-14T22:23:04.4093449+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Model.xnb</Output>
+      <Time>2016-01-16T22:19:57.0299912+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Note\Note Model_0.xml</Key>
-        <Value>2016-01-16T20:23:20.0927049+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Note\Note Model_0.xml</Key>
+        <Value>2016-01-17T14:40:51.1269877+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Misc Level Objects\Pistol\Pistol Model.fbx</Source>
@@ -156,11 +156,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Pistol\Pistol Model.xnb</Output>
-      <Time>2016-01-14T22:23:04.4148518+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Pistol\Pistol Model.xnb</Output>
+      <Time>2016-01-14T22:03:57.0866025+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Pistol\Pistol Model_0.xml</Key>
-        <Value>2016-01-16T20:23:20.3109099+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Pistol\Pistol Model_0.xml</Key>
+        <Value>2016-01-16T20:41:59.0137315+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -169,14 +169,14 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door Model.xnb</Output>
-      <Time>2016-01-15T11:53:37.1998313+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door Model.xnb</Output>
+      <Time>2016-01-14T23:17:21.2897904+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Door\Door Model_0.xml</Key>
-        <Value>2016-01-16T20:23:20.3669675+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Door\Door Model_0.xml</Key>
+        <Value>2016-01-16T20:41:59.076249+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb</Request>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb</Request>
     </Item>
     <Item>
       <Source>Misc Level Objects\Trapdoor\Trapdoor Model.fbx</Source>
@@ -184,14 +184,14 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb</Output>
-      <Time>2016-01-14T19:37:20.6548541+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Trapdoor Model.xnb</Output>
+      <Time>2016-01-14T18:17:36.2545971+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Trapdoor\Trapdoor Model_0.xml</Key>
-        <Value>2016-01-16T20:23:20.5137991+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Trapdoor\Trapdoor Model_0.xml</Key>
+        <Value>2016-01-16T20:41:59.1699815+01:00</Value>
       </Dependency>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb</Request>
-      <Request>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb</Request>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door_0.xnb</Request>
     </Item>
     <Item>
       <Source>Axis.fbx</Source>
@@ -199,11 +199,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Axis.xnb</Output>
-      <Time>2016-01-02T20:21:27.8018273+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Axis.xnb</Output>
+      <Time>2016-01-07T15:19:06.4284169+01:00</Time>
       <Dependency>
-        <Key>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Key>
-        <Value>2016-01-16T20:23:20.6416728+01:00</Value>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Key>
+        <Value>2016-01-16T20:41:59.295002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -212,8 +212,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb</Output>
-      <Time>2016-01-15T14:23:20.8282851+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\White Sprite.xnb</Output>
+      <Time>2016-01-15T21:15:27.5717211+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Trapdoor\Door.jpg</Source>
@@ -221,8 +221,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door.xnb</Output>
-      <Time>2016-01-14T23:02:50.1828248+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door.xnb</Output>
+      <Time>2016-01-10T20:06:39.4508699+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Trapdoor\Wooden Beam.jpg</Source>
@@ -230,8 +230,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam.xnb</Output>
-      <Time>2016-01-14T23:02:50.2945308+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam.xnb</Output>
+      <Time>2016-01-10T20:06:39.4628857+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Cupboard\Wood Texture 1.png</Source>
@@ -239,8 +239,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1.xnb</Output>
-      <Time>2016-01-10T20:24:44.8160678+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1.xnb</Output>
+      <Time>2016-01-10T20:06:39.6089862+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.jpg</Source>
@@ -248,8 +248,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.xnb</Output>
-      <Time>2016-01-10T20:24:44.7957042+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.xnb</Output>
+      <Time>2016-01-10T20:06:39.0089167+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.jpg</Source>
@@ -257,8 +257,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.xnb</Output>
-      <Time>2016-01-10T20:24:44.7981227+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.xnb</Output>
+      <Time>2016-01-10T20:06:39.0840642+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.jpg</Source>
@@ -266,8 +266,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb</Output>
-      <Time>2016-01-10T20:24:44.8095611+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.xnb</Output>
+      <Time>2016-01-17T15:24:31.3495061+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.jpg</Source>
@@ -275,8 +275,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.xnb</Output>
-      <Time>2016-01-10T20:24:44.802223+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.xnb</Output>
+      <Time>2016-01-10T20:06:39.2449256+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Closet\Wood Texture 3.jpg</Source>
@@ -284,8 +284,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3.xnb</Output>
-      <Time>2016-01-10T20:24:44.8140678+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3.xnb</Output>
+      <Time>2016-01-10T20:06:39.3787913+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Monster\Monster Texture.png</Source>
@@ -293,8 +293,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture.xnb</Output>
-      <Time>2016-01-12T19:06:10.3476365+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture.xnb</Output>
+      <Time>2016-01-11T17:25:30.4705528+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.jpg</Source>
@@ -302,8 +302,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.xnb</Output>
-      <Time>2016-01-10T20:24:44.8115653+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.xnb</Output>
+      <Time>2016-01-10T20:06:39.3306263+01:00</Time>
     </Item>
     <Item>
       <Source>HUD\Stamina\Exhausted Empty Stamina.png</Source>
@@ -311,8 +311,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Empty Stamina.xnb</Output>
-      <Time>2016-01-14T19:37:20.6177737+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Empty Stamina.xnb</Output>
+      <Time>2016-01-14T18:17:35.5497523+01:00</Time>
     </Item>
     <Item>
       <Source>HUD\Stamina\Exhausted Full Stamina.png</Source>
@@ -320,8 +320,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Full Stamina.xnb</Output>
-      <Time>2016-01-14T19:37:20.6187767+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Exhausted Full Stamina.xnb</Output>
+      <Time>2016-01-14T18:17:35.5507526+01:00</Time>
     </Item>
     <Item>
       <Source>HUD\Stamina\Full Stamina.png</Source>
@@ -329,8 +329,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Full Stamina.xnb</Output>
-      <Time>2016-01-14T19:37:20.6197779+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\HUD\Stamina\Full Stamina.xnb</Output>
+      <Time>2016-01-14T18:17:35.5517533+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Note\Note Texture.jpg</Source>
@@ -338,8 +338,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture.xnb</Output>
-      <Time>2016-01-14T22:23:04.4113673+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture.xnb</Output>
+      <Time>2016-01-14T22:03:57.0856022+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Door\Door.png</Source>
@@ -347,8 +347,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door.xnb</Output>
-      <Time>2016-01-15T11:53:37.2023403+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door.xnb</Output>
+      <Time>2016-01-14T23:17:21.296795+01:00</Time>
     </Item>
     <Item>
       <Source>Menu Buttons\Menu button Exit.png</Source>
@@ -356,8 +356,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit.xnb</Output>
-      <Time>2016-01-15T14:23:16.3994105+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit.xnb</Output>
+      <Time>2016-01-15T21:15:27.5657335+01:00</Time>
     </Item>
     <Item>
       <Source>Menu Buttons\Menu button Continue.png</Source>
@@ -365,8 +365,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue.xnb</Output>
-      <Time>2016-01-15T14:23:19.5272385+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue.xnb</Output>
+      <Time>2016-01-15T21:15:27.56271+01:00</Time>
     </Item>
     <Item>
       <Source>Menu Buttons\Menu button NewGame.png</Source>
@@ -374,8 +374,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame.xnb</Output>
-      <Time>2016-01-15T14:23:10.323711+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame.xnb</Output>
+      <Time>2016-01-15T21:15:27.5697167+01:00</Time>
     </Item>
     <Item>
       <Source>Menu Buttons\Menu button Continue MouseOver.png</Source>
@@ -383,8 +383,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue MouseOver.xnb</Output>
-      <Time>2016-01-15T14:42:36.7489695+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Continue MouseOver.xnb</Output>
+      <Time>2016-01-15T21:15:27.5607086+01:00</Time>
     </Item>
     <Item>
       <Source>Menu Buttons\Menu button Exit MouseOver.png</Source>
@@ -392,8 +392,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit MouseOver.xnb</Output>
-      <Time>2016-01-15T14:43:07.8598339+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button Exit MouseOver.xnb</Output>
+      <Time>2016-01-15T21:15:27.564738+01:00</Time>
     </Item>
     <Item>
       <Source>Menu Buttons\Menu button NewGame MouseOver.png</Source>
@@ -401,8 +401,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame MouseOver.xnb</Output>
-      <Time>2016-01-15T14:43:11.1963673+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Menu button NewGame MouseOver.xnb</Output>
+      <Time>2016-01-15T21:15:27.567735+01:00</Time>
     </Item>
     <Item>
       <Source>Note blank.jpg</Source>
@@ -410,8 +410,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Note blank.xnb</Output>
-      <Time>2016-01-15T14:03:42.6748754+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Note blank.xnb</Output>
+      <Time>2016-01-15T21:15:27.5707341+01:00</Time>
     </Item>
     <Item>
       <Source>text.spritefont</Source>
@@ -419,8 +419,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb</Output>
-      <Time>2016-01-02T20:21:27.816323+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\text.xnb</Output>
+      <Time>2016-01-07T15:19:06.44743+01:00</Time>
     </Item>
     <Item>
       <Source>Music\mIn_AmbienceHigh@32@0@0.wav</Source>
@@ -428,8 +428,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceHigh@32@0@0.xnb</Output>
-      <Time>2016-01-14T22:23:00.2594313+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceHigh@32@0@0.xnb</Output>
+      <Time>2016-01-14T23:08:16.1987282+01:00</Time>
     </Item>
     <Item>
       <Source>Music\mIn_AmbienceLow@32@0@0.wav</Source>
@@ -437,8 +437,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceLow@32@0@0.xnb</Output>
-      <Time>2016-01-14T22:23:00.9606361+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_AmbienceLow@32@0@0.xnb</Output>
+      <Time>2016-01-14T23:08:16.3808578+01:00</Time>
     </Item>
     <Item>
       <Source>Music\mIn_DrumsFast@2@8@8.wav</Source>
@@ -446,8 +446,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsFast@2@8@8.xnb</Output>
-      <Time>2016-01-14T22:23:00.9786517+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsFast@2@8@8.xnb</Output>
+      <Time>2016-01-14T23:08:16.393867+01:00</Time>
     </Item>
     <Item>
       <Source>Music\mIn_Violin@2@8@8.wav</Source>
@@ -455,8 +455,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_Violin@2@8@8.xnb</Output>
-      <Time>2016-01-14T22:23:00.9916591+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_Violin@2@8@8.xnb</Output>
+      <Time>2016-01-14T23:08:16.4098827+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_ClockTick.wav</Source>
@@ -464,8 +464,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_ClockTick.xnb</Output>
-      <Time>2016-01-14T22:22:59.5071356+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_ClockTick.xnb</Output>
+      <Time>2016-01-14T23:08:15.8686568+01:00</Time>
     </Item>
     <Item>
       <Source>Music\mIn_DrumsSlow@2@0@0.wav</Source>
@@ -473,8 +473,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsSlow@2@0@0.xnb</Output>
-      <Time>2016-01-16T17:50:51.6485065+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mIn_DrumsSlow@2@0@0.xnb</Output>
+      <Time>2016-01-16T20:27:37.9259109+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_paperrustle.wav</Source>
@@ -482,8 +482,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle.xnb</Output>
-      <Time>2016-01-16T17:50:51.6354539+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle.xnb</Output>
+      <Time>2016-01-16T20:27:37.8170553+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_paperrustle2.wav</Source>
@@ -491,8 +491,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle2.xnb</Output>
-      <Time>2016-01-16T17:50:51.6379769+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_paperrustle2.xnb</Output>
+      <Time>2016-01-16T20:27:37.819055+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_doorcreak.wav</Source>
@@ -500,8 +500,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_doorcreak.xnb</Output>
-      <Time>2016-01-16T17:50:51.6324518+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_doorcreak.xnb</Output>
+      <Time>2016-01-16T20:27:37.8140502+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster1.wav</Source>
@@ -509,8 +509,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster1.xnb</Output>
-      <Time>2016-01-16T17:50:51.449497+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster1.xnb</Output>
+      <Time>2016-01-16T20:27:36.8967671+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster0.wav</Source>
@@ -518,8 +518,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster0.xnb</Output>
-      <Time>2016-01-16T17:50:51.4395085+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster0.xnb</Output>
+      <Time>2016-01-16T20:27:36.6520538+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster2.wav</Source>
@@ -527,8 +527,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster2.xnb</Output>
-      <Time>2016-01-16T17:50:51.4590031+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster2.xnb</Output>
+      <Time>2016-01-16T20:27:36.9170055+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster3.wav</Source>
@@ -536,8 +536,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster3.xnb</Output>
-      <Time>2016-01-16T17:50:51.4685128+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster3.xnb</Output>
+      <Time>2016-01-16T20:27:37.0543258+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster4.wav</Source>
@@ -545,8 +545,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster4.xnb</Output>
-      <Time>2016-01-16T17:50:51.4775197+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster4.xnb</Output>
+      <Time>2016-01-16T20:27:37.099117+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster5.wav</Source>
@@ -554,8 +554,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster5.xnb</Output>
-      <Time>2016-01-16T17:50:51.4840241+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster5.xnb</Output>
+      <Time>2016-01-16T20:27:37.164097+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster6.wav</Source>
@@ -563,8 +563,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster6.xnb</Output>
-      <Time>2016-01-16T17:50:51.4929927+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster6.xnb</Output>
+      <Time>2016-01-16T20:27:37.169068+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster7.wav</Source>
@@ -572,8 +572,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster7.xnb</Output>
-      <Time>2016-01-16T17:50:51.4997878+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster7.xnb</Output>
+      <Time>2016-01-16T20:27:37.3439963+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster8.wav</Source>
@@ -581,8 +581,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster8.xnb</Output>
-      <Time>2016-01-16T17:50:51.5391122+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster8.xnb</Output>
+      <Time>2016-01-16T20:27:37.3499355+01:00</Time>
     </Item>
     <Item>
       <Source>Music\3DS_Monster9.wav</Source>
@@ -590,8 +590,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster9.xnb</Output>
-      <Time>2016-01-16T17:50:51.5471202+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\3DS_Monster9.xnb</Output>
+      <Time>2016-01-16T20:27:37.3549579+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_MouseClick.wav</Source>
@@ -599,8 +599,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseClick.xnb</Output>
-      <Time>2016-01-16T17:50:51.6214435+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseClick.xnb</Output>
+      <Time>2016-01-16T20:27:37.8120509+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_MouseOver.wav</Source>
@@ -608,8 +608,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseOver.xnb</Output>
-      <Time>2016-01-16T17:50:51.6284503+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_MouseOver.xnb</Output>
+      <Time>2016-01-16T20:27:37.8130503+01:00</Time>
     </Item>
     <Item>
       <Source>Music\LFX_Footsteps1@8.wav</Source>
@@ -617,8 +617,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps1@8.xnb</Output>
-      <Time>2016-01-16T17:50:51.5846504+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps1@8.xnb</Output>
+      <Time>2016-01-16T20:27:37.6582698+01:00</Time>
     </Item>
     <Item>
       <Source>Music\LFX_Footsteps2@4.wav</Source>
@@ -626,8 +626,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps2@4.xnb</Output>
-      <Time>2016-01-16T17:50:51.6069297+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\LFX_Footsteps2@4.xnb</Output>
+      <Time>2016-01-16T20:27:37.7930374+01:00</Time>
     </Item>
     <Item>
       <Source>Music\mus_MainMenu.wav</Source>
@@ -635,8 +635,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mus_MainMenu.xnb</Output>
-      <Time>2016-01-16T17:50:52.2300015+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\mus_MainMenu.xnb</Output>
+      <Time>2016-01-16T20:27:45.7834648+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_GunShot.wav</Source>
@@ -644,8 +644,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GunShot.xnb</Output>
-      <Time>2016-01-16T17:50:51.6199436+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GunShot.xnb</Output>
+      <Time>2016-01-16T20:27:37.8110476+01:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX_GameOver.wav</Source>
@@ -653,15 +653,15 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GameOver.xnb</Output>
-      <Time>2016-01-16T17:50:51.6139542+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GameOver.xnb</Output>
+      <Time>2016-01-16T20:27:37.8060454+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Cupboard\Cupboard Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Cupboard\Cupboard Model_0.xml</Output>
-      <Time>2016-01-14T19:37:20.6518534+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Cupboard\Cupboard Model_0.xml</Output>
+      <Time>2016-01-14T18:17:36.2616008+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Cupboard\Wood Texture 1.png</Source>
@@ -676,15 +676,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.8160678+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.6089862+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 01\Path Model 01.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 01\Path Model 01_0.xml</Output>
-      <Time>2016-01-10T20:24:44.7942034+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 01\Path Model 01_0.xml</Output>
+      <Time>2016-01-10T20:06:39.6140026+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.jpg</Source>
@@ -699,15 +699,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.7957042+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 01\Path Texture 01_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.0089167+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02_0.xml</Output>
-      <Time>2016-01-10T20:24:44.8087227+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02_0.xml</Output>
+      <Time>2016-01-17T15:24:32.0057176+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.jpg</Source>
@@ -722,15 +722,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.8095611+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02_0.xnb</Output>
+      <Time>2016-01-17T15:24:31.3495061+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 02\Path Model 02.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 02\Path Model 02_0.xml</Output>
-      <Time>2016-01-10T20:24:44.7971224+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 02\Path Model 02_0.xml</Output>
+      <Time>2016-01-10T20:06:39.0229271+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.jpg</Source>
@@ -745,15 +745,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.7981227+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 02\Path Texture 02_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.0840642+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 03\Path Model 03.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 03\Path Model 03_0.xml</Output>
-      <Time>2016-01-10T20:24:44.799624+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Path Cubes\Path Cube 03\Path Model 03_0.xml</Output>
+      <Time>2016-01-10T20:06:39.1262476+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.jpg</Source>
@@ -768,15 +768,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.802223+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Path Cubes\Path Cube 03\Path Texture 03_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.2449256+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Closet\Closet Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Closet\Closet Model_0.xml</Output>
-      <Time>2016-01-14T19:37:20.6348366+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Closet\Closet Model_0.xml</Output>
+      <Time>2016-01-14T18:17:36.2626015+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Closet\Wood Texture 3.jpg</Source>
@@ -791,15 +791,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.8140678+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Closet\Wood Texture 3_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.3787913+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01_0.xml</Output>
-      <Time>2016-01-10T20:24:44.8057206+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 01\Wall Model 01_0.xml</Output>
+      <Time>2016-01-10T20:06:39.6129907+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg</Source>
@@ -814,15 +814,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb</Output>
-      <Time>2016-01-16T17:50:51.4269705+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01_0.xnb</Output>
+      <Time>2016-01-16T20:27:36.4258652+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Monster\Monster Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Monster\Monster Model_0.xml</Output>
-      <Time>2016-01-15T21:23:35.6435048+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Monster\Monster Model_0.xml</Output>
+      <Time>2016-01-15T21:15:25.1912018+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Monster\Monster Texture.png</Source>
@@ -837,15 +837,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture_0.xnb</Output>
-      <Time>2016-01-12T19:06:10.3476365+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Monster\Monster Texture_0.xnb</Output>
+      <Time>2016-01-11T17:25:30.4705528+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03_0.xml</Output>
-      <Time>2016-01-10T20:24:44.8110657+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03_0.xml</Output>
+      <Time>2016-01-10T20:06:39.3168695+01:00</Time>
     </Item>
     <Item>
       <Source>Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.jpg</Source>
@@ -860,15 +860,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb</Output>
-      <Time>2016-01-10T20:24:44.8115653+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.3306263+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Note\Note Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Note\Note Model_0.xml</Output>
-      <Time>2016-01-14T22:23:04.4093449+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Note\Note Model_0.xml</Output>
+      <Time>2016-01-16T22:19:57.0299912+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Note\Note Texture.jpg</Source>
@@ -883,22 +883,22 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb</Output>
-      <Time>2016-01-14T22:23:04.4113673+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Note\Note Texture_0.xnb</Output>
+      <Time>2016-01-14T22:03:57.0856022+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Pistol\Pistol Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Pistol\Pistol Model_0.xml</Output>
-      <Time>2016-01-14T22:23:04.4148518+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Pistol\Pistol Model_0.xml</Output>
+      <Time>2016-01-14T22:03:57.0866025+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Door\Door Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Door\Door Model_0.xml</Output>
-      <Time>2016-01-15T11:53:37.1998313+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Door\Door Model_0.xml</Output>
+      <Time>2016-01-14T23:17:21.2897904+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Door\Door.png</Source>
@@ -913,8 +913,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb</Output>
-      <Time>2016-01-15T11:53:37.2023403+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Door_0.xnb</Output>
+      <Time>2016-01-14T23:17:21.296795+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Door\Wooden Beam.png</Source>
@@ -929,15 +929,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb</Output>
-      <Time>2016-01-15T11:53:37.2048419+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Door\Wooden Beam_0.xnb</Output>
+      <Time>2016-01-14T23:18:19.1285215+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Trapdoor\Trapdoor Model.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Trapdoor\Trapdoor Model_0.xml</Output>
-      <Time>2016-01-14T19:37:20.6548541+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\Trapdoor\Trapdoor Model_0.xml</Output>
+      <Time>2016-01-14T18:17:36.2545971+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Trapdoor\Wooden Beam.jpg</Source>
@@ -952,8 +952,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb</Output>
-      <Time>2016-01-14T23:02:50.2945308+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.4628857+01:00</Time>
     </Item>
     <Item>
       <Source>Misc Level Objects\Trapdoor\Door.jpg</Source>
@@ -968,15 +968,61 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door_0.xnb</Output>
-      <Time>2016-01-14T23:02:50.1828248+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\Trapdoor\Door_0.xnb</Output>
+      <Time>2016-01-10T20:06:39.4508699+01:00</Time>
     </Item>
     <Item>
       <Source>Axis.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Output>
-      <Time>2016-01-02T20:21:27.8018273+01:00</Time>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Output>
+      <Time>2016-01-07T15:19:06.4284169+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\NotePad\Notepad Model.fbx</Source>
+      <Name>Misc Level Objects\NotePad\Notepad Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\NotePad\Notepad Model.xnb</Output>
+      <Time>2016-01-17T14:42:33.1718426+01:00</Time>
+      <Dependency>
+        <Key>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\NotePad\Notepad Model_0.xml</Key>
+        <Value>2016-01-17T14:42:37.8097719+01:00</Value>
+      </Dependency>
+      <Request>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\NotePad\Note Texture_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\NotePad\Note Texture.jpg</Source>
+      <Name>Misc Level Objects\NotePad\Note Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\NotePad\Note Texture.xnb</Output>
+      <Time>2016-01-17T14:42:32.5936139+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\NotePad\Notepad Model.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Misc Level Objects\NotePad\Notepad Model_0.xml</Output>
+      <Time>2016-01-17T14:42:33.1718426+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Misc Level Objects\NotePad\Note Texture.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Misc Level Objects\NotePad\Note Texture_0.xnb</Output>
+      <Time>2016-01-17T14:42:32.5936139+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -985,10 +1031,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Felix\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -1016,8 +1062,8 @@
         <Value>2011-09-01T16:22:30+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-12-14T15:13:05.6111926+01:00</Value>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-09-11T11:48:04.0588211+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

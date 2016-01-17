@@ -95,6 +95,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Misc Level Objects\NotePad\Notepad Model.fbx">
+      <Name>Notepad Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
@@ -426,6 +431,11 @@
       <Name>SFX_GameOver</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\NotePad\Note Texture.jpg">
+      <Name>Note Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
     <None Include="SaveFile.txt">
       <Name>SaveFile</Name>

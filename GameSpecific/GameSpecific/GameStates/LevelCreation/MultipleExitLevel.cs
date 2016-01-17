@@ -12,7 +12,7 @@ class MultipleExitLevel : Level
     protected Vector3[] startingPositions;
     private bool firstTime;
 
-    public MultipleExitLevel()
+    public MultipleExitLevel(int roomNumber = 1)
     {
         part = 0;
         CreateGrids();
@@ -25,7 +25,11 @@ class MultipleExitLevel : Level
         stamina.Parent = this;
         gameObjects.Add(stamina);
 
-        text.text = "Press E to proceed";
+        exitText.text = "Press E to proceed";
+
+        roomCounter = new TextGameObject("text");
+        roomCounter.text = roomNumber.ToString();
+        gameObjects.Add(roomCounter);
     }
 
     public override void Update(GameTime gameTime)

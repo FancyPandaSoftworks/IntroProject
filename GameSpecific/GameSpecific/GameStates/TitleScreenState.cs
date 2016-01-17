@@ -17,8 +17,9 @@ class TitleScreenState : GameState
 
     public TitleScreenState()
     {
-        player = new Player(new Vector3(200, 200f, 200));
-        level = new Level(player);
+        
+        level = new Level();
+        level.player = new Player(new Vector3(200, 200f, 200));
 
         foreach (Sound sound in MusicPlayer.Music)
         {
@@ -179,7 +180,8 @@ class TitleScreenState : GameState
 
     private void DrawEndless(int part,GameTime gameTime, SpriteBatch spriteBatch)
     {
-        level = new Level(player);
+        level = new Level();
+        level.player = new Player(new Vector3(200, 200f, 200));
 
         GameObjectGrid grid = new GameObjectGrid(20,20,"grid");
         
