@@ -327,6 +327,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Content>
+    <Compile Include="Menu Buttons\Paused.png">
+      <Name>Paused</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\GameOver.png">
+      <Name>GameOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Chased.png">
+      <Name>Chased</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="Misc Level Objects\Door\Wooden Beam.png">
       <Name>Wooden Beam</Name>
       <Importer>TextureImporter</Importer>
@@ -434,6 +449,16 @@
     </Compile>
     <Compile Include="Music\SFX_GameOver.wav">
       <Name>SFX_GameOver</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_MonsterScreech.wav">
+      <Name>SFX_MonsterScreech</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_WindAmbience.wav">
+      <Name>SFX_WindAmbience</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>

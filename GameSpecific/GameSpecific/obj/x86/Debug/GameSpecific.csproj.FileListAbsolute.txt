@@ -308,3 +308,6 @@ C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\SaveFile.txt
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\black.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\credits.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Paused.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\GameOver.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Menu Buttons\Chased.xnb

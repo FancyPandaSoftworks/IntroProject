@@ -13,16 +13,21 @@ class PauseScreenState : GameState
 {
     protected Button continueButton, exitButton;
     protected Button continueButtonMouseOver, exitButtonMouseOver;
-    protected Object2D background;
+    protected Object2D background, paused;
 
     public PauseScreenState()
     {
-
+        //Add a background image
         background = new Object2D("Note blank", 0);
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);
 
-        //add a resume button
+        //Add text: paused
+        paused = new Object2D("Menu Buttons\\Paused");
+        paused.Position = new Vector2((GameEnvironment.Screen.X - paused.Width) / 2, background.Position.Y);
+        gameObjects.Add(paused);
+
+        //Add a resume button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 - 100);
         gameObjects.Add(continueButton);
@@ -33,7 +38,7 @@ class PauseScreenState : GameState
         gameObjects.Add(continueButtonMouseOver);
         continueButtonMouseOver.Visible = false;
 
-        //add an exit button
+        //Add an exit button
         exitButton = new Button("Menu Buttons\\Menu button Exit", 0);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
         gameObjects.Add(exitButton);
@@ -50,7 +55,8 @@ class PauseScreenState : GameState
     public void ResetPositions()
     {
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 - 100);
+        paused.Position = new Vector2((GameEnvironment.Screen.X - paused.Width) / 2, background.Position.Y);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
         continueButtonMouseOver.Position = continueButton.Position - new Vector2(20,0);
         exitButtonMouseOver.Position = exitButton.Position - new Vector2(10,0);

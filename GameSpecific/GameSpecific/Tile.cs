@@ -112,6 +112,7 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     protected Object3D trapdoor;
+    public static Vector3 position;
 
     public EntryTile(string pathID)
         : base(pathID, "EntryTile")
@@ -136,6 +137,8 @@ class EntryTile : PathTile
         }
         trapdoor.Position = this.Position + new Vector3(0, 300, 0);
         trapdoor.Draw(gameTime, spriteBatch);
+
+        position = this.Position;
     }
 }
 

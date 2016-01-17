@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 class Monster : Object3D
 {
-    public Vector3 monsterPosition, playerPosition, monsterOrigin;
+    public Vector3 monsterPosition, playerPosition;
     public int[,] stepgrid;
     public GameObject[,] grid;
     public int tiles = 0;
@@ -19,18 +19,15 @@ class Monster : Object3D
     public Player player;
     public Matrix world;
     public float velocity, xzdifference;
-    public float timer;
     private bool groanPlaying;
     private float realXdif, realZdif;
     private AudioEmitter monsterEmitter;
     private AudioListener playerListener;
 
-
-    public Monster(GameObject[,] grid, Vector3 playerPosition)
+    public Monster(GameObject[,] grid)
         : base("Misc Level Objects\\Monster\\Monster Model")
     {
         ResetGrid();
-        this.playerPosition = playerPosition;
     }
 
     public void LoadContent()
@@ -54,9 +51,9 @@ class Monster : Object3D
                 }
             }
         }
-        //Monster's position and origin
-        monsterPosition = playerPosition - new Vector3(0, 50, 0);
-        monsterOrigin = monsterPosition + new Vector3(200 / 2, 0, 200 / 2);
+
+        //Monster's position
+        monsterPosition = EntryTile.position + new Vector3(0, 200, 0);
 
         //Monster's velocity
         velocity = 120;
@@ -64,80 +61,70 @@ class Monster : Object3D
         //Setting the emitter and listener for 3D sound
         playerListener = new AudioListener();
         monsterEmitter = new AudioEmitter();
-
-        //Setting the timer
-        timer = 0;
     }
 
     public override void Update(GameTime gameTime)
     {
-        Console.WriteLine("MONSTER IS HERE");
-        timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+        this.Position = monsterPosition;
+        Level level = parent as Level;
+        player = level.Find("Player") as Player;
+        playerPosition = player.Position;
+        ResetGrid();
 
-        //This updates the monster when the timer reaches 2 seconds
-        if (timer > 2)
-        {
-            this.Position = monsterOrigin;
-            Level level = parent as Level;
-            player = level.Find("Player") as Player;
-            playerPosition = player.Position;
-            ResetGrid();
-            
-            //setting the tile the player is standing on to 0, in the stepgrid
-            stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
-            CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
+        //setting the tile the player is standing on to 0, in the stepgrid
+        stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
+        CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
 
-            //calculating the x- and y-difference between player and monster
-            float xdifference = playerPosition.X - monsterOrigin.X;
-            realXdif = xdifference / 40; // change value to adjust volume
-            xdifference = Math.Abs(xdifference);
-            float zdifference = playerPosition.Z - monsterOrigin.Z;
-            realZdif = zdifference / 40;
-            zdifference = Math.Abs(zdifference);
+        //calculating the x- and y-difference between player and monster
+        float xdifference = playerPosition.X - monsterPosition.X;
+        realXdif = xdifference / 40; // change value to adjust volume
+        xdifference = Math.Abs(xdifference);
+        float zdifference = playerPosition.Z - monsterPosition.Z;
+        realZdif = zdifference / 40;
+        zdifference = Math.Abs(zdifference);
 
-            //this switches the monster's AI depending on whether the player is in the monster's line of sight
-            if (PlayerInSight(xdifference, zdifference, new Vector2(monsterOrigin.X, monsterOrigin.Z)))
-                SimplePathFinding(gameTime, xdifference, zdifference);
-            else
-                AdvancedPathFinding(gameTime);
+        //this switches the monster's AI depending on whether the player is in the monster's line of sight
+        if (PlayerInSight(xdifference, zdifference, new Vector2(monsterPosition.X, monsterPosition.Z)))
+            SimplePathFinding(gameTime, xdifference, zdifference);
+        else
+            AdvancedPathFinding(gameTime);
 
-            //Making the danger level depentent on the position difference of the player and monster
-            xzdifference = (float)Math.Sqrt(Math.Pow(xdifference, 2) + Math.Pow(zdifference, 2));
+        //Making the danger level depentent on the position difference of the player and monster
+        xzdifference = (float)Math.Sqrt(Math.Pow(xdifference, 2) + Math.Pow(zdifference, 2));
 
-            for (int i = 10; i >= 0; i--)
-                if (xzdifference < GameObjectGrid.cellWidth * 2 * i)
-                    MusicPlayer.dangerLevel = 10 - i;
+        for (int i = 10; i >= 0; i--)
+            if (xzdifference < GameObjectGrid.cellWidth * 2 * i)
+                MusicPlayer.dangerLevel = 10 - i;
 
-            //Checking if a groan-sound is playing
+        //Checking if a groan-sound is playing
+        foreach (Sound sound in MusicPlayer.SoundEffect3D)
+            for (int i = 0; i < 10; i++)
+                if (sound.Name == "Monster" + i)
+                    if (sound.SoundState == SoundState.Playing)
+                        groanPlaying = true;
+                    else
+                        groanPlaying = false;
+
+        //Setting the positions of the listener and emitter
+        playerListener.Position = playerPosition;
+        monsterEmitter.Position = new Vector3(playerPosition.X + realXdif, monsterPosition.Y, playerPosition.Z + realZdif);
+
+        //Playing a random groan-sound
+        if (!groanPlaying && GameEnvironment.Random.Next(110) == 0)
             foreach (Sound sound in MusicPlayer.SoundEffect3D)
-                for (int i = 0; i < 10; i++)
-                    if (sound.Name == "Monster" + i)
-                        if (sound.SoundState == SoundState.Playing)
-                            groanPlaying = true;
-                        else
-                            groanPlaying = false;
+                if (sound.Name == "Monster" + GameEnvironment.Random.Next(10))
+                {
+                    Console.WriteLine("Playing: {0}", sound.Name);
+                    sound.Play3DSound(playerListener, monsterEmitter);
+                }
 
-            //Setting the positions of the listener and emitter
-            playerListener.Position = playerPosition;
-            monsterEmitter.Position = new Vector3(playerPosition.X + realXdif, monsterPosition.Y, playerPosition.Z + realZdif);
-
-            //Playing a random groan-sound
-            if (!groanPlaying && GameEnvironment.Random.Next(110) == 0)
-                foreach (Sound sound in MusicPlayer.SoundEffect3D)
-                    if (sound.Name == "Monster" + GameEnvironment.Random.Next(10))
-                    {
-                        Console.WriteLine("Playing: {0}", sound.Name);
-                        sound.Play3DSound(playerListener, monsterEmitter);
-                    }
-
-            //Switch to gameOver state
-            if (xzdifference < 100)
-            {
-                foreach (Sound sound in MusicPlayer.SoundEffect)
-                    if (sound.Name == "GameOver")
-                        sound.PlaySound();
-                GameEnvironment.GameStateManager.SwitchTo("gameOverState");
-            }
+        //Switch to gameOver state
+        if (xzdifference < 100)
+        {
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "GameOver")
+                    sound.PlaySound();
+            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         }
 
     }
@@ -145,42 +132,42 @@ class Monster : Object3D
     //a simple method for moving the monster straight towards the player
     public void SimplePathFinding(GameTime gameTime, float xdifference, float ydifference)
     {
-        if (playerPosition.X > monsterOrigin.X)
-            monsterOrigin.X += velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if (playerPosition.X > monsterPosition.X)
+            monsterPosition.X += velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (playerPosition.X < monsterOrigin.X)
-            monsterOrigin.X -= velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if (playerPosition.X < monsterPosition.X)
+            monsterPosition.X -= velocity * (float)Math.Cos(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (playerPosition.Z > monsterOrigin.Z)
-            monsterOrigin.Z += velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if (playerPosition.Z > monsterPosition.Z)
+            monsterPosition.Z += velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (playerPosition.Z < monsterOrigin.Z)
-            monsterOrigin.Z -= velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if (playerPosition.Z < monsterPosition.Z)
+            monsterPosition.Z -= velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
     }
 
     //this method makes the monster follow the shortest path to the player, using the tile cost method and the stepgrid
     public void AdvancedPathFinding(GameTime gameTime)
     {
-        if ((int)monsterOrigin.X / GameObjectGrid.cellWidth > 0)
-            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
-                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
-                    monsterOrigin.X -= velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if ((int)monsterPosition.X / GameObjectGrid.cellWidth > 0)
+            if (stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] < stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
+                if (!(grid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth - 1, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
+                    monsterPosition.X -= velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if ((int)monsterOrigin.X / GameObjectGrid.cellWidth < gridWidth - 1)
-            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
-                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
-                    monsterOrigin.X += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if ((int)monsterPosition.X / GameObjectGrid.cellWidth < gridWidth - 1)
+            if (stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] < stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
+                if (!(grid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth + 1, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight] is WallTile))
+                    monsterPosition.X += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if ((int)monsterOrigin.Z / GameObjectGrid.cellHeight > 0)
-            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
-                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] is WallTile))
-                    monsterOrigin.Z -= velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if ((int)monsterPosition.Z / GameObjectGrid.cellHeight > 0)
+            if (stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] < stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
+                if (!(grid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight - 1] is WallTile))
+                    monsterPosition.Z -= velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if ((int)monsterOrigin.Z / GameObjectGrid.cellHeight < gridHeight - 1)
-            if (stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] < stepgrid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
-                if (!(grid[(int)(monsterOrigin.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterOrigin.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] is WallTile))
-                    monsterOrigin.Z += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        if ((int)monsterPosition.Z / GameObjectGrid.cellHeight < gridHeight - 1)
+            if (stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] < stepgrid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight])
+                if (!(grid[(int)(monsterPosition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(monsterPosition.Z + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellHeight + 1] is WallTile))
+                    monsterPosition.Z += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
     }
 
     //method to check if the player is in the monster's 'line of sight'
@@ -189,7 +176,7 @@ class Monster : Object3D
     //because that means that the player is not in the monster's line of sight
     public bool PlayerInSight(float xdifference, float zdifference, Vector2 checkposition)
     {
-        if (playerPosition.X < monsterOrigin.X && playerPosition.Z < monsterOrigin.Z)
+        if (playerPosition.X < monsterPosition.X && playerPosition.Z < monsterPosition.Z)
         {
             if (xdifference > zdifference)
             {
@@ -218,7 +205,7 @@ class Monster : Object3D
 
         }
 
-        else if (playerPosition.X < monsterOrigin.X && playerPosition.Z > monsterOrigin.Z)
+        else if (playerPosition.X < monsterPosition.X && playerPosition.Z > monsterPosition.Z)
         {
             if (xdifference > zdifference)
             {
@@ -247,7 +234,7 @@ class Monster : Object3D
 
         }
 
-        else if (playerPosition.X > monsterOrigin.X && playerPosition.Z < monsterOrigin.Z)
+        else if (playerPosition.X > monsterPosition.X && playerPosition.Z < monsterPosition.Z)
         {
             if (xdifference > zdifference)
             {
@@ -276,7 +263,7 @@ class Monster : Object3D
 
         }
 
-        else if (playerPosition.X > monsterOrigin.X && playerPosition.Z > monsterOrigin.Z)
+        else if (playerPosition.X > monsterPosition.X && playerPosition.Z > monsterPosition.Z)
         {
             if (xdifference > zdifference)
             {
@@ -304,11 +291,11 @@ class Monster : Object3D
             }
         }
 
-        else if (playerPosition.X == monsterOrigin.X)
+        else if (playerPosition.X == monsterPosition.X)
         {
-            if (playerPosition.Z > monsterOrigin.Z)
+            if (playerPosition.Z > monsterPosition.Z)
             {
-                while (playerPosition.Z > monsterOrigin.Z)
+                while (playerPosition.Z > monsterPosition.Z)
                 {
                     if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
@@ -317,9 +304,9 @@ class Monster : Object3D
                     checkposition.Y += 1;
                 }
             }
-            else if (playerPosition.Z < monsterOrigin.Z)
+            else if (playerPosition.Z < monsterPosition.Z)
             {
-                while (playerPosition.Z < monsterOrigin.Z)
+                while (playerPosition.Z < monsterPosition.Z)
                 {
                     if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is Tile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
@@ -330,11 +317,11 @@ class Monster : Object3D
             }
         }
 
-        else if (playerPosition.Z == monsterOrigin.Z)
+        else if (playerPosition.Z == monsterPosition.Z)
         {
-            if (playerPosition.X > monsterOrigin.X)
+            if (playerPosition.X > monsterPosition.X)
             {
-                while (playerPosition.X > monsterOrigin.X)
+                while (playerPosition.X > monsterPosition.X)
                 {
                     if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {
@@ -343,9 +330,9 @@ class Monster : Object3D
                     checkposition.X += 1;
                 }
             }
-            else if (playerPosition.X < monsterOrigin.X)
+            else if (playerPosition.X < monsterPosition.X)
             {
-                while (playerPosition.X < monsterOrigin.X)
+                while (playerPosition.X < monsterPosition.X)
                 {
                     if (!(grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile) || grid[(int)(checkposition.X + GameObjectGrid.cellWidth / 2) / GameObjectGrid.cellWidth, (int)(checkposition.Y + GameObjectGrid.cellHeight / 2) / GameObjectGrid.cellHeight] is WallTile)
                     {

@@ -11,6 +11,7 @@ class TitleScreenState : GameState
 {
     protected Button continueButton, newGameButton, exitButton;
     protected Button continueButtonMouseOver, newGameButtonMouseOver, exitButtonMouseOver;
+    protected Object2D title;
     private int part;
     private Level level;
     Player player;
@@ -24,6 +25,11 @@ class TitleScreenState : GameState
         {
             sound.PlaySound();
         }
+
+        //Add title
+        title = new Object2D("Menu Buttons\\Chased");
+        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2, 10);
+        gameObjects.Add(title);
 
         //Add a continue button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
@@ -63,6 +69,7 @@ class TitleScreenState : GameState
 
     public void ResetPositions()
     {
+        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2 + 50, 10);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
         newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);

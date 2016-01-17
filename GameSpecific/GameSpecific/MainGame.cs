@@ -34,6 +34,7 @@ class MainGame : GameEnvironment
     {
         base.LoadContent();
         musicPlayer = new MusicPlayer();
+
         #region Sounds
         musicPlayer.NewSound("mIn_AmbienceHigh@32@0@0");
         musicPlayer.NewSound("mIn_AmbienceLow@32@0@0");
@@ -48,6 +49,8 @@ class MainGame : GameEnvironment
         musicPlayer.NewSound("SFX_MouseOver");
         musicPlayer.NewSound("SFX_GunShot");
         musicPlayer.NewSound("SFX_GameOver");
+        musicPlayer.NewSound("SFX_WindAMbience");
+        musicPlayer.NewSound("SFX_MonsterScreech");
 
         musicPlayer.NewSound("LFX_Footsteps1@8");
         musicPlayer.NewSound("LFX_Footsteps2@4");
@@ -75,6 +78,7 @@ class MainGame : GameEnvironment
         gameStateManager.AddGameState("endGameState", new EndGameState());
         gameStateManager.AddGameState("creditState", new CreditState());
         gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
+        SetFullscreen(true);
         gameStateManager.SwitchTo("titleScreenState");
     }
 }

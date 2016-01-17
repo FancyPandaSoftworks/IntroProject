@@ -23,7 +23,7 @@ class PlayingState : Root
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
     /// <param name="roomCounter">The Roomcounter from where to start</param>
-    public PlayingState(int roomCounter = 230)
+    public PlayingState(int roomCounter = 1)
     {
         this.roomCounter = roomCounter;
         level = new RandomLevel(this.roomCounter);
