@@ -18,12 +18,12 @@ class GameOverState : GameState
 
     public GameOverState()
     {
-        background = new Object2D("White Sprite", 0);
+        background = new Object2D("Note blank", 0);
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);
 
         //add a continue button
-        continueButton = new Button("White Sprite", 0);
+        continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 - 100);
         gameObjects.Add(continueButton);
 
@@ -34,7 +34,7 @@ class GameOverState : GameState
         continueButtonMouseOver.Visible = false;
 
         //add an exit button
-        exitButton = new Button("White Sprite", 0);
+        exitButton = new Button("Menu Buttons\\Menu button Exit", 0);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
         gameObjects.Add(exitButton);
 

@@ -306,3 +306,5 @@ C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GunShot.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\Music\SFX_GameOver.xnb
 C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\SaveFile.txt
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\black.xnb
+C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\credits.xnb

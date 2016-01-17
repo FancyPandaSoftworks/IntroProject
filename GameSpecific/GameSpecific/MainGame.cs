@@ -72,6 +72,8 @@ class MainGame : GameEnvironment
         gameStateManager.AddGameState("playingState", new PlayingState());
         gameStateManager.AddGameState("pauseScreenState", new PauseScreenState());
         gameStateManager.AddGameState("gameOverState", new GameOverState());
+        gameStateManager.AddGameState("endGameState", new EndGameState());
+        gameStateManager.AddGameState("creditState", new CreditState());
         gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         gameStateManager.SwitchTo("titleScreenState");
     }

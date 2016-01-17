@@ -978,6 +978,24 @@
       <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\obj\x86\Debug\Axis_0.xml</Output>
       <Time>2016-01-02T20:21:27.8018273+01:00</Time>
     </Item>
+    <Item>
+      <Source>black.png</Source>
+      <Name>black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\black.xnb</Output>
+      <Time>2016-01-16T22:37:35.381791+01:00</Time>
+    </Item>
+    <Item>
+      <Source>credits.spritefont</Source>
+      <Name>credits</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Wouter\Documents\GitHub\IntroProject\GameSpecific\GameSpecific\bin\x86\Debug\Content\credits.xnb</Output>
+      <Time>2016-01-17T12:29:52.6603658+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}</ContentProjectGUID>

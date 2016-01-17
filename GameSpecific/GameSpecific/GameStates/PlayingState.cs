@@ -11,10 +11,11 @@ using System;
 class PlayingState : Root
 {
     Level level;
-    protected int roomCounter;
+    public int roomCounter;
 
     public int RoomCounter
     {
+        get { return roomCounter; }
         set { roomCounter = value - 1; level.Completed = true; }
     }
 
@@ -22,7 +23,7 @@ class PlayingState : Root
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
     /// <param name="roomCounter">The Roomcounter from where to start</param>
-    public PlayingState(int roomCounter = 1)
+    public PlayingState(int roomCounter = 230)
     {
         this.roomCounter = roomCounter;
         level = new RandomLevel(this.roomCounter);
@@ -115,6 +116,12 @@ class PlayingState : Root
             //Levels with no monster
             else
                 level = new RandomLevel(roomCounter, 20 + (((roomCounter - 1) / 4) - ((roomCounter - 1) % 4)));
+
+            //set a boolean for the final level
+            if (roomCounter == 250)
+                ExitTile.finalLevel = true;
+            else
+                ExitTile.finalLevel = false;
 
             foreach (GameObject obj in level.Objects)
                 obj.Parent = level;

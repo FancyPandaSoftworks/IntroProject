@@ -95,6 +95,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="credits.spritefont">
+      <Name>credits</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
@@ -309,6 +314,11 @@
     </Compile>
     <Compile Include="Menu Buttons\Menu button NewGame MouseOver.png">
       <Name>Menu button NewGame MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="black.png">
+      <Name>black</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
