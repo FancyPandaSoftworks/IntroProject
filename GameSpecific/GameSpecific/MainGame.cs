@@ -72,7 +72,7 @@ class MainGame : GameEnvironment
         musicPlayer.timer.Enabled = true;
         GameState.GameVariable = this;
         gameStateManager.AddGameState("noteViewingState", new NoteViewingState());
-        gameStateManager.AddGameState("playingState", new PlayingState());
+        //gameStateManager.AddGameState("playingState", new PlayingState());
         gameStateManager.AddGameState("pauseScreenState", new PauseScreenState());
         gameStateManager.AddGameState("gameOverState", new GameOverState());
         gameStateManager.AddGameState("endGameState", new EndGameState());
