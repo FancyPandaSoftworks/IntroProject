@@ -64,7 +64,7 @@ class PlayingState : Root
         {
             roomCounter++;
             Console.WriteLine(roomCounter);
-            int tiles = 20 + (((roomCounter + 1) / 10) - ((roomCounter + 1) % 10));
+            int tiles = 10 + (((roomCounter + 1) / 10) - ((roomCounter + 1) % 10));
             //First room
             if (roomCounter == 1)
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\First.txt");

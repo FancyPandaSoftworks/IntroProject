@@ -102,7 +102,7 @@ class RandomLevel : Level
     /// <param name="roomNumber">The number of the room</param>
     /// <param name="tiles">The size the Mainpath should be, counted in tiles</param>
     /// <param name="chased">Whether or not the monster is chasing the player</param>
-    public RandomLevel(int roomNumber, int tiles = 20, bool chased = false)
+    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
     {
         //Setting two booleans for the monster (they are used in the Update method)
         this.chased = chased;
