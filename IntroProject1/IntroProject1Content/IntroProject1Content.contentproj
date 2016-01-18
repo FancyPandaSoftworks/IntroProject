@@ -99,7 +99,7 @@
       <Name>Notepad Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
-      </Compile>
+    </Compile>
     <Compile Include="credits.spritefont">
       <Name>credits</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -461,11 +461,6 @@
       <Name>Note Texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-      </Compile> 
-    <Compile Include="Music\SFX_MonsterScreech.wav">
-      <Name>SFX_MonsterScreech</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="Music\SFX_WindAmbience.wav">
       <Name>SFX_WindAmbience</Name>

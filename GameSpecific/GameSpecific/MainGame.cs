@@ -50,7 +50,6 @@ class MainGame : GameEnvironment
         musicPlayer.NewSound("SFX_GunShot");
         musicPlayer.NewSound("SFX_GameOver");
         musicPlayer.NewSound("SFX_WindAMbience");
-        musicPlayer.NewSound("SFX_MonsterScreech");
 
         musicPlayer.NewSound("LFX_Footsteps1@8");
         musicPlayer.NewSound("LFX_Footsteps2@4");
