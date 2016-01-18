@@ -11,18 +11,18 @@ using Microsoft.Xna.Framework.Media;
 
 class Monster : Object3D
 {
-    public Vector3 monsterPosition, playerPosition;
-    public int[,] stepgrid;
-    public GameObject[,] grid;
-    public int tiles = 0;
-    public int gridHeight, gridWidth;
-    public Player player;
-    public Matrix world;
-    public float velocity, xzdifference;
-    private bool groanPlaying;
-    private float realXdif, realZdif;
-    private AudioEmitter monsterEmitter;
-    private AudioListener playerListener;
+    //public Vector3 monsterPosition, playerPosition;
+    //public int[,] stepgrid;
+    //public GameObject[,] grid;
+    //public int tiles = 0;
+    //public int gridHeight, gridWidth;
+    //public Player player;
+    //public Matrix world;
+    //public float velocity, xzdifference;
+    //private bool groanPlaying;
+    //private float realXdif, realZdif;
+    //private AudioEmitter monsterEmitter;
+    //private AudioListener playerListener;
 
     public Monster(GameObject[,] grid)
         : base("Misc Level Objects\\Monster\\Monster Model")
