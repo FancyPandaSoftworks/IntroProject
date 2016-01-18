@@ -102,7 +102,7 @@ class RandomLevel : Level
     /// <param name="roomNumber">The number of the room</param>
     /// <param name="tiles">The size the Mainpath should be, counted in tiles</param>
     /// <param name="chased">Whether or not the monster is chasing the player</param>
-    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
+    public RandomLevel(int roomNumber, int tiles = 20, bool chased = false)
     {
         //Setting two booleans for the monster (they are used in the Update method)
         this.chased = chased;
@@ -140,11 +140,11 @@ class RandomLevel : Level
         for (int i = random.Next(1, tiles / 4); i > 0; i--)
             CreateSidePath(random.Next(3, tiles / 4), chased);
 
-        //making the tile grid
+        //Making the tile grid
         TileGrid tileGrid = Grid;
         gameObjects.Add(tileGrid);
 
-        //making the player
+        //Making the player
         player = new Player(Vector3.Zero);
         gameObjects.Add(player);
         player.Parent = this;
@@ -160,6 +160,7 @@ class RandomLevel : Level
             gameObjects.Add(note);
         }
 
+        //Set the position of the player to the entry tile
         foreach(GameObject obj in tileGrid.Objects)
         {
             if (obj != null)
@@ -167,12 +168,13 @@ class RandomLevel : Level
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
         }
 
-        //making the stamina bar
+        //Making the stamina bar
         stamina = new Stamina();
         gameObjects.Add(stamina);
         stamina.Parent = this;
         exitText.text = "Press E to proceed";
-
+        
+        //Adding the room counter
         roomCounter = new TextGameObject("text");
         roomCounter.text = roomNumber.ToString();
         gameObjects.Add(roomCounter);
@@ -186,12 +188,12 @@ class RandomLevel : Level
 
         if (timer > 3)
         {
-            //making the monster
+            //Making the monster
             if (chased && !monsterMade)
             {
                 //Playing a sound-effect before the monster has entered the room
                 foreach (Sound sound in MusicPlayer.SoundEffect)
-                    if (sound.Name == "MonsterScreech")
+                    if (sound.Name == "WindAmbience")
                         sound.PlaySound();
                 //Making the monster
                 Monster monster = new Monster(Grid.Objects);

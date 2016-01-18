@@ -23,7 +23,7 @@ class PlayingState : Root
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
     /// <param name="roomCounter">The Roomcounter from where to start</param>
-    public PlayingState(int roomCounter = 250)
+    public PlayingState(int roomCounter = 1)
     {
         this.roomCounter = roomCounter;
         level = new RandomLevel(this.roomCounter);
@@ -64,7 +64,7 @@ class PlayingState : Root
         {
             roomCounter++;
             Console.WriteLine(roomCounter);
-            int tiles = 10 + (((roomCounter + 1) / 10) - ((roomCounter + 1) % 10));
+            int tiles = 20 + (((roomCounter + 1) / 10) - ((roomCounter + 1) % 10));
             //First room
             if (roomCounter == 1)
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\First.txt");

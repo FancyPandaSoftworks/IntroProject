@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -32,7 +32,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Misc Level Objects\Monster\Monster Model.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

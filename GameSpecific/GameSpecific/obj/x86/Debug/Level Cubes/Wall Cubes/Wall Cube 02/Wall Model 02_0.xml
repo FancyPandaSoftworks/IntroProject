@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -31,7 +31,7 @@
               <PositionIndices>0 4 5 1 1 5 6 2 2 6 7 3 4 0 3 7</PositionIndices>
               <Channels>
                 <VertexChannel Name="Normal0" ElementType="Framework:Vector3">1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 1 -2.98023224E-07 4.47034E-08 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -2.831221E-07 -1 -1.78813977E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 -1 2.38418579E-07 -1.34110437E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07 2.38418579E-07 1 1.63912787E-07</VertexChannel>
-                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.99999404 1.00002992 0.9999937 0.00122857094 0.001192507 0.00122857094 0.00119286461 1.0000298 0.9988187 1.00000536 0.9988184 0.00120449066 1.72647033E-05 0.00120401382 1.72647033E-05 1.00000536 5.149268E-07 0.00120216608 5.149268E-07 1.00000358 0.9988017 1.00000346 0.9988017 0.00120216608 0.9994008 0.9994006 0.9994008 0.0005993247 0.000599712133 0.0005993247 0.0005993545 0.9994004</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">1.00005722 0.9987805 1.00005686 -2.07424164E-05 0.00125568407 -2.07424164E-05 0.00125604169 0.9987804 1.00004411 0.998834848 1.00004387 3.385544E-05 0.00124275777 3.33786E-05 0.00124275777 0.998834848 1.00002563 0.998809457 1.00002563 8.106232E-06 0.00122439861 8.225441E-06 0.00122439861 0.998809457 0.00121940277 -2.08616257E-05 0.00121940277 0.9987805 1.0000205 0.9987805 1.00002086 -2.06232071E-05</VertexChannel>
               </Channels>
             </Vertices>
           </Batch>
@@ -43,11 +43,11 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material.001</Name>
       <Identity>
-        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
-        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0 0.4229497</Data>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.640000045 0 0.363777369</Data>
         <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
         <Data Key="Alpha" Type="float">1</Data>
         <Data Key="SpecularColor" Type="Framework:Vector3">0.25 0.25 0.25</Data>
@@ -57,7 +57,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>Material</Name>
       <Identity>
-        <SourceFilename>D:\DATA\GIT\Introproject\Introproject\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Wouter\Documents\GitHub\IntroProject\IntroProject1\IntroProject1Content\Level Cubes\Wall Cubes\Wall Cube 02\Wall Model 02.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

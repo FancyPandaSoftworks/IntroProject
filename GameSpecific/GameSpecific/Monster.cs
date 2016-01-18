@@ -12,17 +12,17 @@ using Microsoft.Xna.Framework.Media;
 class Monster : Object3D
 {
     public Vector3 monsterPosition, playerPosition;
-    public int[,] stepgrid;
-    public GameObject[,] grid;
+    public int[,] stepgrid; //Grid with the tile-costs: amount of tiles it takes to get to the destination
+    public GameObject[,] grid; //Grid with the actual tiles
     public int tiles = 0;
     public int gridHeight, gridWidth;
     public Player player;
-    public Matrix world;
+    public Matrix world; //Matrix for turning the monster (see->Draw method)
     public float velocity, xzdifference;
-    private bool groanPlaying;
-    private float realXdif, realZdif;
+    private float realXdif, realZdif; //The x- and z-difference; can be positive or negative
     private AudioEmitter monsterEmitter;
     private AudioListener playerListener;
+    private bool groanPlaying;
 
     public Monster(GameObject[,] grid)
         : base("Misc Level Objects\\Monster\\Monster Model")
@@ -42,56 +42,49 @@ class Monster : Object3D
 
         //Counting the amount of path-tiles in the room
         for (int x = 0; x < gridWidth; x++)
-        {
             for (int y = 0; y < gridHeight; y++)
-            {
                 if (grid[x, y] is Tile && !(grid[x, y] is WallTile))
-                {
                     tiles++;
-                }
-            }
-        }
 
-        //Monster's position
+        //Monster's position and velocity
         monsterPosition = EntryTile.position + new Vector3(0, 200, 0);
-
-        //Monster's velocity
         velocity = 120;
 
-        //Setting the emitter and listener for 3D sound
+        //Declaring the emitter and listener for 3D sound
         playerListener = new AudioListener();
         monsterEmitter = new AudioEmitter();
     }
 
     public override void Update(GameTime gameTime)
     {
+        //Setting monsterposition and finding the playerposition
         this.Position = monsterPosition;
         Level level = parent as Level;
         player = level.Find("Player") as Player;
         playerPosition = player.Position;
+
         ResetGrid();
 
-        //setting the tile the player is standing on to 0, in the stepgrid
+        //Setting the tile the player is standing on to 0, in the stepgrid
         stepgrid[(int)(playerPosition.X / GameObjectGrid.cellWidth), (int)(playerPosition.Z / GameObjectGrid.cellHeight)] = 0;
         CalculateTileCost(new Vector2((int)((playerPosition.X) / GameObjectGrid.cellWidth), (int)((playerPosition.Z) / GameObjectGrid.cellHeight)), 1);
 
-        //calculating the x- and y-difference between player and monster
+        //Calculating the x- and z-difference between player and monster
         float xdifference = playerPosition.X - monsterPosition.X;
-        realXdif = xdifference / 40; // change value to adjust volume
+        realXdif = xdifference / 40;
         xdifference = Math.Abs(xdifference);
         float zdifference = playerPosition.Z - monsterPosition.Z;
         realZdif = zdifference / 40;
         zdifference = Math.Abs(zdifference);
 
-        //this switches the monster's AI depending on whether the player is in the monster's line of sight
+        //This switches the monster's AI depending on whether the player is in the monster's line of sight
         if (PlayerInSight(xdifference, zdifference, new Vector2(monsterPosition.X, monsterPosition.Z)))
             SimplePathFinding(gameTime, xdifference, zdifference);
         else
             AdvancedPathFinding(gameTime);
 
-        //Making the danger level depentent on the position difference of the player and monster
+        //Making the danger level depentent on the position difference of the player and monster (-> xzdifference)
         xzdifference = (float)Math.Sqrt(Math.Pow(xdifference, 2) + Math.Pow(zdifference, 2));
-
         for (int i = 10; i >= 0; i--)
             if (xzdifference < GameObjectGrid.cellWidth * 2 * i)
                 MusicPlayer.dangerLevel = 10 - i;
@@ -109,7 +102,7 @@ class Monster : Object3D
         playerListener.Position = playerPosition;
         monsterEmitter.Position = new Vector3(playerPosition.X + realXdif, monsterPosition.Y, playerPosition.Z + realZdif);
 
-        //Playing a random groan-sound
+        //Playing a random groan-sound at a random moment
         if (!groanPlaying && GameEnvironment.Random.Next(110) == 0)
             foreach (Sound sound in MusicPlayer.SoundEffect3D)
                 if (sound.Name == "Monster" + GameEnvironment.Random.Next(10))
@@ -128,8 +121,9 @@ class Monster : Object3D
         }
 
     }
-
-    //a simple method for moving the monster straight towards the player
+    ///<summary>
+    ///A simple method for moving the monster straight towards the player
+    ///</summary>
     public void SimplePathFinding(GameTime gameTime, float xdifference, float ydifference)
     {
         if (playerPosition.X > monsterPosition.X)
@@ -143,10 +137,11 @@ class Monster : Object3D
 
         if (playerPosition.Z < monsterPosition.Z)
             monsterPosition.Z -= velocity * (float)Math.Sin(Math.Atan(ydifference / xdifference)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
     }
 
-    //this method makes the monster follow the shortest path to the player, using the tile cost method and the stepgrid
+    /// <summary>
+    /// This method makes the monster follow the shortest path to the player, using the tile cost method and the stepgrid
+    /// </summary>
     public void AdvancedPathFinding(GameTime gameTime)
     {
         if ((int)monsterPosition.X / GameObjectGrid.cellWidth > 0)
@@ -170,10 +165,12 @@ class Monster : Object3D
                     monsterPosition.Z += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
     }
 
-    //method to check if the player is in the monster's 'line of sight'
-    //it checks the position of the player compared to the monster's position and then checks to see which is bigger, the x- or ydifference
-    //it then checks all positions in an imaginary line from monster to player, and if one of those positions is inside a wall, it returns the false value...
-    //because that means that the player is not in the monster's line of sight
+    ///<summary>
+    ///method to check if the player is in the monster's 'line of sight'
+    ///it checks the position of the player compared to the monster's position and then checks to see which is bigger, the x- or ydifference
+    ///it then checks all positions in an imaginary line from monster to player, and if one of those positions is inside a wall, it returns the false value...
+    ///because that means that the player is not in the monster's line of sight
+    ///</summary>
     public bool PlayerInSight(float xdifference, float zdifference, Vector2 checkposition)
     {
         if (playerPosition.X < monsterPosition.X && playerPosition.Z < monsterPosition.Z)
@@ -344,8 +341,9 @@ class Monster : Object3D
         }
         return true;
     }
-
-    //a method that calculates the total steps/tiles it takes to get to the player's position
+    ///<summary>
+    ///A method that calculates the total steps/tiles it takes to get to a position
+    ///</summary>
     public void CalculateTileCost(Vector2 tilepos, int counter)
     {
         if ((int)tilepos.X > 0)
@@ -382,6 +380,9 @@ class Monster : Object3D
         }
     }
 
+    /// <summary>
+    /// Method for resetting the cost of each tile in the stepgrid to the total amount of tiles
+    /// </summary>
     public void ResetGrid()
     {
         for (int x = 0; x < gridWidth; x++)
@@ -389,12 +390,14 @@ class Monster : Object3D
                 stepgrid[x, y] = tiles;
     }
 
-
+    /// <summary>
+    /// Draw method 
+    /// </summary>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         //Code for turning the monster towards the player
         Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, playercamera.Position.Z - Position.Z);
-        direction.Normalize(); //matrix with length 0
+        direction.Normalize(); //Making matrix with a length of 0
         world = Matrix.CreateWorld(Position, direction, Vector3.Up);
         Matrix[] transforms = new Matrix[model.Bones.Count];
         model.CopyAbsoluteBoneTransformsTo(transforms);
