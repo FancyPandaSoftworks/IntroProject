@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 
 class Level
 {
+
     private Dictionary<Point, Tile> tileList;
     private List<Point> keyList;
     private Tile newTile;
