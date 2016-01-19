@@ -52,7 +52,7 @@ public class GameStateManager : Root
         if (gameState.ContainsKey(name))
             currentGameState = gameState[name];
         else
-            throw new KeyNotFoundException("Can't find gamestate" + name);
+            throw new KeyNotFoundException("Can't find " + name);
     }
 
     /// <summary>

@@ -22,7 +22,7 @@ public class GameEnvironment : Game
     protected static GameSettingsManager gameSettingsManager;
     protected static Camera camera;
     protected static Point screen;
-    protected static GraphicsDevice graphicsDevice;
+    public static GraphicsDevice graphicsDevice;
 
     public GameEnvironment()
     {
@@ -35,6 +35,7 @@ public class GameEnvironment : Game
         graphics = new GraphicsDeviceManager(this);
         camera = new Camera();
         //IsMouseVisible = false;
+
     }
     public static GraphicsDevice Graphics
     {

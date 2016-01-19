@@ -15,7 +15,7 @@ public class NoteObject : Object3D
     /// Constructing the note
     /// </summary>
     /// <param name="noteID">What note this note should be</param>
-    public NoteObject(string noteID) : base("Axis", "note")
+    public NoteObject(string noteID) : base("Misc Level Objects\\Note\\Note Model", "note")
     {
         this.noteID = noteID;
     }

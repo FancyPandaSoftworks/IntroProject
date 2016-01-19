@@ -31,11 +31,6 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Misc Level Objects\Cupboard\Cupboard.fbx">
-      <Name>Cupboard</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Level Cubes\Path Cubes\Path Cube 01\Path Model 01.fbx">
       <Name>Path Model 01</Name>
       <Importer>FbxImporter</Importer>
@@ -56,8 +51,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Closet\Closet1.fbx">
-      <Name>Closet1</Name>
+    <Compile Include="Misc Level Objects\Closet\Closet.fbx">
+      <Name>Closet</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -76,15 +71,35 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Cupboard\Cupboard Model.fbx">
-      <Name>Cupboard Model</Name>
+    <Compile Include="Misc Level Objects\Cupboard\Cupboard.fbx">
+      <Name>Cupboard</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Closet\Closet.fbx">
-      <Name>Closet</Name>
+    <Compile Include="Misc Level Objects\Note\Note Model.fbx">
+      <Name>Note Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Pistol\Pistol Model.fbx">
+      <Name>Pistol Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Door\Door Model.fbx">
+      <Name>Door Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\NotePad\Notepad Model.fbx">
+      <Name>Notepad Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="credits.spritefont">
+      <Name>credits</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
     </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
@@ -96,8 +111,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Trapdoor\Trapdoor.fbx">
-      <Name>Trapdoor</Name>
+    <Compile Include="Misc Level Objects\Trapdoor\Trapdoor Model.fbx">
+      <Name>Trapdoor Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -169,13 +184,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
-      <Name>Wall Texture 01</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Misc Level Objects\Monster\Monster Texture.png">
       <Name>Monster Texture</Name>
       <Importer>TextureImporter</Importer>
@@ -185,6 +193,23 @@
   <ItemGroup>
     <Compile Include="Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.jpg">
       <Name>Wall Texture 03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HUD\Stamina\Exhausted Empty Stamina.png">
+      <Name>Exhausted Empty Stamina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="HUD\Stamina\Exhausted Full Stamina.png">
+      <Name>Exhausted Full Stamina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="HUD\Stamina\Full Stamina.png">
+      <Name>Full Stamina</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -202,6 +227,255 @@
       <Name>MultipleExitLevelPart3</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Special Levels\CheckPoint.txt">
+      <Name>CheckPoint</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Special Levels\First.txt">
+      <Name>First</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Special Levels\Final.txt">
+      <Name>Final</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Music\mIn_AmbienceHigh%4032%400%400.wav">
+      <Name>mIn_AmbienceHigh%4032%400%400</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mIn_AmbienceLow%4032%400%400.wav">
+      <Name>mIn_AmbienceLow%4032%400%400</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mIn_DrumsFast%402%408%408.wav">
+      <Name>mIn_DrumsFast%402%408%408</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mIn_Violin%402%408%408.wav">
+      <Name>mIn_Violin%402%408%408</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_ClockTick.wav">
+      <Name>SFX_ClockTick</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Misc Level Objects\Note\Note Texture.jpg">
+      <Name>Note Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Misc Level Objects\Door\Door.png">
+      <Name>Door</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu Buttons\Menu button Exit.png">
+      <Name>Menu button Exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button Continue.png">
+      <Name>Menu button Continue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button NewGame.png">
+      <Name>Menu button NewGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button Continue MouseOver.png">
+      <Name>Menu button Continue MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button Exit MouseOver.png">
+      <Name>Menu button Exit MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Menu button NewGame MouseOver.png">
+      <Name>Menu button NewGame MouseOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="black.png">
+      <Name>black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Content Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
+      <Name>Wall Texture 01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
+    <Compile Include="Menu Buttons\Paused.png">
+      <Name>Paused</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\GameOver.png">
+      <Name>GameOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu Buttons\Chased.png">
+      <Name>Chased</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Content Include="Misc Level Objects\Door\Wooden Beam.png">
+      <Name>Wooden Beam</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
+    <Compile Include="Music\mIn_DrumsSlow%402%400%400.wav">
+      <Name>mIn_DrumsSlow%402%400%400</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_paperrustle.wav">
+      <Name>SFX_paperrustle</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_paperrustle2.wav">
+      <Name>SFX_paperrustle2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_doorcreak.wav">
+      <Name>SFX_doorcreak</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster1.wav">
+      <Name>3DS_Monster1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster0.wav">
+      <Name>3DS_Monster0</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster2.wav">
+      <Name>3DS_Monster2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster3.wav">
+      <Name>3DS_Monster3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster4.wav">
+      <Name>3DS_Monster4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster5.wav">
+      <Name>3DS_Monster5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster6.wav">
+      <Name>3DS_Monster6</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster7.wav">
+      <Name>3DS_Monster7</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster8.wav">
+      <Name>3DS_Monster8</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\3DS_Monster9.wav">
+      <Name>3DS_Monster9</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_MouseClick.wav">
+      <Name>SFX_MouseClick</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_MouseOver.wav">
+      <Name>SFX_MouseOver</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\LFX_Footsteps1%408.wav">
+      <Name>LFX_Footsteps1%408</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\LFX_Footsteps2%404.wav">
+      <Name>LFX_Footsteps2%404</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\mus_MainMenu.wav">
+      <Name>mus_MainMenu</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_GunShot.wav">
+      <Name>SFX_GunShot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_GameOver.wav">
+      <Name>SFX_GameOver</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\NotePad\Note Texture.jpg">
+      <Name>Note Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\SFX_WindAmbience.wav">
+      <Name>SFX_WindAmbience</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <None Include="SaveFile.txt">
+      <Name>SaveFile</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Importer>XImporter</Importer>
+    </None>
+    <Compile Include="Note blank.jpg">
+      <Name>Note blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Notes\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

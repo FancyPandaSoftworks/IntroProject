@@ -16,7 +16,10 @@ class NoteViewingState : Root
 
     public NoteViewingState()
     {
-        NoteObject.idList = new System.Collections.Generic.List<string>();
+
+
+
+                NoteObject.idList = new System.Collections.Generic.List<string>();
         using (StreamReader streamReader = new StreamReader("Content/noteIDList.txt"))
         {
             string line = streamReader.ReadLine();
@@ -44,6 +47,9 @@ class NoteViewingState : Root
     {
         if (inputHelper.AnyKeyPressed)
         {
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "paperrustle2")
+                    sound.PlaySound();
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
@@ -73,7 +79,6 @@ class NoteViewingState : Root
     /// <param name="spriteBatch">The SpriteBatch</param>
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        
         GameEnvironment.GameStateManager.GetGameState("playingState").Draw(gameTime, spriteBatch);
         
         //Draw the Pausescreen
@@ -89,6 +94,8 @@ class NoteViewingState : Root
         //Go back to 3D mode
         spriteBatch.GraphicsDevice.BlendState = BlendState.Opaque;
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
+        MusicPlayer.dangerLevel = 0;
     }
 
     /// <summary>

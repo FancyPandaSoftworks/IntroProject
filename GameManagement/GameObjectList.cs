@@ -92,9 +92,8 @@ public class GameObjectList : GameObject
     {
         if (!visible)
             return;
-        List<GameObject>.Enumerator e = gameObjects.GetEnumerator();
-        while (e.MoveNext())
-            e.Current.Draw(gameTime, spriteBatch);
+        foreach(GameObject obj in gameObjects)
+            obj.Draw(gameTime, spriteBatch);
     }
 
     /// <summary>

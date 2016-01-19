@@ -25,6 +25,7 @@ public class Object3D : GameObject
     public Object3D(string modelName = "", string id = "") : base(id)
     {
         modelRotation = 0.0f;
+        //aspectRatio = GameEnvironment.graphicsDevice.Viewport.AspectRatio; //werkt in de draw
         aspectRatio = 1.6667f; //NEEDS TO BE DETERMINED, INSTEAD OF DECLARED
         model = GameEnvironment.AssetManager.GetModel(modelName);
     }
@@ -86,7 +87,7 @@ public class Object3D : GameObject
     /// <summary>
     /// Get the data of the player and set it in this object
     /// </summary>
-    /// <param name="player">The player which you want to set</param>
+    /// <param name="Player">The player which you want to set</param>
     public void DrawCamera(Camera player)
     {
         playercamera = player;

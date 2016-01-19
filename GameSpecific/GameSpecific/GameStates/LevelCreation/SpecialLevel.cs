@@ -10,15 +10,41 @@ using Microsoft.Xna.Framework;
 class SpecialLevel : Level 
 {
     private TileGrid tileGrid;
+    private TextGameObject saveText;
+    private bool drawSaveText, firstTime;
+    private double time;
     
-    public SpecialLevel(int roomNumber, string name)
+    public SpecialLevel(int roomNumber, string name, bool saved = false)
     {
+        drawSaveText = saved;
+        firstTime = true;
+
         //add items to the level
+        player = new Player(Vector3.Zero);
+        player.Parent = this;
         tileGrid = LoadLevel(name);
         tileGrid.Parent = this;
         gameObjects.Add(tileGrid);
-        Player player = new Player(Vector3.Zero);
+        player.LoadContent();
         gameObjects.Add(player);
+        stamina = new Stamina();
+        stamina.Parent = this;
+        gameObjects.Add(stamina);
+
+        if (drawSaveText)
+        {
+            saveText = new TextGameObject("text");
+            saveText.text = "Progress Saved...";
+            saveText.Position = new Vector2((GameEnvironment.Screen.X - saveText.Size.X) / 2, 0);
+        }
+        if (name == "Content\\Special Levels\\Final.txt")
+            exitText.text = "Press E to kill yourself";
+        else
+            exitText.text = "Press E to proceed";
+
+        roomCounter = new TextGameObject("text");
+        roomCounter.text = roomNumber.ToString();
+        gameObjects.Add(roomCounter);
     }
 
     /// <summary>
@@ -42,15 +68,15 @@ class SpecialLevel : Level
                 line = streamReader.ReadLine();
             }
 
-            //make a grid for the tiles
-            tileGrid = new TileGrid(width + 1, text.Count + 1, "grid");
+        //make a grid for the tiles
+        tileGrid = new TileGrid(width + 1, text.Count + 1, "TileGrid");
 
             //Load the tiles into the grid
             for (int x = 0; x < width; ++x)
             {
                 for (int y = 0; y < text.Count; ++y)
                 {
-                    Tile tile = LoadTile(text[y][x], x, y);
+                    Tile tile = LoadTile(text[y][x], x, y, name);
                     if (tile != null)
                     {
                         tileGrid.Add(tile, x, y);
@@ -72,7 +98,7 @@ class SpecialLevel : Level
     /// <param name="x">The x-coördinate</param>
     /// <param name="y">The y-coördinate</param>
     /// <returns>The Tile to Load</returns>
-    private Tile LoadTile(char chr, int x, int y)
+    private Tile LoadTile(char chr, int x, int y, string name)
     {
         if (chr == 'W')
             return new WallTile("01");
@@ -85,8 +111,56 @@ class SpecialLevel : Level
             return new EntryTile("01");
         }
         else if (chr == 'X')
-            return new ExitTile("01");
+        {
+            ExitTile exitTile = new ExitTile("01");
+            if (name == "Content\\Special Levels\\Final.txt")
+                exitTile.exitObject = new Object3D("Misc Level Objects\\Pistol\\Pistol Model");
+            return exitTile;
+        }
+        else if (chr == 'K')
+        {
+            Decoration notepad = new Decoration("Misc Level Objects\\NotePad\\NotePad Model", "Notepad");
+            notepad.Position = new Vector3(x * 200, 102, y * 200);
+            notepad.Parent = this;
+            gameObjects.Add(notepad);
+            return new PathTile("01");
+        }
+        else if (chr == 'D')
+        {
+            Decoration door = new Decoration("Misc Level Objects\\Door\\Door Model", "Door");
+            door.Position = new Vector3(x * 200, 200, y * 200 + 100);
+            door.modelRotation = (float)Math.PI/180 * 90;
+            door.Parent = this;
+            gameObjects.Add(door);
+            player.Position = new Vector3(x * 200, 200f, y * 200);
+            return new PathTile("01");
+        }
         else
             return null;
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        if (firstTime)
+        {
+            time = gameTime.TotalGameTime.TotalSeconds;
+            firstTime = false;
+        }
+        if (gameTime.TotalGameTime.TotalSeconds >= time + 5)
+        {
+            drawSaveText = false;
+        }
+        base.Update(gameTime);
+    }
+
+    public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+    {        
+        base.Draw(gameTime, spriteBatch);
+        if (drawSaveText)
+        {
+            saveText.Position = new Vector2((GameEnvironment.Screen.X - saveText.Size.X) / 2, 0);
+            saveText.Draw(gameTime, spriteBatch);
+        }
+
     }
 }

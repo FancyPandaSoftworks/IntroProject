@@ -30,6 +30,7 @@ public class TextGameObject : GameObject
         spriteBatch.End();
         spriteBatch.GraphicsDevice.BlendState = BlendState.AlphaBlend;
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
     }
 
     /// <summary>

@@ -14,6 +14,8 @@ class RandomLevel : Level
     private Random random;
     private int tiles; //Amount of tiles to indicate the size of the level
     private string pathID, wallID;
+    private float timer;
+    private bool chased, monsterMade;
 
    
     /// <summary>
@@ -100,8 +102,12 @@ class RandomLevel : Level
     /// <param name="roomNumber">The number of the room</param>
     /// <param name="tiles">The size the Mainpath should be, counted in tiles</param>
     /// <param name="chased">Whether or not the monster is chasing the player</param>
-    public RandomLevel(int roomNumber, int tiles = 10, bool chased = false)
+    public RandomLevel(int roomNumber, int tiles = 20, bool chased = false)
     {
+        //Setting two booleans for the monster (they are used in the Update method)
+        this.chased = chased;
+        monsterMade = false;
+
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
         keyList = new List<Point>();
@@ -132,7 +138,7 @@ class RandomLevel : Level
         CreateMainPath();
 
         for (int i = random.Next(1, tiles / 4); i > 0; i--)
-            CreateSidePath(random.Next(3, tiles / 2), chased);
+            CreateSidePath(random.Next(3, tiles / 4), chased);
 
         //making the tile grid
         TileGrid tileGrid = Grid;
@@ -140,10 +146,10 @@ class RandomLevel : Level
 
         //making the player
         player = new Player(Vector3.Zero);
-            gameObjects.Add(player);
-            player.Parent = this;
-            player.LoadContent();
-
+        gameObjects.Add(player);
+        player.Parent = this;
+        player.LoadContent();
+        
         foreach(GameObject obj in tileGrid.Objects)
         {
             if (obj != null)
@@ -152,14 +158,14 @@ class RandomLevel : Level
         }
 
         //making the monster
-        if (false)
+        if (chased)
         {
-            Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
+            Monster monster = new Monster(Grid.Objects);
             monster.Parent = this;
             monster.LoadContent();
             gameObjects.Add(monster);
         }
-        
+
         //Adding decoration objects
         TileGrid grid = Find("TileGrid") as TileGrid;
         for (int x = 0; x < grid.Columns; x++)
@@ -175,17 +181,17 @@ class RandomLevel : Level
                                 AddDecoration(grid.Get(x, y).Position, new Vector3(-1, 0, 0));
                                 grid.Add(new DecorationTile(pathID), x + 1, y);
                             }
-                            if (grid.Get(x, y + 1) != null && grid.Get(x, y + 1).ID == "PathTile" && grid.Get(x, y + 1).ID != "DecorationTile")
+                            else if (grid.Get(x, y + 1) != null && grid.Get(x, y + 1).ID == "PathTile" && grid.Get(x, y + 1).ID != "DecorationTile")
                             {
                                 AddDecoration(grid.Get(x, y).Position, new Vector3(0, 0, -1));
                                 grid.Add(new DecorationTile(pathID), x, y + 1);
                             }
-                            if (grid.Get(x - 1, y) != null && grid.Get(x - 1, y).ID == "PathTile" && grid.Get(x - 1, y).ID != "DecorationTile")
+                            else if (grid.Get(x - 1, y) != null && grid.Get(x - 1, y).ID == "PathTile" && grid.Get(x - 1, y).ID != "DecorationTile")
                             {
                                 AddDecoration(grid.Get(x, y).Position, new Vector3(1, 0, 0));
                                 grid.Add(new DecorationTile(pathID), x - 1, y);
                             }
-                            if (grid.Get(x, y - 1) != null && grid.Get(x, y - 1).ID == "PathTile" && grid.Get(x, y - 1).ID != "DecorationTile")
+                            else if (grid.Get(x, y - 1) != null && grid.Get(x, y - 1).ID == "PathTile" && grid.Get(x, y - 1).ID != "DecorationTile")
                             {
                                 AddDecoration(grid.Get(x, y).Position, new Vector3(0, 0, 1));
                                 grid.Add(new DecorationTile(pathID), x, y - 1);
@@ -193,7 +199,28 @@ class RandomLevel : Level
                         }
                         catch (IndexOutOfRangeException e) { Console.WriteLine(e.StackTrace); }
                     }
-                }          
+                }
+
+        //Add the note
+        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0)
+        {
+            NoteObject note = new NoteObject(NoteObject.idList[0]);
+            note.Parent = this;
+            //NoteObject.idList.Remove(NoteObject.idList[0]);
+            CreateNote(note, tileGrid);
+            gameObjects.Add(note);
+        }
+
+        //Making the stamina bar
+        stamina = new Stamina();
+        gameObjects.Add(stamina);
+        stamina.Parent = this;
+        exitText.text = "Press E to proceed";
+
+        //Making the room counter
+        roomCounter = new TextGameObject("text");
+        roomCounter.text = roomNumber.ToString();
+        gameObjects.Add(roomCounter);
     }
 
     /// <summary>
@@ -221,6 +248,38 @@ class RandomLevel : Level
             deco.modelRotation = (float)Math.PI / 180 * 90;
         else if (relativePosition.X == -1)
             deco.modelRotation = 0;
+    }
+
+    public override void Update(GameTime gameTime)
+    {
+        base.Update(gameTime);
+
+        timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+        if (timer > 3)
+        {
+            //making the monster
+            if (chased && !monsterMade)
+            {
+                //Playing a sound-effect before the monster has entered the room
+                foreach (Sound sound in MusicPlayer.SoundEffect)
+                    if (sound.Name == "WindAmbience")
+                        sound.PlaySound();
+                //Making the monster
+                Monster monster = new Monster(Grid.Objects);
+                monster.Parent = this;
+                monster.LoadContent();
+                gameObjects.Add(monster);
+                monsterMade = true;
+            }
+        }
+
+        if (GameEnvironment.Random.Next(10000) == 0 && !chased)
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "WindAmbience")
+                {
+                    sound.PlaySound();
+                }
     }
 
     /// <summary>
@@ -366,7 +425,7 @@ class RandomLevel : Level
                 
                 while (tiles > 0)
                 {
-                    if (tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y)))
+                    if (!(tileList.ContainsKey(new Point(this.position.X + x, this.position.Y + y))))
                     {
                         //Choose where to place the Tile
                         this.position.X += x;

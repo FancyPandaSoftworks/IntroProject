@@ -121,11 +121,12 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     protected Object3D trapdoor;
+    public static Vector3 position;
 
     public EntryTile(string pathID)
         : base(pathID, "EntryTile")
     {
-        trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor", "Trapdoor");
+        trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor Model", "Trapdoor");
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -145,6 +146,8 @@ class EntryTile : PathTile
         }
         trapdoor.Position = this.Position + new Vector3(0, 300, 0);
         trapdoor.Draw(gameTime, spriteBatch);
+
+        position = this.Position;
     }
 }
 
@@ -153,17 +156,15 @@ class EntryTile : PathTile
 /// </summary>
 class ExitTile : PathTile
 {
-    TextGameObject text;
-    protected Object3D trapdoor;
+    public TextGameObject text;
+    public Object3D exitObject;
+    public bool isOnTile;
+    public static bool finalLevel;
 
     public ExitTile(string pathID)
         : base(pathID, "ExitTile")
     {
-        text = new TextGameObject("text");
-        text.Position = Vector2.Zero;
-        text.text = "Press E to proceed";
-
-        trapdoor = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor", "Trapdoor");
+        exitObject = new Object3D("Misc Level Objects\\Trapdoor\\Trapdoor Model", "Trapdoor");
     }
 
     /// <summary>
@@ -178,14 +179,27 @@ class ExitTile : PathTile
         {
             if(obj != null)
             {
-                if (obj.ID == "player")
+                if (obj.ID == "Player")
                 {
                     if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
                     {
+                        isOnTile = true;
                         Player player = obj as Player;
-                        if(player.EDown == true)
+                        if (player.EDown && !finalLevel)
+                        {
+                            foreach (Sound sound in MusicPlayer.SoundEffect)
+                                if (sound.Name == "doorcreak")
+                                    sound.PlaySound();
                             level.Completed = true;
+                        }
+                        else if (player.EDown && finalLevel)
+                        {
+                            EndGameState endGameState = GameEnvironment.GameStateManager.GetGameState("endGameState") as EndGameState;
+                            GameEnvironment.GameStateManager.SwitchTo("endGameState");
+                        }
                     }
+                    else
+                        isOnTile = false;
                 }
             } 
         }
@@ -200,23 +214,7 @@ class ExitTile : PathTile
     {
         base.Draw(gameTime, spriteBatch);
 
-        //Draw text if the player is on the ExitTile
-        Level level = parent.Parent as Level;
-        foreach (GameObject obj in level.Objects)
-        {
-            if (obj != null)
-            {
-                if (obj.ID == "player")
-                {
-                    trapdoor.DrawCamera(obj as Player);
-                    if (obj.Position.X > Position.X - 100 && obj.Position.X < Position.X + 100 && obj.Position.Z > Position.Z - 100 && obj.Position.Z < Position.Z + 100)
-                    {
-                        text.Draw(gameTime, spriteBatch);
-                    }
-                }
-            }
-        }
-        trapdoor.Position = Position + new Vector3(0, 100, 0);
-        trapdoor.Draw(gameTime, spriteBatch);
+        exitObject.Position = Position + new Vector3(0, 100, 0);
+        exitObject.Draw(gameTime, spriteBatch);
     }
 }
