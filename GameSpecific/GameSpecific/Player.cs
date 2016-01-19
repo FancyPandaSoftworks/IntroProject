@@ -160,7 +160,7 @@ public class Player : Camera
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
 
-        /* if (input.IsKeyDown(Keys.Space))
+        /*if (input.IsKeyDown(Keys.Space))
             position.Y += 40f;
         if (input.IsKeyDown(Keys.LeftShift))
             position.Y -= 40f; */

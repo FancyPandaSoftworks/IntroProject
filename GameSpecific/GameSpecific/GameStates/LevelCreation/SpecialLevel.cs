@@ -117,6 +117,24 @@ class SpecialLevel : Level
                 exitTile.exitObject = new Object3D("Misc Level Objects\\Pistol\\Pistol Model");
             return exitTile;
         }
+        else if (chr == 'K')
+        {
+            Decoration notepad = new Decoration("Misc Level Objects\\NotePad\\NotePad Model", "Notepad");
+            notepad.Position = new Vector3(x * 200, 102, y * 200);
+            notepad.Parent = this;
+            gameObjects.Add(notepad);
+            return new PathTile("01");
+        }
+        else if (chr == 'D')
+        {
+            Decoration door = new Decoration("Misc Level Objects\\Door\\Door Model", "Door");
+            door.Position = new Vector3(x * 200, 200, y * 200 + 100);
+            door.modelRotation = (float)Math.PI/180 * 90;
+            door.Parent = this;
+            gameObjects.Add(door);
+            player.Position = new Vector3(x * 200, 200f, y * 200);
+            return new PathTile("01");
+        }
         else
             return null;
     }

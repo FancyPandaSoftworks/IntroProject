@@ -150,16 +150,6 @@ class RandomLevel : Level
         player.Parent = this;
         player.LoadContent();
         
-        //Add the note
-        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0) 
-        { 
-            NoteObject note = new NoteObject(NoteObject.idList[0]);
-            note.Parent = this;
-            //NoteObject.idList.Remove(NoteObject.idList[0]);
-            CreateNote(note, tileGrid);
-            gameObjects.Add(note);
-        }
-
         foreach(GameObject obj in tileGrid.Objects)
         {
             if (obj != null)
@@ -167,15 +157,97 @@ class RandomLevel : Level
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
         }
 
-        //making the stamina bar
+        //making the monster
+        if (chased)
+        {
+            Monster monster = new Monster(Grid.Objects);
+            monster.Parent = this;
+            monster.LoadContent();
+            gameObjects.Add(monster);
+        }
+
+        //Adding decoration objects
+        TileGrid grid = Find("TileGrid") as TileGrid;
+        for (int x = 0; x < grid.Columns; x++)
+            for (int y = 0; y < grid.Rows; y++)
+                if (grid.Get(x, y) != null)
+                {
+                    if (grid.Get(x, y).ID == "WallTile" && GameEnvironment.Random.Next(20) == 0)
+                    {
+                        try
+                        {
+                            if (grid.Get(x + 1, y) != null && grid.Get(x + 1, y).ID == "PathTile" && grid.Get(x + 1, y).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(-1, 0, 0));
+                                grid.Add(new DecorationTile(pathID), x + 1, y);
+                            }
+                            else if (grid.Get(x, y + 1) != null && grid.Get(x, y + 1).ID == "PathTile" && grid.Get(x, y + 1).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(0, 0, -1));
+                                grid.Add(new DecorationTile(pathID), x, y + 1);
+                            }
+                            else if (grid.Get(x - 1, y) != null && grid.Get(x - 1, y).ID == "PathTile" && grid.Get(x - 1, y).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(1, 0, 0));
+                                grid.Add(new DecorationTile(pathID), x - 1, y);
+                            }
+                            else if (grid.Get(x, y - 1) != null && grid.Get(x, y - 1).ID == "PathTile" && grid.Get(x, y - 1).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(0, 0, 1));
+                                grid.Add(new DecorationTile(pathID), x, y - 1);
+                            }
+                        }
+                        catch (IndexOutOfRangeException e) { Console.WriteLine(e.StackTrace); }
+                    }
+                }
+
+        //Add the note
+        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0)
+        {
+            NoteObject note = new NoteObject(NoteObject.idList[0]);
+            note.Parent = this;
+            //NoteObject.idList.Remove(NoteObject.idList[0]);
+            CreateNote(note, tileGrid);
+            gameObjects.Add(note);
+        }
+
+        //Making the stamina bar
         stamina = new Stamina();
         gameObjects.Add(stamina);
         stamina.Parent = this;
         exitText.text = "Press E to proceed";
 
+        //Making the room counter
         roomCounter = new TextGameObject("text");
         roomCounter.text = roomNumber.ToString();
         gameObjects.Add(roomCounter);
+    }
+
+    /// <summary>
+    /// Method for adding a random decoration object
+    /// </summary>
+    private void AddDecoration(Vector3 position, Vector3 relativePosition)
+    {
+        string name;
+        switch (GameEnvironment.Random.Next(2))
+        {
+            case 0: name = "Closet"; break;
+            case 1: name = "Cupboard"; break;
+            default: return;
+        }
+        Decoration deco = new Decoration("Misc Level Objects\\" + name + "\\" + name, name);
+        deco.Parent = this;
+        gameObjects.Add(deco);
+        deco.Position = position - new Vector3(relativePosition.X * deco.Width(name), deco.Height(name), relativePosition.Z * deco.Width(name));
+        
+        if (relativePosition.Z == -1)
+            deco.modelRotation = (float)Math.PI/180 * 270;
+        else if (relativePosition.X == 1)
+            deco.modelRotation = (float)Math.PI / 180 * 180;
+        else if (relativePosition.Z == 1)
+            deco.modelRotation = (float)Math.PI / 180 * 90;
+        else if (relativePosition.X == -1)
+            deco.modelRotation = 0;
     }
 
     public override void Update(GameTime gameTime)
@@ -191,7 +263,7 @@ class RandomLevel : Level
             {
                 //Playing a sound-effect before the monster has entered the room
                 foreach (Sound sound in MusicPlayer.SoundEffect)
-                    if (sound.Name == "MonsterScreech")
+                    if (sound.Name == "WindAmbience")
                         sound.PlaySound();
                 //Making the monster
                 Monster monster = new Monster(Grid.Objects);

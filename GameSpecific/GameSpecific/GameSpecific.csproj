@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="Decoration.cs" />
     <Compile Include="GameStates\CreditState.cs" />
     <Compile Include="GameStates\EndGameState.cs" />
     <Compile Include="GameStates\GameOverState.cs" />

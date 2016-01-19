@@ -47,6 +47,9 @@ class NoteViewingState : Root
     {
         if (inputHelper.AnyKeyPressed)
         {
+            foreach (Sound sound in MusicPlayer.SoundEffect)
+                if (sound.Name == "paperrustle2")
+                    sound.PlaySound();
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }

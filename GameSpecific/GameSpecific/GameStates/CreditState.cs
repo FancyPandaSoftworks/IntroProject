@@ -18,7 +18,7 @@ class CreditState : GameState
     public CreditState()
     {
         credits = new TextGameObject("credits");
-        credits.text = "Thank you for playing\n\n\n\n\n\nThis game was made by:\n\nAllard a.k.a. Felix\nJelle a.k.a. PandaLover\nOscar a.k.a. The Tourist\nRik a.k.a. Rikkyboy\nWouter a.k.a. Wootsz\n\n\nFancy Panda Softworks";
+        credits.text = "Thank you for playing\n\n\n\n\n\nThis game was made by:\n\nAllard\nJelle\nOscar\nRik\nWouter\n\nWe are Fancy Panda Softworks";
         //1 regel text is 25 pixels, if statement aanpassen
         credits.Position = new Vector2(100, GameEnvironment.Screen.Y);
         timer = 0;

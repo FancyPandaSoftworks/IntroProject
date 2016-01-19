@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Input;
 /// </summary>
 public class Object3D : GameObject
 {
-    public static float aspectRatio, modelRotation;
+    public float aspectRatio, modelRotation;
     public Model model;
     public static Camera playercamera;
 

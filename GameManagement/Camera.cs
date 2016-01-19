@@ -62,7 +62,6 @@ public class Camera : Object3D
         viewVertex = new Vector3(position.X + (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)),
                                 position.Y + (float)Math.Sin(viewAngleY),
                                 position.Z + (float)(Math.Sin(viewAngleX) * Math.Cos(viewAngleY)));
-        
         base.Update(gameTime);
     }
 }
