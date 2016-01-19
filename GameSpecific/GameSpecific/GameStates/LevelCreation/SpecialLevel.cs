@@ -42,9 +42,17 @@ class SpecialLevel : Level
         else
             exitText.text = "Press E to proceed";
 
+        //Setting the roomcounter
         roomCounter = new TextGameObject("text");
         roomCounter.text = roomNumber.ToString();
         gameObjects.Add(roomCounter);
+
+        //Adding the man
+        /*
+        if (roomCounter.text == "250")
+        {
+            HangingMan man = new HangingMan(new Vector3(900, 0, 300));
+        }*/
     }
 
     /// <summary>
@@ -128,11 +136,30 @@ class SpecialLevel : Level
         else if (chr == 'D')
         {
             Decoration door = new Decoration("Misc Level Objects\\Door\\Door Model", "Door");
-            door.Position = new Vector3(x * 200, 200, y * 200 + 100);
+            door.Position = new Vector3(x * 200, 155, y * 200 + 100);
             door.modelRotation = (float)Math.PI/180 * 90;
             door.Parent = this;
             gameObjects.Add(door);
             player.Position = new Vector3(x * 200, 200f, y * 200);
+            return new PathTile("01");
+        }
+        else if (chr == 'C')
+        {
+            Decoration closet = new Decoration("Misc Level Objects\\Closet\\Closet Model", "Closet");
+            closet.Position = new Vector3(x * 200, 190, y * 200 - 80);
+            closet.Parent = this;
+            closet.modelRotation = (float)Math.PI / 180 * 270;
+            gameObjects.Add(closet);
+            return new PathTile("01");
+        }
+        else if (chr == 'V')
+        {
+            Decoration cupboard = new Decoration("Misc Level Objects\\Cupboard\\Cupboard Model", "Cupboard");
+            cupboard.Position = new Vector3(x * 200 + 100, 165, y * 200);
+            Console.WriteLine(cupboard.Position);
+            cupboard.Parent = this;
+            cupboard.modelRotation = (float)Math.PI / 180 * 180;
+            gameObjects.Add(cupboard);
             return new PathTile("01");
         }
         else
@@ -149,6 +176,12 @@ class SpecialLevel : Level
         if (gameTime.TotalGameTime.TotalSeconds >= time + 5)
         {
             drawSaveText = false;
+        }
+        if (roomCounter.text == "1" && player.Position.Z > 1250)
+        {
+            foreach (Sound sound in MusicPlayer.Music)
+                sound.PlaySound();
+            GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
         }
         base.Update(gameTime);
     }

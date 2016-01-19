@@ -16,9 +16,6 @@ class NoteViewingState : Root
 
     public NoteViewingState()
     {
-
-
-
                 NoteObject.idList = new System.Collections.Generic.List<string>();
         using (StreamReader streamReader = new StreamReader("Content/noteIDList.txt"))
         {
@@ -57,19 +54,17 @@ class NoteViewingState : Root
 
     public void Update(GameTime gameTime)
     {
-        if (noteChanged)
-        {
-            try
-            {
-                noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
-            }
-            catch
-            {
-
-            }
-
-            noteChanged = false;
-        }
+        //if (noteChanged)
+        //{
+        //    try
+        //    {
+        //        noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
+        //    }
+        //    catch
+        //    {
+        //    }
+        //    noteChanged = false;
+        //}
     } 
 
     /// <summary>
@@ -86,7 +81,7 @@ class NoteViewingState : Root
         //spriteBatch.Draw(noteSprite, new Vector2((GameEnvironment.Screen.X - noteSprite.Width) / 2, (GameEnvironment.Screen.Y - noteSprite.Height) / 2), Color.White);
         if (noteSprite == null)
         {
-            noteSprite = GameEnvironment.AssetManager.GetSprite("White Sprite");
+            noteSprite = GameEnvironment.AssetManager.GetSprite("Notes\\Note" + noteID);
         }
         spriteBatch.Draw(noteSprite, new Vector2((GameEnvironment.Screen.X - noteSprite.Width) / 2, (GameEnvironment.Screen.Y - noteSprite.Height) / 2), Color.White);
         spriteBatch.End();

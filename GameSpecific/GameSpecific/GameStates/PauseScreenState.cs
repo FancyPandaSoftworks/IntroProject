@@ -18,8 +18,8 @@ class PauseScreenState : GameState
     public PauseScreenState()
     {
         //Add a background image
-        background = new Object2D("Note blank", 0);
-        background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
+        background = new Object2D("Notes\\Note blank", 0);
+        background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2 + 10, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);
 
         //Add text: paused
@@ -55,7 +55,7 @@ class PauseScreenState : GameState
     public void ResetPositions()
     {
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
-        paused.Position = new Vector2((GameEnvironment.Screen.X - paused.Width) / 2, background.Position.Y);
+        paused.Position = new Vector2((GameEnvironment.Screen.X - paused.Width) / 2 + 10, background.Position.Y + 20);
         continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2);
         exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
         continueButtonMouseOver.Position = continueButton.Position - new Vector2(20,0);

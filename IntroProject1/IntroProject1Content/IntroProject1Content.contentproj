@@ -51,8 +51,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Closet\Closet.fbx">
-      <Name>Closet</Name>
+    <Compile Include="Misc Level Objects\Closet\Closet Model.fbx">
+      <Name>Closet Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -71,8 +71,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Cupboard\Cupboard.fbx">
-      <Name>Cupboard</Name>
+    <Compile Include="Misc Level Objects\Cupboard\Cupboard Model.fbx">
+      <Name>Cupboard Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -100,6 +100,61 @@
       <Name>credits</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Sir Quokkalot\Sir Quokkalot Model.fbx">
+      <Name>Sir Quokkalot Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Surprise Cat\Surprise Cat Model.fbx">
+      <Name>Surprise Cat Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Confused Cat\Confused Cat Model.fbx">
+      <Name>Confused Cat Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Shocked Cat\Shocked Cat Model.fbx">
+      <Name>Shocked Cat Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Baker Cat\Baker Cat Model.fbx">
+      <Name>Baker Cat Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Chair\Chair Model.fbx">
+      <Name>Chair Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Cupboard2\Cupboard2 Model.fbx">
+      <Name>Cupboard2 Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Table\Table Model.fbx">
+      <Name>Table Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Lakeview\Lakeview Model.fbx">
+      <Name>Lakeview Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Level Cubes\Wall Cubes\Wall Cube 04\Wall Model 04.fbx">
+      <Name>Wall Model 04</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Level Cubes\Path Cubes\Path Cube 04\Path Model 04.fbx">
+      <Name>Path Model 04</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
@@ -281,13 +336,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Misc Level Objects\Door\Door.png">
-      <Name>Door</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Menu Buttons\Menu button Exit.png">
       <Name>Menu button Exit</Name>
       <Importer>TextureImporter</Importer>
@@ -323,6 +371,16 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Misc Level Objects\Hanging Man\Hanging Man.png">
+      <Name>Hanging Man</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level Cubes\Path Cubes\Path Cube 04\Path Texture 04.jpg">
+      <Name>Path Texture 04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
       <Name>Wall Texture 01</Name>
       <Importer>TextureImporter</Importer>
@@ -343,6 +401,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Misc Level Objects\Door\Door.jpg">
+      <Name>Door</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Cupboard2\Wood Texture 3.jpg">
+      <Name>Wood Texture 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Content Include="Level Cubes\Wall Cubes\Wall Cube 04\Wall Texture 04.jpg">
+      <Name>Wall Texture 04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
     <Content Include="Misc Level Objects\Door\Wooden Beam.png">
       <Name>Wooden Beam</Name>
       <Importer>TextureImporter</Importer>
@@ -463,6 +536,121 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
+    <Compile Include="Misc Level Objects\Painting\Surprise Cat\Surprise Cat Texture.jpg">
+      <Name>Surprise Cat Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Confused Cat\Confused Cat Texture.jpg">
+      <Name>Confused Cat Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Shocked Cat\Shocked Cat Texture.jpg">
+      <Name>Shocked Cat Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Sir Quokkalot\Sir Quokkalot Texture.jpg">
+      <Name>Sir Quokkalot Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note blank.png">
+      <Name>Note blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note1.png">
+      <Name>Note1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note10.png">
+      <Name>Note10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note11.png">
+      <Name>Note11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note12.png">
+      <Name>Note12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note13.png">
+      <Name>Note13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note14.png">
+      <Name>Note14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note15.png">
+      <Name>Note15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note2.png">
+      <Name>Note2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note3.png">
+      <Name>Note3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note4.png">
+      <Name>Note4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note5.png">
+      <Name>Note5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note6.png">
+      <Name>Note6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note7.png">
+      <Name>Note7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note8.png">
+      <Name>Note8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Notes\Note9.png">
+      <Name>Note9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Baker Cat\Baker Cat Texture.jpg">
+      <Name>Baker Cat Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Table\Wood Texture 2.png">
+      <Name>Wood Texture 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Lakeview\Lakeview Texture.jpg">
+      <Name>Lakeview Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <None Include="SaveFile.txt">
       <Name>SaveFile</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -474,9 +662,7 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Notes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

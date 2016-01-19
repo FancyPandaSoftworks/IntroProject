@@ -48,7 +48,6 @@ class PlayingState : Root
                     sound.PlaySound();
             GameEnvironment.GameStateManager.SwitchTo("pauseScreenState");
         }
-
         level.HandleInput(inputHelper);
     }
 
@@ -114,9 +113,41 @@ class PlayingState : Root
                 else
                     level = new RandomLevel(roomCounter, tiles);
             }
-            //Levels with no monster
+            //Levels with no monster ever
             else
                 level = new RandomLevel(roomCounter, tiles);
+
+            //Levels with notes (last parameter is the note ID)
+            if (roomCounter == 2)
+                level = new RandomLevel(roomCounter, tiles, false, 1);
+            if (roomCounter == 3)
+                level = new RandomLevel(roomCounter, tiles, false, 2);
+            if (roomCounter == 15)
+                level = new RandomLevel(roomCounter, tiles, false, 3);
+            if (roomCounter == 38)
+                level = new RandomLevel(roomCounter, tiles, false, 4);
+            if (roomCounter == 55)
+                level = new RandomLevel(roomCounter, tiles, false, 5);
+            if (roomCounter == 81)
+                level = new RandomLevel(roomCounter, tiles, false, 6);
+            if (roomCounter == 95)
+                level = new RandomLevel(roomCounter, tiles, false, 7);
+            if (roomCounter == 126)
+                level = new RandomLevel(roomCounter, tiles, false, 8);
+            if (roomCounter == 145)
+                level = new RandomLevel(roomCounter, tiles, false, 9);
+            if (roomCounter == 200)
+                level = new RandomLevel(roomCounter, tiles, false, 10);
+            if (roomCounter == 243)
+                level = new RandomLevel(roomCounter, tiles, false, 11);
+            if (roomCounter == 245)
+                level = new RandomLevel(roomCounter, tiles, false, 12);
+            if (roomCounter == 247)
+                level = new RandomLevel(roomCounter, tiles, false, 13);
+            if (roomCounter == 248)
+                level = new RandomLevel(roomCounter, tiles, false, 14);
+            if (roomCounter == 249)
+                level = new RandomLevel(roomCounter, tiles, false, 15);
 
             //set a boolean for the final level
             if (roomCounter == 250)

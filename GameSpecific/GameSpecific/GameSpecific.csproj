@@ -88,6 +88,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GameStates\LevelCreation\RandomLevel.cs" />
+    <Compile Include="Hanging Man.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="NoteObject.cs" />

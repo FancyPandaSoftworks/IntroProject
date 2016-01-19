@@ -28,7 +28,6 @@ Content\HUD\Stamina\Exhausted Empty Stamina.xnb
 Content\HUD\Stamina\Exhausted Full Stamina.xnb
 Content\HUD\Stamina\Full Stamina.xnb
 Content\Misc Level Objects\Note\Note Texture.xnb
-Content\Misc Level Objects\Door\Door.xnb
 Content\Menu Buttons\Menu button Exit.xnb
 Content\Menu Buttons\Menu button Continue.xnb
 Content\Menu Buttons\Menu button NewGame.xnb
@@ -78,13 +77,61 @@ Content\Misc Level Objects\Monster\Monster Texture_0.xnb
 Content\Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03_0.xnb
 Content\Misc Level Objects\Cupboard\Wood Texture 1_0.xnb
 Content\Misc Level Objects\Note\Note Texture_0.xnb
-Content\Misc Level Objects\Door\Door_0.xnb
 Content\Misc Level Objects\Door\Wooden Beam_0.xnb
 Content\Misc Level Objects\NotePad\Note Texture_0.xnb
 Content\Misc Level Objects\Trapdoor\Wooden Beam_0.xnb
 Content\Misc Level Objects\Trapdoor\Door_0.xnb
-Content\Misc Level Objects\Cupboard\Cupboard.xnb
-Content\Misc Level Objects\Closet\Closet.xnb
+Content\Notes\Note1.xnb
+Content\Misc Level Objects\Painting\Sir Quokkalot\Sir Quokkalot Model.xnb
+Content\Misc Level Objects\Painting\Surprise Cat\Surprise Cat Model.xnb
+Content\Misc Level Objects\Painting\Confused Cat\Confused Cat Model.xnb
+Content\Notes\Note blank.xnb
+Content\Misc Level Objects\Painting\Sir Quokkalot\Sir Quokkalot Texture.xnb
+Content\Misc Level Objects\Painting\Surprise Cat\Surprise Cat Texture.xnb
+Content\Misc Level Objects\Painting\Confused Cat\Confused Cat Texture.xnb
+Content\Misc Level Objects\Painting\Sir Quokkalot\Sir Quokkalot Texture_0.xnb
+Content\Misc Level Objects\Painting\Shocked Cat\Shocked Cat Model.xnb
+Content\Misc Level Objects\Painting\Shocked Cat\Shocked Cat Texture.xnb
+Content\Misc Level Objects\Painting\Surprise Cat\Surprise Cat Texture_0.xnb
+Content\Misc Level Objects\Painting\Confused Cat\Confused Cat Texture_0.xnb
+Content\Misc Level Objects\Painting\Shocked Cat\Shocked Cat Texture_0.xnb
+Content\Notes\Note10.xnb
+Content\Notes\Note11.xnb
+Content\Notes\Note12.xnb
+Content\Notes\Note13.xnb
+Content\Notes\Note14.xnb
+Content\Notes\Note15.xnb
+Content\Notes\Note2.xnb
+Content\Notes\Note3.xnb
+Content\Notes\Note4.xnb
+Content\Notes\Note5.xnb
+Content\Notes\Note6.xnb
+Content\Notes\Note7.xnb
+Content\Notes\Note8.xnb
+Content\Notes\Note9.xnb
+Content\Misc Level Objects\Door\Door.xnb
+Content\Misc Level Objects\Door\Door_1.xnb
+Content\Misc Level Objects\Closet\Closet Model.xnb
+Content\Misc Level Objects\Cupboard\Cupboard Model.xnb
+Content\Misc Level Objects\Painting\Baker Cat\Baker Cat Model.xnb
+Content\Misc Level Objects\Painting\Baker Cat\Baker Cat Texture.xnb
+Content\Misc Level Objects\Painting\Baker Cat\Baker Cat Texture_0.xnb
+Content\Misc Level Objects\Chair\Chair Model.xnb
+Content\Misc Level Objects\Cupboard2\Cupboard2 Model.xnb
+Content\Misc Level Objects\Table\Table Model.xnb
+Content\Misc Level Objects\Painting\Lakeview\Lakeview Model.xnb
+Content\Misc Level Objects\Cupboard2\Wood Texture 3.xnb
+Content\Misc Level Objects\Table\Wood Texture 2.xnb
+Content\Misc Level Objects\Painting\Lakeview\Lakeview Texture.xnb
+Content\Misc Level Objects\Cupboard2\Wood Texture 3_0.xnb
+Content\Misc Level Objects\Table\Wood Texture 2_0.xnb
+Content\Misc Level Objects\Painting\Lakeview\Lakeview Texture_0.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 04\Wall Model 04.xnb
+Content\Level Cubes\Wall Cubes\Wall Cube 04\Wall Texture 04_0.xnb
+Content\Hanging Man.xnb
+Content\Level Cubes\Path Cubes\Path Cube 04\Path Model 04.xnb
+Content\Level Cubes\Path Cubes\Path Cube 04\Path Texture 04.xnb
+Content\Level Cubes\Path Cubes\Path Cube 04\Path Texture 04_0.xnb
 Content\MultipleExitLevelPart1.txt
 Content\MultipleExitLevelPart2.txt
 Content\MultipleExitLevelPart3.txt

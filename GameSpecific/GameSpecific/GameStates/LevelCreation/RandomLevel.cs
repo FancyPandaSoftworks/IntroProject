@@ -102,7 +102,7 @@ class RandomLevel : Level
     /// <param name="roomNumber">The number of the room</param>
     /// <param name="tiles">The size the Mainpath should be, counted in tiles</param>
     /// <param name="chased">Whether or not the monster is chasing the player</param>
-    public RandomLevel(int roomNumber, int tiles = 20, bool chased = false)
+    public RandomLevel(int roomNumber, int tiles = 20, bool chased = false, int noteID = 0)
     {
         //Setting two booleans for the monster (they are used in the Update method)
         this.chased = chased;
@@ -115,13 +115,13 @@ class RandomLevel : Level
         random = GameEnvironment.Random;
         
         //Select the tiles to use
-        int pathType = random.Next(3);
+        int pathType = random.Next(4);
         if (pathType < 9)
             pathID = "0" + (pathType + 1);
         else
             pathID = "" + (pathType + 1);
 
-        int wallType = random.Next(3);
+        int wallType = random.Next(4);
         if (wallType < 9)
             wallID = "0" + (wallType + 1);
         else
@@ -136,9 +136,8 @@ class RandomLevel : Level
 
         //Creating the paths
         CreateMainPath();
-
-        for (int i = random.Next(1, tiles / 4); i > 0; i--)
-            CreateSidePath(random.Next(3, tiles / 4), chased);
+        for (int i = random.Next(1, (int)Math.Pow(tiles,2/3)); i > 0; i--)
+            CreateSidePath(random.Next(3, 15), chased);
 
         //making the tile grid
         TileGrid tileGrid = Grid;
@@ -202,9 +201,9 @@ class RandomLevel : Level
                 }
 
         //Add the note
-        if (/* (GameEnvironment.Random.Next(0, 3) == 1) && */ NoteObject.idList.Count != 0)
+        if (noteID != 0)
         {
-            NoteObject note = new NoteObject(NoteObject.idList[0]);
+            NoteObject note = new NoteObject(noteID.ToString());
             note.Parent = this;
             //NoteObject.idList.Remove(NoteObject.idList[0]);
             CreateNote(note, tileGrid);
@@ -229,19 +228,44 @@ class RandomLevel : Level
     private void AddDecoration(Vector3 position, Vector3 relativePosition)
     {
         string name;
-        switch (GameEnvironment.Random.Next(2))
+        Decoration deco;
+        switch (GameEnvironment.Random.Next(6))
         {
-            case 0: name = "Closet"; break;
-            case 1: name = "Cupboard"; break;
+            case 0: name = "Closet"; 
+                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
+                break;
+            case 1: name = "Cupboard";
+                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
+                break;
+            case 2: name = "Table";
+                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
+                break;
+            case 3: name = "Chair";
+                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
+                break;
+            case 4: name = "Cupboard2";
+                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
+                break;
+            case 5: switch (GameEnvironment.Random.Next(400))
+                    {
+                        case 0: name = "Confused Cat"; break;
+                        case 1: name = "Surprise Cat"; break;
+                        case 2: name = "Sir Quokkalot"; break;
+                        case 3: name = "Shocked Cat"; break;
+                        case 4: name = "Baker Cat"; break;
+                        default: name = "Lakeview"; break; 
+                    }
+                deco = new Decoration("Misc Level Objects\\Painting\\" + name + "\\" + name + " Model", name);
+                break;
             default: return;
         }
-        Decoration deco = new Decoration("Misc Level Objects\\" + name + "\\" + name, name);
+
         deco.Parent = this;
         gameObjects.Add(deco);
         deco.Position = position - new Vector3(relativePosition.X * deco.Width(name), deco.Height(name), relativePosition.Z * deco.Width(name));
         
         if (relativePosition.Z == -1)
-            deco.modelRotation = (float)Math.PI/180 * 270;
+            deco.modelRotation = (float)Math.PI / 180 * 270;
         else if (relativePosition.X == 1)
             deco.modelRotation = (float)Math.PI / 180 * 180;
         else if (relativePosition.Z == 1)
@@ -261,7 +285,7 @@ class RandomLevel : Level
             //making the monster
             if (chased && !monsterMade)
             {
-                //Playing a sound-effect before the monster has entered the room
+                //Playing a sound-effect before the monster comes into the room
                 foreach (Sound sound in MusicPlayer.SoundEffect)
                     if (sound.Name == "WindAmbience")
                         sound.PlaySound();
