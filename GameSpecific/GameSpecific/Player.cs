@@ -78,7 +78,7 @@ public class Player : Camera
             (WDown || SDown || DDown || ADown))
         {
             velocity = 500f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (stamina < 20)
                 exhausted = true;
         }
@@ -127,7 +127,7 @@ public class Player : Camera
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
 
-        /* if (input.IsKeyDown(Keys.Space))
+        /*if (input.IsKeyDown(Keys.Space))
             position.Y += 40f;
         if (input.IsKeyDown(Keys.LeftShift))
             position.Y -= 40f; */

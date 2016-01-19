@@ -76,6 +76,15 @@ class PathTile : Tile
     }
 }
 
+class DecorationTile : PathTile
+{
+    public DecorationTile(string pathID, string id = "DecorationTile")
+        : base(pathID, id)
+    {
+
+    }
+}
+
 /// <summary>
 /// A piece of the wall
 /// </summary>

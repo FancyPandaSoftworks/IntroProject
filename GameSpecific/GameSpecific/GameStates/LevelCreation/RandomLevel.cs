@@ -152,66 +152,75 @@ class RandomLevel : Level
         }
 
         //making the monster
-        Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
-        monster.Parent = this;
-        monster.LoadContent();
-        gameObjects.Add(monster);
-
-        if(GameEnvironment.Random.Next(0,10)==1)
+        if (false)
         {
-           
-            Cupboard cupboard = new Cupboard("Misc Level Objects\\Cupboard\\Cupboard");
-            cupboard.Parent = this;
-            gameObjects.Add(cupboard);
-            foreach (GameObject gameObject in gameObjects)
-            {
-                if (gameObject != null)
+            Monster monster = new Monster(Grid.Objects, new Vector3(player.Position.X, 225, player.Position.Z));
+            monster.Parent = this;
+            monster.LoadContent();
+            gameObjects.Add(monster);
+        }
+        
+        //Adding decoration objects
+        TileGrid grid = Find("TileGrid") as TileGrid;
+        for (int x = 0; x < grid.Columns; x++)
+            for (int y = 0; y < grid.Rows; y++)
+                if (grid.Get(x, y) != null)
                 {
-                    if (gameObject.ID == "TileGrid")
+                    if (grid.Get(x, y).ID == "WallTile" && GameEnvironment.Random.Next(20) == 0)
                     {
-                        TileGrid grid = gameObject as TileGrid;
-                        for (int x = 0; x < grid.Columns; x++)
+                        try
                         {
-                            for (int y = 0; y < grid.Rows; y++)
+                            if (grid.Get(x + 1, y) != null && grid.Get(x + 1, y).ID == "PathTile" && grid.Get(x + 1, y).ID != "DecorationTile")
                             {
-                                if (grid.get(x, y) != null)
-                                {
-                                    if (grid.get(x, y).ID == "WallTile" /*&& GameEnvironment.Random.Next(2) == 1*/)
-                                    {
-                                        try
-                                        {
-                                            if (grid.get(x + 1, y) != null)
-                                            {
-                                                if (grid.get(x + 1, y).ID == "PathTile")
-                                                    cupboard.Position = grid.get(x, y).Position + new Vector3(cupboard.cupboardWidth, -30, 0);
-                                            }
-                                            else if (grid.get(x, y + 1) != null)
-                                            {
-                                                if (grid.get(x, y + 1).ID == "PathTile")
-                                                    cupboard.Position = grid.get(x, y).Position + new Vector3(0, -30, cupboard.cupboardWidth);
-                                            }
-                                            else if (grid.get(x - 1, y) != null)
-                                            {
-                                                if (grid.get(x - 1, y).ID == "PathTile")
-                                                    cupboard.Position = grid.get(x, y).Position - new Vector3(cupboard.cupboardWidth, 30, 0);
-                                            }
-                                            else if (grid.get(x, y - 1) != null)
-                                            {
-                                                if (grid.get(x, y - 1).ID == "PathTile")
-                                                    cupboard.Position = grid.get(x, y).Position - new Vector3(0, 30, cupboard.cupboardWidth);
-                                            }
-                                        }
-                                        catch (IndexOutOfRangeException e) { Console.WriteLine(e.StackTrace); }
-                                        Console.WriteLine(cupboard.Position);
-                                        Console.WriteLine(player.Position);
-                                    }
-                                }
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(-1, 0, 0));
+                                grid.Add(new DecorationTile(pathID), x + 1, y);
+                            }
+                            if (grid.Get(x, y + 1) != null && grid.Get(x, y + 1).ID == "PathTile" && grid.Get(x, y + 1).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(0, 0, -1));
+                                grid.Add(new DecorationTile(pathID), x, y + 1);
+                            }
+                            if (grid.Get(x - 1, y) != null && grid.Get(x - 1, y).ID == "PathTile" && grid.Get(x - 1, y).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(1, 0, 0));
+                                grid.Add(new DecorationTile(pathID), x - 1, y);
+                            }
+                            if (grid.Get(x, y - 1) != null && grid.Get(x, y - 1).ID == "PathTile" && grid.Get(x, y - 1).ID != "DecorationTile")
+                            {
+                                AddDecoration(grid.Get(x, y).Position, new Vector3(0, 0, 1));
+                                grid.Add(new DecorationTile(pathID), x, y - 1);
                             }
                         }
+                        catch (IndexOutOfRangeException e) { Console.WriteLine(e.StackTrace); }
                     }
-                }
-            }
+                }          
+    }
+
+    /// <summary>
+    /// Method for adding a random decoration object
+    /// </summary>
+    private void AddDecoration(Vector3 position, Vector3 relativePosition)
+    {
+        string name;
+        switch (GameEnvironment.Random.Next(2))
+        {
+            case 0: name = "Closet"; break;
+            case 1: name = "Cupboard"; break;
+            default: return;
         }
+        Decoration deco = new Decoration("Misc Level Objects\\" + name + "\\" + name, name);
+        deco.Parent = this;
+        gameObjects.Add(deco);
+        deco.Position = position - new Vector3(relativePosition.X * deco.Width(name), deco.Height(name), relativePosition.Z * deco.Width(name));
+        
+        if (relativePosition.Z == -1)
+            deco.modelRotation = (float)Math.PI/180 * 270;
+        else if (relativePosition.X == 1)
+            deco.modelRotation = (float)Math.PI / 180 * 180;
+        else if (relativePosition.Z == 1)
+            deco.modelRotation = (float)Math.PI / 180 * 90;
+        else if (relativePosition.X == -1)
+            deco.modelRotation = 0;
     }
 
     /// <summary>

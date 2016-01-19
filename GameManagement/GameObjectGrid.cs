@@ -44,7 +44,7 @@ public class GameObjectGrid : GameObject
     /// <param name="x">The x-coördinate</param>
     /// <param name="y">The y-coördinate</param>
     /// <returns>Returns the object at the given coördinate, or if the coördinates are empty return null</returns>
-    public GameObject get(int x, int y)
+    public GameObject Get(int x, int y)
     {
         if (x >= 0 && x < grid.GetLength(0) && y >= 0 && y < grid.GetLength(1))
             return grid[x, y];

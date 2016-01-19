@@ -56,8 +56,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Closet\Closet.fbx">
-      <Name>Closet</Name>
+    <Compile Include="Misc Level Objects\Closet\Closet1.fbx">
+      <Name>Closet1</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -73,6 +73,16 @@
     </Compile>
     <Compile Include="Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.fbx">
       <Name>Wall Model 03</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Cupboard\Cupboard Model.fbx">
+      <Name>Cupboard Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Closet\Closet.fbx">
+      <Name>Closet</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

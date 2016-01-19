@@ -8,63 +8,31 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
    
-enum DecorationType
-{
-    cupboard, cuboard2, chairTable, deadBody, empty
-}
-
 class Decoration: Object3D
 {
-    protected DecorationType decorationType;
-    public Decoration(string modelName, string id, DecorationType decorationType = DecorationType.empty): base(modelName, id)
+    public Decoration(string modelName, string id): base(modelName, id)
     {
-        this.decorationType = decorationType;
     }
 
-    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    public int Height(string name)
     {
-        if (decorationType == DecorationType.empty)
-            return;
-        base.Draw(gameTime, spriteBatch);
+        switch (name)
+        {
+            case "Closet": return 0; 
+            case "Cupboard": return 30; 
+            case "ChairTable": return 15; 
+            default: return 0;
+        }
     }
-}
 
-class Cupboard: Decoration
-{
-    public int cupboardWidth = 170;
-    public Cupboard(string cupboard, string id = "Cupboard")
-        : base(cupboard, "Misc Level Objects\\Cupboard\\Cupboard", DecorationType.cupboard)
+    public int Width(string name)
     {
-       
-    }
-    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-    {
-        base.Draw(gameTime, spriteBatch);
-        
+        switch (name)
+        {
+            case "Closet": return 130; 
+            case "Cupboard": return 100; 
+            case "ChairTable": return 250; 
+            default: return 0;
+        }
     }
 }
-
-/*class Cupboard2: Decoration
-{
-    public Cupboard2(string cupboard2, string id = "cupboard2"): base(cupboard2, "cupboard", DecorationType.cuboard2)
-    {
-
-    }
-}
-
-class ChairTable: Decoration
-{
-    public ChairTable(string chairTable, string id = "chairTable"): base(chairTable, "chairTable", DecorationType.chairTable)
-    {
-
-    }
-}
-
-class DeadBody: Decoration
-{
-    public DeadBody(string deadBody, string id ="deadBody"): base(deadBody, "deadBody", DecorationType.deadBody)
-    {
-
-    }
-}
-*/
