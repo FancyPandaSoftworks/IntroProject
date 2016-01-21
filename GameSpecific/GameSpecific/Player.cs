@@ -65,7 +65,7 @@ public class Player : Camera
         if (inputHelper.IsKeyDown(Keys.E))
             EDown = true;
 
-        if ((WDown || ADown || SDown || DDown) && !ShiftDown)
+        if (((WDown || ADown || SDown || DDown) && !ShiftDown) || (WDown || ADown || SDown || DDown) && ShiftDown && exhausted)
         {
             foreach (Sound sound in MusicPlayer.LoopedEffect)
                 if (sound.Name == "Footsteps1")
@@ -80,7 +80,7 @@ public class Player : Camera
                     sound.StopSound();
         }
 
-        if ((WDown || ADown || SDown || DDown) && ShiftDown)
+        if ((WDown || ADown || SDown || DDown) && ShiftDown && !exhausted)
         {
             foreach (Sound sound in MusicPlayer.LoopedEffect)
                 if (sound.Name == "Footsteps2")
