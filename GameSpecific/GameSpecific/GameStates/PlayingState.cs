@@ -12,6 +12,7 @@ class PlayingState : Root
 {
     Level level;
     public int roomCounter;
+    public static int chaseCounter; //integer for the amount of rooms the monster will be chasing you
 
     public int RoomCounter
     {
@@ -33,6 +34,7 @@ class PlayingState : Root
         {
             obj.Parent = level;
         }
+        chaseCounter = 0;
     }
 
     /// <summary>
@@ -82,7 +84,7 @@ class PlayingState : Root
             }
 
             //Rooms 61 - 80: 1/5 chance of a monster chasing you
-            else if (roomCounter > 60 && roomCounter < 81)
+            else if (roomCounter > 60 && roomCounter < 81 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(5) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
@@ -90,7 +92,7 @@ class PlayingState : Root
                     level = new RandomLevel(roomCounter, tiles);
             }
             //Rooms 101 - 125: 1/4 chance of monster chasing you
-            else if (roomCounter > 100 && roomCounter < 126)
+            else if (roomCounter > 100 && roomCounter < 126 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(4) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
@@ -98,7 +100,7 @@ class PlayingState : Root
                     level = new RandomLevel(roomCounter, tiles);
             }
             //Rooms 151 - 190: 1/3 chance of monster chasing you
-            else if (roomCounter > 150 && roomCounter < 191)
+            else if (roomCounter > 150 && roomCounter < 191 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(3) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
@@ -106,16 +108,40 @@ class PlayingState : Root
                     level = new RandomLevel(roomCounter, tiles);
             }
             //Rooms 211 - 240: 1/2 chance of monster chasing you
-            else if (roomCounter > 210 && roomCounter < 241)
+            else if (roomCounter > 210 && roomCounter < 241 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(2) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
                 else
                     level = new RandomLevel(roomCounter, tiles);
             }
+            //Making the monster chase you for 6 rooms (at most)
+            else if (roomCounter > 60 && roomCounter < 81 && chaseCounter > 0 && chaseCounter < 7)
+            {
+                level = new RandomLevel(roomCounter, tiles, true);
+                chaseCounter++;
+            }
+            else if (roomCounter > 100 && roomCounter < 126 && chaseCounter > 0 && chaseCounter < 9)
+            {
+                level = new RandomLevel(roomCounter, tiles, true);
+                chaseCounter++;
+            }
+            else if (roomCounter > 150 && roomCounter < 191 && chaseCounter > 0 && chaseCounter < 11)
+            {
+                level = new RandomLevel(roomCounter, tiles, true);
+                chaseCounter++;
+            }
+            else if (roomCounter > 210 && roomCounter < 241 && chaseCounter > 0 && chaseCounter < 16)
+            {
+                level = new RandomLevel(roomCounter, tiles, true);
+                chaseCounter++;
+            }
             //Levels with no monster ever
             else
+            {
                 level = new RandomLevel(roomCounter, tiles);
+                chaseCounter = 0;
+            }
 
             //Levels with notes (last parameter is the note ID)
             if (roomCounter == 2)
