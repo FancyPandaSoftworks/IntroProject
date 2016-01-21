@@ -53,7 +53,10 @@ class Monster : Object3D
         }
 
         //Monster's position
-        monsterPosition = EntryTile.position + new Vector3(0, 200, 0);
+        foreach(GameObject tile in tileGrid.Objects)
+            if (tile != null)
+                if (tile.ID == "EntryTile")
+                    monsterPosition = tile.Position + new Vector3(0, 200, 0);
 
         //Monster's velocity
         velocity = 120;

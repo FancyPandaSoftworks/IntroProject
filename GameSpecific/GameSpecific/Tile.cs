@@ -121,7 +121,7 @@ class WallTile : Tile
 class EntryTile : PathTile
 {
     protected Object3D trapdoor;
-    public static Vector3 position;
+    public Vector3 position;
 
     public EntryTile(string pathID)
         : base(pathID, "EntryTile")
