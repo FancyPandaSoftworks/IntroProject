@@ -244,7 +244,7 @@ class RandomLevel : Level
                         case 2: name = "Sir Quokkalot"; break;
                         case 3: name = "Shocked Cat"; break;
                         case 4: name = "Baker Cat"; break;
-                        default: name = "Lakeview"; break; 
+                        default: int index = random.Next(2); if (index == 0) name = "Lakeview"; else name = "Village"; break;
                     }
                 deco = new Decoration("Misc Level Objects\\Painting\\" + name + "\\" + name + " Model", name);
                 break;

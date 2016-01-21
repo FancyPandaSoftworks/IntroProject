@@ -156,6 +156,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Misc Level Objects\Painting\Village\Village Model.fbx">
+      <Name>Village Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
@@ -648,6 +653,11 @@
     </Compile>
     <Compile Include="Misc Level Objects\Painting\Lakeview\Lakeview Texture.jpg">
       <Name>Lakeview Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Painting\Village\Village Texture.jpg">
+      <Name>Village Texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

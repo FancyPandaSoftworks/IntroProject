@@ -28,6 +28,8 @@ class Decoration: Object3D
             case "Shocked Cat": return -20;
             case "Baker Cat": return -20;
             case "Sir Quokkalot": return -20;
+            case "Lakeview": return -20;
+            case "Village": return -20;
             default: return 0;
         }
     }
@@ -46,6 +48,8 @@ class Decoration: Object3D
             case "Shocked Cat": return 105;
             case "Baker Cat": return 105;
             case "Sir Quokkalot": return 105;
+            case "Lakeview": return 105;
+            case "Village": return 105;
             default: return 0;
         }
     }

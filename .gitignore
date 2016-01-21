@@ -246,3 +246,4 @@ FakesAssemblies/
 *.suo
 *.xml
 GameSpecific/GameSpecific/obj/x86/Debug/GameSpecific.csproj.FileListAbsolute.txt
+*.cachefile
