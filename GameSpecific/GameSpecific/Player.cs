@@ -111,7 +111,7 @@ public class Player : Camera
             (WDown || SDown || DDown || ADown))
         {
             velocity = 500f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+            stamina = stamina - (int)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (stamina < 20)
                 exhausted = true;
         }
