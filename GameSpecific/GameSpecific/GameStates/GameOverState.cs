@@ -79,7 +79,7 @@ class GameOverState : GameState
             Mouse.SetPosition(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
             if (File.Exists("Content\\SaveFile.txt"))
             {
-                using (StreamReader stream = new StreamReader("SaveFile.txt"))
+                using (StreamReader stream = new StreamReader("Content\\SaveFile.txt"))
                 {
                     string line = stream.ReadLine();
                     if (line != null)

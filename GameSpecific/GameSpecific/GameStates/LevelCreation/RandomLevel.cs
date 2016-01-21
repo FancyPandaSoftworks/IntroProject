@@ -156,15 +156,6 @@ class RandomLevel : Level
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
         }
 
-        //making the monster
-        if (chased)
-        {
-            Monster monster = new Monster(Grid.Objects);
-            monster.Parent = this;
-            monster.LoadContent();
-            gameObjects.Add(monster);
-        }
-
         //Adding decoration objects
         TileGrid grid = Find("TileGrid") as TileGrid;
         for (int x = 0; x < grid.Columns; x++)
