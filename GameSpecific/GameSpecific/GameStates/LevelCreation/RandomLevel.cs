@@ -196,7 +196,6 @@ class RandomLevel : Level
         {
             NoteObject note = new NoteObject(noteID.ToString());
             note.Parent = this;
-            //NoteObject.idList.Remove(NoteObject.idList[0]);
             CreateNote(note, tileGrid);
             gameObjects.Add(note);
         }

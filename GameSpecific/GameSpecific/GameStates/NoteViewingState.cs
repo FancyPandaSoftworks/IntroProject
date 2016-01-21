@@ -16,16 +16,6 @@ class NoteViewingState : Root
 
     public NoteViewingState()
     {
-                NoteObject.idList = new System.Collections.Generic.List<string>();
-        using (StreamReader streamReader = new StreamReader("Content/noteIDList.txt"))
-        {
-            string line = streamReader.ReadLine();
-            while (line != null)
-            {
-                NoteObject.idList.Add(line);
-                line = streamReader.ReadLine();
-            }
-        }
     }
 
     /// <summary>
@@ -54,17 +44,17 @@ class NoteViewingState : Root
 
     public void Update(GameTime gameTime)
     {
-        //if (noteChanged)
-        //{
-        //    try
-        //    {
-        //        noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
-        //    }
-        //    catch
-        //    {
-        //    }
-        //    noteChanged = false;
-        //}
+        if (noteChanged)
+        {
+            try
+            {
+                noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
+            }
+            catch
+            {
+            }
+            noteChanged = false;
+        }
     } 
 
     /// <summary>
