@@ -48,7 +48,7 @@ class NoteViewingState : Root
         {
             try
             {
-                noteSprite = GameEnvironment.AssetManager.GetSprite(noteID);
+                noteSprite = GameEnvironment.AssetManager.GetSprite("Notes\\Note" + noteID);
             }
             catch
             {
