@@ -178,7 +178,7 @@ class RandomLevel : Level
             for (int y = 0; y < grid.Rows; y++)
                 if (grid.Get(x, y) != null)
                 {
-                    if (grid.Get(x, y).ID == "WallTile" && GameEnvironment.Random.Next(20) == 0)
+                    if (grid.Get(x, y).ID == "WallTile" && GameEnvironment.Random.Next(15) == 0)
                     {
                         try
                         {
@@ -235,7 +235,7 @@ class RandomLevel : Level
     {
         string name;
         Decoration deco;
-        switch (GameEnvironment.Random.Next(6))
+        switch (GameEnvironment.Random.Next(7))
         {
             case 0: name = "Closet"; 
                 deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
@@ -252,7 +252,10 @@ class RandomLevel : Level
             case 4: name = "Cupboard2";
                 deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
                 break;
-            case 5: switch (GameEnvironment.Random.Next(400))
+            case 5: name = "ChairTable";
+                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
+                break; 
+            case 6: switch (GameEnvironment.Random.Next(400))
                     {
                         case 0: name = "Confused Cat"; break;
                         case 1: name = "Surprise Cat"; break;

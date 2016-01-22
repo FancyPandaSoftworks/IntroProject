@@ -34,7 +34,7 @@ class SpecialLevel : Level
         if (drawSaveText)
         {
             saveText = new TextGameObject("text");
-            saveText.text = "Progress Saved...";
+            saveText.text = "Progress Saved";
             saveText.Position = new Vector2((GameEnvironment.Screen.X - saveText.Size.X) / 2, 0);
         }
         if (name == "Content\\Special Levels\\Final.txt")
@@ -177,7 +177,7 @@ class SpecialLevel : Level
         {
             drawSaveText = false;
         }
-        if (roomCounter.text == "1" && player.Position.Z > 1250)
+        if (roomCounter.text == "1" && player.Position.Z > 850)
         {
             foreach (Sound sound in MusicPlayer.Music)
                 sound.PlaySound();

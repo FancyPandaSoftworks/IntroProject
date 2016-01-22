@@ -66,77 +66,68 @@ class PlayingState : Root
             roomCounter++;
             Console.WriteLine(roomCounter);
             int tiles = 12 + (((roomCounter + 1) / 10) - ((roomCounter + 1) % 10));
+
             //First room
             if (roomCounter == 1)
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\First.txt");
 
             //Save rooms 
-            else if (roomCounter % 50 == 0 && roomCounter != 250)
+            else if (roomCounter % 20 == 0 && roomCounter != 100)
             {                
                 Save(roomCounter, "Content\\SaveFile.txt");
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\CheckPoint.txt", true);
             }
 
             //Final level
-            else if (roomCounter == 250)
-            {
+            else if (roomCounter == 100)
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\Final.txt");
-            }
 
-            //Rooms 61 - 80: 1/5 chance of a monster chasing you
-            else if (roomCounter > 60 && roomCounter < 81 && chaseCounter == 0)
-            {
-                if (GameEnvironment.Random.Next(5) == 0)
-                    level = new RandomLevel(roomCounter, tiles, true);
-                else
-                    level = new RandomLevel(roomCounter, tiles);
-            }
-            //Rooms 101 - 125: 1/4 chance of monster chasing you
-            else if (roomCounter > 100 && roomCounter < 126 && chaseCounter == 0)
+            //Rooms 31 - 39: 1/4 chance of a monster chasing you
+            else if (roomCounter > 30 && roomCounter < 40 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(4) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
                 else
                     level = new RandomLevel(roomCounter, tiles);
             }
-            //Rooms 151 - 190: 1/3 chance of monster chasing you
-            else if (roomCounter > 150 && roomCounter < 191 && chaseCounter == 0)
+            //Rooms 41 - 50: 1/3 chance of monster chasing you
+            else if (roomCounter > 40 && roomCounter < 51 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(3) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
                 else
                     level = new RandomLevel(roomCounter, tiles);
             }
-            //Rooms 211 - 240: 1/2 chance of monster chasing you
-            else if (roomCounter > 210 && roomCounter < 241 && chaseCounter == 0)
+            //Rooms 61 - 75: 1/2 chance of monster chasing you
+            else if (roomCounter > 60 && roomCounter < 76 && chaseCounter == 0)
             {
                 if (GameEnvironment.Random.Next(2) == 0)
                     level = new RandomLevel(roomCounter, tiles, true);
                 else
                     level = new RandomLevel(roomCounter, tiles);
             }
-            //Making the monster chase you for 6 rooms (at most)
-            else if (roomCounter > 60 && roomCounter < 81 && chaseCounter > 0 && chaseCounter < 7)
+            //Rooms 81 - 90: monster is chasing you
+            else if (roomCounter > 80 && roomCounter < 91)
+            {
+                level = new RandomLevel(roomCounter, tiles, true);
+            }
+            //Making the monster chase you for 6/8/10 rooms (at most)
+            else if (roomCounter > 30 && roomCounter < 40 && chaseCounter > 0 && chaseCounter < 7)
             {
                 level = new RandomLevel(roomCounter, tiles, true);
                 chaseCounter++;
             }
-            else if (roomCounter > 100 && roomCounter < 126 && chaseCounter > 0 && chaseCounter < 9)
+            else if (roomCounter > 40 && roomCounter < 51 && chaseCounter > 0 && chaseCounter < 9)
             {
                 level = new RandomLevel(roomCounter, tiles, true);
                 chaseCounter++;
             }
-            else if (roomCounter > 150 && roomCounter < 191 && chaseCounter > 0 && chaseCounter < 11)
+            else if (roomCounter > 60 && roomCounter < 76 && chaseCounter > 0 && chaseCounter < 11)
             {
                 level = new RandomLevel(roomCounter, tiles, true);
                 chaseCounter++;
             }
-            else if (roomCounter > 210 && roomCounter < 241 && chaseCounter > 0 && chaseCounter < 16)
-            {
-                level = new RandomLevel(roomCounter, tiles, true);
-                chaseCounter++;
-            }
-            //Levels with no monster ever
+            //Levels with no monster
             else
             {
                 level = new RandomLevel(roomCounter, tiles);
@@ -148,31 +139,31 @@ class PlayingState : Root
                 level = new RandomLevel(roomCounter, tiles, false, 1);
             if (roomCounter == 3)
                 level = new RandomLevel(roomCounter, tiles, false, 2);
-            if (roomCounter == 15)
+            if (roomCounter == 5)
                 level = new RandomLevel(roomCounter, tiles, false, 3);
-            if (roomCounter == 38)
+            if (roomCounter == 20)
                 level = new RandomLevel(roomCounter, tiles, false, 4);
-            if (roomCounter == 55)
+            if (roomCounter == 30)
                 level = new RandomLevel(roomCounter, tiles, false, 5);
-            if (roomCounter == 81)
+            if (roomCounter == 51)
                 level = new RandomLevel(roomCounter, tiles, false, 6);
-            if (roomCounter == 95)
+            if (roomCounter == 55)
                 level = new RandomLevel(roomCounter, tiles, false, 7);
-            if (roomCounter == 126)
+            if (roomCounter == 76)
                 level = new RandomLevel(roomCounter, tiles, false, 8);
-            if (roomCounter == 145)
+            if (roomCounter == 77)
                 level = new RandomLevel(roomCounter, tiles, false, 9);
-            if (roomCounter == 200)
+            if (roomCounter == 78)
                 level = new RandomLevel(roomCounter, tiles, false, 10);
-            if (roomCounter == 243)
+            if (roomCounter == 79)
                 level = new RandomLevel(roomCounter, tiles, false, 11);
-            if (roomCounter == 245)
+            if (roomCounter == 90)
                 level = new RandomLevel(roomCounter, tiles, false, 12);
-            if (roomCounter == 247)
+            if (roomCounter == 97)
                 level = new RandomLevel(roomCounter, tiles, false, 13);
-            if (roomCounter == 248)
+            if (roomCounter == 98)
                 level = new RandomLevel(roomCounter, tiles, false, 14);
-            if (roomCounter == 249)
+            if (roomCounter == 99)
                 level = new RandomLevel(roomCounter, tiles, false, 15);
 
             //set a boolean for the final level
