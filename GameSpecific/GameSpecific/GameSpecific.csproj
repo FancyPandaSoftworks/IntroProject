@@ -63,7 +63,7 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A5F14489D923F1DF2543097FFE4B061A1E5F9F50</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4D6D09C6D0186787E67A170E0A1934115F3A3BEE</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>GameSpecific_TemporaryKey.pfx</ManifestKeyFile>
