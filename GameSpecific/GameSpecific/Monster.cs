@@ -415,8 +415,8 @@ class Monster : Object3D
                 effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45),
                 aspectRatio, 1, 1000);
                 effect.FogEnabled = true;
-                effect.FogStart = 0;
-                effect.FogEnd = 1000;
+                effect.FogStart = -1500;
+                effect.FogEnd = 750;
                 effect.Alpha = 1.0f;
             }
             mesh.Draw();

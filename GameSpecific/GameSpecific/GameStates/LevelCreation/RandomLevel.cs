@@ -102,7 +102,7 @@ class RandomLevel : Level
     /// <param name="roomNumber">The number of the room</param>
     /// <param name="tiles">The size the Mainpath should be, counted in tiles</param>
     /// <param name="chased">Whether or not the monster is chasing the player</param>
-    public RandomLevel(int roomNumber, int tiles = 20, bool chased = false, int noteID = 0)
+    public RandomLevel(int roomNumber, int tiles = 12, bool chased = false, int noteID = 0)
     {
         //Setting two booleans for the monster (they are used in the Update method)
         this.chased = chased;
@@ -153,7 +153,23 @@ class RandomLevel : Level
         {
             if (obj != null)
                 if(obj.ID == "EntryTile")
+                {
                     player.Position = new Vector3(obj.Position.X, obj.Position.Y + GameObjectGrid.CellHeight, obj.Position.Z);
+                    foreach(GameObject tile in tileGrid.Objects)
+                    {
+                        if (tile != null)
+                        {
+                            if (tile.Position.X == obj.Position.X + 200 && tile.Position.Z == obj.Position.Z && tile.ID == "PathTile")
+                                player.viewAngleX = 0f;
+                            if (tile.Position.X == obj.Position.X && tile.Position.Z == obj.Position.Z + 200 && tile.ID == "PathTile")
+                                player.viewAngleX = (float)(Math.PI / 2);
+                            if (tile.Position.X == obj.Position.X - 200 && tile.Position.Z == obj.Position.Z && tile.ID == "PathTile")
+                                player.viewAngleX = (float)(Math.PI);
+                            if (tile.Position.X == obj.Position.X && tile.Position.Z == obj.Position.Z - 200 && tile.ID == "PathTile")
+                                player.viewAngleX = (float)(Math.PI * 1.5);
+                        }
+                    }
+                }
         }
 
         //Adding decoration objects
