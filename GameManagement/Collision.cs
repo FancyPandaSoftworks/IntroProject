@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 public class Collision
 {
+    
     public static Vector2 CalculatedIntersectionDepth(Rectangle rectA, Rectangle rectB)
     {
         Vector2 minDistance = new Vector2(rectA.Width + rectB.Width, rectA.Height + rectB.Height) / 2;
-        Vector2 centerA = new Vector2(rectA.Center.X, rectB.Center.Y);
+        Vector2 centerA = new Vector2(rectA.Center.X, rectA.Center.Y);
         Vector2 CenterB = new Vector2(rectB.Center.X, rectB.Center.Y);
         Vector2 distance = centerA - CenterB;
         Vector2 depth = Vector2.Zero;
@@ -33,8 +34,6 @@ public class Collision
             bs1.Center += object1.Position;
             if (player.Intersects(bs1))
                 return true;
-
-
         }
         return false;
     }

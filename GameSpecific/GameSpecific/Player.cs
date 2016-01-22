@@ -14,6 +14,7 @@ public class Player : Camera
     public int stamina;
     public bool exhausted, ShiftDown, WDown, ADown, SDown, DDown, EDown;
     TileGrid grid;
+    Level level;
 
     /// <summary>
     /// Constructing the player
@@ -29,7 +30,7 @@ public class Player : Camera
 
     public void LoadContent()
     {
-        Level level = parent as Level;
+        level = parent as Level;
         grid = level.Find("TileGrid") as TileGrid;
         stamina = 2000;
     }
@@ -94,9 +95,6 @@ public class Player : Camera
                 if (sound.Name == "Footsteps2")
                     sound.StopSound();
         }
-
-
-
         base.HandleInput(inputHelper);
     }
 
@@ -158,6 +156,43 @@ public class Player : Camera
         if (ADown && !(grid.Objects[(int)(position.X + 100) / GameObjectGrid.CellWidth, (int)(position.Z - 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellHeight] is WallTile))
         {
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
+        }
+
+        foreach (GameObject gameObject in level.Objects)
+        {
+            if (gameObject is Decoration)
+            {
+                Decoration decoration = gameObject as Decoration;
+                Rectangle decoRectangle = new Rectangle((int)decoration.Position.X - decoration.Width(decoration.ID) / 2, (int)decoration.Position.Z - decoration.Height(decoration.ID) / 2
+                    , decoration.Width(decoration.ID), decoration.Height(decoration.ID));
+                Rectangle playerRectangle = new Rectangle((int)Position.X - 30, (int)Position.Z - 30, 60, 60);
+                if (playerRectangle.Intersects(decoRectangle))
+                {
+                    Rectangle intersected = Collision.Intersection(decoRectangle,playerRectangle);
+                    if (intersected.Width < intersected.Height)
+                    {
+                        if (Position.X > decoration.Position.X && intersected.Width > 0)
+                        {
+                            position.X += intersected.Width;
+                        }
+                        else if (Position.X < decoration.Position.X && intersected.Width > 0)
+                        {
+                            position.X -= intersected.Width;
+                        }
+                    }
+                    else
+                    {
+                        if (Position.Z > decoration.Position.Z && intersected.Height > 0)
+                        {
+                            position.Z += intersected.Height;
+                        }
+                        else if (Position.Z < decoration.Position.Z && intersected.Height > 0)
+                        {
+                            position.Z -= intersected.Height;
+                        }
+                    }
+                }
+            }
         }
 
         /*if (input.IsKeyDown(Keys.Space))
