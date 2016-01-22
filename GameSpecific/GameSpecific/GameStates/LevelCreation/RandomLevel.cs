@@ -269,13 +269,19 @@ class RandomLevel : Level
         deco.Parent = this;
         gameObjects.Add(deco);
         deco.Position = position - new Vector3(relativePosition.X * deco.Width(name), deco.Height(name), relativePosition.Z * deco.Width(name));
-        
+
         if (relativePosition.Z == -1)
+        {
             deco.modelRotation = (float)Math.PI / 180 * 270;
+            deco.rotated = true;
+        }
         else if (relativePosition.X == 1)
             deco.modelRotation = (float)Math.PI / 180 * 180;
         else if (relativePosition.Z == 1)
+        {
             deco.modelRotation = (float)Math.PI / 180 * 90;
+            deco.rotated = true;
+        }
         else if (relativePosition.X == -1)
             deco.modelRotation = 0;
     }
