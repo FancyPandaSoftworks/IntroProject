@@ -63,10 +63,10 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4D6D09C6D0186787E67A170E0A1934115F3A3BEE</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CDCEC12F4F70E48529C778EC94A8C04806FB9EC3</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>GameSpecific_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>GameSpecific_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -103,7 +103,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GameStates\LevelCreation\RandomLevel.cs" />
-    <Compile Include="Hanging Man.cs" />
+    <Compile Include="BillBoard.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="NoteObject.cs" />
@@ -149,7 +149,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GameSpecific_TemporaryKey.pfx" />
+    <None Include="GameSpecific_1_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

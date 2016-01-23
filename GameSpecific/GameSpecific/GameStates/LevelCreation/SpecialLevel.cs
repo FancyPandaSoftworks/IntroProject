@@ -19,7 +19,7 @@ class SpecialLevel : Level
         drawSaveText = saved;
         firstTime = true;
 
-        //add items to the level
+        //Adding the player and grid
         player = new Player(Vector3.Zero);
         player.Parent = this;
         tileGrid = LoadLevel(name);
@@ -27,9 +27,17 @@ class SpecialLevel : Level
         gameObjects.Add(tileGrid);
         player.LoadContent();
         gameObjects.Add(player);
-        stamina = new Stamina();
-        stamina.Parent = this;
-        gameObjects.Add(stamina);
+
+        //Setting the roomcounter
+        roomCounter = new TextGameObject("text");
+        roomCounter.text = roomNumber.ToString();
+        //Adding the hanging man
+        if (roomCounter.text == "100")
+        {
+            BillBoard man = new BillBoard(new Vector3(700, 210, 200));
+            man.Parent = this;
+            gameObjects.Add(man);
+        }
 
         if (drawSaveText)
         {
@@ -42,17 +50,14 @@ class SpecialLevel : Level
         else
             exitText.text = "Press E to proceed";
 
-        //Setting the roomcounter
-        roomCounter = new TextGameObject("text");
-        roomCounter.text = roomNumber.ToString();
+        //Adding the roomcounter
         gameObjects.Add(roomCounter);
 
-        //Adding the man
-        /*
-        if (roomCounter.text == "250")
-        {
-            HangingMan man = new HangingMan(new Vector3(900, 0, 300));
-        }*/
+        //Adding stamina
+        stamina = new Stamina();
+        stamina.Parent = this;
+        gameObjects.Add(stamina);
+
     }
 
     /// <summary>

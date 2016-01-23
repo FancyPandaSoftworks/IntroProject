@@ -24,7 +24,7 @@ class PlayingState : Root
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
     /// <param name="roomCounter">The Roomcounter from where to start</param>
-    public PlayingState(int roomCounter = 1)
+    public PlayingState(int roomCounter = 100)
     {
         this.roomCounter = roomCounter;
         level = new RandomLevel(this.roomCounter);
@@ -167,7 +167,7 @@ class PlayingState : Root
                 level = new RandomLevel(roomCounter, tiles, false, 15);
 
             //set a boolean for the final level
-            if (roomCounter == 250)
+            if (roomCounter == 100)
                 ExitTile.finalLevel = true;
             else
                 ExitTile.finalLevel = false;

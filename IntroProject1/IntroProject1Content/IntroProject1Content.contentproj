@@ -61,11 +61,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\Monster\Monster Model.fbx">
-      <Name>Monster Model</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Level Cubes\Wall Cubes\Wall Cube 03\Wall Model 03.fbx">
       <Name>Wall Model 03</Name>
       <Importer>FbxImporter</Importer>
@@ -168,6 +163,16 @@
     </Compile>
     <Compile Include="Misc Level Objects\ChairTable\ChairTable Model.fbx">
       <Name>ChairTable Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Hanging Man\Hanging Man Model.fbx">
+      <Name>Hanging Man Model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Monster\Monster Model.fbx">
+      <Name>Monster Model</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -383,11 +388,6 @@
     </Compile>
     <Compile Include="black.png">
       <Name>black</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Misc Level Objects\Hanging Man\Hanging Man.png">
-      <Name>Hanging Man</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -683,6 +683,11 @@
     </Compile>
     <Compile Include="Misc Level Objects\Painting\Village\Village Texture.jpg">
       <Name>Village Texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Misc Level Objects\Hanging Man\Hanging Man.png">
+      <Name>Hanging Man</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

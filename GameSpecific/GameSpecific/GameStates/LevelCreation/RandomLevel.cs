@@ -15,7 +15,8 @@ class RandomLevel : Level
     private int tiles; //Amount of tiles to indicate the size of the level
     private string pathID, wallID;
     private float timer;
-    private bool chased, monsterMade;
+    private bool chased;
+    Monster monster;
 
    
     /// <summary>
@@ -104,9 +105,8 @@ class RandomLevel : Level
     /// <param name="chased">Whether or not the monster is chasing the player</param>
     public RandomLevel(int roomNumber, int tiles = 12, bool chased = false, int noteID = 0)
     {
-        //Setting two booleans for the monster (they are used in the Update method)
+        //Setting a boolean for the monster
         this.chased = chased;
-        monsterMade = false;
 
         //Assining the variables
         tileList = new Dictionary<Point, Tile>();
@@ -216,6 +216,15 @@ class RandomLevel : Level
             gameObjects.Add(note);
         }
 
+        //Making the monster
+        if (chased)
+        {
+            monster = new Monster(Grid.Objects);
+            monster.Parent = this;
+            monster.LoadContent();
+            gameObjects.Add(monster);
+        }
+
         //Making the stamina bar
         stamina = new Stamina();
         gameObjects.Add(stamina);
@@ -295,22 +304,13 @@ class RandomLevel : Level
 
         timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (timer > 3)
+        if (timer > 3 && chased)
         {
-            //making the monster
-            if (chased && !monsterMade)
-            {
                 //Playing a sound-effect before the monster comes into the room
                 foreach (Sound sound in MusicPlayer.SoundEffect)
                     if (sound.Name == "WindAmbience")
                         sound.PlaySound();
-                //Making the monster
-                Monster monster = new Monster(Grid.Objects);
-                monster.Parent = this;
-                monster.LoadContent();
-                gameObjects.Add(monster);
-                monsterMade = true;
-            }
+                monster.UpdateMonster(gameTime);
         }
 
         if (GameEnvironment.Random.Next(10000) == 0 && !chased)

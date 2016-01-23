@@ -59,14 +59,14 @@ class Monster : Object3D
                     monsterPosition = tile.Position + new Vector3(0, 200, 0);
 
         //Monster's velocity
-        velocity = 120;
+        velocity = 150;
 
         //Setting the emitter and listener for 3D sound
         playerListener = new AudioListener();
         monsterEmitter = new AudioEmitter();
     }
 
-    public override void Update(GameTime gameTime)
+    public void UpdateMonster(GameTime gameTime)
     {
         this.Position = monsterPosition;
         Level level = parent as Level;
