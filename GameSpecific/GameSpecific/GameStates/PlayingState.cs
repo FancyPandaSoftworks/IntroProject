@@ -72,7 +72,7 @@ class PlayingState : Root
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\First.txt");
 
             //Save rooms 
-            else if (roomCounter % 20 == 0 && roomCounter != 100)
+            else if (roomCounter % 50 == 0 && roomCounter != 100)
             {                
                 Save(roomCounter, "Content\\SaveFile.txt");
                 level = new SpecialLevel(roomCounter, "Content\\Special Levels\\CheckPoint.txt", true);

@@ -396,6 +396,16 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="FancyPandaLogo.png">
+      <Name>FancyPandaLogo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls.png">
+      <Name>Controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Content Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
       <Name>Wall Texture 01</Name>
       <Importer>TextureImporter</Importer>

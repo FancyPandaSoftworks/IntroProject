@@ -107,8 +107,8 @@ class TitleScreenState : GameState
                         playingState.RoomCounter = int.Parse(line);
                     }
                 }
-            }
-            GameEnvironment.GameStateManager.SwitchTo("playingState");
+                GameEnvironment.GameStateManager.SwitchTo("playingState");
+            }       
         }
 
         if (newGameButton.ButtonIsPressed)
@@ -120,7 +120,7 @@ class TitleScreenState : GameState
             File.WriteAllText("Content\\SaveFile.txt", String.Empty);
             PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
             playingState.RoomCounter = 1;
-            GameEnvironment.GameStateManager.SwitchTo("playingState");
+            GameEnvironment.GameStateManager.SwitchTo("controlsGameState");
         }
 
         if (exitButton.ButtonIsPressed)

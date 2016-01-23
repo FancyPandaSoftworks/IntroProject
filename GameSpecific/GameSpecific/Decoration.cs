@@ -19,8 +19,8 @@ class Decoration: Object3D
 
     public int Height(string name)
     {
-        if (rotated)
-            return Width(name);
+        //if (rotated)
+        //    return Width(name);
         switch (name)
         {
             case "Closet": return 10; 
@@ -42,8 +42,8 @@ class Decoration: Object3D
 
     public int Width(string name)
     {
-        if (rotated)
-            return Height(name);
+        //if (rotated)
+        //    return Height(name);
         switch (name)
         {
             case "Closet": return 130; 

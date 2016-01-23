@@ -70,6 +70,8 @@ class MainGame : GameEnvironment
 
         musicPlayer.timer.Enabled = true;
         GameState.GameVariable = this;
+        gameStateManager.AddGameState("beginGameState", new BeginGameState());
+        gameStateManager.AddGameState("controlsGameState", new ControlsGameState());
         gameStateManager.AddGameState("noteViewingState", new NoteViewingState());
         gameStateManager.AddGameState("playingState", new PlayingState());
         gameStateManager.AddGameState("pauseScreenState", new PauseScreenState());
@@ -78,7 +80,7 @@ class MainGame : GameEnvironment
         gameStateManager.AddGameState("creditState", new CreditState());
         gameStateManager.AddGameState("titleScreenState", new TitleScreenState());
         SetFullscreen(true);
-        gameStateManager.SwitchTo("titleScreenState");
+        gameStateManager.SwitchTo("beginGameState");
     }
 }
 
