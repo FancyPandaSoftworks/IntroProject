@@ -10,17 +10,37 @@ using Microsoft.Xna.Framework.Input;
    
 class Decoration: Object3D
 {
-    public bool rotated;
-
     public Decoration(string modelName, string id): base(modelName, id)
     {
 
     }
-
-    public int Height(string name)
+    public int Width(string name)
     {
-        //if (rotated)
-        //    return Width(name);
+        switch (name)
+        {
+            case "Table": return 50;
+            case "Closet": return 140;
+            case "Cupboard": return 60;
+            case "Cupboard2": return 160;
+            case "Chair": return 40;
+            default: return 0;
+        }
+    }
+    public int Depth(string name)
+    {
+        switch (name)
+        {
+            case "Table": return 50;
+            case "Closet": return 50;
+            case "Cupboard": return 50;
+            case "Cupboard2": return 80;
+            case "Chair": return 40;
+            default: return 0;
+        }
+    }
+
+    public int OffsetY(string name)
+    {
         switch (name)
         {
             case "Closet": return 10; 
@@ -40,17 +60,15 @@ class Decoration: Object3D
         }
     }
 
-    public int Width(string name)
+    public int OffsetX(string name)
     {
-        //if (rotated)
-        //    return Height(name);
         switch (name)
         {
             case "Closet": return 130; 
             case "Cupboard": return 100; 
             case "Cupboard2": return 130;
             case "ChairTable": return 130;
-            case "Table": return 150;
+            case "Table": return 140;
             case "Chair": return 150;
             case "Confused Cat": return 105;
             case "Surprise Cat": return 105;

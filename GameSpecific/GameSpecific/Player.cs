@@ -163,8 +163,17 @@ public class Player : Camera
             if (gameObject is Decoration)
             {
                 Decoration decoration = gameObject as Decoration;
-                Rectangle decoRectangle = new Rectangle((int)decoration.Position.X - decoration.Width(decoration.ID) / 2, (int)decoration.Position.Z - decoration.Height(decoration.ID) / 2
-                    , decoration.Width(decoration.ID), decoration.Height(decoration.ID));
+                Rectangle decoRectangle;
+                if (decoration.modelRotation == (float)Math.PI / 180 * 90 || decoration.modelRotation == (float)Math.PI / 180 * 270)
+                {
+                    decoRectangle = new Rectangle((int)decoration.Position.X - decoration.Width(decoration.ID) / 2, (int)decoration.Position.Z - decoration.Depth(decoration.ID) / 2
+                        , decoration.Width(decoration.ID), decoration.Depth(decoration.ID));
+                }
+                else
+                {
+                    decoRectangle = new Rectangle((int)decoration.Position.X - decoration.Depth(decoration.ID) / 2, (int)decoration.Position.Z - decoration.Width(decoration.ID) / 2
+                        , decoration.Depth(decoration.ID), decoration.Width(decoration.ID));
+                }
                 Rectangle playerRectangle = new Rectangle((int)Position.X - 30, (int)Position.Z - 30, 60, 60);
                 if (playerRectangle.Intersects(decoRectangle))
                 {

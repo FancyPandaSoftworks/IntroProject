@@ -244,7 +244,7 @@ class RandomLevel : Level
     {
         string name;
         Decoration deco;
-        switch (GameEnvironment.Random.Next(7))
+        switch (GameEnvironment.Random.Next(6))
         {
             case 0: name = "Closet"; 
                 deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
@@ -261,10 +261,7 @@ class RandomLevel : Level
             case 4: name = "Cupboard2";
                 deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
                 break;
-            case 5: name = "ChairTable";
-                deco = new Decoration("Misc Level Objects\\" + name + "\\" + name + " Model", name);
-                break; 
-            case 6: switch (GameEnvironment.Random.Next(400))
+            case 5: switch (GameEnvironment.Random.Next(400))
                     {
                         case 0: name = "Confused Cat"; break;
                         case 1: name = "Surprise Cat"; break;
@@ -280,20 +277,14 @@ class RandomLevel : Level
 
         deco.Parent = this;
         gameObjects.Add(deco);
-        deco.Position = position - new Vector3(relativePosition.X * deco.Width(name), deco.Height(name), relativePosition.Z * deco.Width(name));
+        deco.Position = position - new Vector3(relativePosition.X * deco.OffsetX(name), deco.OffsetY(name), relativePosition.Z * deco.OffsetX(name));
 
         if (relativePosition.Z == -1)
-        {
             deco.modelRotation = (float)Math.PI / 180 * 270;
-            deco.rotated = true;
-        }
         else if (relativePosition.X == 1)
             deco.modelRotation = (float)Math.PI / 180 * 180;
         else if (relativePosition.Z == 1)
-        {
             deco.modelRotation = (float)Math.PI / 180 * 90;
-            deco.rotated = true;
-        }
         else if (relativePosition.X == -1)
             deco.modelRotation = 0;
     }

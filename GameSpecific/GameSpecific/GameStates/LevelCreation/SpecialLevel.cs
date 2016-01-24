@@ -142,7 +142,7 @@ class SpecialLevel : Level
         {
             Decoration door = new Decoration("Misc Level Objects\\Door\\Door Model", "Door");
             door.Position = new Vector3(x * 200, 155, y * 200 + 100);
-            door.modelRotation = (float)Math.PI/180 * 90;
+            door.modelRotation = (float)Math.PI / 180 * 90;
             door.Parent = this;
             gameObjects.Add(door);
             player.Position = new Vector3(x * 200, 200f, y * 200);
@@ -167,6 +167,12 @@ class SpecialLevel : Level
             gameObjects.Add(cupboard);
             return new PathTile("01");
         }
+        else if (chr == '1')
+            return new WallTile("No Exit Left");
+        else if (chr == '2')
+            return new WallTile("No Exit Middle");
+        else if (chr == '3')
+            return new WallTile("No Exit Right");
         else
             return null;
     }
