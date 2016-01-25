@@ -12,8 +12,12 @@ class Decoration: Object3D
 {
     public Decoration(string modelName, string id): base(modelName, id)
     {
-
     }
+
+    /// <summary>
+    /// Returns the width of the decoration object
+    /// </summary>
+    /// <param name="name">Name of the decoration object</param>
     public int Width(string name)
     {
         switch (name)
@@ -26,6 +30,11 @@ class Decoration: Object3D
             default: return 0;
         }
     }
+
+    /// <summary>
+    /// Returns the height of the decoration object
+    /// </summary>
+    /// <param name="name">Name of the decoration object</param>
     public int Depth(string name)
     {
         switch (name)
@@ -39,6 +48,10 @@ class Decoration: Object3D
         }
     }
 
+    /// <summary>
+    /// Return the Y-offset, the offset from the ceiling 
+    /// </summary>
+    /// <param name="name">Name of the decoration object</param>
     public int OffsetY(string name)
     {
         switch (name)
@@ -46,7 +59,6 @@ class Decoration: Object3D
             case "Closet": return 10; 
             case "Cupboard": return 40;
             case "Cupboard2": return 71;
-            case "ChairTable": return 40;
             case "Table": return 70;
             case "Chair": return 70;
             case "Confused Cat": return -20;
@@ -60,6 +72,10 @@ class Decoration: Object3D
         }
     }
 
+    /// <summary>
+    /// Returns the X-offset, the offset from the wall
+    /// </summary>
+    /// <param name="name">Name of the decoration object</param>
     public int OffsetX(string name)
     {
         switch (name)
@@ -67,7 +83,6 @@ class Decoration: Object3D
             case "Closet": return 130; 
             case "Cupboard": return 100; 
             case "Cupboard2": return 130;
-            case "ChairTable": return 130;
             case "Table": return 140;
             case "Chair": return 150;
             case "Confused Cat": return 105;

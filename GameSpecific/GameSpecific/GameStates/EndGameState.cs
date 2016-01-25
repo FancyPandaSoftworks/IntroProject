@@ -36,7 +36,7 @@ class EndGameState : GameState
     {
         GameEnvironment.GameStateManager.GetGameState("playingState").Draw(gameTime, spriteBatch);
 
-        //draw the black fade-out square
+        //Draw the black fade-out square
         spriteBatch.Begin();
         base.Draw(gameTime, spriteBatch);
         spriteBatch.Draw(black.SpriteSheet.Sprite , new Rectangle(0,0,GameEnvironment.Screen.X,GameEnvironment.Screen.Y), Color.White * fader);
@@ -48,12 +48,14 @@ class EndGameState : GameState
 
         fader += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+        //Draw the "End." text on screen after 3 seconds
         if (fader > 3)
         {
             text.Position = new Vector2(GameEnvironment.Screen.X/2 - 10,GameEnvironment.Screen.Y/2 - 10);
             text.Draw(gameTime, spriteBatch);
         }
-
+         
+        //Play the gunshot sound after 3 seconds
         if (fader > 3 && !gunShotSound)
         {            
             foreach (Sound sound in MusicPlayer.SoundEffect)
@@ -62,8 +64,10 @@ class EndGameState : GameState
             gunShotSound = true;
         }
 
+        //Switch to the credit state after 6 seconds
         if (fader > 6)
         {
+            fader = 0;
             foreach (Sound sound in MusicPlayer.Music)
                 sound.PlaySound();
             GameEnvironment.GameStateManager.SwitchTo("creditState");

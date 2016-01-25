@@ -43,12 +43,6 @@ public class MusicPlayer
 
     //----------------------------------Methods----------------------------------//
 
-    /*static void Main()
-    {
-        MusicPlayer musicPlayer = new MusicPlayer();
-        musicPlayer.Run();
-    }*/
-
     //create a new sound, and add them to their type list
     public void NewSound(string filename, int dangerlevel = 0, int maxdangerlevel = 10)
     {
@@ -66,13 +60,10 @@ public class MusicPlayer
             LoopedEffect.Add(sound);
         if (sound.Type == "Music")
             Music.Add(sound);
-
-        Console.WriteLine("The {0} {1} has loaded succesfully, with length of {2} bars fadein time of {3} beats and fadeout time of {4} beats", sound.Type, sound.Name, sound.Length, sound.FadeIn, sound.FadeOut);
     }
 
     public MusicPlayer()
     {
-        //graphics = new GraphicsDeviceManager(this);
         beatLength = 60000 / (double)bpm;
         timer.Interval = beatLength;
         timer.Elapsed += MusicTimer;
@@ -129,55 +120,6 @@ public class MusicPlayer
         }
     }
 
-    //add new sounds here: newsound("type_name@length@fadein@fadeout")
-    //protected override void loadcontent()
-    //{
-    //player = new audiolistener();
-    //emitter = new audioemitter();
-    /*content.rootdirectory = "content";
-    spritebatch = new spritebatch(graphicsdevice);
-    font = content.load<spritefont>("spritefont1");*/
-    /*#region musicinstruments
-    newsound("min_ambiencehigh@32@0@0");
-    newsound("min_ambiencelow@32@0@0");
-    newsound("min_violin@2@8@8", 4);
-    newsound("min_drumsfast@2@8@8", 4);
-    #endregion*/
-    //newsound("3ds_beeptone");
-    //newsound("sfx_clocktick");
-    //timer.enabled = true;
-    //}
-
-    //Draw info on screen (debug)
-    /*protected override void Draw(GameTime gameTime)
-    {
-        GraphicsDevice.Clear(Color.White);
-        spriteBatch.Begin();
-        spriteBatch.DrawString(font, "Beats: " + beatCount, pos, Color.Black);
-        pos.Y += 40;
-        spriteBatch.DrawString(font, "Bars:   " + barCount, pos, Color.Black);
-        pos.Y += 80;
-        spriteBatch.DrawString(font, "DangerLevel: " + dangerLevel, pos, Color.Black);
-        pos.Y += 80;
-        spriteBatch.DrawString(font, "GameTime: " + gameTime.TotalGameTime.Seconds, pos, Color.Black);
-        pos.Y = 0;
-        spriteBatch.End();
-    }*/
-
-    //protected override void Update(GameTime gameTime)
-    //{
-    //    emitter.Position = new Vector3(
-    //        (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds), // left right
-    //        (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds), // front back
-    //        (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds) // up down
-    //                                                );
-
-    //    foreach (Sound sound in SoundEffect3D)
-    //    {
-    //        sound.SoundApply3D(player, emitter);
-    //    }
-    //}
-
     private void BeatCounter()
     {
         beatCount++;
@@ -191,12 +133,6 @@ public class MusicPlayer
         {
             barCount = 0;
         }
-
-        /*if (TimerCount == 8) // ??
-        {
-            timer2.Enabled = false;
-            TimerCount = 0;
-        }*/
     }
 
     private void BeatSyncer()
@@ -232,14 +168,7 @@ public class MusicPlayer
     //execute every beat
     private void MusicTimer(Object source, ElapsedEventArgs e)
     {
-        //if (dangerLevel >= 5)
-        //    dangerLevel = 0;
-        //else
-        //    dangerLevel += 0.05f;
-        Console.WriteLine("BarCount = {0}", barCount);
-
         BeatSyncer();
-        //Metronome();
         SyncPlayer();
         BeatCounter();
     }

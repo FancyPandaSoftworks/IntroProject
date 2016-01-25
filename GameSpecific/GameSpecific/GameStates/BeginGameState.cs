@@ -12,13 +12,12 @@ using Microsoft.Xna.Framework.Media;
 
 class BeginGameState : GameState
 {
-    Object2D logo, black;
+    Object2D logo;
     float timer, fader, fader2;
 
     public BeginGameState()
     {
         logo = new Object2D("FancyPandaLogo");
-        black = new Object2D("black");
         timer = 0;
         fader = 0;
         fader2 = 0;
@@ -37,16 +36,18 @@ class BeginGameState : GameState
 
         GameEnvironment.Graphics.Clear(Color.Black);
         spriteBatch.Begin();
+        //Fading the logo-sprite in and out
         spriteBatch.Draw(logo.SpriteSheet.Sprite , new Rectangle(0,0,GameEnvironment.Screen.X,GameEnvironment.Screen.Y), Color.White * (fader-fader2));
         spriteBatch.End();
 
+        //Fading out
         if (timer > 1.5)
-        {
             fader2 += 0.001f * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-        }
+        //Fading in
         else
             fader += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+        //Switch to the titlescreen after 3.5 seconds
         if (timer > 3.5)
             GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
     }

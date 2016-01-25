@@ -104,7 +104,9 @@ public class Player : Camera
     /// <param name="gameTime">The object used for reacting to timechanges</param>
     public override void Update(GameTime gameTime)
     {
+        //Setting the velocity
         velocity = 250f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        //Draining the stamina when running
         if (ShiftDown && stamina > 0 && exhausted == false &&
             (WDown || SDown || DDown || ADown))
         {
@@ -113,11 +115,14 @@ public class Player : Camera
             if (stamina < 20)
                 exhausted = true;
         }
+        //Adding stamina then you are not running
         if (stamina < 2000 && (!ShiftDown || exhausted))
             stamina += (int)(0.5f * gameTime.ElapsedGameTime.TotalMilliseconds);
+        //Deciding when you are exhausted
         if (stamina > 400)
             exhausted = false;
 
+        //Player movement + collision with walls
         if (WDown && !(grid.Objects[(int)((position.X + 20f * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY)) + 100) / GameObjectGrid.CellWidth), (int)((position.Z + 100) / GameObjectGrid.CellHeight)] is WallTile))
         {
             position.X += velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
@@ -158,6 +163,7 @@ public class Player : Camera
             position.Z -= velocity * (float)(Math.Cos(viewAngleX) * Math.Cos(viewAngleY));
         }
 
+        //Collision with decoration objects
         foreach (GameObject gameObject in level.Objects)
         {
             if (gameObject is Decoration)
@@ -203,12 +209,6 @@ public class Player : Camera
                 }
             }
         }
-
-        /*if (input.IsKeyDown(Keys.Space))
-            position.Y += 40f;
-        if (input.IsKeyDown(Keys.LeftShift))
-            position.Y -= 40f; */
-
         base.Update(gameTime);
     }
 }

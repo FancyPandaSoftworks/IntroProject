@@ -186,11 +186,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Misc Level Objects\ChairTable\ChairTable Model.fbx">
-      <Name>ChairTable Model</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <None Include="noteIDList.txt">
       <Name>noteIDList</Name>
       <Importer>XImporter</Importer>
@@ -456,11 +451,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Content>
-    <Compile Include="Misc Level Objects\ChairTable\WoodTexture.png">
-      <Name>WoodTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Level Cubes\Wall Cubes\Wall Cube No Exit Left\NoExit WallTexture.png">
       <Name>NoExit WallTexture</Name>
       <Importer>TextureImporter</Importer>

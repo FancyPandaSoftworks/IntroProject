@@ -70,20 +70,12 @@ public class Sound
         j = i;
         if (type == "SoundEffect")
         {
-            #region SoundEffect Info
-
             localName = filename.Substring(i, filename.Length - i);
-
-            #endregion
         }
 
         if (type == "Music")
         {
-            #region SoundEffect Info
-
             localName = filename.Substring(i, filename.Length - i);
-
-            #endregion
         }
 
         if (type == "LoopedEffect")
@@ -95,7 +87,6 @@ public class Sound
                 //Check for out of bound error
                 if (i == filename.Length)
                 {
-                    Console.WriteLine("Out of Bound");
                     break;
                 }
                 //for first marker (name)
@@ -122,9 +113,7 @@ public class Sound
 
         if (type == "SoundEffect3D")
         {
-            #region SoundEffect3D info
             localName = filename.Substring(i, filename.Length - i);
-            #endregion
         }
 
         if (type == "MusicInstrument")
@@ -136,7 +125,6 @@ public class Sound
                 //Check for out of bound error
                 if (i == filename.Length)
                 {
-                    Console.WriteLine("Out of Bound");
                     break;
                 }
                 //for first marker (name)
@@ -177,11 +165,7 @@ public class Sound
 
         if (type == "Unknown type")
         {
-            #region Unknown type Info
-
             localName = filename.Substring(0, filename.Length);
-
-            #endregion
         }
         #endregion
 
@@ -212,8 +196,6 @@ public class Sound
             else
                 iSound.IsLooped = false;
         }
-
-        Console.WriteLine("Play: {0}", name);
         iSound.Play();
         instancePlaying = true;
         iSound.Volume = volume;
@@ -224,8 +206,6 @@ public class Sound
     {
         if (playingState != "stopped")
         {
-            Console.WriteLine("Stop: {0}", name);
-
             iSound.Stop(true);
             iSound.Dispose();
             playingState = "stopped";

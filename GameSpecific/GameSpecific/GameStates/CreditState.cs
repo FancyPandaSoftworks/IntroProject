@@ -19,7 +19,7 @@ class CreditState : GameState
     public CreditState()
     {
         credits = new TextGameObject("credits");
-        credits.text = "Thank you for playing\n\n\n\n\n\nCoding:\n\nAllard\nJelle\nOscar\nRik\nWouter\n\n\nModel Design\n\nAllard\nOscar\n\n\nSprites\n\nAllard\nOscar\nRik\nJelle\nWouter\n\n\nMusic\n\nJelle\n\n\nSound Effects\n\nJelle\nWouter\n\n\n\nWe are Fancy Panda Softworks";
+        credits.text = "Thank you for playing\n\n\n\n\n\nCoding\n\nAllard\nJelle\nOscar\nRik\nWouter\n\n\nModel Design\n\nAllard\n\n\nSprites\n\nAllard\nOscar\nRik\nJelle\nWouter\n\n\nMusic\n\nJelle\n\n\nSound Effects\n\nJelle\nWouter\n\n\n\nWe are Fancy Panda Softworks";
         credits.Position = new Vector2(100, GameEnvironment.Screen.Y*1.5f);
         timer = 0;
         creditVelocity = 16;

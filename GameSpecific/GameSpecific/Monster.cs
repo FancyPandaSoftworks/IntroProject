@@ -68,6 +68,7 @@ class Monster : Object3D
 
     public void UpdateMonster(GameTime gameTime)
     {
+        //Finding and setting the player's postion
         this.Position = monsterPosition;
         Level level = parent as Level;
         player = level.Find("Player") as Player;
@@ -132,7 +133,11 @@ class Monster : Object3D
 
     }
 
-    //a simple method for moving the monster straight towards the player
+    /// <summary>
+    /// A simple method for moving the monster straight towards the player
+    /// </summary>
+    /// <param name="xdifference">Difference in x-coordinates from the monster and player</param>
+    /// <param name="ydifference">Difference in y-coordinates from the monster and player (if you look at the level from above)</param>
     public void SimplePathFinding(GameTime gameTime, float xdifference, float ydifference)
     {
         if (playerPosition.X > monsterPosition.X)
@@ -149,7 +154,9 @@ class Monster : Object3D
 
     }
 
-    //this method makes the monster follow the shortest path to the player, using the tile cost method and the stepgrid
+    /// <summary>
+    /// Method for making the monster follow the shortest path to the player, using the tile cost method and the stepgrid
+    /// </summary>
     public void AdvancedPathFinding(GameTime gameTime)
     {
         if ((int)monsterPosition.X / GameObjectGrid.cellWidth > 0)
@@ -173,10 +180,12 @@ class Monster : Object3D
                     monsterPosition.Z += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
     }
 
-    //method to check if the player is in the monster's 'line of sight'
-    //it checks the position of the player compared to the monster's position and then checks to see which is bigger, the x- or ydifference
-    //it then checks all positions in an imaginary line from monster to player, and if one of those positions is inside a wall, it returns the false value...
-    //because that means that the player is not in the monster's line of sight
+    /// <summary>
+    /// Method to check if the player is in the monster's line of sight
+    /// </summary>
+    /// <param name="xdifference">Difference in x-coordinates from the monster and player</param>
+    /// <param name="zdifference">Difference in z-coordinates from the monster and player</param>
+    /// <param name="checkposition">Position to check if there is a wall-cube on said position</param>
     public bool PlayerInSight(float xdifference, float zdifference, Vector2 checkposition)
     {
         if (playerPosition.X < monsterPosition.X && playerPosition.Z < monsterPosition.Z)
@@ -348,7 +357,11 @@ class Monster : Object3D
         return true;
     }
 
-    //a method that calculates the total steps/tiles it takes to get to the player's position
+    /// <summary>
+    /// Method that calculates the total steps/tiles it takes to get to the player's position
+    /// </summary>
+    /// <param name="tilepos">Position of the tile that the method is currently checking</param>
+    /// <param name="counter">The amount of steps/tiles</param>
     public void CalculateTileCost(Vector2 tilepos, int counter)
     {
         if ((int)tilepos.X > 0)
@@ -385,6 +398,9 @@ class Monster : Object3D
         }
     }
 
+    /// <summary>
+    /// Method to reset the grid to the total amount of tiles
+    /// </summary>
     public void ResetGrid()
     {
         for (int x = 0; x < gridWidth; x++)
@@ -392,12 +408,14 @@ class Monster : Object3D
                 stepgrid[x, y] = tiles;
     }
 
-
+    /// <summary>
+    /// Draw method for the monster
+    /// </summary>
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         //Code for turning the monster towards the player
         Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, playercamera.Position.Z - Position.Z);
-        direction.Normalize(); //matrix with length 0
+        direction.Normalize(); //making a matrix with length 0
         world = Matrix.CreateWorld(Position, direction, Vector3.Up);
         Matrix[] transforms = new Matrix[model.Bones.Count];
         model.CopyAbsoluteBoneTransformsTo(transforms);

@@ -18,7 +18,7 @@ class GameOverState : GameState
 
     public GameOverState()
     {
-        //Add the background
+        //Add the background sprite
         background = new Object2D("Notes\\Note blank", 0);
         background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);

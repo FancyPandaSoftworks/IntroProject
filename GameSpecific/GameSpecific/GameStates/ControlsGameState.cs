@@ -40,13 +40,17 @@ class ControlsGameState : GameState
 
         spriteBatch.Begin();
         base.Draw(gameTime, spriteBatch);
+        //Fading in the controls-sprite
         spriteBatch.Draw(controls.SpriteSheet.Sprite, new Vector2((GameEnvironment.Screen.X - controls.SpriteSheet.Width) / 2, (GameEnvironment.Screen.Y - controls.SpriteSheet.Height) / 2), Color.White * fader);
         spriteBatch.End();
 
-            fader += (float)gameTime.ElapsedGameTime.TotalSeconds;
+        fader += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+        //After 2 seconds, switch to the PlayingState
         if (timer > 2)
         {
+            timer = 0;
+            fader = 0;
             game.IsMouseVisible = false;
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
