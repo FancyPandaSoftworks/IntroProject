@@ -49,7 +49,10 @@ class MainGame : GameEnvironment
         musicPlayer.NewSound("SFX_MouseOver");
         musicPlayer.NewSound("SFX_GunShot");
         musicPlayer.NewSound("SFX_GameOver");
-        musicPlayer.NewSound("SFX_WindAMbience");
+        musicPlayer.NewSound("SFX_WindAmbience");
+        musicPlayer.NewSound("SFX_Bell");
+        musicPlayer.NewSound("SFX_Cave");
+        musicPlayer.NewSound("SFX_Rocksfalling");
 
         musicPlayer.NewSound("LFX_Footsteps1@8");
         musicPlayer.NewSound("LFX_Footsteps2@4");
@@ -64,6 +67,15 @@ class MainGame : GameEnvironment
         musicPlayer.NewSound("3DS_Monster7");
         musicPlayer.NewSound("3DS_Monster8");
         musicPlayer.NewSound("3DS_Monster9");
+        musicPlayer.NewSound("3DS_MonsterScream0");
+        musicPlayer.NewSound("3DS_MonsterScream1");
+        musicPlayer.NewSound("3DS_MonsterScream2");
+        musicPlayer.NewSound("3DS_MonsterScream3");
+        musicPlayer.NewSound("3DS_MonsterScream4");
+        musicPlayer.NewSound("3DS_MonsterScream5");
+        musicPlayer.NewSound("3DS_MonsterScream6");
+        musicPlayer.NewSound("3DS_MonsterScream7");
+        musicPlayer.NewSound("3DS_MonsterScream8");
 
         musicPlayer.NewSound("mus_MainMenu");
         #endregion

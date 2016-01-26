@@ -15,12 +15,13 @@ class GameOverState : GameState
     protected Button continueButton, exitButton;
     protected Button continueButtonMouseOver, exitButtonMouseOver;
     protected Object2D background, gameOver;
+    float bgPosY = 0;
 
     public GameOverState()
     {
         //Add the background sprite
-        background = new Object2D("Notes\\Note blank", 0);
-        background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
+        background = new Object2D("Menu Buttons\\Blood", 0);
+        background.Position = new Vector2(0, -GameEnvironment.Screen.Y);
         gameObjects.Add(background);
 
         //Add text: game over
@@ -55,10 +56,10 @@ class GameOverState : GameState
     //neccesary for when one switches from fullscreen to windowed or the other way around
     public void ResetPositions()
     {
-        background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2, (GameEnvironment.Screen.Y - background.Height) / 2);
-        gameOver.Position = new Vector2((GameEnvironment.Screen.X - gameOver.Width) / 2, background.Position.Y);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2);
-        exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
+        background.Position = new Vector2(0, -GameEnvironment.Screen.Y + bgPosY);
+        gameOver.Position = new Vector2((GameEnvironment.Screen.X - gameOver.Width) / 2, (GameEnvironment.Screen.Y - gameOver.Height) /2 -300);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 +200);
+        exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 300);
         continueButtonMouseOver.Position = continueButton.Position - new Vector2(20, 0);
         exitButtonMouseOver.Position = exitButton.Position - new Vector2(10, 0);
     }
@@ -89,6 +90,7 @@ class GameOverState : GameState
                     }
                 }
             }
+            bgPosY = 0;
             GameEnvironment.GameStateManager.SwitchTo("playingState");
         }
 
@@ -99,6 +101,7 @@ class GameOverState : GameState
             {
                 sound.PlaySound();
             }
+            bgPosY = 0;
             GameEnvironment.GameStateManager.SwitchTo("titleScreenState");
         }
 
@@ -134,6 +137,8 @@ class GameOverState : GameState
         spriteBatch.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
         //Resetting button and background
+        if (bgPosY < GameEnvironment.Screen.Y)
+            bgPosY+=20;
         ResetPositions();
 
         MusicPlayer.dangerLevel = 0;

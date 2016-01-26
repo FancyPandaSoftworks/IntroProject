@@ -103,7 +103,7 @@ class Monster : Object3D
         //Checking if a groan-sound is playing
         foreach (Sound sound in MusicPlayer.SoundEffect3D)
             for (int i = 0; i < 10; i++)
-                if (sound.Name == "Monster" + i)
+                if (sound.Name == "Monster" + i || sound.Name == "MonsterScream" + i)
                     if (sound.SoundState == SoundState.Playing)
                         groanPlaying = true;
                     else
@@ -116,20 +116,32 @@ class Monster : Object3D
         //Playing a random groan-sound
         if (!groanPlaying && GameEnvironment.Random.Next(110) == 0)
             foreach (Sound sound in MusicPlayer.SoundEffect3D)
-                if (sound.Name == "Monster" + GameEnvironment.Random.Next(10))
+            {
+                if (MusicPlayer.dangerLevel < 7)
                 {
-                    Console.WriteLine("Playing: {0}", sound.Name);
-                    sound.Play3DSound(playerListener, monsterEmitter);
+                    if (sound.Name == "Monster" + GameEnvironment.Random.Next(10))
+                    {
+                        sound.Play3DSound(playerListener, monsterEmitter);
+                    }
                 }
+                else
+                {
+                    if (sound.Name == "MonsterScream" + GameEnvironment.Random.Next(9))
+                    {
+                        sound.Play3DSound(playerListener, monsterEmitter);
+                    }
+                }
+            }
+
 
         //Switch to gameOver state
         if (xzdifference < 100)
-        {
-            foreach (Sound sound in MusicPlayer.SoundEffect)
-                if (sound.Name == "GameOver")
-                    sound.PlaySound();
-            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
-        }
+                {
+                    foreach (Sound sound in MusicPlayer.SoundEffect)
+                        if (sound.Name == "GameOver")
+                            sound.PlaySound();
+                    GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+                }
 
     }
 

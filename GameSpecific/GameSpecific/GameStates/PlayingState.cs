@@ -24,7 +24,7 @@ class PlayingState : Root
     /// Creates the random level and makes the Level the parent of the GameObjects in the level 
     /// </summary>
     /// <param name="roomCounter">The Roomcounter from where to start</param>
-    public PlayingState(int roomCounter = 100)
+    public PlayingState(int roomCounter = 1)
     {
         this.roomCounter = roomCounter;
         level = new RandomLevel(this.roomCounter);
@@ -64,7 +64,6 @@ class PlayingState : Root
         if (level.Completed)
         {
             roomCounter++;
-            Console.WriteLine(roomCounter);
             int tiles = 12 + (((roomCounter + 1) / 10) - ((roomCounter + 1) % 10));
 
             //First room
@@ -174,6 +173,36 @@ class PlayingState : Root
 
             foreach (GameObject obj in level.Objects)
                 obj.Parent = level;
+
+            if (GameEnvironment.Random.Next(4) == 0)
+            {
+                string name = "";
+                float volume = 1.0f;
+                switch (GameEnvironment.Random.Next(3))
+                {
+                    case 0:
+                        name = "Bell";
+                        volume = 0.15f;
+                        break;
+
+                    case 1:
+                        name = "Cave";
+                        break;
+
+                    default:
+                        name = "Rocksfalling";
+                        break;
+                }
+
+                foreach (Sound sound in MusicPlayer.SoundEffect)
+                {
+                    if (sound.Name == name)
+                    {
+                        sound.PlaySound(volume);
+                    }
+                }
+            }
+
         }
         level.Update(gameTime);
     }

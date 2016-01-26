@@ -21,8 +21,6 @@ class BillBoard : Object3D
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        Console.WriteLine(this.position);
-
         //Code for turning the monster towards the player
         Vector3 direction = new Vector3(playercamera.Position.X - Position.X, 0, playercamera.Position.Z - Position.Z);
         direction.Normalize(); //matrix with length 0

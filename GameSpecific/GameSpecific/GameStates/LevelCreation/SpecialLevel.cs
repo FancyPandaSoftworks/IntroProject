@@ -161,7 +161,6 @@ class SpecialLevel : Level
         {
             Decoration cupboard = new Decoration("Misc Level Objects\\Cupboard\\Cupboard Model", "Cupboard");
             cupboard.Position = new Vector3(x * 200 + 100, 165, y * 200);
-            Console.WriteLine(cupboard.Position);
             cupboard.Parent = this;
             cupboard.modelRotation = (float)Math.PI / 180 * 180;
             gameObjects.Add(cupboard);

@@ -70,10 +70,10 @@ class TitleScreenState : GameState
 
     public void ResetPositions()
     {
-        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2 + 50, 10);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
-        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
-        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
+        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2, 10);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 400);
+        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 300);
+        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width)  / 2 - 200);
         continueButtonMouseOver.Position = continueButton.Position - new Vector2(20,0);
         newGameButtonMouseOver.Position = newGameButton.Position - new Vector2(10,0); 
         exitButtonMouseOver.Position = exitButton.Position - new Vector2(10,0);

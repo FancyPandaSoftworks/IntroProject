@@ -71,7 +71,6 @@ public class MusicPlayer
     }
 
     //Play the music in sync
-    //TODO add fadeIn/Out
     public void SyncPlayer()
     {
         if (barSync[0])
@@ -90,12 +89,6 @@ public class MusicPlayer
                     else
                     {
                         if (sound.Playingstate == "playing")
-                            //if (sound.FadeOut >= 0)
-                            //{
-                            //    sound.Playingstate = "fadingOut";
-                            //    //FadeOut(sound);
-                            //}
-                            //else
                                 sound.StopSound();
                     }
                 }
@@ -153,16 +146,6 @@ public class MusicPlayer
 
     }
 
-    //TIJDELIJK ERUIT GECOMMENT
-    //public void FadeOut(Sound sound)
-    //{
-    //    Console.WriteLine("FadeOutTimer start");
-    //    sound.FadeOutTimer.Elapsed += FadeOutTimer;
-    //    sound.FadeOutTimer.Interval = beatLength * sound.FadeOut / 100;
-    //    sound.FadeOutTimer.AutoReset = true;
-    //    sound.FadeOutTimer.Enabled = true;
-    //}
-
     //--------------------Timers----------------------//
 
     //execute every beat
@@ -172,30 +155,6 @@ public class MusicPlayer
         SyncPlayer();
         BeatCounter();
     }
-
-    //private void FadeOutTimer(Object source, ElapsedEventArgs e)
-    //{
-    //    foreach (Sound sound in musicInstruments)
-    //    {
-    //        if (sound.Playingstate == "fadingOut")
-    //        {
-    //            sound.FadeOutCounter++;
-
-
-    //            if (sound.FadeOutCounter < 100)
-    //                sound.Volume = 1.0f - (float)sound.FadeOutCounter / 100;
-    //            else
-    //            {
-    //                sound.FadeOutCounter = 0;
-    //                sound.FadeOutTimer.Enabled = false;
-    //                sound.StopSound();
-    //            }
-    //            Console.WriteLine("Timer executed {0} times", sound.FadeOutCounter);
-    //            Console.WriteLine("volume = {0}", sound.Volume);
-    //        }
-    //    }
-    //}
-
 
     //Metronome for debugging
     private void Metronome()

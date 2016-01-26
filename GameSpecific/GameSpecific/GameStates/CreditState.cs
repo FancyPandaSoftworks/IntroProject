@@ -41,7 +41,6 @@ class CreditState : GameState
             credits.Position -= new Vector2(0, (float)gameTime.ElapsedGameTime.TotalMilliseconds/16);
 
         credits.Draw(gameTime, spriteBatch);
-        Console.WriteLine(credits.Position);
 
         timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 

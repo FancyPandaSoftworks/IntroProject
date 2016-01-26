@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroProject1Content", "IntroProject1\IntroProject1Content\IntroProject1Content.contentproj", "{2D6C8DA2-84F1-457D-8E97-D43DA1EA219A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSpecific", "GameSpecific\GameSpecific\GameSpecific.csproj", "{4FDD701B-1CBE-4567-899E-805BB77E0276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chased", "GameSpecific\GameSpecific\Chased.csproj", "{4FDD701B-1CBE-4567-899E-805BB77E0276}"
 	ProjectSection(ProjectDependencies) = postProject
 		{85E995ED-54DA-417F-8691-168503DFC43E} = {85E995ED-54DA-417F-8691-168503DFC43E}
 	EndProjectSection
