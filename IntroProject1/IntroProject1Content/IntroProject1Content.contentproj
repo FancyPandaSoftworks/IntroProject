@@ -234,34 +234,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.jpg">
-      <Name>Path Texture 01</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.jpg">
-      <Name>Path Texture 02</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.jpg">
-      <Name>Wall Texture 02</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.jpg">
-      <Name>Path Texture 03</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Misc Level Objects\Closet\Wood Texture 3.jpg">
       <Name>Wood Texture 3</Name>
       <Importer>TextureImporter</Importer>
@@ -271,13 +243,6 @@
   <ItemGroup>
     <Compile Include="Misc Level Objects\Monster\Monster Texture.png">
       <Name>Monster Texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.jpg">
-      <Name>Wall Texture 03</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -416,6 +381,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Content Include="Level Cubes\Path Cubes\Path Cube 01\Path Texture 01.jpg">
+      <Name>Path Texture 01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
+    <Content Include="Level Cubes\Path Cubes\Path Cube 02\Path Texture 02.jpg">
+      <Name>Path Texture 02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
+    <Content Include="Level Cubes\Path Cubes\Path Cube 03\Path Texture 03.jpg">
+      <Name>Path Texture 03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
     <Content Include="Level Cubes\Wall Cubes\Wall Cube 01\Wall Texture 01.jpg">
       <Name>Wall Texture 01</Name>
       <Importer>TextureImporter</Importer>
@@ -446,6 +426,16 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Content Include="Level Cubes\Wall Cubes\Wall Cube 03\Wall Texture 03.jpg">
+      <Name>Wall Texture 03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
+    <Content Include="Level Cubes\Wall Cubes\Wall Cube 02\Wall Texture 02.jpg">
+      <Name>Wall Texture 02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Content>
     <Content Include="Level Cubes\Wall Cubes\Wall Cube 04\Wall Texture 04.jpg">
       <Name>Wall Texture 04</Name>
       <Importer>TextureImporter</Importer>
