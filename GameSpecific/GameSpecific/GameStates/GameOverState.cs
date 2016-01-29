@@ -21,33 +21,27 @@ class GameOverState : GameState
     {
         //Add the background sprite
         background = new Object2D("Menu Buttons\\Blood", 0);
-        background.Position = new Vector2(0, -GameEnvironment.Screen.Y);
         gameObjects.Add(background);
 
         //Add text: game over
         gameOver = new Object2D("Menu Buttons\\GameOver");
-        gameOver.Position = new Vector2((GameEnvironment.Screen.X - gameOver.Width) / 2, background.Position.Y);
         gameObjects.Add(gameOver);
 
         //add a continue button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2);
         gameObjects.Add(continueButton);
 
         //Add a mouse-over continue button
         continueButtonMouseOver = new Button("Menu Buttons\\Menu button Continue MouseOver", 0);
-        continueButtonMouseOver.Position = continueButton.Position;
         gameObjects.Add(continueButtonMouseOver);
         continueButtonMouseOver.Visible = false;
 
         //add an exit button
         exitButton = new Button("Menu Buttons\\Menu button Exit", 0);
-        exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
         gameObjects.Add(exitButton);
 
         //Add a mouse-over exit button
         exitButtonMouseOver = new Button("Menu Buttons\\Menu button Exit MouseOver", 0);
-        exitButtonMouseOver.Position = exitButton.Position;
         gameObjects.Add(exitButtonMouseOver);
         exitButtonMouseOver.Visible = false;
     }
@@ -83,15 +77,19 @@ class GameOverState : GameState
                 using (StreamReader stream = new StreamReader("Content\\SaveFile.txt"))
                 {
                     string line = stream.ReadLine();
+                    PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
                     if (line != null)
                     {
-                        PlayingState playingState = GameEnvironment.GameStateManager.GetGameState("playingState") as PlayingState;
                         playingState.RoomCounter = int.Parse(line);
+                    }
+                    else
+                    {
+                        playingState.RoomCounter = 0;
                     }
                 }
             }
-            bgPosY = 0;
             GameEnvironment.GameStateManager.SwitchTo("playingState");
+            bgPosY = 0;
         }
 
         //Check if the exitbutton is being pressed, to switch back to the main menu

@@ -49,6 +49,11 @@ using Microsoft.Xna.Framework.Graphics;
             }
         }
 
+        if (inputHelper.KeyPressed(Keys.R))
+        {
+            this.completed = true;
+        }
+
         Find("Player").HandleInput(inputHelper);        
     }
 

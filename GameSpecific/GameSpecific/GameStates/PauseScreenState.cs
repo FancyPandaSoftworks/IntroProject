@@ -19,33 +19,27 @@ class PauseScreenState : GameState
     {
         //Add a background image
         background = new Object2D("Notes\\Note blank", 0);
-        background.Position = new Vector2((GameEnvironment.Screen.X - background.Width) / 2 + 10, (GameEnvironment.Screen.Y - background.Height) / 2);
         gameObjects.Add(background);
 
         //Add text: paused
         paused = new Object2D("Menu Buttons\\Paused");
-        paused.Position = new Vector2((GameEnvironment.Screen.X - paused.Width) / 2, background.Position.Y);
         gameObjects.Add(paused);
 
         //Add a resume button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.Y - continueButton.Height) / 2 - 100);
         gameObjects.Add(continueButton);
 
         //Add a mouse-over continue button
         continueButtonMouseOver = new Button("Menu Buttons\\Menu button Continue MouseOver", 0);
-        continueButtonMouseOver.Position = continueButton.Position;
         gameObjects.Add(continueButtonMouseOver);
         continueButtonMouseOver.Visible = false;
 
         //Add an exit button
         exitButton = new Button("Menu Buttons\\Menu button Exit", 0);
-        exitButton.Position = new Vector2((GameEnvironment.Screen.X - exitButton.Width) / 2, (GameEnvironment.Screen.Y - exitButton.Height) / 2 + 100);
         gameObjects.Add(exitButton);
 
         //Add a mouse-over exit button
         exitButtonMouseOver = new Button("Menu Buttons\\Menu button Exit MouseOver", 0);
-        exitButtonMouseOver.Position = exitButton.Position;
         gameObjects.Add(exitButtonMouseOver);
         exitButtonMouseOver.Visible = false;
     }

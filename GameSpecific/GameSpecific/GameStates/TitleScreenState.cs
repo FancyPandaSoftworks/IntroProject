@@ -29,39 +29,32 @@ class TitleScreenState : GameState
 
         //Add title
         title = new Object2D("Menu Buttons\\Chased");
-        title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2, 10);
         gameObjects.Add(title);
 
         //Add a continue button
         continueButton = new Button("Menu Buttons\\Menu button Continue", 0);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 200);
         gameObjects.Add(continueButton);
         
         //Add a mouse-over continue button
         continueButtonMouseOver = new Button("Menu Buttons\\Menu button Continue MouseOver", 0);
-        continueButtonMouseOver.Position = continueButton.Position;
         gameObjects.Add(continueButtonMouseOver);
         continueButtonMouseOver.Visible = false;
 
         //Add a new game button
         newGameButton = new Button("Menu Buttons\\Menu button NewGame", 0);
-        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
         gameObjects.Add(newGameButton);
 
         //Add a mouse-over new game button
         newGameButtonMouseOver = new Button("Menu Buttons\\Menu button NewGame MouseOver", 0);
-        newGameButtonMouseOver.Position = newGameButton.Position;
         gameObjects.Add(newGameButtonMouseOver);
         newGameButtonMouseOver.Visible = false;
 
         //Add an exit button
         exitButton = new Button("Menu Buttons\\Menu button Exit", 0);
-        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
         gameObjects.Add(exitButton);
 
         //Add a mouse-over exit button
         exitButtonMouseOver = new Button("Menu Buttons\\Menu button Exit MouseOver", 0);
-        exitButtonMouseOver.Position = exitButton.Position;
         gameObjects.Add(exitButtonMouseOver);
         exitButtonMouseOver.Visible = false;
 
@@ -71,9 +64,9 @@ class TitleScreenState : GameState
     public void ResetPositions()
     {
         title.Position = new Vector2((GameEnvironment.Screen.X - title.Width) / 2, 10);
-        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 400);
-        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 300);
-        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width)  / 2 - 200);
+        continueButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2 - 100);
+        newGameButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width) / 2);
+        exitButton.Position = new Vector2((GameEnvironment.Screen.X - continueButton.Width) / 2, (GameEnvironment.Screen.X - continueButton.Width)  / 2 + 100);
         continueButtonMouseOver.Position = continueButton.Position - new Vector2(20,0);
         newGameButtonMouseOver.Position = newGameButton.Position - new Vector2(10,0); 
         exitButtonMouseOver.Position = exitButton.Position - new Vector2(10,0);
